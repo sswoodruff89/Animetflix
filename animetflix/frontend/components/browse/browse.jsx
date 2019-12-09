@@ -14,7 +14,6 @@ class Browse extends React.Component{
   }
 
   render() {
-    // debugger;
     return (
       <>
       <h1>Logged In</h1>

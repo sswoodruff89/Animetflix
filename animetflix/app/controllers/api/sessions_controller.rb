@@ -4,7 +4,6 @@ class Api::SessionsController < ApplicationController
 
     def create
         @user = User.find_by_cred(params[:user][:email], params[:user][:password])
-        # debugger
         if @user
             login(@user)
             render "api/users/show"

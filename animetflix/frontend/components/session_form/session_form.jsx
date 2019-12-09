@@ -32,6 +32,8 @@ class SessionForm extends React.Component{
     return (e) => {
       e.preventDefault();
       const el = document.getElementById(type);
+      const inputEl = document.getElementById(`input-${type}`);
+      inputEl.className = "active";
       el.className = "active";
     };
   }
@@ -41,8 +43,11 @@ class SessionForm extends React.Component{
       e.preventDefault();
       if (this.state[type] === "") {
         const el = document.getElementById(type);
+        const inputEl = document.getElementById(`input-${type}`);
+        inputEl.className = "active";
         el.className = "";
       }
+
     };
   }
 
@@ -68,8 +73,10 @@ class SessionForm extends React.Component{
         <h2>{header}</h2>
         <form className="session-form"
           onSubmit={this.handleSubmit}>
+          
           <span id="email">Email</span>
           <input type="text"
+            id="input-email"
             value={this.state.email}
             onChange={this.handleInput("email")}
             onFocus={this.handleFocus("email")}
@@ -77,6 +84,7 @@ class SessionForm extends React.Component{
 
           <span id="password">Password</span>
           <input type="password"
+            id="input-password"
             value={this.state.password}
             onChange={this.handleInput("password")}
             onFocus={this.handleFocus("password")}
