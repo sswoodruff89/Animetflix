@@ -1,3 +1,3 @@
 json.set! @user.id do
-    json.partial! "user", user: @user
+    json.partial! "api/users/user", user: @user
 end
