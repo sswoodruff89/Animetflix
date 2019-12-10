@@ -5,13 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script type="text/javascript">
-      window.logo = "<%= image_url('animetflix_logo.png') %>";
+      window.logo = "<%= image_url('animetflix_logo_blue.png') %>";
+      window.homeBack = "<%= image_url('animetflix_home_edited') %>"
     </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
   </head>
 
   <body id="main-body">
     <%= yield %>
   </body>
 </html>
+

@@ -14,7 +14,15 @@
  *= require_self
  */
 
+
+
  body {
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
+
+header {
+  position: absolute;
+  width: 100%;
+};

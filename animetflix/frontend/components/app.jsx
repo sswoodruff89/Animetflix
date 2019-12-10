@@ -3,8 +3,8 @@ import {Link, Route, Switch} from "react-router-dom";
 import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import BrowseContainer from "./browse/browse_container";
-import HomePage from "./homepage";
-import NavBar from "./navbar/navbar";
+import HomePageContainer from "./homepage_container";
+import NavBarContainer from "./navbar/navbar_container";
 import {AuthRoute, ProtectedRoute} from "../util/route_util";
 
 const App = () => {
@@ -12,13 +12,13 @@ const App = () => {
     <main>
     
     <Switch>
-      <Route path="/browse" component={NavBar}/>
+      <Route path="/browse" component={NavBarContainer}/>
 
       <Route path="/" render={() => {
         return(
           <header>
             <Link to="/">
-              <img className="logo" src={window.logo} width="40" alt="logo" />
+              <img className="logo" src={window.logo} alt="logo" />
             </Link>
             <Route exact path="/" render={() => <Link to="/login"><button className="header-button" type="submit">Sign In</button></Link>} />
           </header>
@@ -28,7 +28,7 @@ const App = () => {
       </Switch>
       
       
-      <AuthRoute exact path="/" component={HomePage} /> 
+      <AuthRoute exact path="/" component={HomePageContainer} /> 
 
       <AuthRoute path="/login" component={LoginFormContainer} /> 
       <AuthRoute path="/signup" component={SignupFormContainer} /> 

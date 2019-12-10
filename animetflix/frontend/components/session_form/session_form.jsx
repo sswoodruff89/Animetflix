@@ -5,24 +5,14 @@ class SessionForm extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+        email: "",
+        password: ""
     };
-
+    this.active = "";
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-  }
-
-  componentDidMount() {
-    const body = document.getElementById("main-body");
-    body.className = "session-form-background";
-  }
-
-  componentWillUnmount() {
-    const body = document.getElementById("main-body");
-    body.className = "";
   }
 
   handleInput(type){
@@ -33,9 +23,15 @@ class SessionForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => {
-      this.props.history.push("/browse");
-    });
+    if (this.state.email === "") {
+      this.handleBlur('email');
+    } else if (this.state.password === "") {
+      this.handleBlur('password');
+    } else {
+      this.props.processForm(this.state).then(() => {
+        this.props.history.push("/browse");
+      });
+    }
   }
 
   handleFocus(type) {
@@ -53,13 +49,12 @@ class SessionForm extends React.Component{
       e.preventDefault();
       if (this.state[type] === "") {
         const el = document.getElementById(type);
-        el.className = "";
-
         const inputEl = document.getElementById(`input-${type}`);
-        inputEl.className = "active";
-
         const captionEl = document.getElementById(`enter-${type}`);
+        
+        el.className = "";
         captionEl.className = "";
+        inputEl.className = "active";
       }
 
     };
@@ -68,7 +63,7 @@ class SessionForm extends React.Component{
 
   render() {
     
-    const {formType} = this.props;
+    const {formType, errors} = this.props;
     const header = (formType === 'login') ? "Sign In" : "Sign Up";
 
     const redirector = (formType === 'login') ? (
@@ -80,40 +75,67 @@ class SessionForm extends React.Component{
           Have an account? <Link to="/login" id="form-redirect">Sign in!</Link>
         </section>
     );
+    
+    
+    let errorMessage;
+    if (errors.session) {
+      errorMessage = (errors.session[0] === "Invalid email") ? (
+        <section className="session-error">
+          Sorry, we can't find an account with this email address. Please try again or <Link to="/signup" id="form-redirect"><u>create a new account.</u></Link>
+        </section>
+      ) : (errors.session[0] === "Invalid password") ? (
+        <section className="session-error">
+            <strong>Incorrect password.</strong> Please try again.
+        </section>
+      ) : ''
+    }
   
+///////RENDER RETURN////////
 
     return (
-      <main>
+      <main className="session-form-background">
         <section className="session-form-container">
           <h2>{header}</h2>
+
+          {errorMessage}
+
           <form className="session-form"
             onSubmit={this.handleSubmit}>
-            <span id="email">Email</span>
+            <span className={`span-email ${this.active}`}>Email</span>
             <input type="text"
-              id="input-email"
+              // id="input-email"
               value={this.state.email}
               onChange={this.handleInput("email")}
-              onFocus={this.handleFocus("email")}
-              onBlur={this.handleBlur("email")} />
+              onFocus={(e)=> {
+                this.active = "active";
+              }}
+              // onFocus={this.handleFocus("email")}
+              // onBlur={this.handleBlur("email")}
+               />
             <p id="enter-email" 
               className="hidden">Please enter a valid email</p>
 
-            <span id="password">Password</span>
+            <span className="span-password">Password</span>
             <input type="password"
               id="input-password"
               value={this.state.password}
               onChange={this.handleInput("password")}
-              onFocus={this.handleFocus("password")}
-              onBlur={this.handleBlur("password")} />
+              // onFocus={this.handleFocus("password")}
+              // onBlur={this.handleBlur("password")} 
+              />
             <p id="enter-password"
               className="hidden">Your password must be at least 6 characters long</p>
 
             <button type="submit">{header}</button>
+
+
+            
           </form>
 
           {redirector}
 
         </section>
+
       </main>
     );
   }

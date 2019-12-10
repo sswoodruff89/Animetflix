@@ -1,39 +1,44 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {login} from "../actions/session_actions";
 
 class HomePage extends React.Component {
-  
-  componentDidMount() {
-    const body = document.getElementById("main-body");
-    
-    body.className = "homepage-background";
+  constructor(props) {
+    super(props);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
-  componentWillUnmount() {
-    const body = document.getElementById("main-body");
-    body.className = "";
+
+  loginDemo(e) {
+    e.preventDefault();
+    let demo = {email: "demo@demo.com", password: "anything"};
+    this.props.login(demo);
   }
   
   render() {
     return (
-      <section className="homepage">
 
-        {/* <Link to="/login"><button type="submit">Sign In</button></Link> */}
+      <main className="homepage-background">
+        <section className="homepage">
 
-        <div className="welcome">
-          <h1>All of Animetflix</h1>
-          <h1>Right on your browser!</h1>
-        </div>
+          {/* <Link to="/login"><button type="submit">Sign In</button></Link> */}
 
-        <Link to="/signup">
-          <button className="free">Sign up for a Free Trial</button>
-        </Link>
+          <div className="welcome">
+            <h1>All of Animetflix</h1>
+            <h1>Right on your browser!</h1>
+          </div>
 
-        <button className="demo">Demo</button>
+          <Link to="/signup">
+            <button className="free">Sign up for a Free Trial</button>
+          </Link>
+
+          <button className="demo"
+            onClick={this.loginDemo}
+          >Demo</button>
 
 
-      </section>
-
+        </section>
+      </main>
     );
   }
 

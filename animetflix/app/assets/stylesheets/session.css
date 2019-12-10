@@ -1,7 +1,25 @@
-.session-form-background{
+/* .session-form-background{
+  height: 100%;
   background-image: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
   background-position-x: center;
   background-size: 2000px 1125px; 
+} */
+
+.session-form-background::after{
+  background: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
+  background-size: 2000px 1125px;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+  filter: blur(3px);
+  margin-top: 40px;
+  margin-left: -20px;
+  
 }
 
 .session-form-container {
@@ -9,11 +27,14 @@
   width: 450px;
   background-color: rgba(0,0,0, 0.8);
   margin: 0 auto;
-  margin-top: 75px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
   font-family: Arial, Helvetica, sans-serif;
   padding: 70px 60px;
   box-sizing: border-box;
   color: white;
+  transform: translateX(-50%);
 }
 
 .session-form-container h2 {
@@ -23,7 +44,7 @@
   
 }
 
-.session-form span {
+span.span-email {
   color: rgb(168, 168, 168);
   position: relative;
   top: 45px;
@@ -43,9 +64,20 @@
   font-weight: 200;
   border: 1px solid black;
   box-sizing: border-box;
+  border-bottom: none;
+  transition-property: border-bottom;
+
+
 }
 
-.session-form input.active {
+span.span-email .active{
+  font-size: 10px;
+  top: 30px;
+  left: 16px;
+  transition: all 0.5s ease;
+}
+
+.session-form input:focus {
   border-bottom: 2px solid rgb(43, 160, 255);
 }
 /* 
@@ -67,7 +99,7 @@ input.active label::after {
 }
 
 .session-form button {
-  background-color: rgb(47, 113, 255);
+  background-color: rgb(43, 160, 255);
   width: 100%;
   height: 50px;
   text-align: center;
@@ -78,13 +110,13 @@ input.active label::after {
 }
 
 
-
+/* 
 span.active {
   font-size: 10px;
   top: 30px;
   left: 16px;
   transition: all 0.5s ease;
-}
+} */
 
 .redirect {
   color: rgb(168, 168, 168);
@@ -98,3 +130,28 @@ span.active {
   
 }
 
+.session-error {
+  width: 100%;
+  background-color: rgb(43, 160, 255);
+  font-size: 12px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+
+
+/* .focusing {
+  margin-top: 10%;
+  background-color: blue;
+  width: 100px;
+  
+  transition-property: background-color width;
+  transition-duration: 5000ms;
+}
+
+.focusing:focus {
+  background-color: red;
+  width: 400px;
+  /* transition: all 5s ease;/ */
+} */
