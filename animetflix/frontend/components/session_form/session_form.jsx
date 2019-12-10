@@ -15,6 +15,16 @@ class SessionForm extends React.Component{
     this.handleBlur = this.handleBlur.bind(this);
   }
 
+  componentDidMount() {
+    const body = document.getElementById("main-body");
+    body.className = "session-form-background";
+  }
+
+  componentWillUnmount() {
+    const body = document.getElementById("main-body");
+    body.className = "";
+  }
+
   handleInput(type){
     return (e) => {
       this.setState({[type]: e.target.value});
@@ -43,9 +53,13 @@ class SessionForm extends React.Component{
       e.preventDefault();
       if (this.state[type] === "") {
         const el = document.getElementById(type);
+        el.className = "";
+
         const inputEl = document.getElementById(`input-${type}`);
         inputEl.className = "active";
-        el.className = "";
+
+        const captionEl = document.getElementById(`enter-${type}`);
+        captionEl.className = "";
       }
 
     };
@@ -69,33 +83,38 @@ class SessionForm extends React.Component{
   
 
     return (
-      <section className="session-form-container">
-        <h2>{header}</h2>
-        <form className="session-form"
-          onSubmit={this.handleSubmit}>
-          
-          <span id="email">Email</span>
-          <input type="text"
-            id="input-email"
-            value={this.state.email}
-            onChange={this.handleInput("email")}
-            onFocus={this.handleFocus("email")}
-            onBlur={this.handleBlur("email")} />
+      <main>
+        <section className="session-form-container">
+          <h2>{header}</h2>
+          <form className="session-form"
+            onSubmit={this.handleSubmit}>
+            <span id="email">Email</span>
+            <input type="text"
+              id="input-email"
+              value={this.state.email}
+              onChange={this.handleInput("email")}
+              onFocus={this.handleFocus("email")}
+              onBlur={this.handleBlur("email")} />
+            <p id="enter-email" 
+              className="hidden">Please enter a valid email</p>
 
-          <span id="password">Password</span>
-          <input type="password"
-            id="input-password"
-            value={this.state.password}
-            onChange={this.handleInput("password")}
-            onFocus={this.handleFocus("password")}
-            onBlur={this.handleBlur("password")} />
+            <span id="password">Password</span>
+            <input type="password"
+              id="input-password"
+              value={this.state.password}
+              onChange={this.handleInput("password")}
+              onFocus={this.handleFocus("password")}
+              onBlur={this.handleBlur("password")} />
+            <p id="enter-password"
+              className="hidden">Your password must be at least 6 characters long</p>
 
-          <button type="submit">{header}</button>
-        </form>
+            <button type="submit">{header}</button>
+          </form>
 
-        {redirector}
+          {redirector}
 
-      </section>
+        </section>
+      </main>
     );
   }
 }

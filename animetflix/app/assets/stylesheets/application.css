@@ -15,7 +15,6 @@
  */
 
  body {
-  background-image: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
-  background-position-x: center;
-  background-size: 2000px 1125px; 
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }

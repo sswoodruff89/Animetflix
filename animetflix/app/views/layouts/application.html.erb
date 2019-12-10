@@ -4,12 +4,14 @@
     <title>Animetflix</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script type="text/javascript">
+      window.logo = "<%= image_url('animetflix_logo.png') %>";
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body id="main-body">
     <%= yield %>
   </body>
 </html>

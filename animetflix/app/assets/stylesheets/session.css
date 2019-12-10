@@ -1,3 +1,8 @@
+.session-form-background{
+  background-image: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
+  background-position-x: center;
+  background-size: 2000px 1125px; 
+}
 
 .session-form-container {
   min-height: 660px;
@@ -5,7 +10,7 @@
   background-color: rgba(0,0,0, 0.8);
   margin: 0 auto;
   margin-top: 75px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 70px 60px;
   box-sizing: border-box;
   color: white;
@@ -34,19 +39,35 @@
   height: 50px;
   margin: 10px 0px;
   border-radius: 5px;
-  padding: 10px 14px 3px 14px;
+  padding: 13px 14px 1px 14px;
+  font-weight: 200;
   border: 1px solid black;
   box-sizing: border-box;
-};
-
-.session-form input.active {
-  border-bottom: 1px solid rgb(211, 59, 4);
 }
 
+.session-form input.active {
+  border-bottom: 2px solid rgb(43, 160, 255);
+}
+/* 
+input.active label::after {
+  content: "Please enter a valid email address";
+  color: orangered;
+  font-size: 20px;
 
+} */
+
+.session-form p {
+  font-size: 12px;
+  margin-left: 5px;
+  color: rgb(43, 160, 255);
+}
+
+.hidden{
+  display: none;
+}
 
 .session-form button {
-  background-color: red;
+  background-color: rgb(47, 113, 255);
   width: 100%;
   height: 50px;
   text-align: center;
@@ -54,8 +75,9 @@
   padding: 10px;
   position: relative;
   top: 60px;
-
 }
+
+
 
 span.active {
   font-size: 10px;

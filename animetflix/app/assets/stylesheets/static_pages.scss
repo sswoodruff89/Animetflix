@@ -2,3 +2,98 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// body{
+//   background-image: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
+//   background-position-x: center;
+//   background-size: 2000px 1125px; 
+// }
+
+.homepage-background::after{
+  background: url("https://wallpaperaccess.com/full/538943.jpg");
+  background-size: 2500px 1400px;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+  filter: blur(3px) contrast(150%);
+  
+}
+
+.logo {
+  width: 260px;
+  height: 65px;
+  margin-top: 30px;
+  margin-left: 50px;
+  // position: relative;
+  // top: 30px;
+  // left: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+
+.header-button{
+  background-color: rgb(47, 113, 255);
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 30px;
+  width: 60px;
+  height: 20px;
+  padding: 8px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: relative;
+  top: 200px;
+}
+
+.welcome {
+  // display: flex;
+  text-align: center;
+  font-size: 48px;
+}
+
+
+.homepage button{
+  background-color: rgb(47, 113, 255);
+
+  text-align: center;
+  // border-radius: 5px;
+  padding: 10px;
+
+  margin: 30px;
+}
+
+.free {
+  width: 350px;
+  height: 60px;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: 100;
+  // font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.demo {
+  width: 60px;
+  height: 20px;
+  padding: 5px;
+}
