@@ -9921,3 +9921,5 @@ Migrating to Add (20191211143229)
   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
   [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
   [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
