@@ -9923,3 +9923,2336 @@ Migrating to Add (20191211143229)
   [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
   [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
   [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  [1m[36mGenreLink Load (0.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.7ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.9ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.6ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (1.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (1.8ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.9ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.9ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.6ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (1.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (1.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (2.1ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.8ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (1.0ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (1.1ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (1.6ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (7.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (2.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (1.2ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.4ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mWatchlist Load (1.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@demo.com"], ["password_digest", "$2a$12$uvG2HEoAUBH0RtBCTSL3a.OFNfoW4YiaGAC/oTWazRnmSk4TTtvcK"], ["session_token", "v5fkhL-3d7eG0r8jIbwSyg"], ["created_at", "2019-12-11 16:15:40.934022"], ["updated_at", "2019-12-11 16:15:40.934022"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "otaku@demo.com"], ["password_digest", "$2a$12$6Dia4Eu6FucxxSnfh0hcde//G4SRqC8zsz2gdk5i4DkUBL75FMFpK"], ["session_token", "Xneq9yqn-LnDU8ZFBI5D7g"], ["created_at", "2019-12-11 16:15:41.306290"], ["updated_at", "2019-12-11 16:15:41.306290"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (2.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2019-12-11 16:15:41.311685"], ["updated_at", "2019-12-11 16:15:41.311685"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (2.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2019-12-11 16:15:41.317032"], ["updated_at", "2019-12-11 16:15:41.317032"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2019-12-11 16:15:41.323602"], ["updated_at", "2019-12-11 16:15:41.323602"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2019-12-11 16:15:41.327122"], ["updated_at", "2019-12-11 16:15:41.327122"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Romance"], ["created_at", "2019-12-11 16:15:41.329673"], ["updated_at", "2019-12-11 16:15:41.329673"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (2.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Period"], ["created_at", "2019-12-11 16:15:41.333790"], ["updated_at", "2019-12-11 16:15:41.333790"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (12.1ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "War"], ["created_at", "2019-12-11 16:15:41.339912"], ["updated_at", "2019-12-11 16:15:41.339912"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (9.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2019-12-11 16:15:41.359975"], ["updated_at", "2019-12-11 16:15:41.359975"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2019-12-11 16:15:41.379723"], ["updated_at", "2019-12-11 16:15:41.379723"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (3.2ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2019-12-11 16:15:41.386118"], ["updated_at", "2019-12-11 16:15:41.386118"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2019-12-11 16:15:41.394707"], ["updated_at", "2019-12-11 16:15:41.394707"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Horror"], ["created_at", "2019-12-11 16:15:41.398195"], ["updated_at", "2019-12-11 16:15:41.398195"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (2.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Boy and the Beast"], ["yr", 2015], ["description", "When Kyuta, a young orphan living on the streets of Shibuya, stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice. But when a deep darkness threatens to throw the human and beast worlds into chaos, the strong bond between this unlikely pair will be put to the ultimate test."], ["rating", "PG-13"], ["runtime", 120], ["created_at", "2019-12-11 16:15:41.401822"], ["updated_at", "2019-12-11 16:15:41.401822"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Akira"], ["yr", 1988], ["description", "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets."], ["rating", "R"], ["runtime", 125], ["created_at", "2019-12-11 16:15:41.409096"], ["updated_at", "2019-12-11 16:15:41.409096"], ["director", "Katsuhiro Otomo"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Grave of the Fireflies"], ["yr", 1993], ["description", "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive"], ["rating", "PG-13"], ["runtime", 90], ["created_at", "2019-12-11 16:15:41.412420"], ["updated_at", "2019-12-11 16:15:41.412420"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball Super Broly"], ["yr", 2018], ["description", "One fateful day, a Saiyan appears before Goku and Vegeta who they have never seen before: Broly. With the return of Frieza from hell, a fierce battle awaits these three Saiyans who have followed completely different destinies."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 16:15:41.416289"], ["updated_at", "2019-12-11 16:15:41.416289"], ["director", "Tatsuya Nagamine"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Summer Wars"], ["yr", 2009], ["description", "Kenji a teenage math prodigy, recruited by his secret crush Natsuki for the ultimate summer job - passing himself off as Natsuki's boyfriend during her grandmother's 90th birthday celebration. But when Kenji solves a 2,056 digit math riddle sent to his cell phone, he unwittingly breaches the security barricade protecting Oz, a globe-spanning virtual world where millions of people and governments interact through their avatars. Now a malicious AI program is hijacking Oz accounts, growing exponentially more powerful and sowing chaos and destruction in its wake."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 16:15:41.419469"], ["updated_at", "2019-12-11 16:15:41.419469"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Wind Rises"], ["yr", 2013], ["description", "A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane."], ["rating", "PG-13"], ["runtime", 126], ["created_at", "2019-12-11 16:15:41.423630"], ["updated_at", "2019-12-11 16:15:41.423630"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mMovie Create (4.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Sword of the Stranger"], ["yr", 2007], ["description", "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple."], ["rating", "NR"], ["runtime", 103], ["created_at", "2019-12-11 16:15:41.430622"], ["updated_at", "2019-12-11 16:15:41.430622"], ["director", "Masahiro Andô"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Howl's Moving Castle"], ["yr", 2004], ["description", "Sophie has an uneventful life at her late father's hat shop, but all that changes when she befriends wizard Howl, who lives in a magical flying castle. However, the evil Witch of Waste takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty."], ["rating", "PG"], ["runtime", 119], ["created_at", "2019-12-11 16:15:41.441292"], ["updated_at", "2019-12-11 16:15:41.441292"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ghost in the Shell"], ["yr", 1995], ["description", "Cyborg federal agent Maj. Motoko Kusanagi trails \"The Puppet Master\" , who illegally hacks into the computerized minds of cyborg-human hybrids. Her pursuit of a man who can modify the identity of strangers leaves Motoko pondering her own makeup and what life might be like if she had more human traits."], ["rating", "R"], ["runtime", 95], ["created_at", "2019-12-11 16:15:41.445056"], ["updated_at", "2019-12-11 16:15:41.445056"], ["director", "Mamoru Oshii"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Princess Mononoke"], ["yr", 1997], ["description", "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami. In his travels, he sees humans ravaging the earth, bringing down the wrath of wolf god Moro and his human companion Princess Mononoke. Hiskattempts to broker peace between her and the humans brings only conflict."], ["rating", "PG-13"], ["runtime", 134], ["created_at", "2019-12-11 16:15:41.448089"], ["updated_at", "2019-12-11 16:15:41.448089"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:85
+  [1m[36mMovie Create (2.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "My Neighbor Totoro"], ["yr", 1988], ["description", "Satsuke and her younger sister, Mei, settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro."], ["rating", "G"], ["runtime", 100], ["created_at", "2019-12-11 16:15:41.452111"], ["updated_at", "2019-12-11 16:15:41.452111"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:85
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Spirited Away"], ["yr", 2001], ["description", "10-year-old Chihiro and her parents stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku, who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents."], ["rating", "PG"], ["runtime", 125], ["created_at", "2019-12-11 16:15:41.458917"], ["updated_at", "2019-12-11 16:15:41.458917"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:91
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Tale of Princess Kaguya"], ["yr", 2013], ["description", "A tiny nymph found inside a bamboo stalk grows into a beautiful and desirable young woman, who orders her suitors to prove their love by completing a series of near-impossible tasks."], ["rating", "PG"], ["runtime", 137], ["created_at", "2019-12-11 16:15:41.462372"], ["updated_at", "2019-12-11 16:15:41.462372"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:91
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:91
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:94
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Porco Ross"], ["yr", 1992], ["description", "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina."], ["rating", "PG"], ["runtime", 102], ["created_at", "2019-12-11 16:15:41.465231"], ["updated_at", "2019-12-11 16:15:41.465231"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:94
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:94
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:97
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Whisper of the Heart"], ["yr", 1995], ["description", "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate."], ["rating", "PG"], ["runtime", 111], ["created_at", "2019-12-11 16:15:41.468110"], ["updated_at", "2019-12-11 16:15:41.468110"], ["director", "Yoshifumi Kondō"]]
+  ↳ db/seeds.rb:97
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:97
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Girl Who Leapt Through Time"], ["yr", 2008], ["description", "When a typical young high school girl discovers that she has the unique ability to traverse space and time, her efforts to use the power as a means of preserving the relationships she shares with her closest friends reveals the perpetually shifting nature of personal relationships."], ["rating", "NR"], ["runtime", 98], ["created_at", "2019-12-11 16:15:41.471618"], ["updated_at", "2019-12-11 16:15:41.471618"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:100
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "A Silent Voice "], ["yr", 2016], ["description", "When a grade school student with impaired hearing is bullied mercilessly, she transfers to another school. Years later, one of her former tormentors sets out to make amends."], ["rating", "NR"], ["runtime", 130], ["created_at", "2019-12-11 16:15:41.474840"], ["updated_at", "2019-12-11 16:15:41.474840"], ["director", "Naoko Yamada"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:106
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Kiki’s Delivery Service"], ["yr", 1989], ["description", "13-year-old Kiki moves to a seaside town with her talking cat, Jiji, to spend a year alone, in accordance with her village's tradition for witches in training. After learning to control her broomstick, Kiki sets up a flying courier service and soon becomes a fixture in the community."], ["rating", "G"], ["runtime", 103], ["created_at", "2019-12-11 16:15:41.477712"], ["updated_at", "2019-12-11 16:15:41.477712"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:106
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:106
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:117
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:117
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:117
+  [1m[36mGenreLink Create (1.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.497663"], ["updated_at", "2019-12-11 16:15:41.497663"]]
+  ↳ db/seeds.rb:117
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:117
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:118
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:118
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:118
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 4], ["created_at", "2019-12-11 16:15:41.503711"], ["updated_at", "2019-12-11 16:15:41.503711"]]
+  ↳ db/seeds.rb:118
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:118
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:119
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:119
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:119
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.508196"], ["updated_at", "2019-12-11 16:15:41.508196"]]
+  ↳ db/seeds.rb:119
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:120
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 11], ["created_at", "2019-12-11 16:15:41.513127"], ["updated_at", "2019-12-11 16:15:41.513127"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:121
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:121
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:121
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.517629"], ["updated_at", "2019-12-11 16:15:41.517629"]]
+  ↳ db/seeds.rb:121
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:121
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:122
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:122
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:122
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 3], ["created_at", "2019-12-11 16:15:41.522515"], ["updated_at", "2019-12-11 16:15:41.522515"]]
+  ↳ db/seeds.rb:122
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:122
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:123
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:123
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:123
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.528354"], ["updated_at", "2019-12-11 16:15:41.528354"]]
+  ↳ db/seeds.rb:123
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:123
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:124
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:124
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:124
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 7], ["created_at", "2019-12-11 16:15:41.533923"], ["updated_at", "2019-12-11 16:15:41.533923"]]
+  ↳ db/seeds.rb:124
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:124
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:125
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:125
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:125
+  [1m[36mGenreLink Create (1.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.539940"], ["updated_at", "2019-12-11 16:15:41.539940"]]
+  ↳ db/seeds.rb:125
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:125
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.548262"], ["updated_at", "2019-12-11 16:15:41.548262"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:127
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:127
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:127
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.553350"], ["updated_at", "2019-12-11 16:15:41.553350"]]
+  ↳ db/seeds.rb:127
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:127
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:128
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:128
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 3], ["created_at", "2019-12-11 16:15:41.559531"], ["updated_at", "2019-12-11 16:15:41.559531"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:129
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:129
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.564503"], ["updated_at", "2019-12-11 16:15:41.564503"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:130
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:130
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:130
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 10], ["created_at", "2019-12-11 16:15:41.570189"], ["updated_at", "2019-12-11 16:15:41.570189"]]
+  ↳ db/seeds.rb:130
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:130
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:131
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:131
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:131
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 3], ["created_at", "2019-12-11 16:15:41.575090"], ["updated_at", "2019-12-11 16:15:41.575090"]]
+  ↳ db/seeds.rb:131
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:131
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:132
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 4], ["created_at", "2019-12-11 16:15:41.580523"], ["updated_at", "2019-12-11 16:15:41.580523"]]
+  ↳ db/seeds.rb:132
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:133
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:133
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:133
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.586029"], ["updated_at", "2019-12-11 16:15:41.586029"]]
+  ↳ db/seeds.rb:133
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:133
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:134
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:134
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:134
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 7], ["created_at", "2019-12-11 16:15:41.591586"], ["updated_at", "2019-12-11 16:15:41.591586"]]
+  ↳ db/seeds.rb:134
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:134
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 5], ["created_at", "2019-12-11 16:15:41.596135"], ["updated_at", "2019-12-11 16:15:41.596135"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:136
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:136
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:136
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.600523"], ["updated_at", "2019-12-11 16:15:41.600523"]]
+  ↳ db/seeds.rb:136
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:136
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:137
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:137
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:137
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 4], ["created_at", "2019-12-11 16:15:41.605465"], ["updated_at", "2019-12-11 16:15:41.605465"]]
+  ↳ db/seeds.rb:137
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:137
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:138
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:138
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:138
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.609758"], ["updated_at", "2019-12-11 16:15:41.609758"]]
+  ↳ db/seeds.rb:138
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:138
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:139
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:139
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:139
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.615394"], ["updated_at", "2019-12-11 16:15:41.615394"]]
+  ↳ db/seeds.rb:139
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:139
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:140
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:140
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:140
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 5], ["created_at", "2019-12-11 16:15:41.620909"], ["updated_at", "2019-12-11 16:15:41.620909"]]
+  ↳ db/seeds.rb:140
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:140
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:141
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:141
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:141
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.626905"], ["updated_at", "2019-12-11 16:15:41.626905"]]
+  ↳ db/seeds.rb:141
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:141
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:142
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:142
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:142
+  [1m[36mGenreLink Create (1.3ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.632078"], ["updated_at", "2019-12-11 16:15:41.632078"]]
+  ↳ db/seeds.rb:142
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:142
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:143
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:143
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:143
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.642744"], ["updated_at", "2019-12-11 16:15:41.642744"]]
+  ↳ db/seeds.rb:143
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:143
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:144
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:144
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:144
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.647567"], ["updated_at", "2019-12-11 16:15:41.647567"]]
+  ↳ db/seeds.rb:144
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:144
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:145
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:145
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:145
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 3], ["created_at", "2019-12-11 16:15:41.658868"], ["updated_at", "2019-12-11 16:15:41.658868"]]
+  ↳ db/seeds.rb:145
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:145
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:146
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:146
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:146
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 11], ["created_at", "2019-12-11 16:15:41.668928"], ["updated_at", "2019-12-11 16:15:41.668928"]]
+  ↳ db/seeds.rb:146
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:146
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:147
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:147
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:147
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.678847"], ["updated_at", "2019-12-11 16:15:41.678847"]]
+  ↳ db/seeds.rb:147
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:147
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:148
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:148
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:148
+  [1m[36mGenreLink Create (4.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.690308"], ["updated_at", "2019-12-11 16:15:41.690308"]]
+  ↳ db/seeds.rb:148
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:148
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:149
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:149
+  [1m[36mGenre Load (8.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:149
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 4], ["created_at", "2019-12-11 16:15:41.709046"], ["updated_at", "2019-12-11 16:15:41.709046"]]
+  ↳ db/seeds.rb:149
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:149
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:150
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:150
+  [1m[36mGenre Load (3.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:150
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 9], ["created_at", "2019-12-11 16:15:41.721031"], ["updated_at", "2019-12-11 16:15:41.721031"]]
+  ↳ db/seeds.rb:150
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:150
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:151
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:151
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:151
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.730648"], ["updated_at", "2019-12-11 16:15:41.730648"]]
+  ↳ db/seeds.rb:151
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:151
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:152
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:152
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:152
+  [1m[36mGenreLink Create (0.8ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.737184"], ["updated_at", "2019-12-11 16:15:41.737184"]]
+  ↳ db/seeds.rb:152
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:152
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:153
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:153
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:153
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 1], ["created_at", "2019-12-11 16:15:41.746285"], ["updated_at", "2019-12-11 16:15:41.746285"]]
+  ↳ db/seeds.rb:153
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:153
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:154
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:154
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:154
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.757181"], ["updated_at", "2019-12-11 16:15:41.757181"]]
+  ↳ db/seeds.rb:154
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:154
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:155
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:155
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:155
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.762285"], ["updated_at", "2019-12-11 16:15:41.762285"]]
+  ↳ db/seeds.rb:155
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:155
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:156
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:156
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:156
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 1], ["created_at", "2019-12-11 16:15:41.766391"], ["updated_at", "2019-12-11 16:15:41.766391"]]
+  ↳ db/seeds.rb:156
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:156
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:157
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:157
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:157
+  [1m[36mGenreLink Create (0.8ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.774032"], ["updated_at", "2019-12-11 16:15:41.774032"]]
+  ↳ db/seeds.rb:157
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:157
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:158
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:158
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:158
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.779281"], ["updated_at", "2019-12-11 16:15:41.779281"]]
+  ↳ db/seeds.rb:158
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:158
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:159
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:159
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:159
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.783766"], ["updated_at", "2019-12-11 16:15:41.783766"]]
+  ↳ db/seeds.rb:159
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:159
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:160
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:160
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:160
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.788609"], ["updated_at", "2019-12-11 16:15:41.788609"]]
+  ↳ db/seeds.rb:160
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:160
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:161
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:161
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:161
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.793244"], ["updated_at", "2019-12-11 16:15:41.793244"]]
+  ↳ db/seeds.rb:161
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:161
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:162
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:162
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:162
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.797309"], ["updated_at", "2019-12-11 16:15:41.797309"]]
+  ↳ db/seeds.rb:162
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:162
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:163
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:163
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:163
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 6], ["created_at", "2019-12-11 16:15:41.801818"], ["updated_at", "2019-12-11 16:15:41.801818"]]
+  ↳ db/seeds.rb:163
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:163
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:164
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:164
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 15], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.807443"], ["updated_at", "2019-12-11 16:15:41.807443"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:165
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:165
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:165
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 15], ["genre_id", 5], ["created_at", "2019-12-11 16:15:41.812612"], ["updated_at", "2019-12-11 16:15:41.812612"]]
+  ↳ db/seeds.rb:165
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:165
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:166
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:166
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:166
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.817166"], ["updated_at", "2019-12-11 16:15:41.817166"]]
+  ↳ db/seeds.rb:166
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:166
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:167
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:167
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:167
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 4], ["created_at", "2019-12-11 16:15:41.823022"], ["updated_at", "2019-12-11 16:15:41.823022"]]
+  ↳ db/seeds.rb:167
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:167
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:168
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:168
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:168
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 3], ["created_at", "2019-12-11 16:15:41.827934"], ["updated_at", "2019-12-11 16:15:41.827934"]]
+  ↳ db/seeds.rb:168
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:168
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:169
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:169
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:169
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 1], ["created_at", "2019-12-11 16:15:41.832858"], ["updated_at", "2019-12-11 16:15:41.832858"]]
+  ↳ db/seeds.rb:169
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:169
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:170
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:170
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:170
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 17], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.838664"], ["updated_at", "2019-12-11 16:15:41.838664"]]
+  ↳ db/seeds.rb:170
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:170
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:171
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:171
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:171
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 17], ["genre_id", 5], ["created_at", "2019-12-11 16:15:41.843540"], ["updated_at", "2019-12-11 16:15:41.843540"]]
+  ↳ db/seeds.rb:171
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:171
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:172
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:172
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:172
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 1], ["created_at", "2019-12-11 16:15:41.848626"], ["updated_at", "2019-12-11 16:15:41.848626"]]
+  ↳ db/seeds.rb:172
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:172
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:173
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:173
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:173
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 8], ["created_at", "2019-12-11 16:15:41.855021"], ["updated_at", "2019-12-11 16:15:41.855021"]]
+  ↳ db/seeds.rb:173
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:173
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:174
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:174
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:174
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 2], ["created_at", "2019-12-11 16:15:41.860018"], ["updated_at", "2019-12-11 16:15:41.860018"]]
+  ↳ db/seeds.rb:174
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:174
+  [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMovie Load (2.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+Started GET "/" for ::1 at 2019-12-11 11:18:55 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademystudent/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GSf0bBpQFW25q8pcvWh0Dg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered static_pages/root.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 3151ms (Views: 3142.6ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-11 11:19:02 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 332ms (Views: 13.0ms | ActiveRecord: 8.4ms)
+
+
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "OK-y0Q7EBHnQaDVu3pe4Hw"], ["updated_at", "2019-12-11 16:35:58.214681"], ["id", 2]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-12-11 11:39:01 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v5fkhL-3d7eG0r8jIbwSyg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v5fkhL-3d7eG0r8jIbwSyg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 135ms (Views: 114.6ms | ActiveRecord: 14.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-11 11:39:04 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v5fkhL-3d7eG0r8jIbwSyg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v5fkhL-3d7eG0r8jIbwSyg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xcp_DsmPoGNaO4676odQSQ"], ["updated_at", "2019-12-11 16:39:04.752876"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-11 11:39:08 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 320ms (Views: 14.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-11 11:39:13 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xcp_DsmPoGNaO4676odQSQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xcp_DsmPoGNaO4676odQSQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["updated_at", "2019-12-11 16:39:13.929908"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-11 11:39:18 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (2.7ms)
+Completed 200 OK in 310ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 10]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 10]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 10]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 10]]
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 10]]
+Started GET "/" for ::1 at 2019-12-11 12:11:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 1109ms (Views: 1088.8ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 12:11:44 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (1.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (103.4ms)
+Completed 200 OK in 123ms (Views: 92.1ms | ActiveRecord: 22.4ms)
+
+
+  [1m[36mMovie Load (6.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-12-11 12:14:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 78ms (Views: 68.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 12:14:17 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.9ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (80.1ms)
+Completed 200 OK in 92ms (Views: 68.4ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 13:35:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 959ms (Views: 938.9ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 13:35:48 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:16
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 7.8ms)
+
+
+
+NoMethodError - undefined method `includes' for #<Movie:0x00007f9847d8fe50>:
+  app/controllers/api/movies_controller.rb:16:in `show'
+
+Started GET "/" for ::1 at 2019-12-11 13:36:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 91ms (Views: 80.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 13:36:23 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:16
+  Rendering api/movies/show.json.jbuilder
+  Rendered api/movies/_movie.json.jbuilder (6.3ms)
+  Rendered api/movies/show.json.jbuilder (8.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 6.3ms)
+
+
+
+NoMethodError - undefined method `title' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:1:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146015768240'
+  app/views/api/movies/show.json.jbuilder:2:in `block in _app_views_api_movies_show_json_jbuilder__386741655442644979_70146040915160'
+  app/views/api/movies/show.json.jbuilder:1:in `_app_views_api_movies_show_json_jbuilder__386741655442644979_70146040915160'
+  app/controllers/api/movies_controller.rb:18:in `show'
+
+Started GET "/" for ::1 at 2019-12-11 13:36:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 107ms (Views: 96.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 13:36:54 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:17
+  Rendering api/movies/show.json.jbuilder
+  Rendered api/movies/_movie.json.jbuilder (184.3ms)
+  Rendered api/movies/show.json.jbuilder (193.5ms)
+Completed 500 Internal Server Error in 27549ms (ActiveRecord: 8.9ms)
+
+
+
+NoMethodError - undefined method `title' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:1:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146033873660'
+  app/views/api/movies/show.json.jbuilder:2:in `block in _app_views_api_movies_show_json_jbuilder__386741655442644979_70146017851240'
+  app/views/api/movies/show.json.jbuilder:1:in `_app_views_api_movies_show_json_jbuilder__386741655442644979_70146017851240'
+  app/controllers/api/movies_controller.rb:19:in `show'
+
+Started GET "/" for ::1 at 2019-12-11 13:37:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 107ms (Views: 98.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 13:37:49 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (3.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (4.7ms)
+  Rendered api/movies/index.json.jbuilder (124.8ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 18.3ms)
+
+
+
+NoMethodError - undefined method `shuffle' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:9:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146017403380'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042196140'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042196140'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042196140'
+  app/controllers/api/movies_controller.rb:12:in `index'
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 13:37:51 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:17
+  Rendering api/movies/show.json.jbuilder
+  Rendered api/movies/_movie.json.jbuilder (10.7ms)
+  Rendered api/movies/show.json.jbuilder (22327.5ms)
+Completed 500 Internal Server Error in 30843ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `title' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:1:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146016946260'
+  app/views/api/movies/show.json.jbuilder:3:in `block in _app_views_api_movies_show_json_jbuilder__386741655442644979_70146034184860'
+  app/views/api/movies/show.json.jbuilder:1:in `_app_views_api_movies_show_json_jbuilder__386741655442644979_70146034184860'
+  app/controllers/api/movies_controller.rb:19:in `show'
+
+Started GET "/" for ::1 at 2019-12-11 13:38:31 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (4.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 166ms (Views: 147.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 13:38:35 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:16
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (51.3ms)
+  Rendered api/movies/show.json.jbuilder (54.2ms)
+Completed 200 OK in 89ms (Views: 53.4ms | ActiveRecord: 17.0ms)
+
+
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+Started GET "/" for ::1 at 2019-12-11 13:46:56 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 1009ms (Views: 988.7ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 13:47:06 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  Rendered api/genres/index.json.jbuilder (0.7ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 13:48:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 60ms (Views: 56.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 13:48:15 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  Rendered api/genres/index.json.jbuilder (1.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected keyword_do, expecting keyword_end
+...rTemplate.new(self); @genres do |genre|
+...                             ^~
+/Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/views/api/genres/index.json.jbuilder:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    json.set! genre.id do
+              ^~~~~
+/Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/views/api/genres/index.json.jbuilder:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~:
+  app/views/api/genres/index.json.jbuilder:1:in `'
+  app/controllers/api/genres_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2019-12-11 13:49:50 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 121ms (Views: 110.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 13:49:55 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (80.3ms)
+Completed 200 OK in 95ms (Views: 64.1ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:07:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 943ms (Views: 936.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:07:17 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (1.6ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (2.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (2.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (4.7ms)
+  Rendered api/movies/index.json.jbuilder (60.9ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 16.0ms)
+
+
+
+NoMethodError - undefined method `shuffle' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:9:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146017819960'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146018135680'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146018135680'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder___2679645462267677994_70146018135680'
+  app/controllers/api/movies_controller.rb:11:in `index'
+
+Started GET "/" for ::1 at 2019-12-11 14:07:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 921ms (Views: 918.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:07:43 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 121ms (Views: 110.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:07:46 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.7ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (4.5ms)
+  Rendered api/movies/index.json.jbuilder (25.7ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.9ms)
+
+
+
+NoMethodError - undefined method `shuffle' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:9:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146017698100'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042215000'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042215000'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042215000'
+  app/controllers/api/movies_controller.rb:11:in `index'
+
+Started GET "/" for ::1 at 2019-12-11 14:08:20 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 1020ms (Views: 1015.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:08:30 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (3.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (1.1ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (5.1ms)
+  Rendered api/movies/index.json.jbuilder (33.2ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 5.4ms)
+
+
+
+NoMethodError - undefined method `shuffle' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:9:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146008415280'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042586140'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042586140'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder___2679645462267677994_70146042586140'
+  app/controllers/api/movies_controller.rb:11:in `index'
+
+Started GET "/" for ::1 at 2019-12-11 14:09:17 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 119ms (Views: 113.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:09:25 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (6.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (1.0ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.7ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.7ms)
+  Rendered api/movies/_movie.json.jbuilder (8.2ms)
+  Rendered api/movies/index.json.jbuilder (52.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 8.9ms)
+
+
+
+NoMethodError - undefined method `take' for nil:NilClass:
+  app/views/api/movies/_movie.json.jbuilder:9:in `_app_views_api_movies__movie_json_jbuilder___4366895482519823327_70146007832220'
+  app/views/api/movies/index.json.jbuilder:3:in `block (2 levels) in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146016525200'
+  app/views/api/movies/index.json.jbuilder:2:in `block in _app_views_api_movies_index_json_jbuilder___2679645462267677994_70146016525200'
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder___2679645462267677994_70146016525200'
+  app/controllers/api/movies_controller.rb:11:in `index'
+
+Started GET "/" for ::1 at 2019-12-11 14:10:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 82ms (Views: 69.4ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:10:11 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.7ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (98.2ms)
+Completed 200 OK in 121ms (Views: 88.2ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:10:58 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (12.3ms)
+  Rendered api/movies/show.json.jbuilder (14.3ms)
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:11:54 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (3.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (29678.3ms)
+  Rendered api/movies/show.json.jbuilder (29680.7ms)
+Completed 200 OK in 29691ms (Views: 29685.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:13:40 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 888ms (Views: 883.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:14:09 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:14:15 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.7ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (37.5ms)
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:14:17 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (3.1ms)
+  Rendered api/movies/show.json.jbuilder (4.9ms)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:15:04 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (4.9ms)
+  Rendered api/movies/show.json.jbuilder (7.4ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:16:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 66ms (Views: 59.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:16:28 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (3.0ms)
+  Rendered api/movies/show.json.jbuilder (4.8ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:16:37 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 87ms (Views: 83.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:16:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 929ms (Views: 923.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:16:55 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (1.0ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.7ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/index.json.jbuilder (46.1ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/movies/2" for ::1 at 2019-12-11 14:16:58 -0500
+Processing by Api::MoviesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:15
+  Rendering api/movies/show.json.jbuilder
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:49
+  Rendered api/movies/_movie.json.jbuilder (2.6ms)
+  Rendered api/movies/show.json.jbuilder (4.3ms)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:18:09 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 1214ms (Views: 1209.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:18:14 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (36.6ms)
+Completed 200 OK in 46ms (Views: 43.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 14:18:26 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (31.9ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:19:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 895ms (Views: 892.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:20:06 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 923ms (Views: 919.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 14:20:13 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (26.3ms)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:21:20 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (2.0ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (48.4ms)
+Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:21:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 98ms (Views: 94.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 14:21:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 972ms (Views: 969.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2019-12-11 14:21:48 -0500
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (0.7ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (35.0ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 14:21:50 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (22.6ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 4.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-11 14:31:43 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YEK4KTZTuw6MP9AOCQGITg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "zYVKu130F8bHp4BiDv6XDw"], ["updated_at", "2019-12-11 19:31:43.046957"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-11 14:32:47 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 315ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 15:00:48 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zYVKu130F8bHp4BiDv6XDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zYVKu130F8bHp4BiDv6XDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 947ms (Views: 942.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 15:00:50 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (52.0ms)
+Completed 200 OK in 72ms (Views: 55.7ms | ActiveRecord: 15.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-11 15:01:26 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zYVKu130F8bHp4BiDv6XDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zYVKu130F8bHp4BiDv6XDw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ApieI8xQC8mrnrUQmBjEHg"], ["updated_at", "2019-12-11 20:01:26.719653"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-11 15:01:28 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 330ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 15:01:29 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (51.1ms)
+Completed 200 OK in 63ms (Views: 46.2ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-11 15:04:22 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ApieI8xQC8mrnrUQmBjEHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ApieI8xQC8mrnrUQmBjEHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 1036ms (Views: 1032.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/genres" for ::1 at 2019-12-11 15:04:24 -0500
+Processing by Api::GenresController#index as JSON
+  Rendering api/genres/index.json.jbuilder
+Started GET "/api/movies" for ::1 at 2019-12-11 15:04:24 -0500
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/api/genres/index.json.jbuilder:1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "movies"."id" FROM "movies" INNER JOIN "genre_links" ON "movies"."id" = "genre_links"."movie_id" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ app/views/api/genres/index.json.jbuilder:4
+  Rendered api/genres/index.json.jbuilder (51.6ms)
+Completed 200 OK in 63ms (Views: 50.6ms | ActiveRecord: 12.3ms)
+
+
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenreLink Load (2.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."movie_id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)[0m  [["movie_id", 1], ["movie_id", 2], ["movie_id", 3], ["movie_id", 4], ["movie_id", 5], ["movie_id", 6], ["movie_id", 7], ["movie_id", 8], ["movie_id", 9], ["movie_id", 10], ["movie_id", 11], ["movie_id", 12], ["movie_id", 13], ["movie_id", 14], ["movie_id", 15], ["movie_id", 16], ["movie_id", 17], ["movie_id", 18]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mGenre Load (12.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["id", 2], ["id", 4], ["id", 9], ["id", 11], ["id", 3], ["id", 8], ["id", 7], ["id", 6], ["id", 10], ["id", 5], ["id", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (1.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (48.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/index.json.jbuilder (130.7ms)
+Completed 200 OK in 143ms (Views: 125.3ms | ActiveRecord: 17.2ms)
+
+

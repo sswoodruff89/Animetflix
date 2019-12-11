@@ -38,4 +38,15 @@ class Movie < ApplicationRecord
   has_many :genres,
     through: :genre_links
 
+  def get_runtime
+    hr = (self.runtime / 60) > 0 ? (self.runtime / 60).to_s + "h" : ""
+    min = (self.runtime % 60) > 0 ? (self.runtime % 60).to_s + "m" : ""
+    
+    return "#{hr} #{min}"
+  end
+
+  def list_genres
+    self.genres.map {|genre| genre.name}
+  end
+
 end
