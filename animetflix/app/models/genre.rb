@@ -17,5 +17,5 @@ class Genre < ApplicationRecord
 
     has_many :movies, 
       through: :genre_links, 
-      source: :movie_id
+      source: :movie
 end

@@ -64,8 +64,7 @@
   font-weight: 200;
   border: 1px solid black;
   box-sizing: border-box;
-  /* border-bottom: none;
-  transition-property: border-bottom; */
+
 
 
 }
@@ -80,13 +79,7 @@
 .session-form input.active {
   border-bottom: 2px solid rgb(43, 160, 255);
 }
-/* 
-input.active label::after {
-  content: "Please enter a valid email address";
-  color: orangered;
-  font-size: 20px;
 
-} */
 
 .session-form p {
   display: none;
@@ -99,9 +92,7 @@ p.active, p.active {
   color: rgb(43, 160, 255);
 }
 
-/* .hidden{
-  display: none;
-} */
+
 
 .session-form button {
   background-color: rgb(43, 160, 255);
@@ -115,13 +106,6 @@ p.active, p.active {
 }
 
 
-/* 
-span.active {
-  font-size: 10px;
-  top: 30px;
-  left: 16px;
-  transition: all 0.5s ease;
-} */
 
 .redirect {
   color: rgb(168, 168, 168);
@@ -143,19 +127,3 @@ span.active {
   border-radius: 5px;
 }
 
-
-
-/* .focusing {
-  margin-top: 10%;
-  background-color: blue;
-  width: 100px;
-  
-  transition-property: background-color width;
-  transition-duration: 5000ms;
-}
-
-.focusing:focus {
-  background-color: red;
-  width: 400px;
-  /* transition: all 5s ease;/ */
-} */

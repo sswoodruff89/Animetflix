@@ -31,7 +31,9 @@ class Movie < ApplicationRecord
   validates :title, :yr, :description, :runtime, :director, presence: true
   validates :rating, inclusion: { in: RATINGS }
 
-  has_many :genre_links
+  has_many :genre_links,
+    class_name: "GenreLink",
+    foreign_key: :movie_id
 
   has_many :genres,
     through: :genre_links
