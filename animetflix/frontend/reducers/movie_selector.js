@@ -1,8 +1,9 @@
 export const selectMoviesByGenre = (state = {}, genreId) => {
-  const movieIds = state.entities.genres[genreId].movie_ids
+  if (!genreId) return;
 
-  if (movieIds.length > 0) {
-    return movieIds.map((movieId) => {
+  const genre = state.entities.genres[genreId];
+  if (genre.movie_ids.length > 0) {
+    return genre.movie_ids.map((movieId) => {
       return state.entities.movies[movieId];
     });
   }

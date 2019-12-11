@@ -1,12 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
 import {receiveMovie} from '../../actions/movies_actions';
-import {selectMoviesByGenre} from "../../reducers/movie_selector";
+// import {selectMoviesByGenre} from "../../reducers/movie_selector";
 import MovieList from "./movie_list";
 
 const msp = (state, ownProps) => {
-  return {
-    movies: selectMoviesByGenre(state, ownProps.genre.id)
+  let movies = ownProps.genre.movie_ids.map((movieId) => {
+    return state.entities.movies[movieId];
+  });
+  
+   return {
+    movies: movies
   };
 };
 

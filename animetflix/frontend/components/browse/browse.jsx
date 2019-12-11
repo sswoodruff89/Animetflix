@@ -25,7 +25,9 @@ class Browse extends React.Component{
     return (
       <main className="browse-background">
         {genres.map((genre, i) => {
-          <MovieListContainer genre={genre} key={i}/>
+          return (
+           <MovieListContainer genre={genre} key={i}/>
+          )
         })}
 
       </main>
