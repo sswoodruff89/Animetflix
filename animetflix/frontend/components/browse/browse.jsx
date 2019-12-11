@@ -15,9 +15,9 @@ class Browse extends React.Component{
 
   render() {
     return (
-      <>
-      <button onClick={this.handleLogOut}>Logout</button>
-      </>
+      <main className="browse-background">
+
+      </main>
     );
   };
   

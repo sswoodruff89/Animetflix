@@ -5,6 +5,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import BrowseContainer from "./browse/browse_container";
 import HomePageContainer from "./homepage_container";
 import NavBarContainer from "./navbar/navbar_container";
+import SearchPage from "./search_page/search_page";
 import {AuthRoute, ProtectedRoute} from "../util/route_util";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
     
     <Switch>
       <Route path="/browse" component={NavBarContainer}/>
+      <Route path="/search" component={NavBarContainer}/>
 
       <Route path="/" render={() => {
         return(
@@ -25,14 +27,18 @@ const App = () => {
         )
       }
     } />
-      </Switch>
+    </Switch>
       
       
       <AuthRoute exact path="/" component={HomePageContainer} /> 
 
       <AuthRoute path="/login" component={LoginFormContainer} /> 
       <AuthRoute path="/signup" component={SignupFormContainer} /> 
+
+      <Route path="/search/:searchQuery" component={SearchPage} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
+
+
 
     </main>
   );

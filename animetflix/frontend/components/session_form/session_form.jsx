@@ -5,10 +5,16 @@ class SessionForm extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      user: {
         email: "",
         password: ""
+      },
+      emailActive: "",
+      passwordActive: "",
+      emailCaption: "",
+      passwordCaption: ""
     };
-    this.active = "";
+
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
@@ -17,44 +23,55 @@ class SessionForm extends React.Component{
 
   handleInput(type){
     return (e) => {
-      this.setState({[type]: e.target.value});
+      let user = this.state.user;
+      user[type] =  e.target.value;
+      this.setState({ user });
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.email === "") {
+    let {email, password} = this.state.user;
+    if (email === "") {
       this.handleBlur('email');
-    } else if (this.state.password === "") {
+    } else if (password === "") {
       this.handleBlur('password');
     } else {
-      this.props.processForm(this.state).then(() => {
+      this.props.processForm(this.state.user).then(() => {
         this.props.history.push("/browse");
       });
     }
   }
 
+
+
   handleFocus(type) {
     return (e) => {
       e.preventDefault();
-      const el = document.getElementById(type);
-      const inputEl = document.getElementById(`input-${type}`);
-      inputEl.className = "active";
-      el.className = "active";
+      // const el = document.getElementById(type);
+      // const inputEl = document.getElementById(`input-${type}`);
+      // inputEl.className = "active";
+      // el.className = "active";
+      this.setState({[`${type}Active`]: "active"});
     };
   }
 
   handleBlur(type) {
     return (e) => {
       e.preventDefault();
-      if (this.state[type] === "") {
-        const el = document.getElementById(type);
-        const inputEl = document.getElementById(`input-${type}`);
-        const captionEl = document.getElementById(`enter-${type}`);
+      let input = this.state.user[type];
+      if (input === "") {
+        // const el = document.getElementById(type);
+        // const inputEl = document.getElementById(`input-${type}`);
+        // const captionEl = document.getElementById(`enter-${type}`);
         
-        el.className = "";
-        captionEl.className = "";
-        inputEl.className = "active";
+        // el.className = "";
+        // captionEl.className = "";
+        // inputEl.className = "active";
+        this.setState({ 
+          [`${type}Active`]: "",
+          [`${type}Caption`]: "active",
+         });
       }
 
     };
@@ -64,6 +81,10 @@ class SessionForm extends React.Component{
   render() {
     
     const {formType, errors} = this.props;
+
+    const {emailActive, passwordActive, emailCaption, passwordCaption} = this.state;
+    //toggle for transitions
+
     const header = (formType === 'login') ? "Sign In" : "Sign Up";
 
     const redirector = (formType === 'login') ? (
@@ -87,6 +108,10 @@ class SessionForm extends React.Component{
         <section className="session-error">
             <strong>Incorrect password.</strong> Please try again.
         </section>
+      ) : (errors.session[0] === "Invalid email / password") ? (
+        <section className="session-error">
+              Please enter a valid email address and password.
+        </section>
       ) : ''
     }
   
@@ -101,35 +126,38 @@ class SessionForm extends React.Component{
 
           <form className="session-form"
             onSubmit={this.handleSubmit}>
-            <span className={`span-email ${this.active}`}>Email</span>
+              
+            <span id="email" 
+              className={emailActive}>
+                  Email
+            </span>
+
             <input type="text"
               // id="input-email"
-              value={this.state.email}
+              value={this.state.user.email}
+              className={emailCaption}
               onChange={this.handleInput("email")}
-              onFocus={(e)=> {
-                this.active = "active";
-              }}
-              // onFocus={this.handleFocus("email")}
-              // onBlur={this.handleBlur("email")}
+              onFocus={this.handleFocus("email")}
+              onBlur={this.handleBlur("email")}
                />
-            <p id="enter-email" 
-              className="hidden">Please enter a valid email</p>
+            <p className={emailCaption}>Please enter a valid email</p>
 
-            <span className="span-password">Password</span>
+            <span id="password" 
+              className={passwordActive}>
+                  Password
+            </span>
+
             <input type="password"
-              id="input-password"
-              value={this.state.password}
+              className={passwordCaption}
+              value={this.state.user.password}
               onChange={this.handleInput("password")}
-              // onFocus={this.handleFocus("password")}
-              // onBlur={this.handleBlur("password")} 
+              onFocus={this.handleFocus("password")}
+              onBlur={this.handleBlur("password")} 
               />
-            <p id="enter-password"
-              className="hidden">Your password must be at least 6 characters long</p>
+            <p className={passwordCaption} >Your password must be at least 6 characters long</p>
 
             <button type="submit">{header}</button>
 
-
-            
           </form>
 
           {redirector}

@@ -44,7 +44,7 @@
   
 }
 
-span.span-email {
+#email, #password {
   color: rgb(168, 168, 168);
   position: relative;
   top: 45px;
@@ -64,20 +64,20 @@ span.span-email {
   font-weight: 200;
   border: 1px solid black;
   box-sizing: border-box;
-  border-bottom: none;
-  transition-property: border-bottom;
+  /* border-bottom: none;
+  transition-property: border-bottom; */
 
 
 }
 
-span.span-email .active{
+#email.active, #password.active{
   font-size: 10px;
   top: 30px;
   left: 16px;
   transition: all 0.5s ease;
 }
 
-.session-form input:focus {
+.session-form input.active {
   border-bottom: 2px solid rgb(43, 160, 255);
 }
 /* 
@@ -89,14 +89,19 @@ input.active label::after {
 } */
 
 .session-form p {
+  display: none;
+}
+
+p.active, p.active {
+  display: block;
   font-size: 12px;
   margin-left: 5px;
   color: rgb(43, 160, 255);
 }
 
-.hidden{
+/* .hidden{
   display: none;
-}
+} */
 
 .session-form button {
   background-color: rgb(43, 160, 255);
@@ -120,8 +125,7 @@ span.active {
 
 .redirect {
   color: rgb(168, 168, 168);
-  position: relative;
-  top: 250px;
+  margin-top: 225px;
   font-size: 14px;
 }
 

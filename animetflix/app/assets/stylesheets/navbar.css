@@ -58,22 +58,69 @@
   font-size: 22px;
 }
 
+/* SEARCH BAR FIELD */
 .search-field{
+  height: 30px;
+  margin-top: 16px;
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 .search-field i {
-  font-size: 20px;
+  font-size: 16px;
+  padding: 3px 8px;
 }
+
+.search-field input {
+  /* border: 1px solid white; */
+  width: 0px;
+  /* display: none; */
+  font-size: 14px;
+  padding: 5px 2px;
+  font-weight: 100;
+  vertical-align: middle;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: width 1s ease;
+}
+
+.search-field .fa-times {
+  display: none;
+}
+
+/* SEARCH FIELD ACTIVE */
+.search-field i:active {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.fa-times.active {
+  display: block;
+  font-stretch: ultra-expanded;
+  font-size: 16px;
+  line-height: 14px;
+  position: absolute;
+  left: 265px;
+}
+
+.search-field.active {
+  border: 1px solid lightgray;
+}
+.search-field.active input {
+  /* display: block; */
+  width: 265px;
+  vertical-align: middle;
+  transition: width 1s ease;
+}
+
 /* .icon {
   width: 100px;
   height: 100px;
 } */
 
 li.profile {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: blue;
   border: 1px solid black;
   position: relative;
@@ -91,39 +138,50 @@ li.profile {
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   position: absolute;
-  top: 13px;
-  left: 37px;
+  top: 18px;
+  left: 45px;
 }
 
 
 
-
 .profile-drop-down {
-
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 150px;
-  display: block;
+  /* display: none; */
   position: absolute;
   top: 70px;
   right: 7px;
   font-size: 12px;
   opacity: 0;
-  /* padding: 15px 10px; */
   box-sizing: border-box;
-  /* transition: all ease; */
-  /* transition-delay: 5s;
-  transition-property: all; */
+  /* transition-delay: 1s; */
+  transition: opacity 0s ease;
+  transition-delay: 0.5s;
+  border: 1px solid rgb(80, 80, 80);
+ 
 }
-.profile:hover .profile-drop-down {
-  visibility: visible;
 
+.profile-drop-down.active{
+  opacity: 1;
+  transition: opacity 0.5s ease;
 
 }
+
+aside ul {
+  border-top: 1px solid rgb(80, 80, 80);;
+}
+
+.profile-drop-down.active ul li:hover {
+  text-decoration: underline;
+  transition: none;
+  color: white;
+}
+
 
 .profile-section{
   width: 100%;
   margin-bottom: 25px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(80, 80, 80);
   padding: 15px 10px;
 }
 
@@ -133,6 +191,7 @@ li.profile {
 
 .profile-drop-down li {
   margin: 10px 0px;
+  font-size: 13px;
 }
 
 .profile-drop-down li:hover{

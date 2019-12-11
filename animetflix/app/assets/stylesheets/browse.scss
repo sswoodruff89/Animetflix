@@ -1,0 +1,15 @@
+.browse-background::after{
+  background: image-url("animetflix_home_edited.png");
+  background-size: 2500px 1400px;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+  filter: blur(3px);
+  margin-top: 40px;
+  margin-left: -50px;
+}
