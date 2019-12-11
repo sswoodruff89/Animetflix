@@ -9,9 +9,9 @@ class MovieListItem extends React.Component{
     const movie = (this.props.movie) ? this.props.movie : {};
     return (
       <li className="movie-thumb"s>
-        <span>
+        <p>
           {movie.title}
-        </span>
+        </p>
       </li>
     )
   }

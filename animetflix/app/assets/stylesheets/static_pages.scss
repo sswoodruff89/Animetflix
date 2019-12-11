@@ -40,6 +40,9 @@ header {
   display: flex;
   justify-content: space-between;
   background: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0px;
 }
 
 .header-button{

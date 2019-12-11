@@ -9,9 +9,10 @@ class MovieList extends React.Component{
   render() {
     const {genre} = this.props;
     const movies = (this.props.movies) ? this.props.movies : [];
+    
     return(
-      <>
-      <h3>{genre.name}</h3>
+      <section className="browse-list-container">
+      <h3 className="list-name">{genre.name}</h3>
       <ul className="movie-list">
           {movies.map((movie, i) => {
             return (
@@ -20,7 +21,7 @@ class MovieList extends React.Component{
           }
         )}
       </ul>
-    </>
+    </section>
     )
   }
 }
