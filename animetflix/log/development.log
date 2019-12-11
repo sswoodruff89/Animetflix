@@ -9236,3 +9236,681 @@ Migrating to CreateWatchlists (20191211011633)
   ↳ bin/rails:9
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/appacademystudent/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2019-12-10 20:38:19 -0500
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademystudent/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QrTso6Y1LWf7yUIFasHCSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QrTso6Y1LWf7yUIFasHCSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 1040ms (Views: 1016.5ms | ActiveRecord: 17.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-12-10 20:38:37 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QrTso6Y1LWf7yUIFasHCSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QrTso6Y1LWf7yUIFasHCSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GSf0bBpQFW25q8pcvWh0Dg"], ["updated_at", "2019-12-11 01:38:37.698864"], ["id", 1]]
+  ↳ app/models/user.rb:27
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/session" for ::1 at 2019-12-10 20:38:52 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 310ms (Views: 15.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5253545179186647735)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Add (20191211143229)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.8ms)[0m  [1m[35mALTER TABLE "movies" ADD "director" character varying NOT NULL[0m
+  ↳ db/migrate/20191211143229_add.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211143229"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5253545179186647735)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMovie Load (3.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (1.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mWatchlist Load (2.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@demo.com"], ["password_digest", "$2a$12$o4GqBK.G1wtjstShFfAYL.KZKFTYBzeU0xvBFT5OA.R92rvbRNH6a"], ["session_token", "S4RWPu_QPCg455hyO5XEGQ"], ["created_at", "2019-12-11 15:39:52.541409"], ["updated_at", "2019-12-11 15:39:52.541409"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "otaku@demo.com"], ["password_digest", "$2a$12$hnFOKHsFfwCGkLPGN5.af.eLli0Loxhjvmdy0nZpooytLF04MNlTq"], ["session_token", "t-L7qkI1ni0h29mRpgNpjg"], ["created_at", "2019-12-11 15:39:52.855424"], ["updated_at", "2019-12-11 15:39:52.855424"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2019-12-11 15:39:52.871960"], ["updated_at", "2019-12-11 15:39:52.871960"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2019-12-11 15:39:52.875822"], ["updated_at", "2019-12-11 15:39:52.875822"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2019-12-11 15:39:52.878619"], ["updated_at", "2019-12-11 15:39:52.878619"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2019-12-11 15:39:52.881294"], ["updated_at", "2019-12-11 15:39:52.881294"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Romance"], ["created_at", "2019-12-11 15:39:52.883966"], ["updated_at", "2019-12-11 15:39:52.883966"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Period"], ["created_at", "2019-12-11 15:39:52.887056"], ["updated_at", "2019-12-11 15:39:52.887056"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "War"], ["created_at", "2019-12-11 15:39:52.889843"], ["updated_at", "2019-12-11 15:39:52.889843"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2019-12-11 15:39:52.892770"], ["updated_at", "2019-12-11 15:39:52.892770"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2019-12-11 15:39:52.895539"], ["updated_at", "2019-12-11 15:39:52.895539"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2019-12-11 15:39:52.898097"], ["updated_at", "2019-12-11 15:39:52.898097"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2019-12-11 15:39:52.900656"], ["updated_at", "2019-12-11 15:39:52.900656"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Horror"], ["created_at", "2019-12-11 15:39:52.903286"], ["updated_at", "2019-12-11 15:39:52.903286"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (1.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Boy and the Beast"], ["yr", 2015], ["description", "When Kyuta, a young orphan living on the streets of Shibuya, stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice. But when a deep darkness threatens to throw the human and beast worlds into chaos, the strong bond between this unlikely pair will be put to the ultimate test."], ["rating", "PG-13"], ["runtime", 120], ["created_at", "2019-12-11 15:39:52.931712"], ["updated_at", "2019-12-11 15:39:52.931712"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Akira"], ["yr", 1988], ["description", "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets."], ["rating", "R"], ["runtime", 125], ["created_at", "2019-12-11 15:39:52.935937"], ["updated_at", "2019-12-11 15:39:52.935937"], ["director", "Katsuhiro Otomo"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Grave of the Fireflies"], ["yr", 1993], ["description", "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive"], ["rating", "PG-13"], ["runtime", 90], ["created_at", "2019-12-11 15:39:52.938710"], ["updated_at", "2019-12-11 15:39:52.938710"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball Super Broly"], ["yr", 2018], ["description", "One fateful day, a Saiyan appears before Goku and Vegeta who they have never seen before: Broly. With the return of Frieza from hell, a fierce battle awaits these three Saiyans who have followed completely different destinies."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 15:39:52.941345"], ["updated_at", "2019-12-11 15:39:52.941345"], ["director", "Tatsuya Nagamine"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Summer Wars"], ["yr", 2009], ["description", "Kenji a teenage math prodigy, recruited by his secret crush Natsuki for the ultimate summer job - passing himself off as Natsuki's boyfriend during her grandmother's 90th birthday celebration. But when Kenji solves a 2,056 digit math riddle sent to his cell phone, he unwittingly breaches the security barricade protecting Oz, a globe-spanning virtual world where millions of people and governments interact through their avatars. Now a malicious AI program is hijacking Oz accounts, growing exponentially more powerful and sowing chaos and destruction in its wake."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 15:39:52.944803"], ["updated_at", "2019-12-11 15:39:52.944803"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Wind Rises"], ["yr", 2013], ["description", "A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane."], ["rating", "PG-13"], ["runtime", 126], ["created_at", "2019-12-11 15:39:52.947346"], ["updated_at", "2019-12-11 15:39:52.947346"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Sword of the Stranger"], ["yr", 2007], ["description", "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple."], ["rating", "NOT RATED"], ["runtime", 103], ["created_at", "2019-12-11 15:39:52.949915"], ["updated_at", "2019-12-11 15:39:52.949915"], ["director", "Masahiro Andô"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Howl's Moving Castle"], ["yr", 2004], ["description", "Sophie has an uneventful life at her late father's hat shop, but all that changes when she befriends wizard Howl, who lives in a magical flying castle. However, the evil Witch of Waste takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty."], ["rating", "PG"], ["runtime", 119], ["created_at", "2019-12-11 15:39:52.953414"], ["updated_at", "2019-12-11 15:39:52.953414"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ghost in the Shell"], ["yr", 1995], ["description", "Cyborg federal agent Maj. Motoko Kusanagi trails \"The Puppet Master\" , who illegally hacks into the computerized minds of cyborg-human hybrids. Her pursuit of a man who can modify the identity of strangers leaves Motoko pondering her own makeup and what life might be like if she had more human traits."], ["rating", "R"], ["runtime", 95], ["created_at", "2019-12-11 15:39:52.956073"], ["updated_at", "2019-12-11 15:39:52.956073"], ["director", "Mamoru Oshii"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Princess Mononoke"], ["yr", 1997], ["description", "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami. In his travels, he sees humans ravaging the earth, bringing down the wrath of wolf god Moro and his human companion Princess Mononoke. Hiskattempts to broker peace between her and the humans brings only conflict."], ["rating", "PG-13"], ["runtime", 134], ["created_at", "2019-12-11 15:39:52.958540"], ["updated_at", "2019-12-11 15:39:52.958540"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:85
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "My Neighbor Totoro"], ["yr", 1988], ["description", "Satsuke and her younger sister, Mei, settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro."], ["rating", "G"], ["runtime", 100], ["created_at", "2019-12-11 15:39:52.961074"], ["updated_at", "2019-12-11 15:39:52.961074"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:85
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Spirited Away"], ["yr", 2001], ["description", "10-year-old Chihiro and her parents stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku, who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents."], ["rating", "PG"], ["runtime", 125], ["created_at", "2019-12-11 15:39:52.963780"], ["updated_at", "2019-12-11 15:39:52.963780"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:91
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Tale of Princess Kaguya"], ["yr", 2013], ["description", "A tiny nymph found inside a bamboo stalk grows into a beautiful and desirable young woman, who orders her suitors to prove their love by completing a series of near-impossible tasks."], ["rating", "PG"], ["runtime", 137], ["created_at", "2019-12-11 15:39:52.966371"], ["updated_at", "2019-12-11 15:39:52.966371"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:91
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:91
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:94
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Porco Ross"], ["yr", 1992], ["description", "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina."], ["rating", "PG"], ["runtime", 102], ["created_at", "2019-12-11 15:39:52.968935"], ["updated_at", "2019-12-11 15:39:52.968935"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:94
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:94
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:97
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Whisper of the Heart"], ["yr", 1995], ["description", "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate."], ["rating", "PG"], ["runtime", 111], ["created_at", "2019-12-11 15:39:52.971529"], ["updated_at", "2019-12-11 15:39:52.971529"], ["director", "Yoshifumi Kondō"]]
+  ↳ db/seeds.rb:97
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:97
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.5ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.7ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.3ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.3ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.3ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.3ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.5ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.3ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.2ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links" WHERE "genre_links"."genre_id" = $1[0m  [["genre_id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.3ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@demo.com"], ["password_digest", "$2a$12$LnUlnaUMMTDsfEZqxygMFOZ99JVG9sdt8F.y2uz52uebNWnj6SA8."], ["session_token", "T8Jn52kNtOjVN2fYvZy7RA"], ["created_at", "2019-12-11 15:40:52.004782"], ["updated_at", "2019-12-11 15:40:52.004782"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "otaku@demo.com"], ["password_digest", "$2a$12$7KQFmeF898jRkpNyEYWQiuN2ePSyFjkqB.lfvmlNeZBa270yJ20ry"], ["session_token", "_r8V2cCgCuBpP1HfymXtxA"], ["created_at", "2019-12-11 15:40:52.316750"], ["updated_at", "2019-12-11 15:40:52.316750"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2019-12-11 15:40:52.322781"], ["updated_at", "2019-12-11 15:40:52.322781"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2019-12-11 15:40:52.326885"], ["updated_at", "2019-12-11 15:40:52.326885"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2019-12-11 15:40:52.329594"], ["updated_at", "2019-12-11 15:40:52.329594"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2019-12-11 15:40:52.331972"], ["updated_at", "2019-12-11 15:40:52.331972"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Romance"], ["created_at", "2019-12-11 15:40:52.334880"], ["updated_at", "2019-12-11 15:40:52.334880"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Period"], ["created_at", "2019-12-11 15:40:52.337352"], ["updated_at", "2019-12-11 15:40:52.337352"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "War"], ["created_at", "2019-12-11 15:40:52.339609"], ["updated_at", "2019-12-11 15:40:52.339609"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2019-12-11 15:40:52.343689"], ["updated_at", "2019-12-11 15:40:52.343689"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2019-12-11 15:40:52.346379"], ["updated_at", "2019-12-11 15:40:52.346379"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2019-12-11 15:40:52.348732"], ["updated_at", "2019-12-11 15:40:52.348732"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2019-12-11 15:40:52.351823"], ["updated_at", "2019-12-11 15:40:52.351823"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Horror"], ["created_at", "2019-12-11 15:40:52.354179"], ["updated_at", "2019-12-11 15:40:52.354179"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Boy and the Beast"], ["yr", 2015], ["description", "When Kyuta, a young orphan living on the streets of Shibuya, stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice. But when a deep darkness threatens to throw the human and beast worlds into chaos, the strong bond between this unlikely pair will be put to the ultimate test."], ["rating", "PG-13"], ["runtime", 120], ["created_at", "2019-12-11 15:40:52.357198"], ["updated_at", "2019-12-11 15:40:52.357198"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Akira"], ["yr", 1988], ["description", "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets."], ["rating", "R"], ["runtime", 125], ["created_at", "2019-12-11 15:40:52.361493"], ["updated_at", "2019-12-11 15:40:52.361493"], ["director", "Katsuhiro Otomo"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mMovie Create (1.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Grave of the Fireflies"], ["yr", 1993], ["description", "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive"], ["rating", "PG-13"], ["runtime", 90], ["created_at", "2019-12-11 15:40:52.364177"], ["updated_at", "2019-12-11 15:40:52.364177"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball Super Broly"], ["yr", 2018], ["description", "One fateful day, a Saiyan appears before Goku and Vegeta who they have never seen before: Broly. With the return of Frieza from hell, a fierce battle awaits these three Saiyans who have followed completely different destinies."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 15:40:52.368115"], ["updated_at", "2019-12-11 15:40:52.368115"], ["director", "Tatsuya Nagamine"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Summer Wars"], ["yr", 2009], ["description", "Kenji a teenage math prodigy, recruited by his secret crush Natsuki for the ultimate summer job - passing himself off as Natsuki's boyfriend during her grandmother's 90th birthday celebration. But when Kenji solves a 2,056 digit math riddle sent to his cell phone, he unwittingly breaches the security barricade protecting Oz, a globe-spanning virtual world where millions of people and governments interact through their avatars. Now a malicious AI program is hijacking Oz accounts, growing exponentially more powerful and sowing chaos and destruction in its wake."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-11 15:40:52.370877"], ["updated_at", "2019-12-11 15:40:52.370877"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mMovie Create (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Wind Rises"], ["yr", 2013], ["description", "A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane."], ["rating", "PG-13"], ["runtime", 126], ["created_at", "2019-12-11 15:40:52.374014"], ["updated_at", "2019-12-11 15:40:52.374014"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Sword of the Stranger"], ["yr", 2007], ["description", "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple."], ["rating", "NR"], ["runtime", 103], ["created_at", "2019-12-11 15:40:52.377938"], ["updated_at", "2019-12-11 15:40:52.377938"], ["director", "Masahiro Andô"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Howl's Moving Castle"], ["yr", 2004], ["description", "Sophie has an uneventful life at her late father's hat shop, but all that changes when she befriends wizard Howl, who lives in a magical flying castle. However, the evil Witch of Waste takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty."], ["rating", "PG"], ["runtime", 119], ["created_at", "2019-12-11 15:40:52.380726"], ["updated_at", "2019-12-11 15:40:52.380726"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ghost in the Shell"], ["yr", 1995], ["description", "Cyborg federal agent Maj. Motoko Kusanagi trails \"The Puppet Master\" , who illegally hacks into the computerized minds of cyborg-human hybrids. Her pursuit of a man who can modify the identity of strangers leaves Motoko pondering her own makeup and what life might be like if she had more human traits."], ["rating", "R"], ["runtime", 95], ["created_at", "2019-12-11 15:40:52.384190"], ["updated_at", "2019-12-11 15:40:52.384190"], ["director", "Mamoru Oshii"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:82
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Princess Mononoke"], ["yr", 1997], ["description", "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami. In his travels, he sees humans ravaging the earth, bringing down the wrath of wolf god Moro and his human companion Princess Mononoke. Hiskattempts to broker peace between her and the humans brings only conflict."], ["rating", "PG-13"], ["runtime", 134], ["created_at", "2019-12-11 15:40:52.386933"], ["updated_at", "2019-12-11 15:40:52.386933"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:85
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "My Neighbor Totoro"], ["yr", 1988], ["description", "Satsuke and her younger sister, Mei, settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro."], ["rating", "G"], ["runtime", 100], ["created_at", "2019-12-11 15:40:52.390007"], ["updated_at", "2019-12-11 15:40:52.390007"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:85
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Spirited Away"], ["yr", 2001], ["description", "10-year-old Chihiro and her parents stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku, who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents."], ["rating", "PG"], ["runtime", 125], ["created_at", "2019-12-11 15:40:52.393621"], ["updated_at", "2019-12-11 15:40:52.393621"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:91
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Tale of Princess Kaguya"], ["yr", 2013], ["description", "A tiny nymph found inside a bamboo stalk grows into a beautiful and desirable young woman, who orders her suitors to prove their love by completing a series of near-impossible tasks."], ["rating", "PG"], ["runtime", 137], ["created_at", "2019-12-11 15:40:52.396410"], ["updated_at", "2019-12-11 15:40:52.396410"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:91
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:91
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:94
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Porco Ross"], ["yr", 1992], ["description", "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina."], ["rating", "PG"], ["runtime", 102], ["created_at", "2019-12-11 15:40:52.399910"], ["updated_at", "2019-12-11 15:40:52.399910"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:94
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:94
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:97
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Whisper of the Heart"], ["yr", 1995], ["description", "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate."], ["rating", "PG"], ["runtime", 111], ["created_at", "2019-12-11 15:40:52.403022"], ["updated_at", "2019-12-11 15:40:52.403022"], ["director", "Yoshifumi Kondō"]]
+  ↳ db/seeds.rb:97
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:97
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Girl Who Leapt Through Time"], ["yr", 2008], ["description", "When a typical young high school girl discovers that she has the unique ability to traverse space and time, her efforts to use the power as a means of preserving the relationships she shares with her closest friends reveals the perpetually shifting nature of personal relationships."], ["rating", "NR"], ["runtime", 98], ["created_at", "2019-12-11 15:40:52.406051"], ["updated_at", "2019-12-11 15:40:52.406051"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:100
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:103
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "A Silent Voice "], ["yr", 2016], ["description", "When a grade school student with impaired hearing is bullied mercilessly, she transfers to another school. Years later, one of her former tormentors sets out to make amends."], ["rating", "NR"], ["runtime", 130], ["created_at", "2019-12-11 15:40:52.409497"], ["updated_at", "2019-12-11 15:40:52.409497"], ["director", "Naoko Yamada"]]
+  ↳ db/seeds.rb:103
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:103
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:106
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Kiki’s Delivery Service"], ["yr", 1989], ["description", "13-year-old Kiki moves to a seaside town with her talking cat, Jiji, to spend a year alone, in accordance with her village's tradition for witches in training. After learning to control her broomstick, Kiki sets up a flying courier service and soon becomes a fixture in the community."], ["rating", "G"], ["runtime", 103], ["created_at", "2019-12-11 15:40:52.412544"], ["updated_at", "2019-12-11 15:40:52.412544"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:106
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:106
+  [1m[36mMovie Load (1.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m

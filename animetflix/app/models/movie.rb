@@ -13,4 +13,27 @@
 #
 
 class Movie < ApplicationRecord
+  RATINGS = [
+    "G",
+    "PG",
+    "PG-13",
+    "R",
+    "NC-17",
+    "TV-Y",
+    "TV-Y7",
+    "TV-G",
+    "TV-PG",
+    "TV-14",
+    "TV-MA",
+    "NR"
+  ]
+
+  validates :title, :yr, :description, :runtime, :director, presence: true
+  validates :rating, inclusion: { in: RATINGS }
+
+  has_many :genre_links
+
+  has_many :genres,
+    through: :genre_links
+
 end
