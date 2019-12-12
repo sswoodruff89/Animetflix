@@ -28429,3 +28429,1713 @@ Completed 200 OK in 93ms (Views: 79.1ms | ActiveRecord: 13.4ms)
 Completed 200 OK in 92ms (Views: 82.8ms | ActiveRecord: 9.1ms)
 
 
+  [1m[35m (354.5ms)[0m  [1m[35mCREATE DATABASE "animetflix_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (331.2ms)[0m  [1m[35mCREATE DATABASE "animetflix_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (61.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5253545179186647735)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191208161035)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191208161035_create_users.rb:3
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191208161035_create_users.rb:11
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20191208161035_create_users.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191208161035"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateMovies (20191211010146)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" bigserial primary key, "title" character varying NOT NULL, "yr" integer NOT NULL, "description" text NOT NULL, "rating" character varying NOT NULL, "runtime" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191211010146_create_movies.rb:3
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_title" ON "movies"  ("title")[0m
+  ↳ db/migrate/20191211010146_create_movies.rb:13
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_yr" ON "movies"  ("yr")[0m
+  ↳ db/migrate/20191211010146_create_movies.rb:14
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_movies_on_rating" ON "movies"  ("rating")[0m
+  ↳ db/migrate/20191211010146_create_movies.rb:15
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211010146"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20191211011218)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191211011218_create_genres.rb:3
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_genres_on_name" ON "genres"  ("name")[0m
+  ↳ db/migrate/20191211011218_create_genres.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211011218"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenreLinks (20191211011332)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "genre_links" ("id" bigserial primary key, "movie_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191211011332_create_genre_links.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_genre_links_on_movie_id" ON "genre_links"  ("movie_id")[0m
+  ↳ db/migrate/20191211011332_create_genre_links.rb:10
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_genre_links_on_genre_id" ON "genre_links"  ("genre_id")[0m
+  ↳ db/migrate/20191211011332_create_genre_links.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211011332"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateWatchlists (20191211011633)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "watchlists" ("id" bigserial primary key, "user_id" integer NOT NULL, "movie_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191211011633_create_watchlists.rb:3
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_genre_links_on_movie_id_and_genre_id" ON "genre_links"  ("movie_id", "genre_id")[0m
+  ↳ db/migrate/20191211011633_create_watchlists.rb:8
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_watchlists_on_user_id_and_movie_id" ON "watchlists"  ("user_id", "movie_id")[0m
+  ↳ db/migrate/20191211011633_create_watchlists.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211011633"]]
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to Add (20191211143229)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mALTER TABLE "movies" ADD "director" character varying NOT NULL[0m
+  ↳ db/migrate/20191211143229_add.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191211143229"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-12 11:54:01.057339"], ["updated_at", "2019-12-12 11:54:01.057339"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5253545179186647735)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (1.1ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mWatchlist Load (0.9ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@demo.com"], ["password_digest", "$2a$12$PW8aNTBshDu1w79IUEH5L.fVqkHUWzJLDxfdpbxsRb1xB6Yasa8v."], ["session_token", "EYVluhgEPNssdTNQfC03vg"], ["created_at", "2019-12-12 11:55:07.140900"], ["updated_at", "2019-12-12 11:55:07.140900"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "otaku@demo.com"], ["password_digest", "$2a$12$m/uUgcsWjnYlX77Q0bn2fumepdbX88krjHJHPt.YDq63gl4EwDSr6"], ["session_token", "ZXMR3V0fgKDRNMCYUVM49g"], ["created_at", "2019-12-12 11:55:07.444229"], ["updated_at", "2019-12-12 11:55:07.444229"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2019-12-12 11:55:07.458939"], ["updated_at", "2019-12-12 11:55:07.458939"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2019-12-12 11:55:07.464680"], ["updated_at", "2019-12-12 11:55:07.464680"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2019-12-12 11:55:07.469072"], ["updated_at", "2019-12-12 11:55:07.469072"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2019-12-12 11:55:07.473686"], ["updated_at", "2019-12-12 11:55:07.473686"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Romance"], ["created_at", "2019-12-12 11:55:07.479095"], ["updated_at", "2019-12-12 11:55:07.479095"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Period"], ["created_at", "2019-12-12 11:55:07.484366"], ["updated_at", "2019-12-12 11:55:07.484366"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "War"], ["created_at", "2019-12-12 11:55:07.489458"], ["updated_at", "2019-12-12 11:55:07.489458"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2019-12-12 11:55:07.496237"], ["updated_at", "2019-12-12 11:55:07.496237"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2019-12-12 11:55:07.500743"], ["updated_at", "2019-12-12 11:55:07.500743"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2019-12-12 11:55:07.505157"], ["updated_at", "2019-12-12 11:55:07.505157"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2019-12-12 11:55:07.509779"], ["updated_at", "2019-12-12 11:55:07.509779"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Horror"], ["created_at", "2019-12-12 11:55:07.516305"], ["updated_at", "2019-12-12 11:55:07.516305"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Boy and the Beast"], ["yr", 2015], ["description", "When Kyuta, a young orphan living on the streets of Shibuya, stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice. But when a deep darkness threatens to throw the human and beast worlds into chaos, the strong bond between this unlikely pair will be put to the ultimate test."], ["rating", "PG-13"], ["runtime", 120], ["created_at", "2019-12-12 11:55:07.543341"], ["updated_at", "2019-12-12 11:55:07.543341"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.4ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenre Destroy (0.5ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mGenreLink Load (0.8ms)[0m  [1m[34mSELECT "genre_links".* FROM "genre_links"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mWatchlist Load (0.7ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@demo.com"], ["password_digest", "$2a$12$V2XER.IiONVtmfjEjv2EfOWUzEdgR1JcIFh.yyRUcutHmMIK8wREe"], ["session_token", "TR3iA88Xw7cDgyMizkOt4A"], ["created_at", "2019-12-12 11:55:26.370162"], ["updated_at", "2019-12-12 11:55:26.370162"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "otaku@demo.com"], ["password_digest", "$2a$12$4M979dUa0PTQd2lBDMZgvu91WtwmK7vUYaasDTBnu.FlZrZyBLLxm"], ["session_token", "kEpAEjNgxJoKYy4A9eV02Q"], ["created_at", "2019-12-12 11:55:26.675198"], ["updated_at", "2019-12-12 11:55:26.675198"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Family"], ["created_at", "2019-12-12 11:55:26.680358"], ["updated_at", "2019-12-12 11:55:26.680358"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantasy"], ["created_at", "2019-12-12 11:55:26.685991"], ["updated_at", "2019-12-12 11:55:26.685991"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sci-Fi"], ["created_at", "2019-12-12 11:55:26.690983"], ["updated_at", "2019-12-12 11:55:26.690983"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2019-12-12 11:55:26.696557"], ["updated_at", "2019-12-12 11:55:26.696557"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Romance"], ["created_at", "2019-12-12 11:55:26.702271"], ["updated_at", "2019-12-12 11:55:26.702271"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.3ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Period"], ["created_at", "2019-12-12 11:55:26.706766"], ["updated_at", "2019-12-12 11:55:26.706766"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "War"], ["created_at", "2019-12-12 11:55:26.711076"], ["updated_at", "2019-12-12 11:55:26.711076"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Drama"], ["created_at", "2019-12-12 11:55:26.716391"], ["updated_at", "2019-12-12 11:55:26.716391"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Action"], ["created_at", "2019-12-12 11:55:26.721691"], ["updated_at", "2019-12-12 11:55:26.721691"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Comedy"], ["created_at", "2019-12-12 11:55:26.726741"], ["updated_at", "2019-12-12 11:55:26.726741"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Thriller"], ["created_at", "2019-12-12 11:55:26.738789"], ["updated_at", "2019-12-12 11:55:26.738789"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Create (0.4ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Horror"], ["created_at", "2019-12-12 11:55:26.743034"], ["updated_at", "2019-12-12 11:55:26.743034"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Boy and the Beast"], ["yr", 2015], ["description", "When Kyuta, a young orphan living on the streets of Shibuya, stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice. But when a deep darkness threatens to throw the human and beast worlds into chaos, the strong bond between this unlikely pair will be put to the ultimate test."], ["rating", "PG-13"], ["runtime", 120], ["created_at", "2019-12-12 11:55:26.752011"], ["updated_at", "2019-12-12 11:55:26.752011"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (1.1ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 2], ["created_at", "2019-12-12 11:55:26.796012"], ["updated_at", "2019-12-12 11:55:26.796012"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 9], ["created_at", "2019-12-12 11:55:26.803593"], ["updated_at", "2019-12-12 11:55:26.803593"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 1], ["genre_id", 4], ["created_at", "2019-12-12 11:55:26.810639"], ["updated_at", "2019-12-12 11:55:26.810639"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Akira"], ["yr", 1988], ["description", "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets."], ["rating", "R"], ["runtime", 125], ["created_at", "2019-12-12 11:55:26.814988"], ["updated_at", "2019-12-12 11:55:26.814988"], ["director", "Katsuhiro Otomo"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:64
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Thriller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 11], ["created_at", "2019-12-12 11:55:26.823030"], ["updated_at", "2019-12-12 11:55:26.823030"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 9], ["created_at", "2019-12-12 11:55:26.831479"], ["updated_at", "2019-12-12 11:55:26.831479"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 2], ["genre_id", 3], ["created_at", "2019-12-12 11:55:26.839348"], ["updated_at", "2019-12-12 11:55:26.839348"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Grave of the Fireflies"], ["yr", 1993], ["description", "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive"], ["rating", "PG-13"], ["runtime", 90], ["created_at", "2019-12-12 11:55:26.843303"], ["updated_at", "2019-12-12 11:55:26.843303"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 8], ["created_at", "2019-12-12 11:55:26.850400"], ["updated_at", "2019-12-12 11:55:26.850400"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "War"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 3], ["genre_id", 7], ["created_at", "2019-12-12 11:55:26.857847"], ["updated_at", "2019-12-12 11:55:26.857847"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball Super Broly"], ["yr", 2018], ["description", "One fateful day, a Saiyan appears before Goku and Vegeta who they have never seen before: Broly. With the return of Frieza from hell, a fierce battle awaits these three Saiyans who have followed completely different destinies."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-12 11:55:26.865487"], ["updated_at", "2019-12-12 11:55:26.865487"], ["director", "Tatsuya Nagamine"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:72
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 2], ["created_at", "2019-12-12 11:55:26.873431"], ["updated_at", "2019-12-12 11:55:26.873431"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 9], ["created_at", "2019-12-12 11:55:26.880165"], ["updated_at", "2019-12-12 11:55:26.880165"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 4], ["genre_id", 3], ["created_at", "2019-12-12 11:55:26.888104"], ["updated_at", "2019-12-12 11:55:26.888104"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Summer Wars"], ["yr", 2009], ["description", "Kenji a teenage math prodigy, recruited by his secret crush Natsuki for the ultimate summer job - passing himself off as Natsuki's boyfriend during her grandmother's 90th birthday celebration. But when Kenji solves a 2,056 digit math riddle sent to his cell phone, he unwittingly breaches the security barricade protecting Oz, a globe-spanning virtual world where millions of people and governments interact through their avatars. Now a malicious AI program is hijacking Oz accounts, growing exponentially more powerful and sowing chaos and destruction in its wake."], ["rating", "PG"], ["runtime", 101], ["created_at", "2019-12-12 11:55:26.892763"], ["updated_at", "2019-12-12 11:55:26.892763"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 4], ["created_at", "2019-12-12 11:55:26.901226"], ["updated_at", "2019-12-12 11:55:26.901226"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 9], ["created_at", "2019-12-12 11:55:26.908064"], ["updated_at", "2019-12-12 11:55:26.908064"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 3], ["created_at", "2019-12-12 11:55:26.915402"], ["updated_at", "2019-12-12 11:55:26.915402"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 5], ["genre_id", 10], ["created_at", "2019-12-12 11:55:26.923132"], ["updated_at", "2019-12-12 11:55:26.923132"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:80
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Wind Rises"], ["yr", 2013], ["description", "A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane."], ["rating", "PG-13"], ["runtime", 126], ["created_at", "2019-12-12 11:55:26.927778"], ["updated_at", "2019-12-12 11:55:26.927778"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:80
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 8], ["created_at", "2019-12-12 11:55:26.935414"], ["updated_at", "2019-12-12 11:55:26.935414"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "War"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 7], ["created_at", "2019-12-12 11:55:26.945180"], ["updated_at", "2019-12-12 11:55:26.945180"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Romance"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 5], ["created_at", "2019-12-12 11:55:26.952903"], ["updated_at", "2019-12-12 11:55:26.952903"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 6], ["genre_id", 6], ["created_at", "2019-12-12 11:55:26.960579"], ["updated_at", "2019-12-12 11:55:26.960579"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:84
+  [1m[36mMovie Create (2.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Sword of the Stranger"], ["yr", 2007], ["description", "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple."], ["rating", "NR"], ["runtime", 103], ["created_at", "2019-12-12 11:55:26.965754"], ["updated_at", "2019-12-12 11:55:26.965754"], ["director", "Masahiro Andô"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:84
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 4], ["created_at", "2019-12-12 11:55:26.975515"], ["updated_at", "2019-12-12 11:55:26.975515"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 9], ["created_at", "2019-12-12 11:55:26.982997"], ["updated_at", "2019-12-12 11:55:26.982997"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 7], ["genre_id", 6], ["created_at", "2019-12-12 11:55:26.990558"], ["updated_at", "2019-12-12 11:55:26.990558"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:88
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Howl's Moving Castle"], ["yr", 2004], ["description", "Sophie has an uneventful life at her late father's hat shop, but all that changes when she befriends wizard Howl, who lives in a magical flying castle. However, the evil Witch of Waste takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty."], ["rating", "PG"], ["runtime", 119], ["created_at", "2019-12-12 11:55:26.995199"], ["updated_at", "2019-12-12 11:55:26.995199"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:88
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.002795"], ["updated_at", "2019-12-12 11:55:27.002795"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.009583"], ["updated_at", "2019-12-12 11:55:27.009583"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Romance"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 8], ["genre_id", 5], ["created_at", "2019-12-12 11:55:27.017297"], ["updated_at", "2019-12-12 11:55:27.017297"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:92
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Ghost in the Shell"], ["yr", 1995], ["description", "Cyborg federal agent Maj. Motoko Kusanagi trails \"The Puppet Master\" , who illegally hacks into the computerized minds of cyborg-human hybrids. Her pursuit of a man who can modify the identity of strangers leaves Motoko pondering her own makeup and what life might be like if she had more human traits."], ["rating", "R"], ["runtime", 95], ["created_at", "2019-12-12 11:55:27.022103"], ["updated_at", "2019-12-12 11:55:27.022103"], ["director", "Mamoru Oshii"]]
+  ↳ db/seeds.rb:92
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:92
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.030145"], ["updated_at", "2019-12-12 11:55:27.030145"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.038468"], ["updated_at", "2019-12-12 11:55:27.038468"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 9], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.052001"], ["updated_at", "2019-12-12 11:55:27.052001"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:96
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Princess Mononoke"], ["yr", 1997], ["description", "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami. In his travels, he sees humans ravaging the earth, bringing down the wrath of wolf god Moro and his human companion Princess Mononoke. Hiskattempts to broker peace between her and the humans brings only conflict."], ["rating", "PG-13"], ["runtime", 134], ["created_at", "2019-12-12 11:55:27.057795"], ["updated_at", "2019-12-12 11:55:27.057795"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:96
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:96
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.067999"], ["updated_at", "2019-12-12 11:55:27.067999"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.075645"], ["updated_at", "2019-12-12 11:55:27.075645"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.084085"], ["updated_at", "2019-12-12 11:55:27.084085"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 10], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.090766"], ["updated_at", "2019-12-12 11:55:27.090766"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "My Neighbor Totoro"], ["yr", 1988], ["description", "Satsuke and her younger sister, Mei, settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro."], ["rating", "G"], ["runtime", 100], ["created_at", "2019-12-12 11:55:27.095035"], ["updated_at", "2019-12-12 11:55:27.095035"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:100
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:100
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.102331"], ["updated_at", "2019-12-12 11:55:27.102331"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.109821"], ["updated_at", "2019-12-12 11:55:27.109821"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.117753"], ["updated_at", "2019-12-12 11:55:27.117753"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 11], ["genre_id", 10], ["created_at", "2019-12-12 11:55:27.124760"], ["updated_at", "2019-12-12 11:55:27.124760"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:104
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Spirited Away"], ["yr", 2001], ["description", "10-year-old Chihiro and her parents stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku, who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents."], ["rating", "PG"], ["runtime", 125], ["created_at", "2019-12-12 11:55:27.129052"], ["updated_at", "2019-12-12 11:55:27.129052"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:104
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:104
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.137061"], ["updated_at", "2019-12-12 11:55:27.137061"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.145047"], ["updated_at", "2019-12-12 11:55:27.145047"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 12], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.152496"], ["updated_at", "2019-12-12 11:55:27.152496"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:108
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Tale of Princess Kaguya"], ["yr", 2013], ["description", "A tiny nymph found inside a bamboo stalk grows into a beautiful and desirable young woman, who orders her suitors to prove their love by completing a series of near-impossible tasks."], ["rating", "PG"], ["runtime", 137], ["created_at", "2019-12-12 11:55:27.156494"], ["updated_at", "2019-12-12 11:55:27.156494"], ["director", "Isao Takahata"]]
+  ↳ db/seeds.rb:108
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:108
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.163885"], ["updated_at", "2019-12-12 11:55:27.163885"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.171817"], ["updated_at", "2019-12-12 11:55:27.171817"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 13], ["genre_id", 6], ["created_at", "2019-12-12 11:55:27.179330"], ["updated_at", "2019-12-12 11:55:27.179330"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:112
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Porco Ross"], ["yr", 1992], ["description", "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina."], ["rating", "PG"], ["runtime", 102], ["created_at", "2019-12-12 11:55:27.183640"], ["updated_at", "2019-12-12 11:55:27.183640"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:112
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:112
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.190680"], ["updated_at", "2019-12-12 11:55:27.190680"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.198023"], ["updated_at", "2019-12-12 11:55:27.198023"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 14], ["genre_id", 6], ["created_at", "2019-12-12 11:55:27.205487"], ["updated_at", "2019-12-12 11:55:27.205487"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:116
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Whisper of the Heart"], ["yr", 1995], ["description", "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate."], ["rating", "PG"], ["runtime", 111], ["created_at", "2019-12-12 11:55:27.210210"], ["updated_at", "2019-12-12 11:55:27.210210"], ["director", "Yoshifumi Kondō"]]
+  ↳ db/seeds.rb:116
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:116
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 15], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.218768"], ["updated_at", "2019-12-12 11:55:27.218768"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Romance"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 15], ["genre_id", 5], ["created_at", "2019-12-12 11:55:27.225381"], ["updated_at", "2019-12-12 11:55:27.225381"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:120
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "The Girl Who Leapt Through Time"], ["yr", 2008], ["description", "When a typical young high school girl discovers that she has the unique ability to traverse space and time, her efforts to use the power as a means of preserving the relationships she shares with her closest friends reveals the perpetually shifting nature of personal relationships."], ["rating", "NR"], ["runtime", 98], ["created_at", "2019-12-12 11:55:27.230019"], ["updated_at", "2019-12-12 11:55:27.230019"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:120
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:120
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.237932"], ["updated_at", "2019-12-12 11:55:27.237932"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.245506"], ["updated_at", "2019-12-12 11:55:27.245506"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.253040"], ["updated_at", "2019-12-12 11:55:27.253040"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 16], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.259580"], ["updated_at", "2019-12-12 11:55:27.259580"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:124
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "A Silent Voice "], ["yr", 2016], ["description", "When a grade school student with impaired hearing is bullied mercilessly, she transfers to another school. Years later, one of her former tormentors sets out to make amends."], ["rating", "NR"], ["runtime", 130], ["created_at", "2019-12-12 11:55:27.264575"], ["updated_at", "2019-12-12 11:55:27.264575"], ["director", "Naoko Yamada"]]
+  ↳ db/seeds.rb:124
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:124
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 17], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.272546"], ["updated_at", "2019-12-12 11:55:27.272546"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Romance"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 17], ["genre_id", 5], ["created_at", "2019-12-12 11:55:27.280138"], ["updated_at", "2019-12-12 11:55:27.280138"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Kiki’s Delivery Service"], ["yr", 1989], ["description", "13-year-old Kiki moves to a seaside town with her talking cat, Jiji, to spend a year alone, in accordance with her village's tradition for witches in training. After learning to control her broomstick, Kiki sets up a flying courier service and soon becomes a fixture in the community."], ["rating", "G"], ["runtime", 103], ["created_at", "2019-12-12 11:55:27.284761"], ["updated_at", "2019-12-12 11:55:27.284761"], ["director", "Hayao Miyazaki"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.291948"], ["updated_at", "2019-12-12 11:55:27.291948"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.298801"], ["updated_at", "2019-12-12 11:55:27.298801"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 18], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.306572"], ["updated_at", "2019-12-12 11:55:27.306572"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:132
+  [1m[36mMovie Create (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Samurai X: The Movie"], ["yr", 1997], ["description", "Himura Kenshin, the wandering samurai, was once known as Battousai, the \"Man Slayer,\" and used his unsurpassed prowess as a fighter to fight in the Japanese civil war and bring about the beginning of the Meiji period. That time is over now, however, and Kenshin has vowed to never kill again, and spend the rest of his life in atonement for all the lives that ended under his blade."], ["rating", "NR"], ["runtime", 90], ["created_at", "2019-12-12 11:55:27.311307"], ["updated_at", "2019-12-12 11:55:27.311307"], ["director", "Hatsuki Tsuji"]]
+  ↳ db/seeds.rb:132
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:132
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 19], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.319678"], ["updated_at", "2019-12-12 11:55:27.319678"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 19], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.327154"], ["updated_at", "2019-12-12 11:55:27.327154"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 19], ["genre_id", 6], ["created_at", "2019-12-12 11:55:27.335526"], ["updated_at", "2019-12-12 11:55:27.335526"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:136
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "My Hero Academia: Two Heroes"], ["yr", 2018], ["description", "Deku and All Might receive an invitation to I-Expo, The World's Leading Exhibition of Quirk Abilities and Hero Item Innovations. Suddenly, I-Expo's Top-Of-The-Line Security System gets hacked by villains and a sinister plan is set in motion. It's a serious threat to Hero Society and one man holds the key to it all."], ["rating", "PG-13"], ["runtime", 95], ["created_at", "2019-12-12 11:55:27.340045"], ["updated_at", "2019-12-12 11:55:27.340045"], ["director", "Kenji Nagasaki"]]
+  ↳ db/seeds.rb:136
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:136
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 20], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.346863"], ["updated_at", "2019-12-12 11:55:27.346863"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 20], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.354560"], ["updated_at", "2019-12-12 11:55:27.354560"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 20], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.361652"], ["updated_at", "2019-12-12 11:55:27.361652"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 20], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.370320"], ["updated_at", "2019-12-12 11:55:27.370320"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 20], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.377816"], ["updated_at", "2019-12-12 11:55:27.377816"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:140
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Patema Inverted"], ["yr", 2013], ["description", "A young girl, from a civilization that resides in deep underground tunnels, finds herself trapped in an inverted world and teams up with a resident to escape and return home."], ["rating", "NR"], ["runtime", 99], ["created_at", "2019-12-12 11:55:27.382376"], ["updated_at", "2019-12-12 11:55:27.382376"], ["director", "Yasuhiro Yoshiura"]]
+  ↳ db/seeds.rb:140
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:140
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 21], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.390539"], ["updated_at", "2019-12-12 11:55:27.390539"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.8ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 21], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.398091"], ["updated_at", "2019-12-12 11:55:27.398091"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 21], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.405330"], ["updated_at", "2019-12-12 11:55:27.405330"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:144
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Mary and the Witch's Flower"], ["yr", 2017], ["description", "Young Mary discovers an old broomstick and the strange Fly-by-Night flower, a rare plant that blossoms once every seven years. Together, the flower and the broomstick whisk Mary above the clouds, and far away to a school of magic run by headmistress Madam Mumblechook and the brilliant Doctor Dee. But terrible things are happening at the school, and when Mary tells a lie, she must risk her life to try and set things right."], ["rating", "PG"], ["runtime", 103], ["created_at", "2019-12-12 11:55:27.409711"], ["updated_at", "2019-12-12 11:55:27.409711"], ["director", "Hiromasa Yonebayashi"]]
+  ↳ db/seeds.rb:144
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:144
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 22], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.417199"], ["updated_at", "2019-12-12 11:55:27.417199"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 22], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.424729"], ["updated_at", "2019-12-12 11:55:27.424729"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 22], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.436212"], ["updated_at", "2019-12-12 11:55:27.436212"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:148
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball Z: Battle of Gods"], ["yr", 2013], ["description", "The Z-Fighters must contend with Beerus, the God of Destruction. But it takes a god to fight a god, and none of them are gods... not even the Saiyans."], ["rating", "PG"], ["runtime", 105], ["created_at", "2019-12-12 11:55:27.440383"], ["updated_at", "2019-12-12 11:55:27.440383"], ["director", "Masahiro Hosoda"]]
+  ↳ db/seeds.rb:148
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:148
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 23], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.448076"], ["updated_at", "2019-12-12 11:55:27.448076"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 23], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.455856"], ["updated_at", "2019-12-12 11:55:27.455856"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 23], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.463551"], ["updated_at", "2019-12-12 11:55:27.463551"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:152
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Millennium Actress"], ["yr", 2001], ["description", "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. Now well into old age, Chiyoko has become reclusive and shy about any publicity, but she eventually warms up to Tachibana and starts to relate her life story. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future."], ["rating", "PG"], ["runtime", 87], ["created_at", "2019-12-12 11:55:27.468129"], ["updated_at", "2019-12-12 11:55:27.468129"], ["director", "Satoshi Kon"]]
+  ↳ db/seeds.rb:152
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:152
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Period"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 24], ["genre_id", 6], ["created_at", "2019-12-12 11:55:27.475187"], ["updated_at", "2019-12-12 11:55:27.475187"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 24], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.482920"], ["updated_at", "2019-12-12 11:55:27.482920"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 24], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.492808"], ["updated_at", "2019-12-12 11:55:27.492808"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:155
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "One Piece Film: Z"], ["yr", 2012], ["description", "When the Dyna Stones are stolen by the diabolical former marine admiral Zephyr, now known as `Z', it's up to the Straw Hat Pirates to save the new world."], ["rating", "NR"], ["runtime", 108], ["created_at", "2019-12-12 11:55:27.497079"], ["updated_at", "2019-12-12 11:55:27.497079"], ["director", "Tatsuya Nagamine"]]
+  ↳ db/seeds.rb:155
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:155
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 25], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.504948"], ["updated_at", "2019-12-12 11:55:27.504948"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 25], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.512120"], ["updated_at", "2019-12-12 11:55:27.512120"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 25], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.524557"], ["updated_at", "2019-12-12 11:55:27.524557"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 25], ["genre_id", 10], ["created_at", "2019-12-12 11:55:27.537824"], ["updated_at", "2019-12-12 11:55:27.537824"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:158
+  [1m[36mMovie Create (0.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Pokémon: The First Movie"], ["yr", 1998], ["description", "Ash Ketchum and his friends Misty, Brock, and Pikachu, discover Mewtwo, a super-powered Pokemon created through biological engineering. Mewtwo has powers of which a mere Pokemon can only dream, and when he uses his skills to create even more super-Pokemon, Ash and his Pokemon friends must join forces to battle for survival."], ["rating", "G"], ["runtime", 96], ["created_at", "2019-12-12 11:55:27.544491"], ["updated_at", "2019-12-12 11:55:27.544491"], ["director", "Kunihiko Yuyama"]]
+  ↳ db/seeds.rb:158
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:158
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.7ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 26], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.555877"], ["updated_at", "2019-12-12 11:55:27.555877"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Family"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 26], ["genre_id", 1], ["created_at", "2019-12-12 11:55:27.564584"], ["updated_at", "2019-12-12 11:55:27.564584"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Sci-Fi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 26], ["genre_id", 3], ["created_at", "2019-12-12 11:55:27.572422"], ["updated_at", "2019-12-12 11:55:27.572422"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 26], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.579882"], ["updated_at", "2019-12-12 11:55:27.579882"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 26], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.587239"], ["updated_at", "2019-12-12 11:55:27.587239"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:161
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Perfect Blue"], ["yr", 1997], ["description", "A retired pop singer turned actress' sense of reality is shaken when she is stalked by an obsessed fan and seemingly a ghost of her past."], ["rating", "R"], ["runtime", 90], ["created_at", "2019-12-12 11:55:27.591827"], ["updated_at", "2019-12-12 11:55:27.591827"], ["director", "Satoshi Kon"]]
+  ↳ db/seeds.rb:161
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:161
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Thriller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 27], ["genre_id", 11], ["created_at", "2019-12-12 11:55:27.600394"], ["updated_at", "2019-12-12 11:55:27.600394"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Horror"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 27], ["genre_id", 12], ["created_at", "2019-12-12 11:55:27.607899"], ["updated_at", "2019-12-12 11:55:27.607899"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 27], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.615698"], ["updated_at", "2019-12-12 11:55:27.615698"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Dragon Ball: The Path to Power"], ["yr", 1996], ["description", "When an adventure-hungry girl named Bulma runs across a bizarre young boy named Goku, they set out to recover the mystical Dragon Balls, artifacts of incredible power. Whomever collects all seven Dragon Balls can call forth the Eternal Dragon, a powerful creature that will grant whatever wish their heart desires."], ["rating", "NR"], ["runtime", 80], ["created_at", "2019-12-12 11:55:27.620577"], ["updated_at", "2019-12-12 11:55:27.620577"], ["director", "Yamauchi Shigeyasu"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 28], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.628482"], ["updated_at", "2019-12-12 11:55:27.628482"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Action"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 28], ["genre_id", 9], ["created_at", "2019-12-12 11:55:27.636210"], ["updated_at", "2019-12-12 11:55:27.636210"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.5ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 28], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.643952"], ["updated_at", "2019-12-12 11:55:27.643952"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Comedy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 28], ["genre_id", 10], ["created_at", "2019-12-12 11:55:27.652041"], ["updated_at", "2019-12-12 11:55:27.652041"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:167
+  [1m[36mMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "yr", "description", "rating", "runtime", "created_at", "updated_at", "director") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Mirai"], ["yr", 2018], ["description", "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister, who is all grown up, opening a new perspective on his world."], ["rating", "PG"], ["runtime", 100], ["created_at", "2019-12-12 11:55:27.656771"], ["updated_at", "2019-12-12 11:55:27.656771"], ["director", "Mamoru Hosoda"]]
+  ↳ db/seeds.rb:167
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:167
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Fantasy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.6ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 29], ["genre_id", 2], ["created_at", "2019-12-12 11:55:27.664675"], ["updated_at", "2019-12-12 11:55:27.664675"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Drama"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 29], ["genre_id", 8], ["created_at", "2019-12-12 11:55:27.672633"], ["updated_at", "2019-12-12 11:55:27.672633"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mGenreLink Create (0.4ms)[0m  [1m[32mINSERT INTO "genre_links" ("movie_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["movie_id", 29], ["genre_id", 4], ["created_at", "2019-12-12 11:55:27.680076"], ["updated_at", "2019-12-12 11:55:27.680076"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mGenre Load (2.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genre_links" ON "genres"."id" = "genre_links"."genre_id" WHERE "genre_links"."movie_id" = $1[0m  [["movie_id", 25]]
