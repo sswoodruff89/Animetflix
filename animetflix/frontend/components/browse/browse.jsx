@@ -24,11 +24,14 @@ class Browse extends React.Component{
 
     return (
       <main className="browse-background">
-        {genres.map((genre, i) => {
-          return (
-           <MovieListContainer genre={genre} key={i}/>
-          )
-        })}
+        <section className="browse-list-container">
+          {genres.map((genre, i) => {
+            return (
+            <MovieListContainer genre={genre} key={i}/>
+            )
+          })}
+
+        </section>
 
       </main>
     );

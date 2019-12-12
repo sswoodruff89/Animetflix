@@ -7,8 +7,9 @@ class MovieListItem extends React.Component{
 
   render() {
     const movie = (this.props.movie) ? this.props.movie : {};
+
     return (
-      <li className="movie-thumb"s>
+      <li className="movie-thumb">
         <p>
           {movie.title}
         </p>
