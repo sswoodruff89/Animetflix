@@ -13,11 +13,11 @@
 
 .movie-list-container {
   height: 260px;
-  display: flex;
-  align-items: center;
+  display: inline-grid;
+  // align-items: center;
   width: 100%;
-  position: relative;
-  flex-shrink: 1;
+  // position: relative;
+  // flex-shrink: 1;
 }
 
 .movie-list{

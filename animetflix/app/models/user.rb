@@ -13,6 +13,7 @@
 class User < ApplicationRecord
     validates :email, :password_digest, :session_token, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
+    validate :valid_email
 
     after_initialize :ensure_token
     attr_reader :password
@@ -40,4 +41,13 @@ class User < ApplicationRecord
     def is_password?(pw)
         BCrypt::Password.new(self.password_digest).is_password?(pw)
     end
+
+    def valid_email
+        unless (self.email.split.one? {|char| char == "@"} ) && self.email[self.email.index("@")..-1].end_with?(".com")
+            errors.add(:email, "must be end with a valid address")
+        end
+
+    end
+
+   
 end

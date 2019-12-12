@@ -18,10 +18,12 @@ const App = () => {
 
       <Route path="/" render={() => {
         return(
-          <header>
-            <Link to="/">
-              <img className="logo" src={window.logo} alt="logo" />
-            </Link>
+          <header className="auth-header">
+            <div className="logo-container">
+              <Link to="/">
+                <img className="logo" src={window.logo} alt="logo" />
+              </Link>
+            </div>
             <Route exact path="/" render={() => <Link to="/login"><button className="header-button" type="submit">Sign In</button></Link>} />
           </header>
         )
@@ -37,6 +39,20 @@ const App = () => {
 
       <Route path="/search/:searchQuery" component={SearchPage} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
+
+
+      <footer className="home-footer">
+        <aside className="footer-stuff">
+          <p>Questions? Call <a href="#">1-867-5309</a></p>
+          
+          <ul>
+            <li>
+              <a href="https://github.com/sswoodruff89">GitHub</a>
+            </li>
+          </ul>
+        </aside>
+
+      </footer>
 
 
 

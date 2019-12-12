@@ -122,16 +122,18 @@ class SessionForm extends React.Component{
         <section className="session-form-container">
           <h2>{header}</h2>
 
-          {errorMessage}
 
           <form className="session-form"
             onSubmit={this.handleSubmit}>
+            
+            {errorMessage}
               
             <span id="email" 
               className={emailActive}>
                   Email
             </span>
 
+            
             <input type="text"
               // id="input-email"
               value={this.state.user.email}
