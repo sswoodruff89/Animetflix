@@ -43,7 +43,8 @@ class User < ApplicationRecord
     end
 
     def valid_email
-        unless (self.email.split.one? {|char| char == "@"} ) && self.email[self.email.index("@")..-1].end_with?(".com")
+        hasOne = self.email.split("").one? {|char| char == "@"}
+        unless (hasOne) && self.email[self.email.index("@")..-1].end_with?(".com")
             errors.add(:email, "must be end with a valid address")
         end
 

@@ -9,11 +9,12 @@ class MovieListItem extends React.Component{
     const movie = (this.props.movie) ? this.props.movie : {};
 
     return (
-      <li className="movie-thumb">
+      <>
+        <img src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
         <p>
           {movie.title}
         </p>
-      </li>
+      </>
     )
   }
 }

@@ -4,6 +4,8 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 900;
 }
 
 .browse-logo{
@@ -149,7 +151,7 @@ li.profile {
   width: 150px;
   /* display: none; */
   position: absolute;
-  z-index: 6;
+  z-index: 900;
   top: 70px;
   right: 7px;
   font-size: 12px;

@@ -111,7 +111,7 @@ glinks(13, ["Drama", "Fantasy", "Period"])
 
 Movie.create!(title: "Porco Ross", yr: 1992, director: "Hayao Miyazaki", rating: "PG", runtime: 102, description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina.")
 #14 Drama, Fantasy, Period
-glinks(14, ["Drama", "Fantasy", "Period"])
+glinks(14, ["Drama", "Fantasy", "Period", "Action"])
 
 Movie.create!(title: "Whisper of the Heart", yr: 1995, director: "Yoshifumi Kondō", rating: "PG", runtime: 111, description: "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
 #15 Drama, Romance
@@ -167,8 +167,11 @@ glinks(28, ["Fantasy", "Action", "Adventure", "Comedy"])
 Movie.create!(title: "Mirai", yr: 2018, director: "Mamoru Hosoda", rating: "PG", runtime: 100, description: "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister, who is all grown up, opening a new perspective on his world.")
 glinks(29, ["Fantasy", "Drama", "Adventure"])
 
-# Movie.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
-# glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
+Movie.create!(title: "One Piece Film: Strong World", yr: 2009, director: "Munehisa Sakai", rating: "NR", runtime: 113, description: "Straw Hat Pirates must save their navigator and stop the legendary Pirate, Shiki the Golden Lion from conquering East Blue.")
+glinks(30, ["Fantasy", "Action", "Adventure", "Comedy"])
+
+Movie.create!(title: "One Piece Film: Gold", yr: 2017, director: "Hiroaki Miyamoto", rating: "NR", runtime: 120, description: "The Straw Hat Pirates come to Gran Tesoro, the richest ship in the world.")
+glinks(31, ["Fantasy", "Action", "Adventure", "Comedy"])
 
 # Movie.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
