@@ -12,7 +12,7 @@ class MovieListItem extends React.Component{
       
         movie.genres.slice(0, 3).map((genre, i) => {
           return (
-            <li className={`genre${i}`}>{genre}</li>
+            <li className={`genre${i}`} key={i}>{genre}</li>
           )
         })
       

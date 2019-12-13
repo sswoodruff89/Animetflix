@@ -8,9 +8,9 @@
   z-index: 900;
 }
 
-.browse-nav.scroll {
-  background: rgba(0, 0, 0. 0.5);
-}
+/* .browse-nav.scroll {
+  background-color: rgba(0, 0, 0. 0.5);
+} */
 
 .browse-logo{
   width: 150px;
