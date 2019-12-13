@@ -1,0 +1,15 @@
+/* line 1, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/browse.scss */
+.browse-background::after {
+  background-image: url(/assets/animetflix_home_edited-dbfe07acd595e8f8f930a3e56565c2b3211471c3662f11d0ee828ee93ce3b0df.png);
+  background-size: 2500px 1400px;
+  content: "";
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  filter: blur(3px);
+  margin-left: -50px;
+}

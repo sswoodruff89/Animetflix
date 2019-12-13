@@ -1,0 +1,81 @@
+/* line 144, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.lists-container {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+
+/* line 153, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-slider {
+  min-width: 900px;
+  max-width: 100%;
+  overflow: visible;
+  display: flex;
+  padding-left: 5%;
+}
+
+/* line 165, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-item {
+  min-width: 15.65%;
+  margin: 0 0.12%;
+  transform: scale(1);
+  transition-property: all;
+  transition-delay: 500ms;
+  transition-duration: 0.5s;
+}
+
+/* line 177, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-slider:hover .movie-item {
+  transform: translateX(-22%);
+  transition-property: all;
+  transition-delay: 500ms;
+  transition-duration: 0.5s;
+}
+
+/* line 185, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-item:hover ~ .movie-item {
+  transform: translateX(22%);
+  transition-property: all;
+  transition-delay: 500ms;
+  transition-duration: 0.5s;
+}
+
+/* line 193, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-item:hover {
+  position: relative;
+  transform: scale(1.45) !important;
+  transition-property: all;
+  transition-delay: 500ms;
+  transition-duration: 1s;
+  z-index: 10;
+}
+
+/* line 263, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+.movie-item img {
+  width: 100%;
+}
+
+@media all and (max-width: 1400px) {
+  /* line 269, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+  .lists-container {
+    overflow-x: hidden;
+    width: 1400px;
+    margin-top: 100px;
+  }
+
+  /* line 275, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+  .movie-slider {
+    width: 100%;
+    overflow: visible;
+    display: flex;
+    padding-left: 5%;
+  }
+
+  /* line 284, /Users/appacademystudent/Desktop/FullStack_Project/animetflix/app/assets/stylesheets/movie_list.scss */
+  .movie-item {
+    transition: none;
+    resize: both;
+    min-width: 270px;
+  }
+}

@@ -24,7 +24,7 @@ class Browse extends React.Component{
 
     return (
       <main className="browse-background">
-        <section className="browse-list-container">
+        <section className="lists-container">
           {genres.map((genre, i) => {
             //remove condition when done formatting
             if (genre.name === "Action" || genre.name === "Sci-Fi") {

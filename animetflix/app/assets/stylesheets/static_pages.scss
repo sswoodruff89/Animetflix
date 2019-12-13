@@ -3,15 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// body{
-//   background-image: url("https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg");
-//   background-position-x: center;
-//   background-size: 2000px 1125px; 
-// }
- body {
+html{
+  height: 10%;
+}
+
+body {
   background-color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100% !important;
   height: 100%;
+  width: 100%;
 }
 
 .homepage-background::after{
