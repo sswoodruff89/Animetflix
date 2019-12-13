@@ -40,21 +40,40 @@ const App = () => {
       <Route path="/search/:searchQuery" component={SearchPage} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
 
+<Switch>
+      <Route path="/browse" render={() => {
+        return (
+        <footer className="browse-footer">
+          <aside className="footer-stuff">
+            <p>Questions? Call <a href="#">1-867-5309</a></p>
 
-      <footer className="home-footer">
-        <aside className="footer-stuff">
-          <p>Questions? Call <a href="#">1-867-5309</a></p>
-          
-          <ul>
-            <li>
-              <a href="https://github.com/sswoodruff89">GitHub</a>
-            </li>
-          </ul>
-        </aside>
-
-      </footer>
+            <ul>
+              <li>
+                <a href="https://github.com/sswoodruff89">GitHub</a>
+              </li>
+            </ul>
+          </aside>
+        </footer>
+        )
+      }} />
 
 
+      <Route path="/" render={() => {
+        return (
+        <footer className="home-footer">
+          <aside className="footer-stuff">
+            <p>Questions? Call <a href="#">1-867-5309</a></p>
+
+            <ul>
+              <li>
+                <a href="https://github.com/sswoodruff89">GitHub</a>
+              </li>
+            </ul>
+          </aside>
+        </footer>
+        )
+      }} />
+  </Switch>
 
     </main>
   );

@@ -9,7 +9,7 @@ html{
 
 body {
   background-color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
   min-height: 100% !important;
   height: 100%;
   width: 100%;
@@ -124,6 +124,15 @@ header {
   position: absolute;
   // bottom: 0px;
   top: 94%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.browse-footer {
+  height: 236px;
+  width: 100%;
+  position: relative;
+  // bottom: 0px;
+  // top: 94%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

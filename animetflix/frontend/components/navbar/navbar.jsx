@@ -9,7 +9,8 @@ class NavBar extends React.Component{
         searchQuery: ""
       },
       dropDown: "",
-      searchBar: ""
+      searchBar: "",
+      scrolling: false
     };
     this.handleLogOut = this.handleLogOut.bind(this);
     this.dropDropDown = this.dropDropDown.bind(this);
@@ -59,14 +60,20 @@ class NavBar extends React.Component{
     this.setState({query});
   }
 
+  handleScroll(e) {
+    this.setState({scrolling: true});
+  }
+
   render() {
 
-    const {searchBar} = this.state;
+    const {searchBar, scrolling} = this.state;
     const {searchQuery} = this.state.query;
+
     let queryFilled = (searchQuery === "") ? "" : "active";
+    let scroll = (scrolling) ? "active" : "";
 
     return (
-      <header className="browse-nav">
+      <header className={`browse-nav ${scroll}`} >
         <nav className="left-nav">
           <Link to="/browse">
             <img className="browse-logo" src={window.logo} alt="logo" />

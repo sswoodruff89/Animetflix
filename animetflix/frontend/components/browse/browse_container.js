@@ -7,6 +7,10 @@ import { requestAllMovies } from "../../actions/movies_actions";
 
 
 const msp = (state, ownProps) => {
+  // let genres = Object.values(state.entities.genres);
+  // genres = genres.sort((g1, g2) => {
+
+  // })
   return {
     session: state.session.id,
     genres: Object.values(state.entities.genres)
