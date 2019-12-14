@@ -135,11 +135,11 @@ class MovieList extends React.Component{
             {
               movies.map((movie, i) => {
                 return (
-                  <li key={i} className="movie-item">
+                  // <li key={i} className="movie-item">
 
-                    <MovieListItemContainer movie={movie} />
+                    <MovieListItemContainer movie={movie} genreId={genre.id} key={i}/>
 
-                  </li>
+                  // </li>
                 )
               })
             }

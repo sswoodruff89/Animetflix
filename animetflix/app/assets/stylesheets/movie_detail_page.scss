@@ -1,0 +1,114 @@
+@keyframes slidingin {
+  from {
+    height: 0;
+    opacity: 0;
+    z-index: -3;
+  }
+  to {
+    height: 60vh;
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+.movie-detail-page {
+    width: 100%;
+    // border: 1px solid white;
+    min-height: 60vh;
+    background-color: rgba(0, 0, 0, 1);
+    position: relative;
+    animation-name: slidingin;
+    animation-duration: .5s;
+
+    display: block;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1% 5%;
+}
+
+.left-detail-container {
+  height: 100%;
+  width: 450px;
+  // display: flex;
+  // flex-direction: column;
+  // align-content: space-between;
+}
+
+// .movie-detail-page.open {
+//   transform: translateY(0);
+//   opacity: 1;
+//   transition: opacity transform 1s ease-in;
+//   transition-delay: 300ms;
+
+// }
+
+.movie-logo {
+  width: 300px;
+  height: auto;
+}
+
+caption.rating-runtime {
+    display: inline-flex;
+    font-size: 18px;
+    justify-content: space-evenly;
+    width: 300px;
+    margin-top: 1%;
+}
+
+.description {
+    height: 30%;
+    max-width: 550px;
+    color: gray;
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+.detail-buttons {
+  display: flex;
+  align-items: center;
+  // justify-content:;
+  // margin-right: 2%;
+  margin-top: 5%;
+}
+
+.detail-buttons button {
+  width: 27%;
+  padding: 2.6%;
+  text-align: center;
+  font-size: 17px;
+  margin-right: 5%
+}
+
+.detail-play {
+  background-color: red;
+  // width: 27%;
+  // padding: 2.6%;
+  // background-color: red;
+  // text-align: center;
+  // font-size: 17px;
+}
+
+.detail-watchlist {
+  background-color: transparent;
+  border: 1px solid white;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.fa-plus {
+  margin-right: 1%
+}
+
+
+
+.detail-play span {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.genre-cap {
+  display: inline-block;
+  color: gray;
+  font-size: 15px;
+  margin-top: 4%;
+}
