@@ -23,8 +23,8 @@ class MovieListItem extends React.Component{
     ) : "";
 
     return (
-      <li className="movie-item">
-        <img src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
+      <>
+        <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
 
         <section className="movie-item-info">
             <h4>{movie.title}</h4>
@@ -44,7 +44,7 @@ class MovieListItem extends React.Component{
           </Link>
         </section>
 
-      </li>
+      </>
     )
   }
 }

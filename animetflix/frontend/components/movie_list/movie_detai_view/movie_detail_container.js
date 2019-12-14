@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { requestMovie } from "../../../actions/movies_actions";
 import MovieDetail from "./movie_detail";
+import {withRouter} from "react-router-dom";
 
 
 const msp = (state, ownProps) => {
@@ -17,4 +18,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(MovieDetail);
+export default withRouter(connect(msp, mdp)(MovieDetail));

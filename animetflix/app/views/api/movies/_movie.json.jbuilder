@@ -4,7 +4,7 @@ json.runtime movie.get_runtime
 if (details)
 
   json.description movie.description
-  json.yr
+  json.yr movie.yr
   json.genres movie.list_genres
 else
   json.genres movie.list_genres.take(3)

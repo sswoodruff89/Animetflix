@@ -17,4 +17,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(MovieListItem);
+export default withRouter(connect(msp, mdp)(MovieListItem));

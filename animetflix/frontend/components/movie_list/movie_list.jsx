@@ -15,6 +15,8 @@ class MovieList extends React.Component{
 
     this.toggleRight = this.toggleRight.bind(this);
     this.toggleLeft = this.toggleLeft.bind(this);
+    // this.detailOpen = this.detailOpen.bind(this);
+    // this.showRange = this.showRange.bind(this);
     // this.alterList = this.alterList.bind(this);
   }
 
@@ -49,6 +51,16 @@ class MovieList extends React.Component{
 
   }
 
+  // showRange(i) {
+  //   let startIdx = this.state.lastMovie - 6;
+  //   let endIdx = this.state.lastMovie;
+  //   ///for thumbnail trailing off edge
+
+  //   return (i === startIdx) ? "i0" :
+  //     (i === endIdx) ? "i6" :
+  //       (i > startIdx && i <= endIdx) ? `i${i % 6}` : "";
+  // }
+
   // alterList() {
   //   let numMovies = this.props.movies.length;
   //   let {listLoop, lastMovie} = this.state;
@@ -59,6 +71,20 @@ class MovieList extends React.Component{
   //   }
   // }
 
+  
+  ///CHECKS IF A DETAIL PAGE IS OPEN
+  detailOpen(i) {
+    let detailMovieId = this.props.history.location.pathname;
+
+    /////start here
+
+    if (!detailMovieId) {
+      return "";
+    } else if (detailMovieId) {
+      return (detailMovieId === i) ? "detail-open-true" : "detail-open-false";
+    }
+  }
+
  
 
 
@@ -66,6 +92,7 @@ class MovieList extends React.Component{
     const {genre} = this.props;
     const {slideCount, tilEnd, lastMovie} = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
+    let checkOpenDetail = (this.props.match.params.movieId) ? true : false;
 
     /////Check if near end of list & duplicate list
     // if (this.props.movies) {
@@ -100,60 +127,44 @@ class MovieList extends React.Component{
       transform: `translateX(-${slideMovePercentage}%)`,
       transition: "all 0.8s ease-out"
     };
-
-
-    //How to track what is showing
-    // const showRange = (i) => {
-    //   return (i === showIdx) ? "i0" : 
-    //     (i === endIdx) ? "i7" :
-    //     (i > showIdx && i <= endIdx) ? `i${i % 7}` : "";
-    // };
-
-    // const buttonPos = {
-    //   transform: `translateX(${(90.5 * slideCount)}%)`,
-    //   transition: "all 0.8s ease-out"
-    // };
-
-    // let movielist = this.renderList(movies);
-
+    
     return(
 
-<>
+  <>
       <h3 className="list-name">{genre.name}</h3>
 
       <ul className="list-with-buttons">
 
           <button className={`toggle-list-button left ${hide}`}
             onClick={this.toggleLeft}>
-            <i className="fas fa-chevron-left"></i>
+            <img className="left-arrow" src={window.leftArrow} alt="left-arrow" />
+
           </button>
 
         <ul className="movie-slider" style={listRange}>
 
-          {/* {movielist} */}
-
             {
               movies.map((movie, i) => {
-                return (
-                  // <li key={i} className="movie-item">
-
-                    <MovieListItemContainer movie={movie} genreId={genre.id} key={i}/>
-
-                  // </li>
-                )
-              })
+                if (movie) {
+                  return (
+                    <li key={i} className={`movie-item `}>
+                      <MovieListItemContainer movie={movie} genreId={genre.id} />
+                    </li>
+                  )
+              }})
             }
 
           </ul>
 
           <button className={`toggle-list-button right`}
             onClick={this.toggleRight}>
-            <i className="fas fa-chevron-right"></i>
+            <img className="right-arrow" src={window.rightArrow} alt="right-arrow" />
+
           </button>
       </ul>
 
 
-</>
+  </>
     )
   }
 }

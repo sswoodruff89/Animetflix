@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {receiveMovie} from '../../actions/movies_actions';
+import {withRouter} from "react-router-dom";
 // import {selectMoviesByGenre} from "../../reducers/movie_selector";
 import MovieList from "./movie_list";
 
@@ -23,5 +24,5 @@ const mdp = (dispatch) => {
 };
 
 
-export default connect(msp, mdp)(MovieList);
+export default withRouter(connect(msp, mdp)(MovieList));
 

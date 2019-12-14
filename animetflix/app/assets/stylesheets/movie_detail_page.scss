@@ -1,3 +1,13 @@
+////////MOVIE THUMBNAIL FORMAT WHEN DETAIL IS OPEN
+
+.detail-open-false section.movie-item-info {
+  display: none;
+}
+
+
+/////////
+
+
 @keyframes slidingin {
   from {
     height: 0;
@@ -11,43 +21,86 @@
   }
 }
 
+
 .movie-detail-page {
     width: 100%;
-    // border: 1px solid white;
-    min-height: 60vh;
-    background-color: rgba(0, 0, 0, 1);
+    height: 60vh;
+    opacity: 1;
+    z-index: 0;
+    transform: translateY(0);
+    background-color: black;
     position: relative;
     animation-name: slidingin;
     animation-duration: .5s;
-
-    display: block;
-    align-items: center;
+    // align-items: center;
     box-sizing: border-box;
-    padding: 1% 5%;
+    overflow: hidden;
+    background-image: url("https://www.knowledge4world.com/wp-content/uploads/2019/04/Screenshot_20190418-1408352-1024x528.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: 80% auto;
+
 }
 
-.left-detail-container {
+.movie-detail-page.closing {
+    height: 0;
+    opacity: 0;
+    z-index: -3;
+    transform: translateY(-100px);
+    transition: all 600ms ease-out;
+
+}
+
+.inner-detail-container {
+  width: 100%;
+  padding: 0 5%;
+  height: 60vh;
+  background: linear-gradient(to right, black 33%, transparent);
+}
+
+
+header.detail-logo-header{
+  position: relative;
+  height: 19vh;
+  width: 100%;
+}
+
+button.detail-closer {
+  font-size: 1.8vw;
+  position: absolute;
+  right: 0;
+  margin: 0.7vw 0.9vw;
+  filter: saturate(0) brightness(15);
+  background: none;
+  z-index: 10;
+}
+
+.detail-content-container{
+  opacity: 0;
   height: 100%;
   width: 450px;
-  // display: flex;
-  // flex-direction: column;
-  // align-content: space-between;
+  // animation-name: fader;
+  // animation-duration: 1s;
+  // transition: opacity 100ms ease;
 }
 
-// .movie-detail-page.open {
-//   transform: translateY(0);
-//   opacity: 1;
-//   transition: opacity transform 1s ease-in;
-//   transition-delay: 300ms;
+///logo on main tab
+.movie-logo.overview {
+  width: auto;
+  height: 100%;
+  transition: all 500ms ease-out;
+}
 
-// }
-
+//logo on other tabs
 .movie-logo {
-  width: 300px;
-  height: auto;
+  width: auto;
+  height: 70%;
+  transition: all 500ms ease-out;
 }
 
-caption.rating-runtime {
+/////OVERVIEW
+.detail-content-container aside.rating-runtime {
     display: inline-flex;
     font-size: 18px;
     justify-content: space-evenly;
@@ -55,12 +108,16 @@ caption.rating-runtime {
     margin-top: 1%;
 }
 
+aside .rating {
+  padding: .5% 1.4%;
+  margin: 0;
+}
+
 .description {
-    height: 30%;
-    max-width: 550px;
-    color: gray;
-    font-size: 20px;
-    margin-top: 2%;
+  max-width: 550px;
+  color: gray;
+  font-size: 1.1em;
+  margin-top: 2%;
 }
 
 .detail-buttons {
@@ -68,24 +125,34 @@ caption.rating-runtime {
   align-items: center;
   // justify-content:;
   // margin-right: 2%;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 .detail-buttons button {
   width: 27%;
-  padding: 2.6%;
+  padding: 1.8%;
   text-align: center;
-  font-size: 17px;
-  margin-right: 5%
+  font-size: 1em;
+  margin-right: 5%;
+  transform: scale(1);
+  background-color: black;
+  filter: brightness(1);
 }
 
-.detail-play {
+.detail-buttons button:hover {
+  background-color: rgb(22, 22, 22);
+  transform: scale(1.05);
+  transition: scale 200ms ease;
+  transition-delay: 300ms;
+  // filter: brightness(2);
+}
+
+button.detail-play {
   background-color: red;
-  // width: 27%;
-  // padding: 2.6%;
-  // background-color: red;
-  // text-align: center;
-  // font-size: 17px;
+}
+
+button.detail-play:hover {
+  background-color: rgb(255, 34, 34);
 }
 
 .detail-watchlist {
@@ -95,11 +162,9 @@ caption.rating-runtime {
   // justify-content: space-between;
 }
 
-.fa-plus {
+.fas.fa-plus {
   margin-right: 1%
 }
-
-
 
 .detail-play span {
   font-size: 20px;
@@ -111,4 +176,48 @@ caption.rating-runtime {
   color: gray;
   font-size: 15px;
   margin-top: 4%;
+}
+
+///////TABS
+
+.detail-tabs {
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.detail-tabs li {
+  padding: 1em 1.5em 0;
+  font-size: 1vw;
+  letter-spacing: 0.15em;
+  color: rgb(170, 170, 170); 
+  cursor: pointer;
+}
+
+
+
+
+
+//CURRENT TAB BAR DEFAULT
+.detail-tabs li span {
+  width: 100%;
+  display: block;
+  height: .3em;
+  margin-top: .5em;
+  background-color: rgb(51,157, 255);
+  transform: translateY(10px);
+  transition: none;
+}
+
+
+///CURRENT TAB FORMAT
+.detail-tabs li:hover, .detail-tabs li.current-tab {
+  color: white;
+}
+
+.detail-tabs li span.current-tab {
+  transform: translateY(0);
+  transition: transform 400ms ease-out;
 }
