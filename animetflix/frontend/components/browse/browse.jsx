@@ -3,6 +3,7 @@ import React from "react";
 import MovieListContainer from "../movie_list/movie_list_container";
 import MovieDetailContainer from "../movie_list/movie_detai_view/movie_detail_container";
 import { Route } from "react-router-dom";
+import LoadingPage from "../loading_page";
 
 class Browse extends React.Component{
   constructor(props) {
@@ -21,7 +22,11 @@ class Browse extends React.Component{
   }
 
   render() {
-    const {genres} = this.props;
+    const {genres, loading} = this.props;
+
+    if (loading) {
+      return <LoadingPage />
+    }
 
     return (
       <main className="browse-background">

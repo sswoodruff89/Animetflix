@@ -8,7 +8,7 @@ class SearchPage extends React.Component{
   }
 
   componentDidMount() {
-    this.props.requestSearchedMovies(this.props.match.params.searchQuery);
+    // this.props.requestSearchedMovies(this.props.match.params.searchQuery);
   }
 
   render() {
@@ -18,7 +18,7 @@ class SearchPage extends React.Component{
     return (
       <main className="search-page">
 
-        <h2>{query}</h2>
+        <h2>SEARCH</h2>
 
       </main>
     )

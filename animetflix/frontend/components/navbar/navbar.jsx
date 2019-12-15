@@ -11,7 +11,7 @@ class NavBar extends React.Component{
       dropDown: "",
       searchBar: "",
       searchBarClosing: false,
-      scrolling: false
+      // scrolling: false
     };
     this.handleLogOut = this.handleLogOut.bind(this);
     this.dropDropDown = this.dropDropDown.bind(this);
@@ -57,7 +57,13 @@ class NavBar extends React.Component{
       if (query.searchQuery === "") {
         this.props.history.push("/browse");
       } else {
-        this.props.history.push(`/search/${query.searchQuery}`);
+        this.props.history.push(`/search/`);
+        
+//////figure out Warning: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.
+        setTimeout(() => {
+          this.props.history.push(`/search/${query.searchQuery}`);
+
+        }, 200);
       }
   }
 
@@ -73,25 +79,25 @@ class NavBar extends React.Component{
 
   render() {
 
-    const {searchBar, scrolling, searchBarClosing} = this.state;
+    const {searchBar, searchBarClosing} = this.state;
     const {searchQuery} = this.state.query;
+    const closing = (searchBarClosing) ? "closing" : "";
 
     const inputBar = (searchBar === "active") ? (
       <input
         type="text"
         id="search-bar"
         placeholder="Titles, people, genres"
-        className={(searchBarClosing) ? "closing" : ""}
+        className={closing}
         value={searchQuery}
         autoFocus={true}
         onBlur={this.searchBarToggle}
-        onChange={this.handleInput}
-      />
+        onChange={this.handleInput} />
     ) : "";
 
     let queryFilled = (searchQuery === "") ? "" : "active";
 
-    let scroll = (scrolling) ? "active" : "";
+    // let scroll = (scrolling) ? "active" : "";
 
     return (
       <header className={`browse-nav ${scroll}`} >

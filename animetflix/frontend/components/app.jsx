@@ -7,8 +7,10 @@ import HomePageContainer from "./homepage_container";
 import NavBarContainer from "./navbar/navbar_container";
 import SearchPageContainer from "./search_page/search_page_container";
 import {AuthRoute, ProtectedRoute} from "../util/route_util";
+import LoadingPage from "./loading_page";
 
-const App = () => {
+const App = (props) => {
+
   return (
     <main>
     
@@ -30,7 +32,9 @@ const App = () => {
       }
     } />
     </Switch>
-      
+
+
+      <Route exact path="/loading" component={LoadingPage} />
       
       <AuthRoute exact path="/" component={HomePageContainer} /> 
 

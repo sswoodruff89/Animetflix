@@ -12,14 +12,14 @@ export const receiveGenres = (genres) => {
   };
 };
 
-export const startLoadingGenres = () => {
-  return {
-    type: START_LOADING_GENRES
-  };
-};
+// export const startLoadingGenres = () => {
+//   return {
+//     type: START_LOADING_GENRES
+//   };
+// };
 
 export const requestGenres = () => dispatch => {
-  dispatch(startLoadingGenres());
+  // dispatch(startLoadingGenres());
   return fetchGenres().then((genres) => {
     return dispatch(receiveGenres(genres));
   });

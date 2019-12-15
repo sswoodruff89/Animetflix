@@ -6,7 +6,7 @@ import SearchPage from "./search_page";
 const msp = (state, ownProps) => {
   let {search} = state.entities;
   let movies;
-  
+  // debugger
   if (search.length > 0) {
     movies = search.map((searchId) => {
       return state.entities.movies[searchId];

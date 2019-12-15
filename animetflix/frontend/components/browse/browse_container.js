@@ -13,7 +13,8 @@ const msp = (state, ownProps) => {
   // })
   return {
     session: state.session.id,
-    genres: Object.values(state.entities.genres)
+    genres: Object.values(state.entities.genres),
+    loading: state.ui.loading.moviesLoading
   };
 };
 

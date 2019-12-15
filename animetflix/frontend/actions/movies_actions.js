@@ -58,7 +58,7 @@ export const requestAllMovies = () => dispatch => {
 };
 
 export const requestMovie = (movieId) => dispatch => {
-  dispatch(startLoadingMovies());
+  // dispatch(startLoadingMovies());
 
   return MovieAPIUtil.fetchMovie(movieId).then((movie) => {
     return dispatch(receiveMovie(movie));
