@@ -8,9 +8,10 @@ class MovieList extends React.Component{
     this.state = {
       lastMovie: 6,
       nearEnd: (this.props.movies.length - 6) < 6,
-      // listLoop: 1,
       tilEnd: ((this.props.movies.length - 6)),
       slideCount: 0
+      // firstIdx: 0, //Index, not place, of first movie in each slide
+      // listLoop: 1,
     };
 
     this.toggleRight = this.toggleRight.bind(this);
@@ -23,7 +24,7 @@ class MovieList extends React.Component{
   //Scroll right
   toggleRight(e) {
     e.preventDefault();
-    let { slideCount, lastMovie, tilEnd } = this.state;
+    let { slideCount, lastMovie, tilEnd, firstIdx } = this.state;
 
     if (tilEnd <= 0) {
       slideCount = 0;
@@ -40,49 +41,24 @@ class MovieList extends React.Component{
 
   toggleLeft(e) {
     e.preventDefault();
-    let {slideCount, lastMovie, tilEnd} = this.state;
+    let {slideCount, lastMovie, tilEnd } = this.state;
 
     if (slideCount > 0) {
       slideCount -= 1;
+      firstIdx -= 6;
       tilEnd += 6;
       lastMovie -= (tilEnd < 6) ? tilEnd : 6;
-      this.setState({slideCount, lastMovie, tilEnd});
+      this.setState({slideCount, lastMovie, tilEnd, firstIdx});
     }
-
   }
-
-  // showRange(i) {
-  //   let startIdx = this.state.lastMovie - 6;
-  //   let endIdx = this.state.lastMovie;
-  //   ///for thumbnail trailing off edge
-
-  //   return (i === startIdx) ? "i0" :
-  //     (i === endIdx) ? "i6" :
-  //       (i > startIdx && i <= endIdx) ? `i${i % 6}` : "";
-  // }
-
-  // alterList() {
-  //   let numMovies = this.props.movies.length;
-  //   let {listLoop, lastMovie} = this.state;
-
-  //   if (((numMovies * listLoop) - lastMovie) < 12) {
-  //     listLoop += 1;
-  //     this.setState({listLoop});
-  //   }
-  // }
 
   
   ///CHECKS IF A DETAIL PAGE IS OPEN
   detailOpen(i) {
-    let detailMovieId = this.props.history.location.pathname;
+    let detailMovieId = this.props.history.location.pathname.split("/");
+    detailMovieId = parseInt(detailMovieId[detailMovieId.length - 1]);
 
-    /////start here
-
-    if (!detailMovieId) {
-      return "";
-    } else if (detailMovieId) {
-      return (detailMovieId === i) ? "detail-open-true" : "detail-open-false";
-    }
+    return (detailMovieId === i) ? "detail-open-true" : "detail-open-false";
   }
 
  
@@ -90,23 +66,9 @@ class MovieList extends React.Component{
 
   render() {
     const {genre} = this.props;
-    const {slideCount, tilEnd, lastMovie} = this.state;
+    const {slideCount, tilEnd, lastMovie, firstIdx} = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
-    let checkOpenDetail = (this.props.match.params.movieId) ? true : false;
-
-    /////Check if near end of list & duplicate list
-    // if (this.props.movies) {
-    //   movies = this.props.movies;
-
-    //   if (listLoop > 1) {
-    //     for (let i = 1; i <= listLoop; i++) {
-    //       movies = movies.concat(movies);
-    //     }
-    //   }
-    // } else {
-    //   movies = [];
-    // }
-    ///////
+    let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
         
     const hide = (slideCount === 0) ? "hidden" : "";
 
@@ -147,7 +109,9 @@ class MovieList extends React.Component{
               movies.map((movie, i) => {
                 if (movie) {
                   return (
-                    <li key={i} className={`movie-item `}>
+                    <li key={i} 
+                      id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
+                      className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
                       <MovieListItemContainer movie={movie} genreId={genre.id} />
                     </li>
                   )
@@ -170,3 +134,40 @@ class MovieList extends React.Component{
 }
 
 export default MovieList;
+
+
+
+  // showRange(i) {
+  //   let startIdx = this.state.lastMovie - 6;
+  //   let endIdx = this.state.lastMovie;
+  //   ///for thumbnail trailing off edge
+
+  //   return (i === startIdx) ? "i0" :
+  //     (i === endIdx) ? "i6" :
+  //       (i > startIdx && i <= endIdx) ? `i${i % 6}` : "";
+  // }
+
+  // alterList() {
+  //   let numMovies = this.props.movies.length;
+  //   let {listLoop, lastMovie} = this.state;
+
+  //   if (((numMovies * listLoop) - lastMovie) < 12) {
+  //     listLoop += 1;
+  //     this.setState({listLoop});
+  //   }
+  // }
+
+     // let movieItemClass = ;
+    /////Check if near end of list & duplicate list
+    // if (this.props.movies) {
+    //   movies = this.props.movies;
+
+    //   if (listLoop > 1) {
+    //     for (let i = 1; i <= listLoop; i++) {
+    //       movies = movies.concat(movies);
+    //     }
+    //   }
+    // } else {
+    //   movies = [];
+    // }
+    ///////

@@ -39,7 +39,7 @@ class MovieListItem extends React.Component{
 
         </section>
         <section className="down-arrow-container">
-          <Link to={`/browse/${this.props.genreId}/${movie.id}`}>
+          <Link to={`/browse/genre_${this.props.genreId}/${movie.id}`}>
            <img className="down-arrow" src={window.downArrow} alt="down-arrow"/>
           </Link>
         </section>

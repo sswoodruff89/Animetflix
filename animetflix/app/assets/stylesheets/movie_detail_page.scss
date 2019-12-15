@@ -1,13 +1,108 @@
 ////////MOVIE THUMBNAIL FORMAT WHEN DETAIL IS OPEN
 
-.detail-open-false section.movie-item-info {
-  display: none;
+
+[class^="movie-item-detail-open"] {
+  min-width: 16.43%;
+  max-width: 16.43%;
+  margin: 0 0.12%;
+  position: relative;
+  transform: scale(1);
+}
+
+
+
+.movie-item-detail-open-false .background-image{
+  filter: brightness(0.5);
+}
+
+.movie-item-detail-open-false img.down-arrow {
+  opacity: 0;
+  transform: translateY(-20px);
+  z-index: 13;
+  filter: brightness(3) saturate(1);
+
+  transition: all 500ms ease-out;
+  transition-delay: 500ms;
+}
+
+.movie-item-detail-open-false:hover img.down-arrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms ease-out;
+  transition-delay: 500ms;
+}
+
+//HIGHLIGHT BORDER
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.movie-item-detail-open-true {
+  transform: scale(1);
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.movie-item::before {
+  content: "";
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.movie-item::after, .movie-item::before, .movie-item-detail-open-false::before, .movie-item-detail-open-false::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.movie-item-detail-open-true::after {
+  // box-sizing: border-box;
+  // outline: 0.75vw solid white;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border: 0.4em solid rgb(43, 160, 255);
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  transition: opacity 500ms ease;
+  // animation-name: fade-in;
+  // animation-delay: 700ms;
+  // animation-duration: 500ms;
+}
+
+
+//TOOLTIP
+
+.movie-item-detail-open-true::before {
+  content: "";
+  position: absolute;
+  border-top: 1.1vw solid rgb(43, 160, 255);
+  border-left: 1.1vw solid transparent;
+  border-right: 1.1vw solid transparent;
+  border-bottom: 0;
+  z-index: 41;
+  bottom: -11%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 500ms ease;
+  // animation-name: fade-in;
+  // animation-duration: 500ms;
 }
 
 
 /////////
 
-
+///MOVIE DETAIL PAGE
 @keyframes slidingin {
   from {
     height: 0;
@@ -25,6 +120,7 @@
 .movie-detail-page {
     width: 100%;
     height: 60vh;
+    top: 0;
     opacity: 1;
     z-index: 0;
     transform: translateY(0);
@@ -69,11 +165,11 @@ header.detail-logo-header{
 button.detail-closer {
   font-size: 1.8vw;
   position: absolute;
-  right: 0;
-  margin: 0.7vw 0.9vw;
+  margin: 1% 0;
   filter: saturate(0) brightness(15);
   background: none;
   z-index: 10;
+  right: 1%;
 }
 
 .detail-content-container{

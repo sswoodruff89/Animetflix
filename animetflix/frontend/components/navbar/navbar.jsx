@@ -10,6 +10,7 @@ class NavBar extends React.Component{
       },
       dropDown: "",
       searchBar: "",
+      searchBarClosing: false,
       scrolling: false
     };
     this.handleLogOut = this.handleLogOut.bind(this);
@@ -37,9 +38,14 @@ class NavBar extends React.Component{
   searchBarToggle(e) {
     let searchBar = this.state.searchBar;
     if (this.state.query.searchQuery === "") {
-      (searchBar === "") ? 
-        this.setState({ searchBar: "active" }) : 
-        this.setState({ searchBar: "" });
+      if (searchBar === "") { 
+        this.setState({ searchBar: "active" })
+      } else { 
+        this.setState({searchBarClosing: true});
+        setTimeout(() => {
+          this.setState({ searchBar: "", searchBarClosing: false });
+        }, 500)
+      }
     }
   }
 
@@ -47,6 +53,7 @@ class NavBar extends React.Component{
       let query = this.state.query;
       query.searchQuery = e.target.value;
       this.setState({ query });
+      
       if (query.searchQuery === "") {
         this.props.history.push("/browse");
       } else {
@@ -66,10 +73,24 @@ class NavBar extends React.Component{
 
   render() {
 
-    const {searchBar, scrolling} = this.state;
+    const {searchBar, scrolling, searchBarClosing} = this.state;
     const {searchQuery} = this.state.query;
 
+    const inputBar = (searchBar === "active") ? (
+      <input
+        type="text"
+        id="search-bar"
+        placeholder="Titles, people, genres"
+        className={(searchBarClosing) ? "closing" : ""}
+        value={searchQuery}
+        autofocus="true"
+        onBlur={this.searchBarToggle}
+        onChange={this.handleInput}
+      />
+    ) : "";
+
     let queryFilled = (searchQuery === "") ? "" : "active";
+
     let scroll = (scrolling) ? "active" : "";
 
     return (
@@ -92,14 +113,16 @@ class NavBar extends React.Component{
             <i className="fas fa-search"
               onClick={this.searchBarToggle}
               ></i>
-            <input 
+              {inputBar}
+            {/* <input 
               type="text"
               id="search-bar"
               placeholder="Titles, people, genres"
               value={searchQuery}
+              autofocus={(searchBar === "active") ? "true" : ""}
               onBlur={this.searchBarToggle}
               onChange={this.handleInput}
-              />
+              /> */}
             <i className={`fas fa-times ${queryFilled}`}
               onClick={this.clearInput}></i>
           </section>

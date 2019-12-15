@@ -6,6 +6,7 @@ class MovieDetail extends React.Component{
     super(props);
     this.state = {
       tab: "overview",
+      currentId: this.props.movieId,
       changing: false,
       closing: false
     };
@@ -21,6 +22,17 @@ class MovieDetail extends React.Component{
 
   componentDidMount() {
     this.props.requestMovie(this.props.match.params.movieId);
+  }
+
+  componentDidUpdate() {
+    ///For toggling between movies while Details is open
+    
+    let movieId = parseInt(this.props.match.params.movieId)
+
+    if (movieId !== this.state.currentId) {
+      this.props.requestMovie(this.props.match.params.movieId);
+      this.setState({currentId: movieId});
+    }
   }
 
   handleTab(type) {
@@ -89,9 +101,9 @@ class MovieDetail extends React.Component{
         </aside>
 
 
-        <span> className="genre-cap">
+        <span className="genre-cap">
           Genres: {genres}
-        </span>>
+        </span>
       </section>
     )
 

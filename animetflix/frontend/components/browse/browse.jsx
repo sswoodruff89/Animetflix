@@ -30,10 +30,12 @@ class Browse extends React.Component{
             //remove condition when done formatting
             if (genre.name === "Action" || genre.name === "Sci-Fi") {
               return (
+              <>
                 <section className="single-list-container" key={i}>
                   <MovieListContainer genre={genre} />
-                  <Route path={`/browse/${genre.id}/:movieId`} component={MovieDetailContainer} />
                 </section>
+                  <Route path={`/browse/genre_${genre.id}/:movieId`} component={MovieDetailContainer} />
+              </>
               )
           }
         })}

@@ -61,11 +61,11 @@ Movie.create!(title: "The Boy and the Beast", yr: 2015, director: "Mamoru Hosoda
 #1 
 glinks(1, ["Fantasy", "Action", "Adventure"])
 
-Movie.create!(title: "Akira", yr: 1988, director: "Katsuhiro Otomo", rating: "R", runtime: 125, description: "In 1988 the Japanese government drops an atomic bomb on Tokyo after ESP experiments on children go awry. In 2019, 31 years after the nuking of the city, Kaneda, a bike gang leader, tries to save his friend Tetsuo from a secret government project. He battles anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader until Tetsuo's supernatural powers suddenly manifest. A final battle is fought in Tokyo Olympiad exposing the experiment's secrets.")
+Movie.create!(title: "Akira", yr: 1988, director: "Katsuhiro Otomo", rating: "R", runtime: 125, description: "A secret military project endangers Neo-Tokyo when it turns a biker gang member into a rampaging psychic psychopath who can only be stopped by two teenagers and a group of psychics.")
 #2 
 glinks(2, ["Thriller", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Grave of the Fireflies", yr: 1993, director: "Isao Takahata", rating: "PG-13", runtime: 90, description: "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko (Ayano Shiraishi), after an American firebombing during World War II separates the two children from their parents. Their tale of survival is as heartbreaking as it is true to life. The siblings rely completely on each other and struggle against all odds to stay together and stay alive")
+Movie.create!(title: "Grave of the Fireflies", yr: 1993, director: "Isao Takahata", rating: "PG-13", runtime: 90, description: "A devastating meditation on the human cost of war, this animated tale follows Seita (Tsutomu Tatsumi), a teenager charged with the care of his younger sister, Setsuko, after an American firebombing during World War II separates the two children from their parents.")
 #3 Drama, War
 glinks(3, ["Drama", "War"])
 
@@ -73,7 +73,7 @@ Movie.create!(title: "Dragon Ball Super Broly", yr: 2018, director: "Tatsuya Nag
 #4 Action, Fantasy, Sci-fi
 glinks(4, ["Fantasy", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Summer Wars", yr: 2009, director: "Mamoru Hosoda", rating: "PG", runtime: 101, description: "Kenji a teenage math prodigy, recruited by his secret crush Natsuki for the ultimate summer job - passing himself off as Natsuki's boyfriend during her grandmother's 90th birthday celebration. But when Kenji solves a 2,056 digit math riddle sent to his cell phone, he unwittingly breaches the security barricade protecting Oz, a globe-spanning virtual world where millions of people and governments interact through their avatars. Now a malicious AI program is hijacking Oz accounts, growing exponentially more powerful and sowing chaos and destruction in its wake.")
+Movie.create!(title: "Summer Wars", yr: 2009, director: "Mamoru Hosoda", rating: "PG", runtime: 101, description: "A student tries to fix a problem he accidentally caused in OZ, a digital world, while pretending to be the fiancé of his friend at her grandmother's 90th birthday.")
 #5 Action, Adventure, Sci-Fi, Comedy
 glinks(5, ["Adventure", "Action", "Sci-Fi", "Comedy"])
 
@@ -85,7 +85,7 @@ Movie.create!(title: "Sword of the Stranger", yr: 2007, director: "Masahiro And�
 #7 Period, Action, Historical, Adventure
 glinks(7, ["Adventure", "Action", "Period"])
 
-Movie.create!(title: "Howl's Moving Castle", yr: 2004, director: "Hayao Miyazaki", rating: "PG", runtime: 119, description: "Sophie has an uneventful life at her late father's hat shop, but all that changes when she befriends wizard Howl, who lives in a magical flying castle. However, the evil Witch of Waste takes issue with their budding relationship and casts a spell on young Sophie, which ages her prematurely. Now Howl must use all his magical talents to battle the jealous hag and return Sophie to her former youth and beauty.")
+Movie.create!(title: "Howl's Moving Castle", yr: 2004, director: "Hayao Miyazaki", rating: "PG", runtime: 119, description: "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.")
 #8 Romance, Fantasy, Drama
 glinks(8, ["Drama", "Fantasy", "Romance"])
 
@@ -93,7 +93,7 @@ Movie.create!(title: "Ghost in the Shell", yr: 1995, director: "Mamoru Oshii", r
 #9 Action, Sci-Fi, Drama
 glinks(9, ["Action", "Sci-Fi", "Drama"])
 
-Movie.create!(title: "Princess Mononoke", yr: 1997, director: "Hayao Miyazaki", rating: "PG-13", runtime: 134, description: "In the 14th century, the harmony that humans, animals and gods have enjoyed begins to crumble. The protagonist, young Ashitaka - infected by an animal attack, seeks a cure from the deer-like god Shishigami. In his travels, he sees humans ravaging the earth, bringing down the wrath of wolf god Moro and his human companion Princess Mononoke. Hiskattempts to broker peace between her and the humans brings only conflict.")
+Movie.create!(title: "Princess Mononoke", yr: 1997, director: "Hayao Miyazaki", rating: "PG-13", runtime: 134, description: "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.")
 #10 Drama, Fantasy, Action, Adventure
 glinks(10, ["Adventure", "Action", "Drama", "Fantasy"])
 
@@ -109,7 +109,7 @@ Movie.create!(title: "The Tale of Princess Kaguya", yr: 2013, director: "Isao Ta
 #13 Drama, Fantasy, Period
 glinks(13, ["Drama", "Fantasy", "Period"])
 
-Movie.create!(title: "Porco Ross", yr: 1992, director: "Hayao Miyazaki", rating: "PG", runtime: 102, description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war. As he prepares to battle the pirate crew's American ace, Porco Rosso enlists the help of spunky girl mechanic Fio Piccolo and his longtime friend Madame Gina.")
+Movie.create!(title: "Porco Ross", yr: 1992, director: "Hayao Miyazaki", rating: "PG", runtime: 102, description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war.")
 #14 Drama, Fantasy, Period
 glinks(14, ["Drama", "Fantasy", "Period", "Action"])
 
@@ -141,7 +141,7 @@ Movie.create!(title: "Patema Inverted", yr: 2013, director: "Yasuhiro Yoshiura",
 #21 Fantasy, Sci-Fi, Adventure
 glinks(21, ["Fantasy", "Adventure", "Sci-Fi"])
 
-Movie.create!(title: "Mary and the Witch's Flower", yr: 2017, director: "Hiromasa Yonebayashi", rating: "PG", runtime: 103, description: "Young Mary discovers an old broomstick and the strange Fly-by-Night flower, a rare plant that blossoms once every seven years. Together, the flower and the broomstick whisk Mary above the clouds, and far away to a school of magic run by headmistress Madam Mumblechook and the brilliant Doctor Dee. But terrible things are happening at the school, and when Mary tells a lie, she must risk her life to try and set things right.")
+Movie.create!(title: "Mary and the Witch's Flower", yr: 2017, director: "Hiromasa Yonebayashi", rating: "PG", runtime: 103, description: "Young Mary discovers an old broomstick and the strange Fly-by-Night flower, a rare plant that blossoms once every seven years. Together, the flower and the broomstick whisk Mary above the clouds, and far away to a school of magic run by headmistress Madam Mumblechook and the brilliant Doctor Dee.")
 #22 Fantasy, Adventure, Family
 glinks(22, ["Fantasy", "Adventure", "Family"])
 
@@ -149,22 +149,22 @@ Movie.create!(title: "Dragon Ball Z: Battle of Gods", yr: 2013, director: "Masah
 #Action, Fantasy, Sci-fi
 glinks(23, ["Fantasy", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Millennium Actress", yr: 2001, director: "Satoshi Kon", rating: "PG", runtime: 87, description: "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. Now well into old age, Chiyoko has become reclusive and shy about any publicity, but she eventually warms up to Tachibana and starts to relate her life story. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future.")
+Movie.create!(title: "Millennium Actress", yr: 2001, director: "Satoshi Kon", rating: "PG", runtime: 87, description: "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future.")
 glinks(24, ["Period", "Drama", "Fantasy"])
 
 Movie.create!(title: "One Piece Film: Z", yr: 2012, director: "Tatsuya Nagamine", rating: "NR", runtime: 108, description: "When the Dyna Stones are stolen by the diabolical former marine admiral Zephyr, now known as `Z', it's up to the Straw Hat Pirates to save the new world.")
 glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
 
-Movie.create!(title: "Pokémon: The First Movie", yr: 1998, director: "Kunihiko Yuyama", rating: "G", runtime: 96, description: "Ash Ketchum and his friends Misty, Brock, and Pikachu, discover Mewtwo, a super-powered Pokemon created through biological engineering. Mewtwo has powers of which a mere Pokemon can only dream, and when he uses his skills to create even more super-Pokemon, Ash and his Pokemon friends must join forces to battle for survival.")
+Movie.create!(title: "Pokémon: The First Movie", yr: 1998, director: "Kunihiko Yuyama", rating: "G", runtime: 96, description: "Ash Ketchum and his friends Misty, Brock, and Pikachu, discover Mewtwo, a super-powered Pokemon created through biological engineering.")
 glinks(26, ["Fantasy", "Family", "Sci-Fi", "Action", "Adventure"])
 
 Movie.create!(title: "Perfect Blue", yr: 1997, director: "Satoshi Kon", rating: "R", runtime: 90, description: "A retired pop singer turned actress' sense of reality is shaken when she is stalked by an obsessed fan and seemingly a ghost of her past.")
 glinks(27, ["Thriller", "Horror", "Drama"])
 
-Movie.create!(title: "Dragon Ball: The Path to Power", yr: 1996, director: "Yamauchi Shigeyasu", rating: "NR", runtime: 80, description: "When an adventure-hungry girl named Bulma runs across a bizarre young boy named Goku, they set out to recover the mystical Dragon Balls, artifacts of incredible power. Whomever collects all seven Dragon Balls can call forth the Eternal Dragon, a powerful creature that will grant whatever wish their heart desires.")
+Movie.create!(title: "Dragon Ball: The Path to Power", yr: 1996, director: "Yamauchi Shigeyasu", rating: "NR", runtime: 80, description: "Goku and Bulma go on an adventure to seek out the mystical Dragon Balls.")
 glinks(28, ["Fantasy", "Action", "Adventure", "Comedy"])
 
-Movie.create!(title: "Mirai", yr: 2018, director: "Mamoru Hosoda", rating: "PG", runtime: 100, description: "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister, who is all grown up, opening a new perspective on his world.")
+Movie.create!(title: "Mirai", yr: 2018, director: "Mamoru Hosoda", rating: "PG", runtime: 100, description: "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister all grown up.")
 glinks(29, ["Fantasy", "Drama", "Adventure"])
 
 Movie.create!(title: "One Piece Film: Strong World", yr: 2009, director: "Munehisa Sakai", rating: "NR", runtime: 113, description: "Straw Hat Pirates must save their navigator and stop the legendary Pirate, Shiki the Golden Lion from conquering East Blue.")

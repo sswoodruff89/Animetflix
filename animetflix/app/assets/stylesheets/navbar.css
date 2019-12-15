@@ -78,16 +78,28 @@
   padding: 3px 8px;
 }
 
+@keyframes open-input {
+  from {
+    width: 0
+  }
+  to {
+    width: 265px;
+  }
+}
+
 .search-field input {
   /* border: 1px solid white; */
-  width: 0px;
+  
   /* display: none; */
+  width: 265px;
   font-size: 14px;
   padding: 5px 2px;
   font-weight: 300;
   letter-spacing: 0.05em;
   vertical-align: middle;
-  transition: width 1s ease;
+  /* transition: width 1s ease; */
+  animation-name: open-input;
+  animation-duration: .5s;
 }
 
 .search-field .fa-times {
@@ -116,7 +128,12 @@
   /* display: block; */
   width: 265px;
   vertical-align: middle;
-  transition: width 1s ease;
+  /* transition: width 1s ease; */
+}
+
+.search-field input.closing {
+  width: 0px;
+  transition: all .5s ease-out;
 }
 
 /* .icon {
@@ -158,10 +175,11 @@ li.profile {
   right: 7px;
   font-size: 12px;
   opacity: 0;
+  top: 70px;
   box-sizing: border-box;
-  top: -50px;
+  transform: translateY(-300px);
   /* transition-delay: 1s; */
-  transition: opacity 0s ease;
+  transition: opacity transform 0s ease;
   transition-delay: 0.5s;
   border: 1px solid rgb(80, 80, 80);
  
@@ -170,6 +188,7 @@ li.profile {
 .profile-drop-down.active{
   opacity: 1;
   transition: opacity 0.5s ease;
+  transform: translateY(0px);
   top: 70px;
   z-index: 900;
 }

@@ -10,13 +10,18 @@
 }
 
 .single-list-container{
-  margin-bottom: 4%;
+  // margin-bottom: 4%;
 }
+
 .movie-list-container{
   height: fit-content;
   display: flex;
   border: none;
 
+}
+
+.single-list-container:last-child {
+  margin-bottom: 5%;
 }
 
 .list-name{
@@ -34,8 +39,8 @@
   // height: 220px;
   overflow: visible;
   display: flex;
-  // padding-left: 3.5%;
-  // position: relative;
+  position: relative;
+  z-index: 3;
 }
 
 .list-with-buttons {
@@ -108,24 +113,43 @@ img.left-arrow {
   transition-property: all;
   // transition-delay: 500ms;
   transition-duration: 0.5s;
-  border: none;
 
 }
 
+//TRANSITION FROM FIRST SLIDE
+#first-in-slide {
+transform-origin: left !important;
+}
+
+li#first-in-slide:hover {
+  position: relative;
+  transform: scale(1.6) !important;
+  transform-origin: left !important;
+  transition-property: all 1s ease;
+  // transition-delay: 500ms;
+  z-index: 10;
+}
+////
+
 ///ALL THUMBNAILS BEFORE HOVERED THUMBNAIL
+
+// .movie-slider:hover li#former-last{
+//   transform: translateX(0%) !important;
+//   transition-property: all;
+//   // transition-property: all 0.5s ease;
+//   // // transition-delay: 500ms;
+//   // transition-duration: 0.5s;
+// }
 .movie-slider:hover .movie-item {
     transform: translateX(-29.5%);
     transition-property: all;
     // transition-delay: 500ms;
     transition-duration: 0.5s;
-      border: none;
 
 }
 
 //All THUMBNAILS TO THE RIGHT
 .movie-item:hover ~ .movie-item{
-  border: none;
-
   transform: translateX(29.5%);
   transition-property: all 0.5s ease;
   // transition-delay: 500ms;
@@ -139,7 +163,14 @@ img.left-arrow {
   transition-property: all 1s ease;
   // transition-delay: 500ms;
   z-index: 10;
-  border: none;
+}
+
+
+li#first-in-slide:hover ~ li.movie-item{
+  transform: translateX(9.25vw) !important;
+  transition-property: all 0.5s ease;
+  // transition-delay: 500ms;
+  transition-duration: 0.5s;
 }
 
 
