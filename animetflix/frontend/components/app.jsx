@@ -5,7 +5,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import BrowseContainer from "./browse/browse_container";
 import HomePageContainer from "./homepage_container";
 import NavBarContainer from "./navbar/navbar_container";
-import SearchPage from "./search_page/search_page";
+import SearchPageContainer from "./search_page/search_page_container";
 import {AuthRoute, ProtectedRoute} from "../util/route_util";
 
 const App = () => {
@@ -37,7 +37,7 @@ const App = () => {
       <AuthRoute path="/login" component={LoginFormContainer} /> 
       <AuthRoute path="/signup" component={SignupFormContainer} /> 
 
-      <Route path="/search/:searchQuery" component={SearchPage} />
+      <Route path="/search/:searchQuery" component={SearchPageContainer} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
 
 <Switch>
@@ -48,7 +48,7 @@ const App = () => {
             <p>Questions? Call <a href="#">1-867-5309</a></p>
 
             <ul>
-              <li>
+              <li key="1">
                 <a href="https://github.com/sswoodruff89">GitHub</a>
               </li>
             </ul>

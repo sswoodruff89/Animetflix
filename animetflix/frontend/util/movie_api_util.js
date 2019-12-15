@@ -18,3 +18,11 @@ export const fetchGenres = () => {
     url: "/api/genres"
   });
 };
+
+export const searchMovies = (searchQuery) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/movies",
+    data: { search_query: searchQuery }
+  });
+};

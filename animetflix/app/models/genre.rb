@@ -9,6 +9,8 @@
 #
 
 class Genre < ApplicationRecord
+  include MovieFilter
+  
   validates :name, presence: true
 
     has_many :genre_links

@@ -1,6 +1,7 @@
 json.extract! movie, :title, :rating, :id
 json.runtime movie.get_runtime
-
+json.score movie.score
+json.director movie.director
 if (details)
 
   json.description movie.description

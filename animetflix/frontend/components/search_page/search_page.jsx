@@ -7,7 +7,12 @@ class SearchPage extends React.Component{
     super(props);
   }
 
+  componentDidMount() {
+    this.props.requestSearchedMovies(this.props.match.params.searchQuery);
+  }
+
   render() {
+    debugger
     let query = this.props.match.params.searchQuery;
 
     return (

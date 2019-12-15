@@ -83,7 +83,7 @@ class NavBar extends React.Component{
         placeholder="Titles, people, genres"
         className={(searchBarClosing) ? "closing" : ""}
         value={searchQuery}
-        autofocus="true"
+        autoFocus={true}
         onBlur={this.searchBarToggle}
         onChange={this.handleInput}
       />

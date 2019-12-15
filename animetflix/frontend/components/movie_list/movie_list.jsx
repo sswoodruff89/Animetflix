@@ -42,13 +42,13 @@ class MovieList extends React.Component{
   toggleLeft(e) {
     e.preventDefault();
     let {slideCount, lastMovie, tilEnd } = this.state;
-
+    
     if (slideCount > 0) {
       slideCount -= 1;
-      firstIdx -= 6;
+      // firstIdx -= 6;
       tilEnd += 6;
       lastMovie -= (tilEnd < 6) ? tilEnd : 6;
-      this.setState({slideCount, lastMovie, tilEnd, firstIdx});
+      this.setState({slideCount, lastMovie, tilEnd});
     }
   }
 

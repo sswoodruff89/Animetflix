@@ -13,6 +13,9 @@
 #
 
 class Movie < ApplicationRecord
+
+  include MovieFilter
+
   RATINGS = [
     "G",
     "PG",
@@ -28,7 +31,8 @@ class Movie < ApplicationRecord
     "NR"
   ]
 
-  validates :title, :yr, :description, :runtime, :director, presence: true
+  validates :title, :yr, :description, :runtime, :director, :score, presence: true
+  validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
   validates :rating, inclusion: { in: RATINGS }
 
   has_many :genre_links,

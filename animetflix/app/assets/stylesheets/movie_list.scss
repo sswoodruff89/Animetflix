@@ -181,7 +181,7 @@ li#first-in-slide:hover ~ li.movie-item{
 .movie-item .background-image {
   border: none;
   width: 100%;
-  filter: brightness(50%);
+  // filter: brightness(50%);
   transition-property: all;
   // transition-delay: 200ms;
   transition-duration: .3s;
@@ -250,7 +250,7 @@ li#first-in-slide:hover ~ li.movie-item{
 
 .rating {
   border: 1px solid white;
-  padding: 1px 3px;
+  padding: .1em .2em;
   margin-right: 5%;
 }
 

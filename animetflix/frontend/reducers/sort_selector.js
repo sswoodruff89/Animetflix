@@ -1,0 +1,29 @@
+const checkMatch = (str, query) => {
+  return str.toLowerCase().startsWith(query);
+};
+
+const XORCompare = (a, b) => {
+  return (a || b) && !(a && b);
+};
+
+
+export const sortBySearch = (obj, query) => {
+
+  return obj.sort((a,b) => {
+    if (XORCompare(checkMatch(a.title, query), checkMatch(b.title, query))) {
+      return (checkMatch(a.title, query)) ? -1 : 1;
+    } else if (XORCompare(checkMatch(a.director, query), checkMatch(b.director, query))) {
+      return (checkMatch(a.director, query)) ?
+        -1 : 1;
+    } else {
+      return (a.title < b.title) ? -1 : (a.title > b.title) ? 1 : 0;
+    }
+  });
+
+};
+
+export const sortByScore = (obj) => {
+  return obj.sort((a,b) => {
+    return (a.score < b.score) ? 1 : (a.score > b.score) ? -1 : 0;
+  });
+};

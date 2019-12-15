@@ -153,12 +153,12 @@ class MovieDetail extends React.Component{
         </section>
 
         <ul className="detail-tabs">
-          <li className={(tab === 'overview') ? "current-tab" : ""}
+          <li key="1" className={(tab === 'overview') ? "current-tab" : ""}
             onClick={this.handleTab("overview")}>
             OVERVIEW
             <span className={(tab === 'overview') ? "current-tab" : ""}></span>
           </li>
-          <li className={(tab === 'details') ? "current-tab" : ""}
+          <li key="2" className={(tab === 'details') ? "current-tab" : ""}
             onClick={this.handleTab("details")}>
             DETAILS
             <span className={(tab === 'details') ? "current-tab" : ""}></span>
