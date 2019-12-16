@@ -5,18 +5,18 @@ import SearchPage from "./search_page";
 
 const msp = (state, ownProps) => {
   let {search} = state.entities;
-  let movies;
-  // debugger
-  if (search.length > 0) {
-    movies = search.map((searchId) => {
-      return state.entities.movies[searchId];
-    });
-    movies = sortBySearch(movies, ownProps.match.params.searchQuery);
-  }
+  // if (search.length > 0) {
+  //   movies = search.map((searchId) => {
+  //     return state.entities.movies[searchId];
+  //   });
+  //   movies = sortBySearch(movies, ownProps.match.params.searchQuery);
+  // }
 
+  let movieIds = sortBySearch(state.entities.movies, search, ownProps.match.params.searchQuery);
   return {
-    movies: movies,
+    // movies: movies,
     // matches: "",
+    movieIds,
     errors: state.errors.search
   };
 };

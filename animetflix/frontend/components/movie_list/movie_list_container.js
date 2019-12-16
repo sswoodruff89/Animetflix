@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
   });
   
    return {
-    movies: movies
+    movies: movies,
+    displayType: "browse"
   };
 };
 

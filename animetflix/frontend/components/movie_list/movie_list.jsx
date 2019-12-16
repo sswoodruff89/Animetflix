@@ -6,6 +6,7 @@ class MovieList extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      displayType: this.props.displayType,
       lastMovie: 6,
       nearEnd: (this.props.movies.length - 6) < 6,
       tilEnd: ((this.props.movies.length - 6)),
@@ -65,12 +66,14 @@ class MovieList extends React.Component{
 
 
   render() {
-    const {genre} = this.props;
-    const {slideCount, tilEnd, lastMovie, firstIdx} = this.state;
+    const genre = (this.props.genre) ? this.props.genre: "";
+    const {slideCount, tilEnd, lastMovie, firstIdx, displayType} = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
     let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
         
     const hide = (slideCount === 0) ? "hidden" : "";
+
+    const searchPage = (displayType === "search") ? "hidden" : "";
 
     ///how much to slide, depending on vicinity to End
     let slideMovePercentage;
@@ -93,11 +96,11 @@ class MovieList extends React.Component{
     return(
 
   <>
-      <h3 className="list-name">{genre.name}</h3>
+      <h3 className={`list-name ${searchPage}`}>{genre.name}</h3>
 
       <ul className="list-with-buttons">
 
-          <button className={`toggle-list-button left ${hide}`}
+          <button className={`toggle-list-button left ${hide} ${searchPage}`}
             onClick={this.toggleLeft}>
             <img className="left-arrow" src={window.leftArrow} alt="left-arrow" />
 
@@ -120,10 +123,9 @@ class MovieList extends React.Component{
 
           </ul>
 
-          <button className={`toggle-list-button right`}
+          <button className={`toggle-list-button right ${searchPage}`}
             onClick={this.toggleRight}>
             <img className="right-arrow" src={window.rightArrow} alt="right-arrow" />
-
           </button>
       </ul>
 
