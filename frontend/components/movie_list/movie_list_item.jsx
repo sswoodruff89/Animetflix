@@ -9,8 +9,7 @@ class MovieListItem extends React.Component{
   render() {
     const movie = (this.props.movie) ? this.props.movie : {};
     // let bullet = <span>•</span>
-    debugger
-    let genres = (this.prop.genres) ? (
+    let genres = (this.props.genres) ? (
     
         this.props.genres.slice(0, 3).map((genre, i) => {
           let bullet = (i > 0) ? (<span>•</span>) : "";

@@ -11,8 +11,9 @@ const msp = (state, ownProps) => {
   //   });
   //   movies = sortBySearch(movies, ownProps.match.params.searchQuery);
   // }
+  let movieIds 
+  movieIds = sortBySearch(state.entities.movies, search, ownProps.match.params.searchQuery);
 
-  let movieIds = sortBySearch(state.entities.movies, search, ownProps.match.params.searchQuery);
   return {
     // movies: movies,
     // matches: "",
