@@ -1,9 +1,10 @@
 import {connect} from "react-redux";
+import { withRouter } from "react-router-dom";
 import MovieList from "../movie_list/movie_list";
 
 const msp = (state, ownProps) => {
-  let movies = ownProps.movieIds.map((movieId) => {
-    return state.entities.movies[movieId];
+  let movies = ownProps.list.map((id) => {
+    return state.entities.movies[id];
   });
 
   return {
@@ -20,4 +21,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(MovieList);
+export default withRouter(connect(msp, mdp)(MovieList));

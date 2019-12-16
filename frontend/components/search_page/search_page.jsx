@@ -1,6 +1,7 @@
 import React from "react";
 import SearchListContainer from "./search_list_container";
-
+import MovieDetailContainer from "../movie_list/movie_detai_view/movie_detail_container";
+import { Route } from "react-router-dom";
 
 class SearchPage extends React.Component{
 
@@ -22,22 +23,21 @@ class SearchPage extends React.Component{
       movieLists.push(movieIds.slice(i, i+6));
     }
 ////////
-    // let rows = this.props.movies.length % 6;
 
     return (
       <main className="search-page">
 
-        <h2>SEARCH</h2>
         <section className="search-list">
-          {/* {
-            movieLists.map((list) => {
-              <section className="single-list-container" >
-                <SearchListContainer list={list} />
-              </section>
-                <Route path={`/search/${query}/:movieId`} component={MovieDetailContainer} />
+          {
+            movieLists.map((list, i) => {
 
-            })
-          } */}
+              return (
+              <section className="search-list-detail-container" key={i}>
+                  <SearchListContainer list={list} />
+                  <Route path={`/search/${query}/:movieId`} component={MovieDetailContainer} />
+              </section>
+            )})
+          }
 
         </section>
       </main>

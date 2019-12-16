@@ -6,7 +6,7 @@ class MovieDetail extends React.Component{
     super(props);
     this.state = {
       tab: "overview",
-      currentId: this.props.movieId,
+      currentId: this.props.movie.id,
       changing: false,
       closing: false
     };
@@ -27,9 +27,8 @@ class MovieDetail extends React.Component{
   componentDidUpdate() {
     ///For toggling between movies while Details is open
     
-    let movieId = parseInt(this.props.match.params.movieId)
-
-    if (movieId !== this.state.currentId) {
+    let movieId = parseInt(this.props.match.params.movieId);
+    if (this.state.currentId && movieId !== this.state.currentId) {
       this.props.requestMovie(this.props.match.params.movieId);
       this.setState({currentId: movieId});
     }

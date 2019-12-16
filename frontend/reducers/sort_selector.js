@@ -22,9 +22,9 @@ const XORCompare = (a, b) => {
 
 // };
 
-export const sortBySearch = (state, obj, query) => {
-
-  return obj.sort((a, b) => {
+export const sortBySearch = (state, arr, query) => {
+  let sortArr = arr.slice(0);
+  return sortArr.sort((a, b) => {
     if (XORCompare(checkMatch(state[a].title, query), checkMatch(state[b].title, query))) {
       return (checkMatch(state[a].title, query)) ? -1 : 1;
     } else if (XORCompare(checkMatch(state[a].director, query), checkMatch(state[b].director, query))) {

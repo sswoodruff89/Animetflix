@@ -17,6 +17,7 @@ class MovieList extends React.Component{
 
     this.toggleRight = this.toggleRight.bind(this);
     this.toggleLeft = this.toggleLeft.bind(this);
+    this.browseOrSearch = this.browseOrSearch.bind(this);
     // this.detailOpen = this.detailOpen.bind(this);
     // this.showRange = this.showRange.bind(this);
     // this.alterList = this.alterList.bind(this);
@@ -62,15 +63,14 @@ class MovieList extends React.Component{
     return (detailMovieId === i) ? "detail-open-true" : "detail-open-false";
   }
 
- 
+ ///RENDERS BASED ON BROWSE OR SEARCH
+  browseOrSearch(displayType) {
 
-
-  render() {
-    const genre = (this.props.genre) ? this.props.genre: "";
-    const {slideCount, tilEnd, lastMovie, firstIdx, displayType} = this.state;
+    const genre = (this.props.genre) ? this.props.genre : "";
+    const { slideCount, tilEnd, lastMovie } = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
     let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
-        
+
     const hide = (slideCount === 0) ? "hidden" : "";
 
     const searchPage = (displayType === "search") ? "hidden" : "";
@@ -82,7 +82,7 @@ class MovieList extends React.Component{
     } else {
       let endPercentage = (tilEnd && tilEnd < 6 && lastMovie % 6 > 0) ? (
         (100 - ((lastMovie % 6) / 6) * 100)
-        ) : 0;
+      ) : 0;
       slideMovePercentage = ((100 * (slideCount)) - (endPercentage));
     }
     //////
@@ -92,45 +92,74 @@ class MovieList extends React.Component{
       transform: `translateX(-${slideMovePercentage}%)`,
       transition: "all 0.8s ease-out"
     };
-    
-    return(
 
-  <>
-      <h3 className={`list-name ${searchPage}`}>{genre.name}</h3>
-
-      <ul className="list-with-buttons">
-
-          <button className={`toggle-list-button left ${hide} ${searchPage}`}
-            onClick={this.toggleLeft}>
-            <img className="left-arrow" src={window.leftArrow} alt="left-arrow" />
-
-          </button>
-
-        <ul className="movie-slider" style={listRange}>
-
-            {
-              movies.map((movie, i) => {
+    if (displayType === "search") {
+      return (
+        <>
+          <ul className="movie-slider search" >
+            {movies.map((movie, i) => {
                 if (movie) {
                   return (
-                    <li key={i} 
+                    <li key={i}
                       id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
                       className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
-                      <MovieListItemContainer movie={movie} genreId={genre.id} />
+                      <MovieListItemContainer movie={movie} displayType={displayType}/>
                     </li>
                   )
-              }})
-            }
-
+                }
+              })}
           </ul>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <h3 className={`list-name`}>{genre.name}</h3>
+          <ul className="list-with-buttons">
 
-          <button className={`toggle-list-button right ${searchPage}`}
-            onClick={this.toggleRight}>
-            <img className="right-arrow" src={window.rightArrow} alt="right-arrow" />
-          </button>
-      </ul>
+            <button className={`toggle-list-button left ${hide}`}
+              onClick={this.toggleLeft}>
+              <img className="left-arrow" src={window.leftArrow} alt="left-arrow" />
+
+            </button>
+
+            <ul className="movie-slider" style={listRange}>
+
+              {
+                movies.map((movie, i) => {
+                  if (movie) {
+                    return (
+                      <li key={i}
+                        id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
+                        className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
+                        <MovieListItemContainer movie={movie} displayType={displayType} genreId={genre.id} />
+                      </li>
+                    )
+                  }
+                })
+              }
+
+            </ul>
+
+            <button className={`toggle-list-button right`}
+              onClick={this.toggleRight}>
+              <img className="right-arrow" src={window.rightArrow} alt="right-arrow" />
+            </button>
+          </ul>
+        </>
+      )
+    }
+  }
 
 
-  </>
+  render() {
+    const {displayType} = this.state;
+
+    return(
+      <>
+        {this.browseOrSearch(displayType)}
+      </>
+  
     )
   }
 }
