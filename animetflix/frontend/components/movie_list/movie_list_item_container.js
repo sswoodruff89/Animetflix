@@ -4,8 +4,14 @@ import { requestMovie } from "../../actions/movies_actions";
 import MovieListItem from "./movie_list_item";
 
 const msp = (state, ownProps) => {
+  debugger
+  let genres = (ownProps.movie.genreIds) ? ownProps.movie.genreIds.map((id) => {
+    return state.entities.genres[id].name;
+  }) : [];
+  
   return {
     movie: ownProps.movie,
+    genres
   };
 };
 

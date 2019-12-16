@@ -29,15 +29,16 @@ class SearchPage extends React.Component{
 
         <h2>SEARCH</h2>
         <section className="search-list">
-          {/* {
+          {
             movieLists.map((list) => {
-              <section className="single-list-container" >
-                <SearchListContainer list={list} />
+              <section className="list-and-detail-container" key={i}>
+                <section className="single-list-container" >
+                  <SearchListContainer list={list} />
+                </section>
+                  <Route path={`/search/${query}/:movieId`} component={MovieDetailContainer} />
               </section>
-                <Route path={`/search/${query}/:movieId`} component={MovieDetailContainer} />
-
             })
-          } */}
+          }
 
         </section>
       </main>

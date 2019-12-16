@@ -36,10 +36,10 @@ class Browse extends React.Component{
             if (genre.name === "Action" || genre.name === "Sci-Fi") {
               return (
                 <section className="list-and-detail-container" key={i}>
-                <section className="single-list-container" >
-                  <MovieListContainer genre={genre} />
-                </section>
-                  <Route path={`/browse/genre_${genre.id}/:movieId`} component={MovieDetailContainer} key={genre.id}/>
+                  <section className="single-list-container" >
+                    <MovieListContainer genre={genre} />
+                  </section>
+                    <Route path={`/browse/genre_${genre.id}/:movieId`} component={MovieDetailContainer} key={genre.id}/>
               </section>
               )
           }
