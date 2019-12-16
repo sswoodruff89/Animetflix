@@ -5,8 +5,19 @@ import {withRouter} from "react-router-dom";
 
 
 const msp = (state, ownProps) => {
+  
+  let movie = state.entities.movies[ownProps.match.params.movieId];
+  let genres = (movie.genreIds.length > 0 && movie.genreIds[0]) ? movie.genreIds.map((id) => {
+    return state.entities.genres[id].name;
+  }) : [];
+  
+  let displayType = (ownProps.history.location.pathname.includes("search")) ? "search" : "browse";
+
+
   return {
-    movie: state.entities.movies[ownProps.match.params.movieId]
+    movie,
+    genres,
+    displayType
   };
 };
 

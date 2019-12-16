@@ -4,13 +4,31 @@ import { Link } from "react-router-dom";
 class MovieListItem extends React.Component{
   constructor(props) {
     super(props);
+
+    this.detailsLink = this.detailsLink.bind(this);
+  }
+
+  detailsLink(displayType) {
+    const movie = (this.props.movie) ? this.props.movie : {};
+
+    if (displayType === "browse") {
+      return (
+        <Link to={`/browse/genre_${this.props.genreId}/${movie.id}`}>
+          <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
+        </Link>
+      )
+    } else {
+      return (
+        <Link to={`/search/${this.props.match.params.searchQuery}/${this.props.listNum}/${movie.id}`}>
+          <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
+        </Link>
+      )
+    }
   }
 
   render() {
     const movie = (this.props.movie) ? this.props.movie : {};
-    // let bullet = <span>•</span>
     let genres = (this.props.genres) ? (
-    
         this.props.genres.slice(0, 3).map((genre, i) => {
           let bullet = (i > 0) ? (<span>•</span>) : "";
           return (
@@ -34,14 +52,11 @@ class MovieListItem extends React.Component{
             </aside>
             <ul className="genres">
                 {genres}
-            
             </ul>
 
         </section>
         <section className="down-arrow-container">
-          <Link to={`/browse/genre_${this.props.genreId}/${movie.id}`}>
-           <img className="down-arrow" src={window.downArrow} alt="down-arrow"/>
-          </Link>
+          {this.detailsLink(this.props.displayType)}
         </section>
 
       </>

@@ -50,10 +50,19 @@ class MovieDetail extends React.Component{
   closeDetails(e) {
     e.preventDefault();
     this.setState({closing: true});
+    debugger
+    
+    if (this.props.displayType === 'search') {
+      setTimeout(() => {
+        let queryAddress = this.props.history.location.pathname.split("/");
+        this.props.history.push(`/search/${queryAddress[queryAddress.length - 2]}`);
+      }, 600);
+    } else {
 
-    setTimeout(() => {
-      this.props.history.push("/browse");
-    }, 600);
+      setTimeout(() => {
+          this.props.history.push("/browse");
+      }, 600);
+    }
   }
   
   renderOverview(movie, genres, fadeIn) {
@@ -129,7 +138,8 @@ class MovieDetail extends React.Component{
 
   render() {
     let movie = this.props.movie || {};
-    let genres = (movie.genres) ? movie.genres.join(", ") : "";
+    
+    let genres = (this.props.genres) ? this.props.genres.join(", ") : "";
     let {tab, closing} = this.state;
     let closer = (closing) ? "closing" : "";
     

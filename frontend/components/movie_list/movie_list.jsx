@@ -69,11 +69,7 @@ class MovieList extends React.Component{
     const genre = (this.props.genre) ? this.props.genre : "";
     const { slideCount, tilEnd, lastMovie } = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
-    let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
-
     const hide = (slideCount === 0) ? "hidden" : "";
-
-    const searchPage = (displayType === "search") ? "hidden" : "";
 
     ///how much to slide, depending on vicinity to End
     let slideMovePercentage;
@@ -94,6 +90,11 @@ class MovieList extends React.Component{
     };
 
     if (displayType === "search") {
+
+      let searchQuery = this.props.match.params.searchQuery;
+      let listNum = this.props.listNum;
+      let checkOpenDetail = (this.props.history.location.pathname.includes(`${searchQuery}/${listNum}`)) ? true : false;
+
       return (
         <>
           <ul className="movie-slider search" >
@@ -103,7 +104,11 @@ class MovieList extends React.Component{
                     <li key={i}
                       id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
                       className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
-                      <MovieListItemContainer movie={movie} displayType={displayType}/>
+                      
+                      <MovieListItemContainer movie={movie} 
+                        listNum={this.props.listNum}
+                        displayType={displayType}/>
+
                     </li>
                   )
                 }
@@ -112,6 +117,8 @@ class MovieList extends React.Component{
         </>
       )
     } else {
+      let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
+
       return (
         <>
           <h3 className={`list-name`}>{genre.name}</h3>

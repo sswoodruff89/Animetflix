@@ -39,7 +39,10 @@ class Browse extends React.Component{
                   <section className="single-list-container" >
                     <MovieListContainer genre={genre} />
                   </section>
-                    <Route path={`/browse/genre_${genre.id}/:movieId`} component={MovieDetailContainer} key={genre.id}/>
+                    <Route path={`/browse/genre_${genre.id}/:movieId`} 
+                    component={MovieDetailContainer} 
+                    key={genre.id}
+                    displayType="browse"/>
               </section>
               )
           }

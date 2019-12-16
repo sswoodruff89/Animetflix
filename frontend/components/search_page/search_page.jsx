@@ -15,6 +15,29 @@ class SearchPage extends React.Component{
 
   render() {
     let query = this.props.match.params.searchQuery;
+
+/////////For ERRORS
+
+    if (this.props.errors[0] === "No movies found") {
+
+      return (
+        <section className="search-errors">
+
+          <p>Your search for "{query}" did not have any matches.</p>
+          
+          <p>Suggestions:</p>
+
+          <ul className="error-suggestions">
+            <li>Try different keywords</li>
+            <li>Looking for a movie or TV show?</li>
+            <li>Try using a movie, TV show title, actor, or director</li>
+            <li>Try a genre, like comedy, action, romance</li>
+          </ul>
+        </section>
+      )
+    }
+//////////////
+
     let { movieIds } = this.props;
 
 ////////
@@ -25,23 +48,23 @@ class SearchPage extends React.Component{
 ////////
 
     return (
-      <main className="search-page">
+        <main className="search-page">
 
-        <section className="search-list">
-          {
-            movieLists.map((list, i) => {
+          <section className="search-list">
+            {
+              movieLists.map((list, i) => {
 
-              return (
-              <section className="search-list-detail-container" key={i}>
-                  <SearchListContainer list={list} />
-                  <Route path={`/search/${query}/:movieId`} component={MovieDetailContainer} />
-              </section>
-            )})
-          }
+                return (
+                <section className="search-list-detail-container" key={i}>
+                    <SearchListContainer list={list} listNum={i}/>
+                    <Route path={`/search/${query}/${i}/:movieId`} component={MovieDetailContainer} />
+                </section>
+              )})
+            }
 
-        </section>
-      </main>
-    )
+          </section>
+        </main>
+      )
   }
 }
 
