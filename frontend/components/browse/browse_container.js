@@ -3,17 +3,20 @@ import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { requestGenres } from "../../actions/genre_actions";
 import { requestAllMovies } from "../../actions/movies_actions";
+import { sortByListLength } from "../../reducers/sort_selector";
 
 
 
 const msp = (state, ownProps) => {
-  // let genres = Object.values(state.entities.genres);
-  // genres = genres.sort((g1, g2) => {
+  let genres = Object.values(state.entities.genres);
 
-  // })
+  if (genres.length > 0) {
+    genres = sortByListLength(genres);
+  }
+
   return {
     session: state.session.id,
-    genres: Object.values(state.entities.genres),
+    genres,
     loading: state.ui.loading.moviesLoading
   };
 };

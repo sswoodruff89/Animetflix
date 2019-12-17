@@ -23,7 +23,7 @@ class Browse extends React.Component{
 
   render() {
     const {genres, loading} = this.props;
-
+    
     if (loading) {
       return <LoadingPage />
     }
@@ -33,7 +33,7 @@ class Browse extends React.Component{
         <section className="lists-container">
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            if (genre.name === "Action") {
+            if (genre.movie_ids.length > 7) {
               return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >

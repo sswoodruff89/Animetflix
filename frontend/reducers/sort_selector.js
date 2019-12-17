@@ -42,3 +42,9 @@ export const sortByScore = (obj) => {
     return (a.score < b.score) ? 1 : (a.score > b.score) ? -1 : 0;
   });
 };
+
+export const sortByListLength = (obj) => {
+  return obj.sort((a, b) => {
+    return (a.movie_ids.length < b.movie_ids.length) ? 1 : (a.movie_ids.length > b.movie_ids.length) ? -1 : 0;
+  });
+};
