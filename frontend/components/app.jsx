@@ -15,81 +15,77 @@ const App = (props) => {
   return (
 <>
 
-<Switch>
-    <Route exact path="/watch/:movieId" component={WatchPageContainer} />
 
-
-    <Route path="/" render={() => {
-        <main>
-
-        <Switch>
-          <Route path="/browse" component={NavBarContainer}/>
-          <Route path="/search" component={NavBarContainer}/>
-
-          <Route path="/" render={() => {
-            return(
-              <header className="auth-header">
-                <div className="logo-container">
-                  <Link to="/">
-                    <img className="logo" src={window.logo} alt="logo" />
-                  </Link>
-                </div>
-                <Route exact path="/" render={() => <Link to="/login"><button className="header-button" type="submit">Sign In</button></Link>} />
-              </header>
-            )
-          }
-        } />
-        </Switch>
-
-
-          <Route exact path="/loading" component={LoadingPage} />
-          
-          <AuthRoute exact path="/" component={HomePageContainer} /> 
-
-          <AuthRoute path="/login" component={LoginFormContainer} /> 
-          <AuthRoute path="/signup" component={SignupFormContainer} /> 
-
-          <Route path="/search/:searchQuery" component={SearchPageContainer} />
-          <ProtectedRoute path="/browse" component={BrowseContainer} />
+    <main>
+    <Route exact path="/watch/:movieId" component={WatchPageContainer}/>
 
     <Switch>
-          <Route path="/browse" render={() => {
-            return (
-            <footer className="browse-footer">
-              <aside className="footer-stuff">
-                <p>Questions? Call <a href="#">1-867-5309</a></p>
+      <Route path="/browse" component={NavBarContainer}/>
+      <Route path="/search" component={NavBarContainer}/>
 
-                <ul>
-                  <li key="1">
-                    <a href="https://github.com/sswoodruff89">GitHub</a>
-                  </li>
-                </ul>
-              </aside>
-            </footer>
-            )
-          }} />
+      <Route path="/" render={() => {
+        return(
+          <header className="auth-header">
+            <div className="logo-container">
+              <Link to="/">
+                <img className="logo" src={window.logo} alt="logo" />
+              </Link>
+            </div>
+            <Route exact path="/" render={() => <Link to="/login"><button className="header-button" type="submit">Sign In</button></Link>} />
+          </header>
+        )
+      }
+    } />
+    </Switch>
 
 
-          <Route path="/" render={() => {
-            return (
-            <footer className="home-footer">
-              <aside className="footer-stuff">
-                <p>Questions? Call <a href="#">1-867-5309</a></p>
+      <Route exact path="/loading" component={LoadingPage} />
+      
+      <AuthRoute exact path="/" component={HomePageContainer} /> 
 
-                <ul>
-                  <li>
-                    <a href="https://github.com/sswoodruff89">GitHub</a>
-                  </li>
-                </ul>
-              </aside>
-            </footer>
-            )
-          }} />
-      </Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} /> 
+      <AuthRoute path="/signup" component={SignupFormContainer} /> 
 
-        </main>
-   }} />
-</Switch>
+      <Route path="/search/:searchQuery" component={SearchPageContainer} />
+      <ProtectedRoute path="/browse" component={BrowseContainer} />
+
+<Switch>
+      <Route path="/browse" render={() => {
+        return (
+        <footer className="browse-footer">
+          <aside className="footer-stuff">
+            <p>Questions? Call <a href="#">1-867-5309</a></p>
+
+            <ul>
+              <li key="1">
+                <a href="https://github.com/sswoodruff89">GitHub</a>
+              </li>
+            </ul>
+          </aside>
+        </footer>
+        )
+      }} />
+
+
+      <Route path="/" render={() => {
+        return (
+        <footer className="home-footer">
+          <aside className="footer-stuff">
+            <p>Questions? Call <a href="#">1-867-5309</a></p>
+
+            <ul>
+              <li>
+                <a href="https://github.com/sswoodruff89">GitHub</a>
+              </li>
+            </ul>
+          </aside>
+        </footer>
+        )
+      }} />
+  </Switch>
+
+    </main>
+
 </>    
   );
 }
