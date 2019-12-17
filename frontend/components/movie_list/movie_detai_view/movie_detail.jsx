@@ -1,4 +1,5 @@
 import React from "react";
+import Video from "../../video/video";
 
 
 class MovieDetail extends React.Component{
@@ -50,7 +51,6 @@ class MovieDetail extends React.Component{
   closeDetails(e) {
     e.preventDefault();
     this.setState({closing: true});
-    debugger
     
     if (this.props.displayType === 'search') {
       setTimeout(() => {
@@ -146,6 +146,9 @@ class MovieDetail extends React.Component{
     return(
 
       <section className={`movie-detail-page ${closer}`}>
+
+          <Video version="detail"/>
+
           <section className="inner-detail-container">
 
               <button className="detail-closer"
@@ -153,6 +156,7 @@ class MovieDetail extends React.Component{
 
             <header className="detail-logo-header">
               <img className={`movie-logo ${tab}`} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt=""/>
+              {/* <img className={`movie-logo ${tab}`} src={movie.logo} alt=""/> */}
           
             </header>
 

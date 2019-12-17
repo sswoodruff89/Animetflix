@@ -1,5 +1,6 @@
 import React from "react";
 import MovieListItemContainer from "./movie_list_item_container";
+import Video from "../video/video";
 
 class MovieList extends React.Component{
 // maybe have a util function requesting backend for movies through this given genre
@@ -63,6 +64,7 @@ class MovieList extends React.Component{
     return (detailMovieId === i) ? "detail-open-true" : "detail-open-false";
   }
 
+
  ///RENDERS BASED ON BROWSE OR SEARCH
   browseOrSearch(displayType) {
 
@@ -104,7 +106,7 @@ class MovieList extends React.Component{
                     <li key={i}
                       id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
                       className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
-                      
+
                       <MovieListItemContainer movie={movie} 
                         listNum={this.props.listNum}
                         displayType={displayType}/>
@@ -159,6 +161,9 @@ class MovieList extends React.Component{
   }
 
 
+
+
+
   render() {
     const {displayType} = this.state;
 
@@ -166,7 +171,6 @@ class MovieList extends React.Component{
       <>
         {this.browseOrSearch(displayType)}
       </>
-  
     )
   }
 }

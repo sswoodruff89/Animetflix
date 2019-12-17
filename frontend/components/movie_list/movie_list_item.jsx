@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Video from "../video/video";
 
 class MovieListItem extends React.Component{
   constructor(props) {
     super(props);
 
     this.detailsLink = this.detailsLink.bind(this);
+    this.pauseThumbnail = this.pauseThumbnail.bind(this);
+    this.playThumbnail = this.playThumbnail.bind(this);
   }
 
   detailsLink(displayType) {
@@ -26,6 +29,22 @@ class MovieListItem extends React.Component{
     }
   }
 
+
+
+/////////HOVER VIDEO START/STOP
+  playThumbnail(e) {
+    debugger
+    let vid = e.currentTarget.previousSibling;
+    vid.play();
+  }
+
+  pauseThumbnail(e) {
+    let vid = e.currentTarget.previousSibling;
+    vid.pause();
+  }
+/////////
+
+
   render() {
     const movie = (this.props.movie) ? this.props.movie : {};
     let genres = (this.props.genres) ? (
@@ -43,8 +62,12 @@ class MovieListItem extends React.Component{
     return (
       <>
         <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
+        <Video version="thumbnail"/>
 
-        <section className="movie-item-info">
+        <section className="movie-item-info"
+          onMouseEnter={this.playThumbnail}
+          onMouseLeave={this.pauseThumbnail}
+        >
             <h4>{movie.title}</h4>
             <aside className="rating-runtime">
               <span className="rating">{movie.rating}</span>

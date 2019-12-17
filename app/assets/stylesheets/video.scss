@@ -1,0 +1,33 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+video.thumbnail {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.movie-item:hover video.thumbnail {
+  opacity: 1;
+  transition: opacity 300ms ease 500ms;
+}
+
+.movie-detail-page video.detail {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  opacity: 1;
+  animation-name: fade-in;
+  animation-duration: 300ms;
+  animation-delay: 2s;
+}
+
