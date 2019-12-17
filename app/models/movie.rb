@@ -10,6 +10,8 @@
 #  runtime     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  director    :string           not null
+#  score       :float            not null
 #
 
 class Movie < ApplicationRecord
@@ -56,5 +58,7 @@ class Movie < ApplicationRecord
   has_one_attached :thumbnail
   has_one_attached :background
   has_one_attached :logo
+
+  has_one_attached :clip
 
 end

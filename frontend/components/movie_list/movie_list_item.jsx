@@ -43,6 +43,11 @@ class MovieListItem extends React.Component{
   }
 /////////
 
+redirectFullPlay(e) {
+  e.preventDefault();
+  this.props.history.push(`/watch/${this.props.movie.id}`);
+}
+
 
   render() {
     const movie = (this.props.movie) ? this.props.movie : {};
@@ -61,20 +66,30 @@ class MovieListItem extends React.Component{
     return (
       <>
         <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
+        {/* <img className="background-image" src={movie.thumbnail} alt=""/> */}
+
         <Video version="thumbnail" vidRef="thumbVidRef" />
 
         <section className="movie-item-info"
           onMouseEnter={this.playThumbnail}
-          onMouseLeave={this.pauseThumbnail}
-        >
-            <h4>{movie.title}</h4>
-            <aside className="rating-runtime">
-              <span className="rating">{movie.rating}</span>
-              <span>{movie.runtime}</span>
-            </aside>
-            <ul className="genres">
-                {genres}
-            </ul>
+          onMouseLeave={this.pauseThumbnail} >
+            
+          <section className="movie-item-thumb-details" >
+              <button className="play-full" 
+              // Set ClickHandler here
+                >
+                	<img className="item-play" src={window.playButton} alt=""/>
+              </button>
+              <h4>{movie.title}</h4>
+              <aside className="rating-runtime">
+                <span className="rating">{movie.rating}</span>
+                <span>{movie.runtime}</span>
+              </aside>
+              <ul className="genres">
+                  {genres}
+              </ul>
+
+          </section>
 
         </section>
         <section className="down-arrow-container">

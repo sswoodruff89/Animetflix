@@ -105,8 +105,8 @@ img.left-arrow {
 .movie-item {
   // min-width: 230px;
   // width: 15.65%;
-    max-height: 8.35vw;
-    min-width: 14.77vw;
+  max-height: 8.35vw;
+  min-width: 14.77vw;
   margin: 0 0.12%;
   position: relative;
   transform: scale(1);
@@ -114,6 +114,8 @@ img.left-arrow {
   // transition-delay: 500ms;
   transition-duration: 0.5s;
   border: 1px solid white;
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -180,19 +182,24 @@ li#first-in-slide:hover ~ li.movie-item{
 ////inside MOVIE ITEM
 
 .movie-item .background-image {
-  width: 100%;
   // filter: brightness(50%);
   transition-property: all;
   // transition-delay: 200ms;
   transition-duration: .3s;
+  width: 100%;
+  height: auto;
 }
 
+.movie-item-thumb-details {
+    width: 100%;
+    margin-bottom: 8%;
+}
 
 .movie-item-info {
   opacity: 0;///
   font-size: 1em;
   height: 100%;
-  padding: 7.5% 2%;
+  padding: 0 2%;
   position: absolute;
   color: black;
   bottom: 0;
@@ -203,6 +210,8 @@ li#first-in-slide:hover ~ li.movie-item{
   transition-property: all;
   transition-delay: 200ms;
   transition-duration: .3s;
+  display: flex;
+  align-items: flex-end;
 }
 
 .movie-item:hover .background-image {
@@ -213,30 +222,30 @@ li#first-in-slide:hover ~ li.movie-item{
 
 .movie-item:hover .movie-item-info {
   opacity: 1;///
-  padding: 7.5% 2%;
   transition-property: all;
   transition-delay: 0.3s;
   transition-duration: .7s;
-  border: none;
 }
 
-.movie-item-info h4 {
-  color: white;
-  margin-bottom: 1%;
-  width: 100%;
-  font-weight: 500;
-  font-size: 80%;
-  transition-delay: 500ms;
+.movie-item-info button.play-full {
+  // border: 2px solid white;
+  // border-radius: 100%;
+  // color: white;
+
+}
+
+img.item-play {
+  width: 20%;
+  transform: translateY(17%);
 }
 
 // .movie-item:hover 
 .movie-item-info h4 {
   color: white;
-  margin-bottom: 1%;
   width: 100%;
   font-weight: 500;
-  font-size: 0.9em;
-  border: none;
+  font-size: 0.7vw;
+  margin: 0;
   // transition-property: all 1s ease;
   // transition-delay: 500ms;
 }
@@ -246,32 +255,30 @@ li#first-in-slide:hover ~ li.movie-item{
   display: inline-flex;
   align-items: center;
   width: 100%;
-  font-size: 65%;
+  font-size: .6vw;
 }
 
-.rating {
+.rating-runtime .rating {
   border: 1px solid white;
-  padding: .1em .2em;
-  margin-right: 5%;
+  // padding: .5% .6%;
+  margin-right: 0.2vw;
 }
 
 .genres{
   display: flex;
   align-items: center;
   border: none;
-  font-size: 65%;
+  font-size: 0.6vw;
 }
 .genres div{
   // list-style-type: disc;
   display: inline-flex;
   align-items: center;
   opacity: .9;
-  border: none;
 }
 
 .genres li {
   padding: 0;
-  border: none;
 }
 
 
@@ -279,7 +286,7 @@ li#first-in-slide:hover ~ li.movie-item{
 .genres span {
   opacity: .8;
   font-size: 14px;
-  padding: 4px;
+  padding: 0 4px;
 }
 ////
 

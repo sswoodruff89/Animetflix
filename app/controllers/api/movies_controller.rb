@@ -3,14 +3,14 @@ class Api::MoviesController < ApplicationController
 
   def index
     if params[:genre_id]
-      @movies = Genre.find(params[:genre_id]).movies.includes(:genres)
+      @movies = Genre.find(params[:genre_id]).movies.with_attached_logo.includes(:genres)
     # elsif params[:watchlist_id]
     elsif params[:search_query]
 
       @movies = search_filter_list(params[:search_query])
     else
       
-      @movies = Movie.all.includes(:genres)
+      @movies = Movie.with_attached_logo.all.includes(:genres)
     end
 
     if (@movies.length == 0)
@@ -21,7 +21,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Movie.with_attached_thumbnail.with_attached_background.with_attached_logo.find(params[:id])
 
     render :show
   end

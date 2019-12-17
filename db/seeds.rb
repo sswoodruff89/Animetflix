@@ -57,7 +57,7 @@ end
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 
-Movie.create!(title: "The Boy and the Beast", 
+movie1 = Movie.create!(title: "The Boy and the Beast", 
   yr: 2015, 
   director: "Mamoru Hosoda", 
   rating: "PG-13", 
@@ -66,8 +66,13 @@ Movie.create!(title: "The Boy and the Beast",
   description: "When Kyuta stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice.")
 #1 
 glinks(1, ["Fantasy", "Action", "Adventure"])
+# movie1.logo.attach(io: File.open('app/assets/images/movie_photos/boy-and-the-beast-bakemono-nlogo.png'), filename: 'boy-and-the-beast-bakemono-nlogo.png')
+# movie1.thumbnail.attach(io: File.open('app/assets/images/movie_photos/boy_and_beast_thumb.png'), filename: 'boy_and_beast_thumb.png')
+# movie1.background.attach(io: File.open('app/assets/images/movie_photos/boy_and_beast_back.jpg'), filename: 'boy_and_beast_back.jpg')
 
-Movie.create!(title: "Akira", 
+
+
+movie2 = Movie.create!(title: "Akira", 
   yr: 1988, 
   director: "Katsuhiro Otomo", 
   rating: "R", 
@@ -77,7 +82,7 @@ Movie.create!(title: "Akira",
 #2 
 glinks(2, ["Thriller", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Grave of the Fireflies", 
+movie3 = Movie.create!(title: "Grave of the Fireflies", 
   yr: 1993, 
   director: "Isao Takahata", 
   rating: "PG-13", 
@@ -87,7 +92,7 @@ Movie.create!(title: "Grave of the Fireflies",
 #3 Drama, War
 glinks(3, ["Drama", "War"])
 
-Movie.create!(title: "Dragon Ball Super Broly", 
+movie4 = Movie.create!(title: "Dragon Ball Super Broly", 
   yr: 2018, 
   director: "Tatsuya Nagamine", 
   rating: "PG", 
@@ -97,7 +102,9 @@ Movie.create!(title: "Dragon Ball Super Broly",
 #4 Action, Fantasy, Sci-fi
 glinks(4, ["Fantasy", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Summer Wars", 
+# movie4.clip.attach(io: File.open('app/assets/images/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+
+movie5 = Movie.create!(title: "Summer Wars", 
   yr: 2009, 
   director: "Mamoru Hosoda", 
   rating: "PG", 
@@ -107,7 +114,7 @@ Movie.create!(title: "Summer Wars",
 #5 Action, Adventure, Sci-Fi, Comedy
 glinks(5, ["Adventure", "Action", "Sci-Fi", "Comedy"])
 
-Movie.create!(title: "The Wind Rises", 
+movie6 = Movie.create!(title: "The Wind Rises", 
   yr: 2013, 
   director: "Hayao Miyazaki", 
   rating: "PG-13", 
@@ -117,7 +124,7 @@ Movie.create!(title: "The Wind Rises",
 #6 Drama, War, Romance, Period
 glinks(6, ["Drama", "War", "Romance", "Period"])
 
-Movie.create!(title: "Sword of the Stranger", 
+movie7 = Movie.create!(title: "Sword of the Stranger", 
   yr: 2007, 
   director: "Masahiro Andô", 
   rating: "NR", 
@@ -127,7 +134,7 @@ Movie.create!(title: "Sword of the Stranger",
 #7 Period, Action, Historical, Adventure
 glinks(7, ["Adventure", "Action", "Period"])
 
-Movie.create!(title: "Howl's Moving Castle", 
+movie8 = Movie.create!(title: "Howl's Moving Castle", 
   yr: 2004, 
   director: "Hayao Miyazaki", 
   rating: "PG", 
@@ -137,7 +144,7 @@ Movie.create!(title: "Howl's Moving Castle",
 #8 Romance, Fantasy, Drama
 glinks(8, ["Drama", "Fantasy", "Romance"])
 
-Movie.create!(title: "Ghost in the Shell", 
+movie9 = Movie.create!(title: "Ghost in the Shell", 
   yr: 1995, 
   director: "Mamoru Oshii", 
   rating: "R", 
@@ -147,7 +154,7 @@ Movie.create!(title: "Ghost in the Shell",
 #9 Action, Sci-Fi, Drama
 glinks(9, ["Action", "Sci-Fi", "Drama"])
 
-Movie.create!(title: "Princess Mononoke", 
+movie10 = Movie.create!(title: "Princess Mononoke", 
   yr: 1997, 
   director: "Hayao Miyazaki", 
   rating: "PG-13", 
@@ -157,7 +164,7 @@ Movie.create!(title: "Princess Mononoke",
 #10 Drama, Fantasy, Action, Adventure
 glinks(10, ["Adventure", "Action", "Drama", "Fantasy"])
 
-Movie.create!(title: "My Neighbor Totoro", 
+movie11 = Movie.create!(title: "My Neighbor Totoro", 
   yr: 1988, 
   director: "Hayao Miyazaki", 
   rating: "G", 
@@ -167,7 +174,7 @@ Movie.create!(title: "My Neighbor Totoro",
 #11 Drama, Fantasy, Family
 glinks(11, ["Drama", "Fantasy", "Family", "Comedy"])
 
-Movie.create!(title: "Spirited Away", 
+movie12 = Movie.create!(title: "Spirited Away", 
   yr: 2001, 
   director: "Hayao Miyazaki", 
   rating: "PG", 
@@ -177,7 +184,7 @@ Movie.create!(title: "Spirited Away",
 #12 Fantasy, Family, Drama
 glinks(12, ["Drama", "Fantasy", "Family"])
 
-Movie.create!(title: "The Tale of Princess Kaguya", 
+movie13 = Movie.create!(title: "The Tale of Princess Kaguya", 
   yr: 2013, 
   director: "Isao Takahata", 
   rating: "PG", 
@@ -187,7 +194,7 @@ Movie.create!(title: "The Tale of Princess Kaguya",
 #13 Drama, Fantasy, Period
 glinks(13, ["Drama", "Fantasy", "Period"])
 
-Movie.create!(title: "Porco Ross", 
+movie14 = Movie.create!(title: "Porco Ross", 
   yr: 1992, 
   director: "Hayao Miyazaki", 
   rating: "PG", 
@@ -197,7 +204,7 @@ Movie.create!(title: "Porco Ross",
 #14 Drama, Fantasy, Period
 glinks(14, ["Drama", "Fantasy", "Period", "Action"])
 
-Movie.create!(title: "Whisper of the Heart", 
+movie15 = Movie.create!(title: "Whisper of the Heart", 
   yr: 1995, 
   director: "Yoshifumi Kondō", 
   rating: "PG", 
@@ -207,7 +214,7 @@ Movie.create!(title: "Whisper of the Heart",
 #15 Drama, Romance
 glinks(15, ["Drama", "Romance"])
 
-Movie.create!(title: "The Girl Who Leapt Through Time", 
+movie16 = Movie.create!(title: "The Girl Who Leapt Through Time", 
   yr: 2008, 
   director: "Mamoru Hosoda", 
   rating: "NR", 
@@ -217,7 +224,7 @@ Movie.create!(title: "The Girl Who Leapt Through Time",
 #16 Drama, Adventure, Family, Sci-Fi
 glinks(16, ["Drama", "Adventure", "Family", "Sci-Fi"])
 
-Movie.create!(title: "A Silent Voice", 
+movie17 = Movie.create!(title: "A Silent Voice", 
   yr: 2016, 
   director: "Naoko Yamada",
   rating: "NR", 
@@ -227,7 +234,7 @@ Movie.create!(title: "A Silent Voice",
 #17 Drama, Romance 
 glinks(17, ["Drama", "Romance"])
 
-Movie.create!(title: "Kiki’s Delivery Service", 
+movie18 = Movie.create!(title: "Kiki’s Delivery Service", 
   yr: 1989, 
   director: "Hayao Miyazaki", 
   rating: "G", 
@@ -237,7 +244,7 @@ Movie.create!(title: "Kiki’s Delivery Service",
 #18 Drama, Family, Fantasy
 glinks(18, ["Drama", "Fantasy", "Family"])
 
-Movie.create!(title: "Samurai X: The Movie", 
+movie19 = Movie.create!(title: "Samurai X: The Movie", 
   yr: 1997, 
   director: "Hatsuki Tsuji", 
   rating: "NR", 
@@ -247,7 +254,7 @@ Movie.create!(title: "Samurai X: The Movie",
 #19 Drama, Action, Period
 glinks(19, ["Drama", "Action", "Period"])
 
-Movie.create!(title: "My Hero Academia: Two Heroes", 
+movie20 = Movie.create!(title: "My Hero Academia: Two Heroes", 
   yr: 2018, 
   director: "Kenji Nagasaki", 
   rating: "PG-13", 
@@ -257,7 +264,7 @@ Movie.create!(title: "My Hero Academia: Two Heroes",
 #20 Action, Adventure, Fantasy, Sci-Fi
 glinks(20, ["Fantasy", "Adventure", "Action", "Family", "Sci-Fi"])
 
-Movie.create!(title: "Patema Inverted", 
+movie21 = Movie.create!(title: "Patema Inverted", 
   yr: 2013, 
   director: "Yasuhiro Yoshiura", 
   rating: "NR", 
@@ -267,7 +274,7 @@ Movie.create!(title: "Patema Inverted",
 #21 Fantasy, Sci-Fi, Adventure
 glinks(21, ["Fantasy", "Adventure", "Sci-Fi"])
 
-Movie.create!(title: "Mary and the Witch's Flower", 
+movie22 = Movie.create!(title: "Mary and the Witch's Flower", 
   yr: 2017, 
   director: "Hiromasa Yonebayashi", 
   rating: "PG", 
@@ -277,7 +284,7 @@ Movie.create!(title: "Mary and the Witch's Flower",
 #22 Fantasy, Adventure, Family
 glinks(22, ["Fantasy", "Adventure", "Family"])
 
-Movie.create!(title: "Dragon Ball Z: Battle of Gods", 
+movie23 = Movie.create!(title: "Dragon Ball Z: Battle of Gods", 
   yr: 2013, 
   director: "Masahiro Hosoda", 
   rating: "PG", 
@@ -287,7 +294,7 @@ Movie.create!(title: "Dragon Ball Z: Battle of Gods",
 #Action, Fantasy, Sci-fi
 glinks(23, ["Fantasy", "Action", "Sci-Fi"])
 
-Movie.create!(title: "Millennium Actress", 
+movie24 = Movie.create!(title: "Millennium Actress", 
   yr: 2001, 
   director: "Satoshi Kon", 
   rating: "PG", 
@@ -296,7 +303,7 @@ Movie.create!(title: "Millennium Actress",
   description: "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future.")
 glinks(24, ["Period", "Drama", "Fantasy"])
 
-Movie.create!(title: "One Piece Film: Z", 
+movie25 = Movie.create!(title: "One Piece Film: Z", 
   yr: 2012, 
   director: "Tatsuya Nagamine", 
   rating: "NR", 
@@ -305,7 +312,7 @@ Movie.create!(title: "One Piece Film: Z",
   description: "When the Dyna Stones are stolen by the diabolical former marine admiral Zephyr, now known as `Z', it's up to the Straw Hat Pirates to save the new world.")
 glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
 
-Movie.create!(title: "Pokémon: The First Movie", 
+movie26 = Movie.create!(title: "Pokémon: The First Movie", 
   yr: 1998, 
   director: "Kunihiko Yuyama", 
   rating: "G", 
@@ -314,7 +321,7 @@ Movie.create!(title: "Pokémon: The First Movie",
   description: "Ash Ketchum and his friends Misty, Brock, and Pikachu, discover Mewtwo, a super-powered Pokemon created through biological engineering.")
 glinks(26, ["Fantasy", "Family", "Sci-Fi", "Action", "Adventure"])
 
-Movie.create!(title: "Perfect Blue", 
+movie27 = Movie.create!(title: "Perfect Blue", 
   yr: 1997, 
   director: "Satoshi Kon", 
   rating: "R", 
@@ -323,7 +330,7 @@ Movie.create!(title: "Perfect Blue",
   description: "A retired pop singer turned actress' sense of reality is shaken when she is stalked by an obsessed fan and seemingly a ghost of her past.")
 glinks(27, ["Thriller", "Horror", "Drama"])
 
-Movie.create!(title: "Dragon Ball: The Path to Power", 
+movie28 = Movie.create!(title: "Dragon Ball: The Path to Power", 
   yr: 1996, 
   director: "Yamauchi Shigeyasu", 
   rating: "NR", 
@@ -332,7 +339,7 @@ Movie.create!(title: "Dragon Ball: The Path to Power",
   description: "Goku and Bulma go on an adventure to seek out the mystical Dragon Balls.")
 glinks(28, ["Fantasy", "Action", "Adventure", "Comedy"])
 
-Movie.create!(title: "Mirai", 
+movie29 = Movie.create!(title: "Mirai", 
   yr: 2018, 
   director: "Mamoru Hosoda", 
   rating: "PG", 
@@ -341,7 +348,7 @@ Movie.create!(title: "Mirai",
   description: "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister all grown up.")
 glinks(29, ["Fantasy", "Drama", "Adventure"])
 
-Movie.create!(title: "One Piece Film: Strong World", 
+movie30 = Movie.create!(title: "One Piece Film: Strong World", 
   yr: 2009, 
   director: "Munehisa Sakai", 
   rating: "NR", 
@@ -350,7 +357,7 @@ Movie.create!(title: "One Piece Film: Strong World",
   description: "Straw Hat Pirates must save their navigator and stop the legendary Pirate, Shiki the Golden Lion from conquering East Blue.")
 glinks(30, ["Fantasy", "Action", "Adventure", "Comedy"])
 
-Movie.create!(title: "One Piece Film: Gold", 
+movie31 = Movie.create!(title: "One Piece Film: Gold", 
   yr: 2017, 
   director: "Hiroaki Miyamoto", 
   rating: "NR", 
