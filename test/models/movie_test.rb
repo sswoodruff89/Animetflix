@@ -10,6 +10,8 @@
 #  runtime     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  director    :string           not null
+#  score       :float            not null
 #
 
 require 'test_helper'
