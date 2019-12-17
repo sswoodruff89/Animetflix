@@ -9,6 +9,7 @@ class MovieListItem extends React.Component{
     this.detailsLink = this.detailsLink.bind(this);
     this.pauseThumbnail = this.pauseThumbnail.bind(this);
     this.playThumbnail = this.playThumbnail.bind(this);
+    // this.redirectFullPlay = this.redirectFullPlay.bind(this);
   }
 
   detailsLink(displayType) {
@@ -43,10 +44,10 @@ class MovieListItem extends React.Component{
   }
 /////////
 
-redirectFullPlay(e) {
-  e.preventDefault();
-  this.props.history.push(`/watch/${this.props.movie.id}`);
-}
+// redirectFullPlay(e) {
+//   e.preventDefault();
+//   this.props.history.push(`/watch/${this.props.movie.id}`);
+// }
 
 
   render() {
@@ -75,11 +76,15 @@ redirectFullPlay(e) {
           onMouseLeave={this.pauseThumbnail} >
             
           <section className="movie-item-thumb-details" >
+
+            <Link to={`/watch/${movie.id}`} >
               <button className="play-full" 
-              // Set ClickHandler here
+                // onClick={this.redirectFullPlay} 
                 >
                 	<img className="item-play" src={window.playButton} alt=""/>
               </button>
+            </Link>
+
               <h4>{movie.title}</h4>
               <aside className="rating-runtime">
                 <span className="rating">{movie.rating}</span>

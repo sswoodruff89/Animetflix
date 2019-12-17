@@ -54,6 +54,7 @@
 .toggle-list-button {
   opacity: 0;
   min-width: 4vw;
+  max-width: 4vw;
   background-color: rgba(0, 0, 0, .5);
   font-size: 50px;
   text-align: center;
@@ -107,6 +108,7 @@ img.left-arrow {
   // width: 15.65%;
   max-height: 8.35vw;
   min-width: 14.77vw;
+  max-width: 14.77vw;
   margin: 0 0.12%;
   position: relative;
   transform: scale(1);

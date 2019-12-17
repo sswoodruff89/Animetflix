@@ -23,6 +23,10 @@ const App = (props) => {
       <Route path="/browse" component={NavBarContainer}/>
       <Route path="/search" component={NavBarContainer}/>
 
+      <Route path="/watch" render={() => {
+        return (<div></div>)
+      }} />
+
       <Route path="/" render={() => {
         return(
           <header className="auth-header">

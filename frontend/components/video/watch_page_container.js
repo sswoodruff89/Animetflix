@@ -4,6 +4,7 @@ import WatchPage from "./watch_page";
 
 
 const msp = (state, ownProps) => {
+  
   return {
     movie: state.entities.movies[ownProps.match.params.movieId]
   };

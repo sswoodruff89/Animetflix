@@ -1,5 +1,6 @@
 import React from "react";
 import Video from "./video";
+import { Link } from "react-router-dom";
 
 class WatchPage extends React.Component{
   constructor(props) {
@@ -44,16 +45,21 @@ class WatchPage extends React.Component{
 
     return (
       <main className="fullscreen">
-        <button className="back-to-last-address">
-          
-          Back to Browse
-        </button>
+        <Link to="/browse">
+          <button className="back-to-last-address">
+            Back to Browse
+          </button>
+        </Link>
 
         <section className="video-controls" >
           {pausePlay}
-
-
         </section>
+
+        {/* <section className="current-movie-details" >
+
+
+        </section> */}
+
         <section className="video-container">
           {/* <Video version="full" sourceVid={movie.clip}/> */}
           <Video version="full" />

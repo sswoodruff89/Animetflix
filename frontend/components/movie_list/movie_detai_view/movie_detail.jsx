@@ -1,5 +1,6 @@
 import React from "react";
 import Video from "../../video/video";
+import {Link} from "react-router-dom";
 
 
 class MovieDetail extends React.Component{
@@ -94,10 +95,12 @@ class MovieDetail extends React.Component{
         </aside>
 
         <div className="detail-buttons">
-          <button className="detail-play">
-            <span>&#9654;</span>
-            PLAY
-              </button>
+            <button className="detail-play">
+          <Link to={`/watch/${movie.id}`} >
+              <span>&#9654;</span>
+              PLAY
+          </Link>
+            </button>
           <button className="detail-watchlist">
             <i className="fas fa-plus"></i>
             MY LIST
