@@ -33,7 +33,6 @@ class MovieListItem extends React.Component{
 
 /////////HOVER VIDEO START/STOP
   playThumbnail(e) {
-    debugger
     let vid = e.currentTarget.previousSibling;
     vid.play();
   }
@@ -62,7 +61,7 @@ class MovieListItem extends React.Component{
     return (
       <>
         <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
-        <Video version="thumbnail"/>
+        <Video version="thumbnail" vidRef="thumbVidRef" />
 
         <section className="movie-item-info"
           onMouseEnter={this.playThumbnail}

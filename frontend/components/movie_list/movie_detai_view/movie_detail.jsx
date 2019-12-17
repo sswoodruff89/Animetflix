@@ -8,6 +8,7 @@ class MovieDetail extends React.Component{
     this.state = {
       tab: "overview",
       currentId: this.props.movie.id,
+      video: false,
       changing: false,
       closing: false
     };
@@ -23,6 +24,9 @@ class MovieDetail extends React.Component{
 
   componentDidMount() {
     this.props.requestMovie(this.props.match.params.movieId);
+    setTimeout(() => {
+      this.setState({video: true});
+    }, 1800);
   }
 
   componentDidUpdate() {
@@ -38,9 +42,17 @@ class MovieDetail extends React.Component{
   handleTab(type) {
     return (e) => {
       e.preventDefault();
-      let {tab} = this.state;
+      let {tab, video} = this.state;
+
+      ///Pause or play video
+      if (video) {
+        let vid = e.currentTarget.parentNode.parentNode.childNodes[0];
+        (tab === "overview") ? vid.pause() : vid.play();
+      }
+
       if (tab !== type) {
         this.setState({tab: type, changing: true});
+
         setTimeout(() => {
           this.setState({changing: false});
         }, 50);
@@ -50,7 +62,7 @@ class MovieDetail extends React.Component{
 
   closeDetails(e) {
     e.preventDefault();
-    this.setState({closing: true});
+    this.setState({closing: true, video: false});
     
     if (this.props.displayType === 'search') {
       setTimeout(() => {
@@ -140,14 +152,17 @@ class MovieDetail extends React.Component{
     let movie = this.props.movie || {};
     
     let genres = (this.props.genres) ? this.props.genres.join(", ") : "";
-    let {tab, closing} = this.state;
+    let {tab, closing, video} = this.state;
+    let paused = (tab !== "overview") ? "paused" : "";
     let closer = (closing) ? "closing" : "";
+
+    let videoRender = (video) ? (<Video version={`detail ${paused}`} />) : "";
     
     return(
 
       <section className={`movie-detail-page ${closer}`}>
 
-          <Video version="detail"/>
+          {videoRender}
 
           <section className="inner-detail-container">
 

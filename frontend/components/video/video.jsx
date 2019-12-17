@@ -4,20 +4,27 @@ class Video extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      version: this.props.version
-    };
+    // this.state = {
+    //   version: this.props.version
+    // };
 
   }
 
 
   render() {
-    debugger
+
+    let {version, vidRef} = this.props;
+    // let sourceVid = this.props.sourceVid || "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
+    let mute = (version === "thumbnail") ? true : false;
+    let autoplay = (version.includes("detail")) ? true : false;
+
     return (
       <>
-        <video className={this.state.version}
+        <video className={version}
           src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
-          muted />
+          ref={vidRef}
+           muted={mute}
+           autoPlay={autoplay} />
       </>
     )
   }
