@@ -14,6 +14,7 @@ const msp = (state, ownProps) => {
     genres = sortByListLength(genres);
   }
 
+
   return {
     session: state.session.id,
     genres,

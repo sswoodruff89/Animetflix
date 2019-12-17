@@ -59,4 +59,6 @@ class Movie < ApplicationRecord
   has_one_attached :background
   has_one_attached :logo
 
+  has_one_attached :clip
+
 end

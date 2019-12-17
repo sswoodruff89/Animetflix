@@ -14,17 +14,18 @@ class Video extends React.Component {
   render() {
 
     let {version, vidRef} = this.props;
-    // let sourceVid = this.props.sourceVid || "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
+    let sourceVid = this.props.sourceVid || "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
     let mute = (version === "thumbnail") ? true : false;
-    let autoplay = (version.includes("detail")) ? true : false;
-
+    let autoplay = (version.includes("detail") || version === "full") ? true : false;
+    let controls = (version === "full") ? true: false;
     return (
       <>
         <video className={version}
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
+          src={sourceVid}
           ref={vidRef}
            muted={mute}
-           autoPlay={autoplay} />
+           autoPlay={autoplay}
+           controls={controls} />
       </>
     )
   }

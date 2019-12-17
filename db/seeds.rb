@@ -66,7 +66,15 @@ movie1 = Movie.create!(title: "The Boy and the Beast",
   description: "When Kyuta stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice.")
 #1 
 glinks(1, ["Fantasy", "Action", "Adventure"])
+# movie1.logo.attach(io: File.open('app/assets/images/movie_photos/boy-and-the-beast-bakemono-nlogo.png'), filename: 'boy-and-the-beast-bakemono-nlogo.png')
+# movie1.thumbnail.attach(io: File.open('app/assets/images/movie_photos/boy_and_beast_thumb.png'), filename: 'boy_and_beast_thumb.png')
+# movie1.background.attach(io: File.open('app/assets/images/movie_photos/boy_and_beast_back.jpg'), filename: 'boy_and_beast_back.jpg')
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> sideline2
 movie2 = Movie.create!(title: "Akira", 
   yr: 1988, 
   director: "Katsuhiro Otomo", 
@@ -97,6 +105,11 @@ movie4 = Movie.create!(title: "Dragon Ball Super Broly",
 #4 Action, Fantasy, Sci-fi
 glinks(4, ["Fantasy", "Action", "Sci-Fi"])
 
+<<<<<<< HEAD
+=======
+# movie4.clip.attach(io: File.open('app/assets/images/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+
+>>>>>>> sideline2
 movie5 = Movie.create!(title: "Summer Wars", 
   yr: 2009, 
   director: "Mamoru Hosoda", 
