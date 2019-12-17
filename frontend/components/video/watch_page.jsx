@@ -12,6 +12,10 @@ class WatchPage extends React.Component{
     this.handlePlayPause = this.handlePlayPause.bind(this);
   }
 
+  componentDidMount() {
+    this.props.requestMovie(this.props.match.params.movieId);
+  }
+
   previousPage(e) {
     e.preventDefault();
     this.props.history.push(this.props.previousPage);
@@ -24,6 +28,7 @@ class WatchPage extends React.Component{
   }
 
   render() {
+    // let movie = (this.props.movie) ? this.props.movie: {};
 
     let pausePlay = (this.state.play) ? (
           <button className="play"
@@ -50,6 +55,7 @@ class WatchPage extends React.Component{
 
         </section>
         <section className="video-container">
+          {/* <Video version="full" sourceVid={movie.clip}/> */}
           <Video version="full" />
 
         </section>

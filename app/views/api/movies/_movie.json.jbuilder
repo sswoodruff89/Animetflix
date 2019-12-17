@@ -9,11 +9,11 @@ json.genreIds movie.genre_ids
 # else 
 #   json.thumbnail image_url("gokutemp.jpg")
 # end
-
 if (details)
   json.description movie.description
   json.yr movie.yr
   json.score movie.score
+  # json.clip url_for(movie.clip)
 
   # if (movie.logo.attached?)
   #   json.logo url_for(movie.logo)
