@@ -8,5 +8,8 @@ if (details)
   json.description movie.description
   json.yr movie.yr
   json.score movie.score
-  
+
+  # if (movie.logo.attached?)
+  #   json.logo url_for(movie.logo)
+  # end
 end

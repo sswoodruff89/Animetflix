@@ -53,4 +53,8 @@ class Movie < ApplicationRecord
     self.genres.map {|genre| genre.name}
   end
 
+  has_one_attached :thumbnail
+  has_one_attached :background
+  has_one_attached :logo
+
 end

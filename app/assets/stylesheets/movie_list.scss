@@ -53,7 +53,7 @@
 
 .toggle-list-button {
   opacity: 0;
-  min-width: 3.5%;
+  min-width: 4vw;
   background-color: rgba(0, 0, 0, .5);
   font-size: 50px;
   text-align: center;
@@ -105,14 +105,15 @@ img.left-arrow {
 .movie-item {
   // min-width: 230px;
   // width: 15.65%;
-  min-width: 16.43%;
-  max-width: 16.43%;
+    max-height: 8.35vw;
+    min-width: 14.77vw;
   margin: 0 0.12%;
   position: relative;
   transform: scale(1);
   transition-property: all;
   // transition-delay: 500ms;
   transition-duration: 0.5s;
+  border: 1px solid white;
 
 }
 
@@ -179,7 +180,6 @@ li#first-in-slide:hover ~ li.movie-item{
 ////inside MOVIE ITEM
 
 .movie-item .background-image {
-  border: none;
   width: 100%;
   // filter: brightness(50%);
   transition-property: all;
@@ -191,6 +191,7 @@ li#first-in-slide:hover ~ li.movie-item{
 .movie-item-info {
   opacity: 0;///
   font-size: 1em;
+  height: 100%;
   padding: 7.5% 2%;
   position: absolute;
   color: black;

@@ -33,7 +33,7 @@ class Browse extends React.Component{
         <section className="lists-container">
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            if (genre.name === "Action" || genre.name === "Sci-Fi") {
+            if (genre.name === "Action") {
               return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >
