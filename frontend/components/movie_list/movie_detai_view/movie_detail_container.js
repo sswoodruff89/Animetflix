@@ -5,13 +5,18 @@ import {withRouter} from "react-router-dom";
 
 
 const msp = (state, ownProps) => {
-  
-  let movie = state.entities.movies[ownProps.match.params.movieId];
-  let genres = (movie.genreIds.length > 0 && movie.genreIds[0]) ? movie.genreIds.map((id) => {
+  let movie;
+  if (ownProps.home) {
+    movie = state.entities.movies[ownProps.movieId] || {};
+  } else {
+    movie = state.entities.movies[ownProps.match.params.movieId];
+  }
+  debugger
+  let genres = (movie.genreIds && movie.genreIds[0]) ? movie.genreIds.map((id) => {
     return state.entities.genres[id].name;
   }) : [];
   
-  let displayType = (ownProps.history.location.pathname.includes("search")) ? "search" : "browse";
+  let displayType = (ownProps.history && ownProps.history.location.pathname.includes("search")) ? "search" : "browse";
 
 
   return {
@@ -29,4 +34,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default withRouter(connect(msp, mdp)(MovieDetail));
+export default connect(msp, mdp)(MovieDetail);

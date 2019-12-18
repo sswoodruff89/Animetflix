@@ -28,8 +28,12 @@ class Browse extends React.Component{
       return <LoadingPage />
     }
 
+    let firstMovieId = (genres[0] !== undefined) ? genres[0].movie_ids[0] : null;
+
     return (
       <main className="browse-background">
+        {/* <MovieDetailContainer home="true" movieId={firstMovieId}/> */}
+
         <section className="lists-container">
           {genres.map((genre, i) => {
             //remove condition when done formatting

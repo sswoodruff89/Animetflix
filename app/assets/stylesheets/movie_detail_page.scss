@@ -250,6 +250,13 @@ button.detail-closer {
     margin-top: 1%;
 }
 
+.stars {
+  color: rgb(214, 193, 0);
+  overflow: hidden;
+  display: flex;
+  margin: 0;
+}
+
 aside .rating {
   padding: .1em .2em;
   margin: 0;
