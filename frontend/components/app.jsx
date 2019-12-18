@@ -70,6 +70,9 @@ const App = (props) => {
         )
       }} />
 
+      <Route path="/watch" render={() => {
+        return (<div></div>)
+      }} />
 
       <Route path="/" render={() => {
         return (

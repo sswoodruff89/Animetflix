@@ -239,7 +239,13 @@ li#first-in-slide:hover ~ li.movie-item{
 img.item-play {
   width: 20%;
   transform: translateY(17%);
+  filter: brightness(5) saturate(0);
 }
+
+.movie-item:hover img.item-play {
+  filter: brightness(1) saturate(1);
+}
+
 
 // .movie-item:hover 
 .movie-item-info h4 {
