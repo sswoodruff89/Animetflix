@@ -5,7 +5,6 @@ import SearchPage from "./search_page";
 
 const msp = (state, ownProps) => {
   let {movieIds, searchlist} = state.entities.search; 
-  debugger
   // let movieIds;
   if (movieIds && movieIds.length > 0) {
     movieIds = sortBySearch(state.entities.movies, movieIds, ownProps.match.params.searchQuery);
