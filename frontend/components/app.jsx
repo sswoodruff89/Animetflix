@@ -43,6 +43,7 @@ const App = (props) => {
     </Switch>
 
 
+
       <Route exact path="/loading" component={LoadingPage} />
       
       <AuthRoute exact path="/" component={HomePageContainer} /> 
@@ -73,6 +74,10 @@ const App = (props) => {
       <Route path="/watch" render={() => {
         return (<div></div>)
       }} />
+
+      {/* <Route path="/loading" render={() => {
+        return (<div></div>)
+      }} /> */}
 
       <Route path="/" render={() => {
         return (

@@ -8,18 +8,18 @@ module MovieFilter
       # table_query = self.arel_table
       filter_query = filter_query.downcase
 
-      results = self.where("translate(title, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
+      results = self.where("translate(title, ':-;%', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
 
     def director_filter(filter_query)
       filter_query = filter_query.downcase
-      results = self.where("translate(director, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
+      results = self.where("translate(director, ':-;%', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
 
     #FOR GENRE
     def genre_filter(filter_query)
       filter_query = filter_query.downcase
-      results = self.where("translate(name, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
+      results = self.where("translate(name, ':-;%', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
     ##
 
@@ -29,15 +29,16 @@ module MovieFilter
       # table_query = self.arel_table
       filter_query = filter_query.downcase
 
-      results = self.where("translate(title, ':-;', '') ILIKE :start_query 
+      results = self.joins(:genres).where("translate(genres.name, '%:-;', '') ILIKE :start_query
+        OR translate(title, ':-;%', '') ILIKE :start_query 
         OR translate(director, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
 
     def all_include_filter(filter_query)
       filter_query = filter_query.downcase
 
-      results = self.where("translate(title, ':-;', '') ILIKE :start_query 
-        OR translate(director, ':-;', '') ILIKE :start_query", start_query: "%#{filter_query}%")
+      results = self.where("translate(title, ':%-;', '') ILIKE :start_query 
+        OR translate(director, ':-;%', '') ILIKE :start_query", start_query: "%#{filter_query}%")
     end
 
   end

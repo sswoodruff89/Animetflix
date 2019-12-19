@@ -5,6 +5,38 @@
   position: relative;
 }
 
+section.search-header {
+  display: flex;
+  /* width: 100%; */
+  margin: 0 4vw;
+  margin-bottom: 3vh;
+}
+
+.expected-results {
+  min-width: 13%;
+  padding: 4px 0;
+  color: gray;
+}
+
+section.search-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-buttons {
+  border-right: 1px solid white;
+  padding: 3px 8px;
+  font-size: 1.1em;
+}
+
+.list-buttons:hover {
+  color: rgb(68, 171, 255);
+}
+
+.list-buttons:last-child {
+  border: none;
+}
+
 .search-list-detail-container {
   margin-bottom: 4.5%;
 }

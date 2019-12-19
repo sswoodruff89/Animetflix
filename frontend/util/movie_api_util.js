@@ -22,7 +22,15 @@ export const fetchGenres = () => {
 export const searchMovies = (searchQuery) => {
   return $.ajax({
     method: "GET",
-    url: "/api/movies",
+    url: "/api/movies/search",
     data: { search_query: searchQuery }
   });
 };
+
+// export const searchMovies = (searchQuery) => {
+//   return $.ajax({
+//     method: "GET",
+//     url: "/api/movies",
+//     data: { search_query: searchQuery }
+//   });
+// };

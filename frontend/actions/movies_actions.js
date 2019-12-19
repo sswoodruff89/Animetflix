@@ -21,10 +21,10 @@ export const receiveMovie = (movie) => {
 };
 
 //////FOR SEARCH PAGE
-export const receiveSearchedMovies = (movies) => {
+export const receiveSearchedMovies = (payload) => {
   return {
     type: RECEIVE_SEARCHED_MOVIES,
-    movies
+    payload
   };
 };
 
@@ -70,8 +70,8 @@ export const requestMovie = (movieId) => dispatch => {
 export const requestSearchedMovies = (searchQuery) => dispatch => {
   dispatch(startLoadingMovies());
 
-  return MovieAPIUtil.searchMovies(searchQuery).then((movies) => {
-    return dispatch(receiveSearchedMovies(movies));
+  return MovieAPIUtil.searchMovies(searchQuery).then((payload) => {
+    return dispatch(receiveSearchedMovies(payload));
   }, (errors) => {
     return dispatch(receiveSearchErrors(errors.responseJSON));
   });

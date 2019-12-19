@@ -4,14 +4,19 @@ import {sortBySearch} from "../../reducers/sort_selector";
 import SearchPage from "./search_page";
 
 const msp = (state, ownProps) => {
-  let {search} = state.entities; 
-  let movieIds;
-  movieIds = sortBySearch(state.entities.movies, search, ownProps.match.params.searchQuery);
+  let {movieIds, searchlist} = state.entities.search; 
+  debugger
+  // let movieIds;
+  if (movieIds && movieIds.length > 0) {
+    movieIds = sortBySearch(state.entities.movies, movieIds, ownProps.match.params.searchQuery);
+  }
+  
 
   return {
     // movies: movies,
     // matches: "",
     movieIds,
+    searchlist,
     errors: state.errors.search
   };
 };

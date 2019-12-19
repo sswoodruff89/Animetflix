@@ -83,7 +83,6 @@ class MovieList extends React.Component{
       let endPercentage = (tilEnd && tilEnd < 6 && lastMovie % 6 > 0) ? (
         (100 - ((lastMovie % 6) / 6) * 100)
       ) : 0;
-      debugger
       slideMovePercentage = ((100 * (slideCount) - 0.35) - (endPercentage));
     }
     //////

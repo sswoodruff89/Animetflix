@@ -15,7 +15,6 @@ export default (state = {}, action) => {
       };
       return Object.assign({}, state, newWatch);
     case REMOVE_WATCH:
-      debugger
       let newState = Object.assign({}, state);
       delete newState[action.movieId];
       return newState;
