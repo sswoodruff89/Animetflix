@@ -79,9 +79,12 @@ movie2 = Movie.create!(title: "Akira",
   description: "A secret military project endangers Neo-Tokyo when it turns a biker gang member into a rampaging psychic psychopath who can only be stopped by two teenagers and a group of psychics.")
 #2 
 glinks(2, ["Thriller", "Action", "Sci-Fi"])
-movie1.logo.attach(io: File.open('app/assets/images/movie_photos/akira_logo.png'), filename: 'akira_logo.png')
-movie1.thumbnail.attach(io: File.open('app/assets/images/movie_photos/akira_thumb.png'), filename: 'akira_thumb.png')
-movie1.background.attach(io: File.open('app/assets/images/movie_photos/akira_back.jpg'), filename: 'akira_back.jpg')
+# movie2.logo.attach(io: File.open('app/assets/images/movie_photos/akira_logo.png'), filename: 'akira_logo.png')
+# movie2.thumbnail.attach(io: File.open('app/assets/images/movie_photos/akira_thumb.png'), filename: 'akira_thumb.png')
+# movie2.background.attach(io: File.open('app/assets/images/movie_photos/akira_back.jpg'), filename: 'akira_back.jpg')
+
+# movie2.clip.attach(io: File.open('app/assets/images/video/akira_clip.mp4'), filename: 'akira_clip.mp4')
+
 
 movie3 = Movie.create!(title: "Grave of the Fireflies", 
   yr: 1993, 
@@ -103,7 +106,7 @@ movie4 = Movie.create!(title: "Dragon Ball Super Broly",
 #4 Action, Fantasy, Sci-fi
 glinks(4, ["Fantasy", "Action", "Sci-Fi"])
 
-# movie4.clip.attach(io: File.open('app/assets/images/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+# movie4.clip.attach(io: File.open('app/assets/images/video/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
 
 movie5 = Movie.create!(title: "Summer Wars", 
   yr: 2009, 
