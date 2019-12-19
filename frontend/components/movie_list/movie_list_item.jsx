@@ -5,10 +5,14 @@ import Video from "../video/video";
 class MovieListItem extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      watched: (this.props.watched) ? true : false
+    };
 
     this.detailsLink = this.detailsLink.bind(this);
     this.pauseThumbnail = this.pauseThumbnail.bind(this);
     this.playThumbnail = this.playThumbnail.bind(this);
+    this.handleWatchList = this.handleWatchList.bind(this);
     // this.redirectFullPlay = this.redirectFullPlay.bind(this);
   }
 
@@ -17,7 +21,7 @@ class MovieListItem extends React.Component{
 
     if (displayType === "browse") {
       return (
-        <Link to={`/browse/genre_${this.props.genreId}/${movie.id}`}>
+        <Link to={`/browse/list_${this.props.listName}/${movie.id}`}>
           <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
         </Link>
       )
@@ -44,6 +48,18 @@ class MovieListItem extends React.Component{
   }
 /////////
 
+
+  handleWatchList(e) {
+    e.preventDefault();
+    let watchStatus = this.state.watched;
+
+    if (watchStatus) {
+      this.props.removeFromWatchList(this.props.watched.id);
+    } else {
+      this.props.addToWatchList(this.props.movie.id);
+    }
+    this.setState({ watched: !watchStatus });
+  }
 // redirectFullPlay(e) {
 //   e.preventDefault();
 //   this.props.history.push(`/watch/${this.props.movie.id}`);
@@ -64,6 +80,18 @@ class MovieListItem extends React.Component{
         })
     ) : "";
 
+    let watchStatus = (this.state.watched) ? (
+      <button className="watchlist" 
+      onClick={this.handleWatchList}>
+        <img className="added" src={window.check} alt="check" />
+      </button>
+    ) : (
+        <button className="watchlist" 
+          onClick={this.handleWatchList}>
+          <img className="add" src={window.add} alt="add" />
+        </button>
+      )
+
     return (
       <>
         <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
@@ -78,9 +106,7 @@ class MovieListItem extends React.Component{
           <section className="movie-item-thumb-details" >
 
             <Link to={`/watch/${movie.id}`} >
-              <button className="play-full" 
-                // onClick={this.redirectFullPlay} 
-                >
+              <button className="play-full" >
                 	<img className="item-play" src={window.playButton} alt=""/>
               </button>
             </Link>
@@ -95,6 +121,8 @@ class MovieListItem extends React.Component{
               </ul>
 
           </section>
+
+          {watchStatus}
 
         </section>
         <section className="down-arrow-container">

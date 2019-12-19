@@ -8,6 +8,7 @@ class Api::MoviesController < ApplicationController
     elsif params[:search_query]
 
       @movies = search_filter_list(params[:search_query])
+      
     else
       
       @movies = Movie.with_attached_logo.all.includes(:genres)

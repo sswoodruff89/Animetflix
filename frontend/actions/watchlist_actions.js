@@ -1,8 +1,10 @@
 import * as WatchlistAPIUtil from "../util/watchlist_api_util";
+import {startLoadingMovies} from "./movies_actions";
 
 export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
 export const RECEIVE_NEW_WATCH = "RECEIVE_NEW_WATCH";
 export const REMOVE_WATCH = "REMOVE_WATCH";
+
 
 
 export const receiveWatchlist = (watchlist) => {
@@ -30,6 +32,8 @@ export const removeWatch = (movieId) => {
 
 
 export const fetchWatchlist = () => dispatch => {
+  // dispatch(startLoadingMovies());
+
   return WatchlistAPIUtil.fetchWatchlist().then((watchlist) => {
     return dispatch(receiveWatchlist(watchlist));
   });

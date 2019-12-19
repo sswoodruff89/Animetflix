@@ -16,10 +16,12 @@ module MovieFilter
       results = self.where("translate(director, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
 
+    #FOR GENRE
     def genre_filter(filter_query)
       filter_query = filter_query.downcase
-      results = self.where("translate(genre, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
+      results = self.where("translate(name, ':-;', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
+    ##
 
     def all_filter(filter_query)
 

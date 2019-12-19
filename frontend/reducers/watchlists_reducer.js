@@ -15,8 +15,9 @@ export default (state = {}, action) => {
       };
       return Object.assign({}, state, newWatch);
     case REMOVE_WATCH:
+      debugger
       let newState = Object.assign({}, state);
-      delete state.entities.watchlists[action.movieId];
+      delete newState[action.movieId];
       return newState;
     case RECEIVE_CURRENT_USER:
       watchlist = action.payload.watchlist;

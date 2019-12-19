@@ -48,3 +48,9 @@ export const sortByListLength = (obj) => {
     return (a.movie_ids.length < b.movie_ids.length) ? 1 : (a.movie_ids.length > b.movie_ids.length) ? -1 : 0;
   });
 };
+
+export const sortByDateAdded =  (obj) => {
+  return obj.sort((a, b) => {
+    return (a.created_at < b.created_at) ? 1 : (a.created_at > b.created_at) ? -1 : 0;
+  });
+};

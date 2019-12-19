@@ -9,14 +9,19 @@ import Video from "../video/video";
 class Browse extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      watched: this.props.watched
+    };
 
     this.handleLogOut = this.handleLogOut.bind(this);
     this.renderHomeDetails = this.renderHomeDetails.bind(this);
     this.renderShowcaseDetails = this.renderShowcaseDetails.bind(this);
-    this.redirectShowcase = this. redirectShowcase.bind(this);
+    this.redirectShowcase = this.redirectShowcase.bind(this);
+    this.handleWatchList = this.handleWatchList.bind(this);
   }
 
   componentDidMount() {
+    this.props.fetchWatchlist();
     this.props.requestGenres();
     this.props.requestAllMovies();
   }
@@ -28,13 +33,36 @@ class Browse extends React.Component{
 
   redirectShowcase(movie) {
     return (e) => {
+      e.preventDefault();
       this.props.history.push(`/browse/showcase/${movie.id}`);
     };
+  }
+
+  handleWatchList(e) {
+    e.preventDefault();
+    let watchStatus = this.state.watched;
+
+    if (watchStatus) {
+      this.props.removeFromWatchList(this.props.showcaseMovie.id);
+    } else {
+      this.props.addToWatchList(this.props.showcaseMovie.id);
+    }
+    this.setState({ watched: !watchStatus });
   }
 
   renderHomeDetails(movie) {
     if (movie) {
       clearTimeout(this.showcaseDisplay);
+
+      let watchStatus = (this.state.watched) ? (
+        <span className="button-icon">
+            <i className="fas fa-check"></i>
+        </span>
+      ) : (
+          <span className="button-icon">
+              <i className="fas fa-plus"></i>
+          </span>
+      )
       return (
         <>
           <div className="vid-container">
@@ -57,14 +85,12 @@ class Browse extends React.Component{
                   </Link>
                 </button>
 
-                <button className="showcase-watchlist">
-                  <span className="button-icon"><i className="fas fa-plus"></i></span>
+                <button className="showcase-watchlist" onClick={this.handleWatchList}>
+                  {watchStatus}
                   <span>My List</span>
                 </button>
 
-                <button className="showcase-more-info"
-                  // onClick={this.redirectShowcase(this.props.showcaseMovie)}
-                  >
+                <button className="showcase-more-info">
                   <Link to={`/browse/showcase/${movie.id}`} >
                     <span className="button-icon">&#x24D8;</span>
                     <span>More Info</span>
@@ -96,7 +122,7 @@ class Browse extends React.Component{
   }
 
   render() {
-    const {genres, loading} = this.props;
+    const {genres, watchlist, loading} = this.props;
 
     if (loading) {
       return <LoadingPage />
@@ -120,6 +146,15 @@ class Browse extends React.Component{
         </section>
 
         <section className="lists-container">
+          <section className="list-and-detail-container">
+            <section className="single-list-container" >
+              <MovieListContainer listName={watchlist} listType="watchlist" />
+            </section>
+            <Route path={`/browse/list_watchlist/:movieId`}
+              component={MovieDetailContainer}
+              displayType="browse" />
+          </section>
+
           {genres.map((genre, i) => {
             //remove condition when done formatting
             // if (genre.movie_ids.length > 12) {
@@ -127,9 +162,9 @@ class Browse extends React.Component{
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >
-                    <MovieListContainer genre={genre} />
+                    <MovieListContainer listName={genre} listType="genre"/>
                   </section>
-                    <Route path={`/browse/genre_${genre.id}/:movieId`} 
+                    <Route path={`/browse/list_${genre.name}/:movieId`} 
                     component={MovieDetailContainer} 
                     key={genre.id}
                     displayType="browse"/>

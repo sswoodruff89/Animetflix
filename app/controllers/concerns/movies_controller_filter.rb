@@ -1,6 +1,8 @@
 module MoviesControllerFilter
 
   def search_filter_list(query)
+    genre = Genre.genre_filter(query)
+
     list = Movie.all_filter(query).limit(18).includes(:genres)
     if (list.length < 18)
 

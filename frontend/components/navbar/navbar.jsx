@@ -13,6 +13,8 @@ class NavBar extends React.Component{
       searchBarClosing: false,
       // scrolling: false
     };
+
+    this.searchTimeout;
     this.handleLogOut = this.handleLogOut.bind(this);
     this.dropDropDown = this.dropDropDown.bind(this);
     this.hideDropDown = this.hideDropDown.bind(this);
@@ -37,19 +39,25 @@ class NavBar extends React.Component{
 
   searchBarToggle(e) {
     let searchBar = this.state.searchBar;
+
     if (this.state.query.searchQuery === "") {
+
       if (searchBar === "") { 
         this.setState({ searchBar: "active" })
       } else { 
         this.setState({searchBarClosing: true});
         setTimeout(() => {
           this.setState({ searchBar: "", searchBarClosing: false });
-        }, 500)
+        }, 500);
+
       }
     }
   }
 
   handleInput(e) {
+
+      clearTimeout(this.searchTimeout);
+      
       let query = this.state.query;
       query.searchQuery = e.target.value;
       this.setState({ query });
@@ -60,10 +68,10 @@ class NavBar extends React.Component{
         this.props.history.push(`/search/`);
         
 //////figure out Warning: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.
-        setTimeout(() => {
+        this.searchTimeout = setTimeout(() => {
           this.props.history.push(`/search/${query.searchQuery}`);
 
-        }, 200);
+        }, 300);
       }
   }
 
