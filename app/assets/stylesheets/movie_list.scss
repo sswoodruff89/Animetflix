@@ -25,7 +25,7 @@
 }
 
 .list-name{
-  padding-left: 3.5%;
+  padding-left: 4.1vw;
   margin-bottom: 0.7%;
   
   font-weight: 500;
@@ -53,8 +53,8 @@
 
 .toggle-list-button {
   opacity: 0;
-  min-width: 4.1vw;
-  max-width: 4.1vw;
+  min-width: 4.2%;
+  max-width: 4.2%;
   background-color: rgba(0, 0, 0, .5);
   font-size: 50px;
   text-align: center;
@@ -246,6 +246,24 @@ img.item-play {
   filter: brightness(1) saturate(1);
 }
 
+
+.watchlist {
+  position: absolute;
+  z-index: 14;
+  width: 11%;
+  height: auto;
+  right: 2%;
+  bottom: 15%;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: all 100ms ease 100ms
+}
+
+.watchlist:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  transition: all 100ms ease 100ms
+}
 
 // .movie-item:hover 
 .movie-item-info h4 {

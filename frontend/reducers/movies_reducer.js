@@ -4,7 +4,6 @@ import {RECEIVE_ALL_MOVIES, RECEIVE_MOVIE, RECEIVE_SEARCHED_MOVIES} from "../act
 export default (state = {}, action) => {
   Object.freeze(state);
   
-  
   switch (action.type) {
     case RECEIVE_ALL_MOVIES:
       return action.movies;
@@ -14,7 +13,7 @@ export default (state = {}, action) => {
       };
       return Object.assign({}, state, newMovie);
     case RECEIVE_SEARCHED_MOVIES:
-      return Object.assign({}, state, action.movies);
+      return Object.assign({}, state, action.payload.movies);
     default:
       return state;
   }

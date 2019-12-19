@@ -8,9 +8,10 @@ class MovieDetail extends React.Component{
     super(props);
     this.state = {
       tab: "overview",
-      currentId: this.props.movie.id,
+      currentId: (this.props.movie) ? this.props.movie.id : "",
       video: false,
       changing: false,
+      watched: (this.props.watched) ? true : false,
       closing: false
     };
 
@@ -18,7 +19,7 @@ class MovieDetail extends React.Component{
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
     this.currentTabPage = this.currentTabPage.bind(this);
-
+    this.handleWatchList = this.handleWatchList.bind(this);
     this.closeDetails = this.closeDetails.bind(this);
 
   }
@@ -65,6 +66,18 @@ class MovieDetail extends React.Component{
     };
   }
 
+  handleWatchList(e) {
+    e.preventDefault();
+    let watchStatus = this.state.watched;
+
+    if (watchStatus) {
+      this.props.removeFromWatchList(this.props.watched.id);
+    } else {
+      this.props.addToWatchList(this.props.movie.id);
+    }
+    this.setState({watched: !watchStatus});
+  }
+
   closeDetails(e) {
     e.preventDefault();
     this.setState({closing: true, video: false});
@@ -77,7 +90,7 @@ class MovieDetail extends React.Component{
     } else {
 
       setTimeout(() => {
-          this.props.history.push("/browse");
+          this.props.history.goBack();
       }, 600);
     }
   }
@@ -86,6 +99,13 @@ class MovieDetail extends React.Component{
     let score = {
       width: `${(movie.score / 5) * 100}%`
     };
+
+    let watchStatus = (this.state.watched) ? (
+      <i className="fas fa-check"></i>
+    ) : (
+      <i className="fas fa-plus"></i>
+    )
+
     return (
       <section className="detail-content-container"
         style={fadeIn}   >
@@ -119,10 +139,11 @@ class MovieDetail extends React.Component{
               PLAY
           </Link>
             </button>
-          <button className="detail-watchlist">
-            <i className="fas fa-plus"></i>
+          <button className="detail-watchlist"
+            onClick={this.handleWatchList}>
+            {watchStatus}
             MY LIST
-              </button>
+          </button>
         </div>
 
         <span className="genre-cap">

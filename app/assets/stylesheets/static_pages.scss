@@ -52,6 +52,8 @@ header {
 }
 .auth-header {
   height: 90px;
+  position: absolute;
+  z-index: 2;
 }
 
 .logo-container{
@@ -130,7 +132,7 @@ header {
 .browse-footer {
   height: 236px;
   width: 100%;
-  position: relative;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   margin-top: 5%;
   z-index: 1;

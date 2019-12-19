@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
     resources :movies, only: [:index, :show] do
       resources :watchlists, only: [:create, :destroy]
+
+      collection do
+        get 'search'
+      end
     end
+
+ 
 
     resources :genres, only: :index do
       resources :movies, only: :index

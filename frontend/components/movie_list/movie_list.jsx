@@ -68,7 +68,9 @@ class MovieList extends React.Component{
  ///RENDERS BASED ON BROWSE OR SEARCH
   browseOrSearch(displayType) {
 
-    const genre = (this.props.genre) ? this.props.genre : "";
+
+    const listName = (this.props.listType === "genre") ? this.props.listName.name : 
+      (this.props.listType === "watchlist") ? "Watchlist" : "";
     const { slideCount, tilEnd, lastMovie } = this.state;
     let movies = (this.props.movies) ? this.props.movies : [];
     const hide = (slideCount === 0) ? "hidden" : "";
@@ -81,7 +83,7 @@ class MovieList extends React.Component{
       let endPercentage = (tilEnd && tilEnd < 6 && lastMovie % 6 > 0) ? (
         (100 - ((lastMovie % 6) / 6) * 100)
       ) : 0;
-      slideMovePercentage = ((100 * (slideCount)) - (endPercentage));
+      slideMovePercentage = ((100 * (slideCount) - 0.35) - (endPercentage));
     }
     //////
 
@@ -96,7 +98,7 @@ class MovieList extends React.Component{
       let searchQuery = this.props.match.params.searchQuery;
       let listNum = this.props.listNum;
       let checkOpenDetail = (this.props.history.location.pathname.includes(`${searchQuery}/${listNum}`)) ? true : false;
-
+      
       return (
         <>
           <ul className="movie-slider search" >
@@ -119,11 +121,11 @@ class MovieList extends React.Component{
         </>
       )
     } else {
-      let checkOpenDetail = (this.props.history.location.pathname.includes(`genre_${genre.id}`)) ? true : false;
+      let checkOpenDetail = (this.props.history.location.pathname.includes(`list_${listName}`)) ? true : false;
 
       return (
         <>
-          <h3 className={`list-name`}>{genre.name}</h3>
+          <h3 className={`list-name`}>{listName}</h3>
           <ul className="list-with-buttons">
 
             <button className={`toggle-list-button left ${hide}`}
@@ -141,7 +143,7 @@ class MovieList extends React.Component{
                       <li key={i}
                         id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
                         className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
-                        <MovieListItemContainer movie={movie} displayType={displayType} genreId={genre.id} />
+                        <MovieListItemContainer movie={movie} displayType={displayType} listName={listName} />
                       </li>
                     )
                   }

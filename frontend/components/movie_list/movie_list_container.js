@@ -6,13 +6,25 @@ import {withRouter} from "react-router-dom";
 import MovieList from "./movie_list";
 
 const msp = (state, ownProps) => {
-  let movies = ownProps.genre.movie_ids.map((movieId) => {
-    return state.entities.movies[movieId];
-  });
+  let movies
+
+  if (ownProps.listType === "genre") {
+    movies = (ownProps.listName.movie_ids.length > 0) ? ownProps.listName.movie_ids.map((movieId) => {
+      return state.entities.movies[movieId];
+    }) : [];
+  } else {
+    movies = (ownProps.listName.length > 0) ? ownProps.listName.map((watchedMovie) => {
+      return state.entities.movies[watchedMovie.movie_id];
+    }) : [];
+  }
+  // movies= (ownProps.listName.length > 0 ) ? ownProps.listName.movie_ids.map((movieId) => {
+  //   return state.entities.movies[movieId];
+  // }) : [];
   
    return {
     movies: movies,
-    displayType: "browse"
+    displayType: "browse",
+    listType: ownProps.listType
   };
 };
 

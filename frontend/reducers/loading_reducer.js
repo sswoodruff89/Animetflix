@@ -5,6 +5,7 @@ import {
   RECEIVE_SEARCH_ERRORS,
   START_LOADING_MOVIES
 } from "../actions/movies_actions";
+import {RECEIVE_WATCHLIST} from "../actions/watchlist_actions"; 
 // import {
 //   RECEIVE_GENRES, START_LOADING_GENRES
 // } from "../actions/genre_actions";

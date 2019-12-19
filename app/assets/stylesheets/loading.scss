@@ -20,6 +20,14 @@
   top: 30vh;
 }
 
+.loading-back {
+  height: 100vh;
+  background-color: rgb(0, 3, 8);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
 .loading div {
   min-width: 16.43%;
   max-width: 16.43%;

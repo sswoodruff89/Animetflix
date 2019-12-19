@@ -70,6 +70,7 @@ class Movie < ApplicationRecord
   has_one_attached :thumbnail
   has_one_attached :background
   has_one_attached :logo
+  has_one_attached :thumbclip
 
   has_one_attached :clip
 

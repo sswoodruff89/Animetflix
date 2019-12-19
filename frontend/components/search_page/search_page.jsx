@@ -7,10 +7,35 @@ class SearchPage extends React.Component{
 
   constructor(props) {
     super(props);
+    this.listOptions = this.listOptions.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
   componentDidMount() {
     this.props.requestSearchedMovies(this.props.match.params.searchQuery);
+  }
+
+  updateSearch(e) {
+    e.preventDefault();
+    let query = e.target.value;
+    this.props.requestSearchedMovies(query);
+    this.props.history.push(`/search/${query}`);
+  }
+
+  listOptions() {
+    if (this.props.searchlist) {
+      let options = this.props.searchlist;
+
+     return options.map((option, i) => {
+        return (
+            <button 
+              key={i}
+              value={option}
+              onClick={this.updateSearch}
+              className="list-buttons">{option}</button>
+        )
+      })
+    }
   }
 
   render() {
@@ -38,7 +63,7 @@ class SearchPage extends React.Component{
     }
 //////////////
 
-    let { movieIds } = this.props;
+    let movieIds = this.props.movieIds || [];
 
 ////////
     let movieLists = [];
@@ -49,7 +74,14 @@ class SearchPage extends React.Component{
 
     return (
         <main className="search-page">
-
+        <section className="search-header">
+            <div className="expected-results">
+              Explore titles related to:
+            </div>
+            <section className="search-options">
+                {this.listOptions()}
+            </section>
+        </section>
           <section className="search-list">
             {
               movieLists.map((list, i) => {
