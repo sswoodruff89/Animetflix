@@ -14,9 +14,12 @@ const msp = (state, ownProps) => {
     genres = sortByListLength(genres);
   }
 
+  let randomMovieId = Math.floor(Math.random() * 30);
+
 
   return {
     session: state.session.id,
+    showcaseMovie: state.entities.movies[randomMovieId],
     genres,
     loading: state.ui.loading.moviesLoading
   };

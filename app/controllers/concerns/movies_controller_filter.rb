@@ -1,9 +1,11 @@
 module MoviesControllerFilter
 
   def search_filter_list(query)
-    list = Movie.title_filter(query).limit(18).includes(:genres)
+    list = Movie.all_filter(query).limit(18).includes(:genres)
     if (list.length < 18)
-      list = (list + Movie.director_filter(query).includes(:genres)).uniq
+
+      remain = 18 - list.length
+      list = (list + Movie.all_include_filter(query).includes(:genres)).uniq.take(18)
     end
   end
 end

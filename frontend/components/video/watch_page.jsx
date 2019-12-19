@@ -122,7 +122,6 @@ class WatchPage extends React.Component{
 
   // mouseMove(e) {
   //   if (this.state.mouseDown) {
-  //     debugger
   //     this.setState({mouseMove: true});
 
   //   }
@@ -141,7 +140,7 @@ class WatchPage extends React.Component{
   handleProgressBar(vid) {
     return (e) => {
       e.preventDefault();
-      // debugger
+      
       // let {mouseDown, mouseMove} = this.state;
       // if (mouseDown && mouseMove) {
       if (e.currentTarget.value > vid.currentTime) {

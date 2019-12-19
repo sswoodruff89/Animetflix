@@ -37,7 +37,7 @@ class MovieDetail extends React.Component{
   componentDidUpdate() {
     ///For toggling between movies while Details is open
     
-    let movieId = parseInt(this.props.movieId) || parseInt(this.props.match.params.movieId);
+    let movieId = parseInt(this.props.match.params.movieId);
     if (this.state.currentId && movieId !== this.state.currentId) {
       this.props.requestMovie(this.props.match.params.movieId);
       this.setState({currentId: movieId});
@@ -191,7 +191,7 @@ class MovieDetail extends React.Component{
 
           <section className="inner-detail-container">
 
-              <button className="detail-closer"
+              <button className={`detail-closer `}
                   onClick={this.closeDetails}>&#10060;</button>
 
             <header className="detail-logo-header">

@@ -2,12 +2,11 @@ import {RECEIVE_CURRENT_USER} from "../actions/session_actions";
 
 export default (state = {}, action) => {
     Object.freeze(state);
-    
-    
+    debugger
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             const newUser = {
-                [action.user.id]: action.user
+                [action.payload.user.id]: action.payload.user
             };
             return Object.assign({}, state, newUser);
         default: 
