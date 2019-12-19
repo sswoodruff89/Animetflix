@@ -13,3 +13,88 @@
   // margin-top: 40px;
   margin-left: -50px;
 }
+
+.showcase-container{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.browse-display {
+    margin-top: 5vh;
+    width: 100%;
+    height: 46vw;
+    position: relative;
+    background: linear-gradient(to bottom, black 90%, transparent);
+    display: flex;
+    align-items: center;
+
+}
+
+.logo-and-buttons {
+  width: 100%;
+  margin-left: 3.5vw;
+  transform: translateY(5vh);
+}
+
+.showcase-logo-container {
+  max-height: 33vh;
+  max-width: 30vw;
+  position: relative;
+}
+
+.showcase-detail-buttons {
+  display: flex;
+  align-items: center;
+  // justify-content:;
+  // margin-right: 2%;
+  margin-top: 4%;
+}
+
+
+.showcase-detail-buttons button {
+    width: 13vw;
+    padding: 1.8%;
+    text-align: center;
+    font-size: 1.1em;
+    margin-right: 5%;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    letter-spacing: .1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-icon {
+  margin-right: 4px;
+}
+
+.showcase-detail-buttons button:hover {
+  // background-color: rgb(22, 22, 22);
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.8);
+  filter: invert(1);
+  transition: all 200ms ease;
+  transition-delay: 100ms;
+  // filter: brightness(2);
+}
+
+.vid-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 90%;
+    top: 0;
+    width: 100%;
+}
+
+video.showcase {
+  position: absolute;
+  max-width: 100%;
+  z-index: 0;
+}
+

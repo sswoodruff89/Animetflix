@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as SessionAPIUtil from "./util/session_api_util";
 import * as MovieAPIUtil from "./util/movie_api_util";
+import * as WatchAPIUtil from "./util/watchlist_api_util";
 import * as SortSelector from "./reducers/sort_selector";
 import {requestAllMovies, requestMovie, requestSearchedMovies} from "./actions/movies_actions";
 import {requestGenres} from "./actions/genre_actions";
+import {addToWatchList, removeFromWatchList}  from "./actions/watchlist_actions";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.searchMovies = MovieAPIUtil.searchMovies;
+  // window.searchMovies = MovieAPIUtil.searchMovies;
   window.sortBySearch = SortSelector.sortBySearch;
   window.sortByScore = SortSelector.sortByScore;
   // window.fetchMovie = MovieAPIUtil.fetchMovie;
@@ -41,6 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.requestAllMovies = requestAllMovies;
   window.requestSearchedMovies = requestSearchedMovies;
   window.requestGenres = requestGenres;
+  window.createWatch = WatchAPIUtil.createWatch;
+  window.addToWatchList = addToWatchList;
+  window.removeFromWatchList = removeFromWatchList;
 
   // window.login = SessionAPIUtil.login;
   // window.signup = SessionAPIUtil.signup;

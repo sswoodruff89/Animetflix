@@ -24,7 +24,11 @@ class MovieDetail extends React.Component{
   }
 
   componentDidMount() {
-    this.props.requestMovie(this.props.match.params.movieId);
+    if (this.props.home) {
+      this.props.requestMovie(this.props.movieId);
+    } else {
+      this.props.requestMovie(this.props.match.params.movieId);
+    }
     setTimeout(() => {
       this.setState({video: true});
     }, 1800);
@@ -79,12 +83,26 @@ class MovieDetail extends React.Component{
   }
   
   renderOverview(movie, genres, fadeIn) {
-
+    let score = {
+      width: `${(movie.score / 5) * 100}%`
+    };
     return (
       <section className="detail-content-container"
         style={fadeIn}   >
 
         <aside className="rating-runtime">
+
+          <div className="score" >
+            <span className="stars"
+              style={score}>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+            </span>
+          </div>
+
           <span>{movie.yr}</span>
           <span className="rating">{movie.rating}</span>
           <span>{movie.runtime}</span>
@@ -173,7 +191,7 @@ class MovieDetail extends React.Component{
 
           <section className="inner-detail-container">
 
-              <button className="detail-closer"
+              <button className={`detail-closer `}
                   onClick={this.closeDetails}>&#10060;</button>
 
             <header className="detail-logo-header">

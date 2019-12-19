@@ -4,9 +4,9 @@
   // overflow-y: visible;
   width: 100%;
   min-height: 100vh;
-  margin-top: 125px;
+  // margin-top: 2vh;
   position: relative;
-  border: none;
+  top: -2vh;
 }
 
 .single-list-container{
@@ -53,8 +53,8 @@
 
 .toggle-list-button {
   opacity: 0;
-  min-width: 4vw;
-  max-width: 4vw;
+  min-width: 4.1vw;
+  max-width: 4.1vw;
   background-color: rgba(0, 0, 0, .5);
   font-size: 50px;
   text-align: center;

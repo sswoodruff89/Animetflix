@@ -13,19 +13,24 @@ class WatchPage extends React.Component{
       vidLength: 0,
       currentTime: 0,
       timeLeft: 0,
+      mouseDown: false,
+      mouseMove: false,
       showControls: false
     };
 
-    // this.previousPage = this.previousPage.bind(this);
     this.startRuntime = this.startRuntime.bind(this);
     this.handlePlayPause = this.handlePlayPause.bind(this);
     this.handleVolume = this.handleVolume.bind(this);
     this.handleMute = this.handleMute.bind(this);
     this.handleSecondSkip = this.handleSecondSkip.bind(this);
-    // this.showControls = this.showControls.bind(this);
+    this.showControls = this.showControls.bind(this);
     this.videoLoaded = this.videoLoaded.bind(this);
     this.handleProgressBar = this.handleProgressBar.bind(this);
-    this.fullScreen = this.fullScreen.bind(this);
+    // this.fullScreen = this.fullScreen.bind(this);
+    // this.mouseDown = this.mouseDown.bind(this);
+    // this.mouseUp = this.mouseUp.bind(this);
+    // this.mouseMove = this.mouseMove.bind(this);
+    this.updateProgressBar = this.updateProgressBar.bind(this);
   }
 
   componentDidMount() {
@@ -36,21 +41,18 @@ class WatchPage extends React.Component{
   
   videoLoaded() {
     let vid = document.getElementById("video-player");
-
     if (!isNaN(vid.duration)) {
       let vidLength = vid.duration;
       let currentTime = vid.currentTime;
       this.setState({vidLength, currentTime, videoPresent: true});
+      vid.play();
     } else {
       setTimeout(() => {
         this.videoLoaded();
       }, 500);
     }
   }
-  // previousPage(e) {
-  //   e.preventDefault();
-  //   this.props.history.push(this.props.previousPage);
-  // }
+
 
   handlePlayPause(e) {
     e.preventDefault();
@@ -59,11 +61,11 @@ class WatchPage extends React.Component{
   
     if (paused) {
       vid.play();
-      this.runtime = setInterval(() => {
-        this.startRuntime(vid);
-      }, 500);
+      // this.runtime = setInterval(() => {
+      //   this.startRuntime(vid);
+      // }, 50);
     } else {
-      clearInterval(this.runtime);
+      // clearInterval(this.runtime);
       vid.pause();
     }
 
@@ -76,7 +78,6 @@ class WatchPage extends React.Component{
     let vid = document.getElementById("video-player");
     this.setState({volume: e.target.value, lastVol: e.target.value});
     vid.volume = this.state.volume / 100;
-
   }
 
   handleMute(e) {
@@ -107,38 +108,75 @@ class WatchPage extends React.Component{
   }
 
   startRuntime(vid) {
-    if (!this.state.paused) {
       this.setState({currentTime: vid.currentTime});
-    }
+      vid.play();
   }
+
+  // mouseDown(vid) {
+  //   return (e) => {
+  //     // e.preventDefault();
+  //     vid.pause();
+  //     this.setState({mouseDown: true});
+  //   };
+  // }
+
+  // mouseMove(e) {
+  //   if (this.state.mouseDown) {
+  //     this.setState({mouseMove: true});
+
+  //   }
+  // }
+
+  // mouseUp(vid) {
+  //   return (e) => {
+  //     // e.preventDefault();
+  //     vid.play();
+  //     this.setState({ mouseDown: false, mouseMove: false});
+  //   };
+  // }
+
+  
 
   handleProgressBar(vid) {
     return (e) => {
       e.preventDefault();
-      // if (Math.floor(vid.currentTime) !== Math.floor(e.target.value)) {
-        vid.currentTime = e.target.value;
-        this.setState({currentTime: vid.currentTime});
-      // }
+      
+      // let {mouseDown, mouseMove} = this.state;
+      // if (mouseDown && mouseMove) {
+      if (e.currentTarget.value > vid.currentTime) {
+        vid.currentTime = e.currentTarget.value;
+        this.setState({ currentTime: e.currentTarget.value});
+      }
     };
   }
 
-  fullScreen(vid) {
+  updateProgressBar(vid) {
     return (e) => {
-      e.preventDefault();
-      vid.requestFullScreen();
+      document.getElementById("progress").value = vid.currentTime;
+      this.setState({currentTime: vid.currentTime});
     };
   }
+
+
+  // fullScreen(vid) {
+  //   return (e) => {
+  //     e.preventDefault();
+  //     vid.requestFullScreen();
+  //   };
+  // }
 
 ////REVEAL CONTROLS
-  // showControls(e) {
+  showControls(e) {
+    
+    this.setState({showControls: true});
+    setTimeout(() => {
+      this.setState({showControls: false});
+    }, 4000);
 
-  //   this.setState({showControls: true});
-  //   setTimeout(() => {
-  //     this.setState({showControls: false});
-  //   }, 6000);
-
-  // }
+  }
 ////////////////
+
+
 
 ////GET TIME LEFT
 runtimeRemaining(duration, vid) {
@@ -154,7 +192,8 @@ runtimeRemaining(duration, vid) {
     (minutes > 0) ? `${minutes}:${seconds}`:
       `0:${ seconds }`;
 }
-///
+
+/////////RENDER///////////////////
 
   render() {
     // let movie = (this.props.movie) ? this.props.movie: {};
@@ -169,22 +208,22 @@ runtimeRemaining(duration, vid) {
         ) : (
           <button className="pause"
           onClick={this.handlePlayPause}>
-            &#9612;&#9612;
+            &#10073; &#10073;
           </button>
         )
     
+    let control = (showControls) ? "" : "hidden";
     
 //////PROGRESS BAR
-    let runtimeRatio = (currentTime / vidLength).toFixed(2)
-    let videoColorMeter = {
-      width: `${runtimeRatio * 100}%`
-    }
+    let runtimeRatio = (Math.floor(currentTime) / Math.floor(vidLength))
+    // let videoColorMeter = {
+    //   width: `${runtimeRatio * 100}%`
+    // }
  ///////VOLUME       
     let volumeButton = (volume === 0) ? (
-      <i className="fas fa-volume-mute" onClick={this.handleMute}></i>
+        <img className="mute" src={window.mute} alt="mute" onClick={this.handleMute}/>
       ) : (
-        <i className="fas fa-volume-up"
-          onClick={this.handleMute}></i> 
+          <i className="fas fa-volume-up" onClick={this.handleMute}></i> 
       )
 
     let volumeColorMeter = {
@@ -193,22 +232,39 @@ runtimeRemaining(duration, vid) {
 ///////
 
 ////////CONTROLS
-    let vidControls = (!showControls) ? (
+    let vidControls = (
       <section className="video-controls" >
 
         <div className="progress">
           <div className="progress-slide-container">
+
             <input
-            type="range"
+             type="range"
+              id="progress"
               min="0"
-              max="100"
-              value={runtimeRatio * 100}
-              // onChange={this.handleProgressBar(vid)}
+              max={vidLength}
+              value={currentTime}
+              onChange={this.handleProgressBar(vid)}
               className="video-progress" />
 
-            <div className="volume-color-meter"
+            <progress className="progress-meter" min="0" 
+              value={this.state.currentTime} max={vidLength}></progress>
+
+            {/* <div className="video-progress-meter"
+              style={videoColorMeter}>
+            </div> */}
+
+            {/* <div className="bar">
+            <div className="video-progress-meter"
               style={videoColorMeter}>
             </div>
+                <div className="thumber" draggable={true}>
+
+                </div>
+
+            </div> */}
+
+
           </div>
           <span className="minutes-left">
               {(vid !== null) ? this.runtimeRemaining(vidLength, vid) : ""}
@@ -244,33 +300,57 @@ runtimeRemaining(duration, vid) {
             </div>
           </section>
 
+        <div className="now-playing">
+            Movie Title
+        </div>
 
         </section>
 
+
         <section className="right-controls">
-            <button className="fullscreen-button"
-              onClick={this.fullScreen(vid)}>
+
+            <button className="questions">
+             <i className="far fa-question-circle"></i>
+            </button>
+
+            <button className="questions">
+              <i className="far fa-closed-captioning"></i>
+            </button>
+
+            <button className="fullscreen-button" // onClick={this.fullScreen(vid)}
+            >
               <i className="fas fa-expand"></i>
             </button>
 
         </section>
 
       </section> 
-    ) : "";
-////////
+    );
+
+
+////////////////////////
+////////////////////////
+
+
 
     return (
       <main className="fullscreen"
-        // onMouseMove={this.showControls}
+        onMouseMove={this.showControls}
         >
-        <Link to="/browse">
-          <button className="back-to-last-address">
-            Back to Browse
-          </button>
-        </Link>
+
+      <section className={`all-controls ${control}`}>
+        <div className="browser-link"> 
+          <Link to="/browse">
+            <button className="back-to-last-address">
+              <i className="fas fa-arrow-left"></i>
+              <span>Back to Browse</span>
+            </button>
+          </Link>
+
+        </div>
 
         {vidControls}
-       
+      </section>
 
         {/* <section className="current-movie-details" >
 
@@ -279,7 +359,16 @@ runtimeRemaining(duration, vid) {
 
         {/* <section className="video-container"> */}
           {/* <Video version="full" sourceVid={movie.clip}/> */}
-          <Video version="full" />
+
+          {/* <Video version="full" /> */}
+
+        <video className="full"
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          id="video-player"
+          // muted={mute} 
+          autoPlay={true} 
+          onTimeUpdate={this.updateProgressBar(vid)} 
+          />
 
         {/* </section> */}
 

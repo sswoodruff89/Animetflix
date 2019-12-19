@@ -178,6 +178,10 @@ button.detail-closer {
   right: 1%;
 }
 
+button.detail-closer.showcase{
+  display: none;
+}
+
 .detail-content-container{
   opacity: 0;
   height: 100%;
@@ -248,6 +252,13 @@ button.detail-closer {
     justify-content: space-evenly;
     width: 300px;
     margin-top: 1%;
+}
+
+.stars {
+  color: rgb(214, 193, 0);
+  overflow: hidden;
+  display: flex;
+  margin: 0;
 }
 
 aside .rating {

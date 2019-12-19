@@ -18,6 +18,14 @@ class User < ApplicationRecord
     after_initialize :ensure_token
     attr_reader :password
 
+    has_many :watchlists,
+        foreign_key: :user_id,
+        dependent: :destroy
+
+    has_many :watched_movies,
+        through: :watchlists,
+        source: :movie
+
     def self.find_by_cred(email, pw)
         user = User.find_by(email: email);
         return user if user && user.is_password?(pw)
