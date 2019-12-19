@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :movies, only: :index
     end
 
-    resources :watchlists, only: [:destroy] do
+    resources :watchlists, only: [:index, :destroy] do
       resources :movies, only: :index;
     end
     

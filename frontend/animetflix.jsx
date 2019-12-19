@@ -6,7 +6,7 @@ import * as WatchAPIUtil from "./util/watchlist_api_util";
 import * as SortSelector from "./reducers/sort_selector";
 import {requestAllMovies, requestMovie, requestSearchedMovies} from "./actions/movies_actions";
 import {requestGenres} from "./actions/genre_actions";
-import {addToWatchList, removeFromWatchList}  from "./actions/watchlist_actions";
+import {addToWatchList, removeFromWatchList, fetchWatchlist}  from "./actions/watchlist_actions";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createWatch = WatchAPIUtil.createWatch;
   window.addToWatchList = addToWatchList;
   window.removeFromWatchList = removeFromWatchList;
+  window.fetchWatchlist = fetchWatchlist;
 
   // window.login = SessionAPIUtil.login;
   // window.signup = SessionAPIUtil.signup;

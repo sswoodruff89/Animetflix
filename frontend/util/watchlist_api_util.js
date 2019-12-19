@@ -1,3 +1,11 @@
+export const fetchWatchlist = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/watchlists"
+    // data: {user_id: userId}
+  });
+};
+
 export const createWatch = (movieId) => {
   return $.ajax({
     method: "POST",

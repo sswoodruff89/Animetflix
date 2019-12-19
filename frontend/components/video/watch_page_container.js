@@ -4,9 +4,10 @@ import WatchPage from "./watch_page";
 
 
 const msp = (state, ownProps) => {
+  let movie = state.entities.movies[ownProps.match.params.movieId] || {};
   
   return {
-    movie: state.entities.movies[ownProps.match.params.movieId]
+    movie
   };
 };
 

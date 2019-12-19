@@ -199,6 +199,8 @@ runtimeRemaining(duration, vid) {
     // let movie = (this.props.movie) ? this.props.movie: {};
 
     let {paused, volume, vidLength, currentTime, showControls} = this.state;
+    
+    let movie = (this.props.movie) ? this.props.movie : {};
     let vid = document.getElementById("video-player");
     let pausePlay = (paused) ? (
           <button className="play"
@@ -208,7 +210,7 @@ runtimeRemaining(duration, vid) {
         ) : (
           <button className="pause"
           onClick={this.handlePlayPause}>
-            &#10073; &#10073;
+            &#10073;&#10073;
           </button>
         )
     
@@ -223,7 +225,7 @@ runtimeRemaining(duration, vid) {
     let volumeButton = (volume === 0) ? (
         <img className="mute" src={window.mute} alt="mute" onClick={this.handleMute}/>
       ) : (
-          <i className="fas fa-volume-up" onClick={this.handleMute}></i> 
+        <img className="volume" src={window.volume} alt="volume" onClick={this.handleMute} /> 
       )
 
     let volumeColorMeter = {
@@ -273,6 +275,7 @@ runtimeRemaining(duration, vid) {
         </div>
 
         <section className="left-controls">
+          <div className="left-buttons">
           {pausePlay}
 
           <img className="back-ten" src={window.backTen}
@@ -297,11 +300,13 @@ runtimeRemaining(duration, vid) {
               <div className="volume-color-meter"
                 style={volumeColorMeter}>
               </div>
+
+              <div className="volume-meter-back"></div>
             </div>
           </section>
-
+          </div>
         <div className="now-playing">
-            Movie Title
+            {movie.title}
         </div>
 
         </section>

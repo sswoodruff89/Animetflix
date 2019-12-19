@@ -1,13 +1,14 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from "../actions/session_actions";
-import { RECEIVE_NEW_WATCH, REMOVE_WATCH } from "../actions/watchlist_actions";
+import { RECEIVE_WATCHLIST, RECEIVE_NEW_WATCH, REMOVE_WATCH } from "../actions/watchlist_actions";
 
 
 export default (state = {}, action) => {
   Object.freeze(state);
   let watchlist;
-  debugger
+  
   switch (action.type) {
-    
+    case RECEIVE_WATCHLIST:
+      return action.watchlist;
     case RECEIVE_NEW_WATCH:
       let newWatch = {
         [action.watch.movie_id]: action.watch
