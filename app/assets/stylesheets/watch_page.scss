@@ -12,13 +12,15 @@
   width: 100%;
   height: 100vh;
   transition: all 3s ease 2s;
-
+  position: absolute;
 }
 
 .all-controls {
   opacity: 1;
   width: 100%;
   height: 100vh;
+    position: absolute;
+
 }
 
 
@@ -259,7 +261,7 @@ span.minutes-left {
     background-color: rgb(56, 56, 56);
     position: absolute;
     z-index: 12;
-    width: 100%;
+    width: 180px;
 }
 ////////
 

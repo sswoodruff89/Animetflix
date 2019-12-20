@@ -97,10 +97,10 @@ movie3 = Movie.create!(title: "Grave of the Fireflies",
 #3 Drama, War
 glinks(3, ["Drama", "War"])
 
-#####
-# movie3.logo.attach(io: File.open('app/assets/images/movie_photos/akira_logo.png'), filename: 'akira_logo.png')
-# movie3.thumbnail.attach(io: File.open('app/assets/images/movie_photos/akira_thumb.png'), filename: 'akira_thumb.png')
-# movie3.background.attach(io: File.open('app/assets/images/movie_photos/akira_back.jpg'), filename: 'akira_back.jpg')
+####
+# movie3.logo.attach(io: File.open('app/assets/images/movie_photos/grave_flies_logo.png'), filename: 'grave_flies_logo.png')
+# movie3.thumbnail.attach(io: File.open('app/assets/images/movie_photos/grave_thumg.jpg'), filename: 'grave_thumg.jpg')
+# movie3.background.attach(io: File.open('app/assets/images/movie_photos/grave_flies_back.jpg'), filename: 'grave_flies_back.jpg')
 
 
 movie4 = Movie.create!(title: "Dragon Ball Super Broly", 
@@ -160,6 +160,9 @@ movie7 = Movie.create!(title: "Sword of the Stranger",
   description: "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple.")
 #7 Period, Action, Historical, Adventure
 glinks(7, ["Adventure", "Action", "Period"])
+# movie7.logo.attach(io: File.open('app/assets/images/movie_photos/sword_stranger_logo.png'), filename: 'sword_stranger_logo.png')
+# movie7.thumbnail.attach(io: File.open('app/assets/images/movie_photos/sword_stranger_thumb.jpg'), filename: 'sword_stranger_thumb.jpg')
+# movie7.background.attach(io: File.open('app/assets/images/movie_photos/sword_stranger_back.jpg'), filename: 'sword_stranger_back.jpg')
 ########
 
 movie8 = Movie.create!(title: "Howl's Moving Castle", 
@@ -278,7 +281,7 @@ movie15 = Movie.create!(title: "Whisper of the Heart",
   description: "Shizuku, an inquisitive young girl and a voracious reader, longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
 #15 Drama, Romance
 glinks(15, ["Drama", "Romance"])
-# movie15.logo.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_back.jpg'), filename: 'whisper_of_heart_back.jpg')
+# movie15.logo.attach(io: File.open('app/assets/images/movie_photos/whisper-of-the-heart-logo.png'), filename: 'whisper-of-the-heart-logo.png')
 # movie15.thumbnail.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_thumb.jpg'), filename: 'whisper_of_heart_thumb.jpg')
 # movie15.background.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_back.jpg'), filename: '/whisper_of_heart_back.jpg')
 

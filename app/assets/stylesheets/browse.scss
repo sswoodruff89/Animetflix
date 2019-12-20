@@ -20,12 +20,14 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 5
 }
 
 .browse-display {
     margin-top: 5vh;
     width: 100%;
-    height: 46vw;
+    height: 44vw;
     position: relative;
     background: linear-gradient(to bottom, black 90%, transparent);
     display: flex;
@@ -92,9 +94,31 @@
     width: 100%;
 }
 
+.vid-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, transparent 75%, black 90%, black 100%);
+
+}
+
 video.showcase {
   position: absolute;
   max-width: 100%;
   z-index: 0;
+  max-height: 100%;
 }
+
+// video.showcase::before {
+// content: "";
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   bottom: 0;
+//   background: linear-gradient(to bottom, transparent 88%, black);
+
+// }
 

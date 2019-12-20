@@ -94,10 +94,13 @@ class MovieListItem extends React.Component{
 
     return (
       <>
-        <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/>
-        {/* <img className="background-image" src={movie.thumbnail} alt=""/> */}
+      {/* for testing */}
+        {/* <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/> */}
+       
+       
+        <img className="background-image" src={movie.thumbnail} alt=""/>
 
-        <Video version="thumbnail" vidRef="thumbVidRef" />
+        <Video version="thumbnail" sourceVid={movie.clip} />
 
         <section className="movie-item-info"
           onMouseEnter={this.playThumbnail}
