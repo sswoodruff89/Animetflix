@@ -306,6 +306,10 @@ movie17 = Movie.create!(title: "A Silent Voice",
   description: "When a grade school student with impaired hearing is bullied mercilessly, she transfers to another school. Years later, one of her former tormentors sets out to make amends.")
 #17 Drama, Romance 
 glinks(17, ["Drama", "Romance"])
+# movie17.logo.attach(io: File.open('app/assets/images/movie_photos/a_silent_voice_logo.png'), filename: 'a_silent_voice_logo.png')
+# movie17.thumbnail.attach(io: File.open('app/assets/images/movie_photos/a_silent_voice_back.png'), filename: 'a_silent_voice_back.png')
+#### movie17.background.attach(io: File.open('app/assets/images/movie_photos/a_silent_voice_back.png'), filename: 'a_silent_voice_back.png')
+
 
 movie18 = Movie.create!(title: "Kiki’s Delivery Service", 
   yr: 1989, 
@@ -316,6 +320,12 @@ movie18 = Movie.create!(title: "Kiki’s Delivery Service",
   description: "13-year-old witch Kiki moves to a seaside town with her talking cat, Jiji, where she sets up a flying courier service.")
 #18 Drama, Family, Fantasy
 glinks(18, ["Drama", "Fantasy", "Family"])
+# movie18.logo.attach(io: File.open('app/assets/images/movie_photos/kiki_logo.png'), filename: 'kiki_logo.png')
+# movie18.thumbnail.attach(io: File.open('app/assets/images/movie_photos/kiki_thumb.png'), filename: 'kiki_thumb.png')
+# movie18.background.attach(io: File.open('app/assets/images/movie_photos/kiki_back.jpg'), filename: 'kiki_back.jpg')
+
+# movie18.clip.attach(io: File.open('app/assets/images/video/kiki_clip.mp4'), filename: 'kiki_clip.mp4')
+
 
 movie19 = Movie.create!(title: "Samurai X: The Movie", 
   yr: 1997, 
@@ -326,6 +336,12 @@ movie19 = Movie.create!(title: "Samurai X: The Movie",
   description: "Himura Kenshin, the wandering samurai, was once known as Battousai, the \"Man Slayer,\" and used his unsurpassed prowess as a fighter to fight in the Japanese civil war and bring about the beginning of the Meiji period. That time is over now, however, and Kenshin has vowed to never kill again, and spend the rest of his life in atonement for all the lives that ended under his blade.")
 #19 Drama, Action, Period
 glinks(19, ["Drama", "Action", "Period"])
+# movie19.logo.attach(io: File.open('app/assets/images/movie_photos/samuraix_logo.png'), filename: 'samuraix_logo.png')
+# movie19.thumbnail.attach(io: File.open('app/assets/images/movie_photos/samuraix_thumb.png'), filename: 'samuraix_thumb.png')
+# movie19.background.attach(io: File.open('app/assets/images/movie_photos/samuraix_back.jpg'), filename: 'samuraix_back.jpg')
+
+
+
 
 movie20 = Movie.create!(title: "My Hero Academia: Two Heroes", 
   yr: 2018, 
@@ -336,6 +352,10 @@ movie20 = Movie.create!(title: "My Hero Academia: Two Heroes",
   description: "Deku and All Might receive an invitation to I-Expo, The World's Leading Exhibition of Quirk Abilities and Hero Item Innovations. Suddenly, I-Expo's Top-Of-The-Line Security System gets hacked by villains and a sinister plan is set in motion.")
 #20 Action, Adventure, Fantasy, Sci-Fi
 glinks(20, ["Fantasy", "Adventure", "Action", "Family", "Sci-Fi"])
+# movie20.logo.attach(io: File.open('app/assets/images/movie_photos/my_hero_logo.png'), filename: 'my_hero_logo.png')
+# movie20.thumbnail.attach(io: File.open('app/assets/images/movie_photos/my_hero_thumb.jpg'), filename: 'my_hero_thumb.jpg')
+# movie20.background.attach(io: File.open('app/assets/images/movie_photos/my_hero_back.jpg'), filename: 'my_hero_back.jpg')
+
 
 movie21 = Movie.create!(title: "Patema Inverted", 
   yr: 2013, 
@@ -346,6 +366,12 @@ movie21 = Movie.create!(title: "Patema Inverted",
   description: "A young girl, from a civilization that resides in deep underground tunnels, finds herself trapped in an inverted world and teams up with a resident to escape and return home.")
 #21 Fantasy, Sci-Fi, Adventure
 glinks(21, ["Fantasy", "Adventure", "Sci-Fi"])
+# movie21.logo.attach(io: File.open('app/assets/images/movie_photos/patema-inverted-logo.png'), filename: 'patema-inverted-logo.png')
+# movie21.thumbnail.attach(io: File.open('app/assets/images/movie_photos/patemainverted_thumb.jpg'), filename: 'patemainverted_thumb.jpg')
+# movie21.background.attach(io: File.open('app/assets/images/movie_photos/patema_inverted_back.jpg'), filename: 'patema_inverted_back.jpg')
+
+# movie21.clip.attach(io: File.open('app/assets/images/video/patema_clip.mp4'), filename: 'patema_clip.mp4')
+
 
 movie22 = Movie.create!(title: "Mary and the Witch's Flower", 
   yr: 2017, 
@@ -356,6 +382,12 @@ movie22 = Movie.create!(title: "Mary and the Witch's Flower",
   description: "Young Mary discovers an old broomstick and the strange Fly-by-Night flower, a rare plant that blossoms once every seven years. Together, the flower and the broomstick whisk Mary above the clouds, and far away to a school of magic run by headmistress Madam Mumblechook and the brilliant Doctor Dee.")
 #22 Fantasy, Adventure, Family
 glinks(22, ["Fantasy", "Adventure", "Family"])
+# movie22.logo.attach(io: File.open('app/assets/images/movie_photos/mary-and-the-witchs-flower-logo.png'), filename: 'mary-and-the-witchs-flower-logo.png')
+# movie22.thumbnail.attach(io: File.open('app/assets/images/movie_photos/mary_and_flower_thumb.png'), filename: 'mary_and_flower_thumb.png')
+# movie22.background.attach(io: File.open('app/assets/images/movie_photos/Mary2.jpg'), filename: 'Mary2.jpg')
+
+# movie22.clip.attach(io: File.open('app/assets/images/video/mary_witch.mp4'), filename: 'mary_witch.mp4')
+
 
 movie23 = Movie.create!(title: "Dragon Ball Z: Battle of Gods", 
   yr: 2013, 
@@ -366,6 +398,13 @@ movie23 = Movie.create!(title: "Dragon Ball Z: Battle of Gods",
   description: "The Z-Fighters must contend with Beerus, the God of Destruction. But it takes a god to fight a god, and none of them are gods... not even the Saiyans.")
 #Action, Fantasy, Sci-fi
 glinks(23, ["Fantasy", "Action", "Sci-Fi"])
+# movie23.logo.attach(io: File.open('app/assets/images/movie_photos/dbz_bog_logo.png'), filename: 'dbz_bog_logo.png')
+# movie23.thumbnail.attach(io: File.open('app/assets/images/movie_photos/dbz_bog_thumb.jpg'), filename: 'dbz_bog_thumb.jpg')
+# movie23.background.attach(io: File.open('app/assets/images/movie_photos/dbz_bog_back.jpg'), filename: 'dbz_bog_back.jpg')
+
+# movie23.clip.attach(io: File.open('app/assets/images/video/dbz_bog_clip.mp4'), filename: 'dbz_bog_clip.mp4')
+
+
 
 movie24 = Movie.create!(title: "Millennium Actress", 
   yr: 2001, 
@@ -375,6 +414,11 @@ movie24 = Movie.create!(title: "Millennium Actress",
   score: 3.9,
   description: "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future.")
 glinks(24, ["Period", "Drama", "Fantasy"])
+# movie24.logo.attach(io: File.open('app/assets/images/movie_photos/millennium-actress-logo.png'), filename: 'millennium-actress-logo.png')
+# movie24.thumbnail.attach(io: File.open('app/assets/images/movie_photos/millennium-actress_thumb.png'), filename: 'millennium-actress_thumb.png')
+# movie24.background.attach(io: File.open('app/assets/images/movie_photos/millennium-actress2.jpg'), filename: 'millennium-actress2.jpg')
+
+
 
 movie25 = Movie.create!(title: "One Piece Film: Z", 
   yr: 2012, 
@@ -384,6 +428,12 @@ movie25 = Movie.create!(title: "One Piece Film: Z",
   score: 3.9,
   description: "When the Dyna Stones are stolen by the diabolical former marine admiral Zephyr, now known as `Z', it's up to the Straw Hat Pirates to save the new world.")
 glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
+# movie25.logo.attach(io: File.open('app/assets/images/movie_photos/one_piece_z_logo.png'), filename: 'one_piece_z_logo.png')
+# movie25.thumbnail.attach(io: File.open('app/assets/images/movie_photos/one_piece_z_thumb.png'), filename: 'one_piece_z_thumb.png')
+# movie25.background.attach(io: File.open('app/assets/images/movie_photos/one_piece_z_back.png'), filename: 'one_piece_z_back.png')
+
+# movie25.clip.attach(io: File.open('app/assets/images/video/one_piece_z.mp4'), filename: 'one_piece_z.mp4')
+
 
 movie26 = Movie.create!(title: "Pokémon: The First Movie", 
   yr: 1998, 
@@ -393,6 +443,11 @@ movie26 = Movie.create!(title: "Pokémon: The First Movie",
   score: 3.1,
   description: "Ash Ketchum and his friends Misty, Brock, and Pikachu, discover Mewtwo, a super-powered Pokemon created through biological engineering.")
 glinks(26, ["Fantasy", "Family", "Sci-Fi", "Action", "Adventure"])
+# movie26.logo.attach(io: File.open('app/assets/images/movie_photos/pokemon_logo.png'), filename: 'pokemon_logo.png')
+# movie26.thumbnail.attach(io: File.open('app/assets/images/movie_photos/pokemon_thumb.jpg'), filename: 'pokemon_thumb.jpg')
+# movie26.background.attach(io: File.open('app/assets/images/movie_photos/pokemon_back.jpg'), filename: 'pokemon_back.jpg')
+
+
 
 movie27 = Movie.create!(title: "Perfect Blue", 
   yr: 1997, 
@@ -402,6 +457,10 @@ movie27 = Movie.create!(title: "Perfect Blue",
   score: 4.0,
   description: "A retired pop singer turned actress' sense of reality is shaken when she is stalked by an obsessed fan and seemingly a ghost of her past.")
 glinks(27, ["Thriller", "Horror", "Drama"])
+movie27.logo.attach(io: File.open('app/assets/images/movie_photos/perfect-blue-logo.png'), filename: 'perfect-blue-logo.png')
+movie27.thumbnail.attach(io: File.open('app/assets/images/movie_photos/perfect_blue_thumbnail.png'), filename: 'perfect_blue_thumbnail.png')
+movie27.background.attach(io: File.open('app/assets/images/movie_photos/perfect_blue_back.jpg'), filename: 'perfect_blue_back.jpg')
+
 
 movie28 = Movie.create!(title: "Dragon Ball: The Path to Power", 
   yr: 1996, 
@@ -411,6 +470,12 @@ movie28 = Movie.create!(title: "Dragon Ball: The Path to Power",
   score: 3.7,
   description: "Goku and Bulma go on an adventure to seek out the mystical Dragon Balls.")
 glinks(28, ["Fantasy", "Action", "Adventure", "Comedy"])
+# movie28.logo.attach(io: File.open('app/assets/images/movie_photos/db_power_logo.png'), filename: 'db_power_logo.png')
+# movie28.thumbnail.attach(io: File.open('app/assets/images/movie_photos/db_power_thumb.jpg'), filename: 'db_power_thumb.jpg')
+# movie28.background.attach(io: File.open('app/assets/images/movie_photos/dragonball_path_power_back.png'), filename: 'dragonball_path_power_back.png')
+
+# movie28.clip.attach(io: File.open('app/assets/images/video/db_power_clip.mp4'), filename: 'db_power_clip.mp4')
+
 
 movie29 = Movie.create!(title: "Mirai", 
   yr: 2018, 
@@ -420,6 +485,11 @@ movie29 = Movie.create!(title: "Mirai",
   score: 3.5,
   description: "A young boy named Kun feels forgotten by his family when his little sister Mirai arrives. Running away from home, Kun stumbles upon a magical garden that serves as a time-travelling gateway where he encounters his mother as a little girl and has a series of adventures with his baby sister all grown up.")
 glinks(29, ["Fantasy", "Drama", "Adventure"])
+# movie29.logo.attach(io: File.open('app/assets/images/movie_photos/mirai_logo.png'), filename: 'mirai_logo.png')
+# movie29.thumbnail.attach(io: File.open('app/assets/images/movie_photos/mirai_thumb.png'), filename: 'mirai_thumb.png')
+# movie29.background.attach(io: File.open('app/assets/images/movie_photos/mirai-of-the-future.jpg'), filename: 'mirai-of-the-future.jpg')
+
+
 
 movie30 = Movie.create!(title: "One Piece Film: Strong World", 
   yr: 2009, 
@@ -429,6 +499,12 @@ movie30 = Movie.create!(title: "One Piece Film: Strong World",
   score: 3.8,
   description: "Straw Hat Pirates must save their navigator and stop the legendary Pirate, Shiki the Golden Lion from conquering East Blue.")
 glinks(30, ["Fantasy", "Action", "Adventure", "Comedy"])
+# movie30.logo.attach(io: File.open('app/assets/images/movie_photos/one-piece-movie-10-strong-world-logo.png'), filename: 'one-piece-movie-10-strong-world-logo.png')
+# movie30.thumbnail.attach(io: File.open('app/assets/images/movie_photos/op_strong_world_thumb.jpg'), filename: 'op_strong_world_thumb.jpg')
+# movie30.background.attach(io: File.open('app/assets/images/movie_photos/one-piece-strong-world.jpg'), filename: 'one-piece-strong-world.jpg')
+
+# movie30.clip.attach(io: File.open('app/assets/images/video/one_piece_strong-clip.mp4'), filename: 'one_piece_strong-clip.mp4')
+
 
 movie31 = Movie.create!(title: "One Piece Film: Gold", 
   yr: 2017, 
@@ -438,6 +514,12 @@ movie31 = Movie.create!(title: "One Piece Film: Gold",
   score: 3.6,
   description: "The Straw Hat Pirates come to Gran Tesoro, the richest ship in the world.")
 glinks(31, ["Fantasy", "Action", "Adventure", "Comedy"])
+# movie31.logo.attach(io: File.open('app/assets/images/movie_photos/onepiecegold_logo.png'), filename: 'onepiecegold_logo.png')
+# movie31.thumbnail.attach(io: File.open('app/assets/images/movie_photos/onepiecegold_thumb.jpg'), filename: 'onepiecegold_thumb.jpg')
+# movie31.background.attach(io: File.open('app/assets/images/movie_photos/onepiece_gold_back.jpeg'), filename: 'onepiece_gold_back.jpeg')
+
+# movie31.clip.attach(io: File.open('app/assets/images/video/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+
 
 # Movie.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
