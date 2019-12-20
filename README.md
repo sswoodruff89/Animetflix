@@ -15,6 +15,8 @@ This app was built with Ruby on Rails and React Redux. Please checkout a working
 ## Built With
 * Ruby on Rails
 * React Redux
+* AWS
+* Heroku
 
 
 ## Features
@@ -22,7 +24,7 @@ This app was built with Ruby on Rails and React Redux. Please checkout a working
 <h1 align="center">
   <img src="https://github.com/sswoodruff89/Animetflix/blob/master/app/assets/images/demo/scroll_gif.gif?raw=true" width="600" height="auto" align="center"/>
 </h1>
-<<<<<<< HEAD
+
 
 ### Movie List Carousel
 
@@ -265,6 +267,9 @@ As for rendering the details of a given movie when selected, I placed a MovieDet
 
 ### Watch Page Movie Controller
 
->>>>>>> a78ca2a504a65803ae529b520ca3ce680b91cd20
+<h1 align="center">
+  <img src="https://github.com/sswoodruff89/Animetflix/blob/master/app/assets/images/demo/watch_page.gif?raw=true" width="600" height="auto" align="center"/>
+</h1>
 
+When creating the watch page, I crafted a custom video controller to interact with the video. Getting it alter the video proved extremely difficult, as several buttons and states directly affect and are simultaneously affected by the video's current time. The video progress bar is a combination of a 'progress' tag and an 'input[type="range"]', the latter of which scrolls through the runtime. The two skip buttons jump 10 seconds forward and back on the video, and the volume button reveals the volume slider when hovered over, and when clicked, mutes or unmutes the video.
 
