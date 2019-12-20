@@ -18,6 +18,13 @@ This app was built with Ruby on Rails and React Redux. Please checkout a working
 * AWS
 * Heroku
 
+## Interactions
+Toggle through each list of movies, and as you hover over each thumbnail, it's clip will begin playing. On the thumbnail, you can go directly to the movie's watch page with the play button, add it to your watchlist with the watchlist button, or open the details page with the down arrow. The details page will display a synopsis, MPAA rating, a score (based on 5-stars), runtime, and genres with the clip playing in the background.
+
+If you want to search for movies, open up the search bar and type in to get live results, along with a list of possible titles, directors, and genres you are looking for that will link you to a new set of results.
+
+On the watch page, enjoy your movie of choice!
+
 
 ## Features
 
