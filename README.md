@@ -12,10 +12,19 @@ Welcome to Animetflix, the hot new streaming service catered to your Anime viewi
 This app was built with Ruby on Rails and React Redux. Please checkout a working demo right here: https://animetflix-app.herokuapp.com/#/
 ## 
 
+### Built With
+* Ruby on Rails
+* React Redux
+
+
 ### Features
+<img src="https://github.com/sswoodruff89/Animetflix/blob/master/app/assets/images/sign_in_page.png?raw=true" width="400" height="auto"/>
 
+The backend is run on Ruby on Rails. 
 
-
+<!-- * List Toggle
+![](http://g.recordit.co/7Y5P4wlpTY.gif)
+<img src="http://g.recordit.co/7Y5P4wlpTY.gif" alt="scroll"/> -->
 
 # README
 
