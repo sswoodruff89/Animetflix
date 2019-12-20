@@ -108,6 +108,40 @@ With the given component states, translated the 'ul' movie list along the X axis
   <img src="https://github.com/sswoodruff89/Animetflix/blob/master/app/assets/images/demo/movie_list_item_animation.gif?raw=true" width="600" height="auto" align="center"/>
 </h1>
 
+Going off the previous challenge, getting the thumbnails to interact with the mouse over and displaying details when clicked proved even greater. I implemented some of the solution of moving the list by translating each thumbnail a percentage amount across the list when one is hovered over. Formatting the following siblings of the hovered item was no problem, but there is no selector for an elements previous siblings. After tireless css rendering and research, I came upon a solution that allowed me to use a container element I had already made that was simply meant to hold the list.
+
+```css
+
+///HOVERED THUMBNAIL
+.movie-item:hover{
+  position: relative;
+  transform: scale(1.6) !important;
+  transition-property: all 1s ease;
+  // transition-delay: 500ms;
+  z-index: 10;
+}
+///All THUMBNAILS AFTER HOVERED THUMBNAIL
+.movie-item:hover ~ .movie-item{
+  transform: translateX(29.5%);
+  transition-property: all 0.5s ease;
+  // transition-delay: 500ms;
+  transition-duration: 0.5s;
+}
+
+///ALL THUMBNAILS BEFORE HOVERED THUMBNAIL
+.movie-slider:hover .movie-item {
+    transform: translateX(-29.5%);
+    transition-property: all;
+    // transition-delay: 500ms;
+    transition-duration: 0.5s;
+
+}
+```
+Since the user will be hovering over the .movie-slider container that is holding my 'ul' no matter which thumbnail is focused on, I was able to select the thumbnail's previous siblings.
+
+As for rendering the details of a given movie when selected, I placed a MovieDetail component after each .movie-slider container and wrapped them both is a 'section' tag. The details only render when the URL pathname has the list name and the movie ID, which is pushed to the history by the thumbnail's down-arrow button.  Any lists that follow are pushed down as the detail's page fades and slides in, thanks to keyframe animations. To animate it's exit, it's class is changed by the component state, reducing it's height and opacity to 0 before the previous pathname is pushed back to the history.
+
+### Watch Page Movie Controller
 
 
 
