@@ -55,9 +55,9 @@ movie1 = Movie.find(1);
 #   description: "When Kyuta stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice.")
 # #1 
 # glinks(1, ["Fantasy", "Action", "Adventure"])
-movie1.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/boy-and-the-beast-bakemono-nlogo.png'), filename: 'boy-and-the-beast-bakemono-nlogo.png')
-movie1.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/boy_and_beast_thumb.png'), filename: 'boy_and_beast_thumb.png')
-movie1.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/boy_and_beast_back.jpg'), filename: 'boy_and_beast_back.jpg')
+movie1.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy-and-the-beast-bakemono-nlogo.png'), filename: 'boy-and-the-beast-bakemono-nlogo.png')
+movie1.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy_and_beast_thumb.png'), filename: 'boy_and_beast_thumb.png')
+movie1.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy_and_beast_back.jpg'), filename: 'boy_and_beast_back.jpg')
 
 # movie2 = Movie.create!(title: "Akira", 
 #   yr: 1988, 
@@ -70,11 +70,11 @@ movie1.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/boy_a
 # glinks(2, ["Thriller", "Action", "Sci-Fi"])
 movie2 = Movie.find(2);
 
-movie2.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/akira_logo.png'), filename: 'akira_logo.png')
-movie2.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/akira_thumb.png'), filename: 'akira_thumb.png')
-movie2.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/akira_back.jpg'), filename: 'akira_back.jpg')
+movie2.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/akira_logo.png'), filename: 'akira_logo.png')
+movie2.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/akira_thumb.png'), filename: 'akira_thumb.png')
+movie2.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/akira_back.jpg'), filename: 'akira_back.jpg')
 
-movie2.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/akira_clip.mp4'), filename: 'akira_clip.mp4')
+movie2.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/akira_clip.mp4'), filename: 'akira_clip.mp4')
 
 
 #########################################
@@ -84,15 +84,15 @@ movie2.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/akira_clip.
 #   rating: "PG-13", 
 #   runtime: 90, 
 #   score: 4.3,
-#   description: "A devastating meditation on the human cost of war, this animated tale follows Seita, a teenager charged with the care of his younger sister, Setsuko, after an American firebombing during World War II separates the two children from their parents.")
+#   description: "A seedsastating meditation on the human cost of war, this animated tale follows Seita, a teenager charged with the care of his younger sister, Setsuko, after an American firebombing during World War II separates the two children from their parents.")
 # #3 Drama, War
 # glinks(3, ["Drama", "War"])
 movie3 = Movie.find(3);
 
 ####
-movie3.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/grave_flies_logo.png'), filename: 'grave_flies_logo.png')
-movie3.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/grave_thumg.jpg'), filename: 'grave_thumg.jpg')
-movie3.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/grave_flies_back.jpg'), filename: 'grave_flies_back.jpg')
+movie3.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/grave_flies_logo.png'), filename: 'grave_flies_logo.png')
+movie3.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/grave_thumg.jpg'), filename: 'grave_thumg.jpg')
+movie3.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/grave_flies_back.jpg'), filename: 'grave_flies_back.jpg')
 
 
 # movie4 = Movie.create!(title: "Dragon Ball Super Broly", 
@@ -106,11 +106,11 @@ movie3.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/grave
 # glinks(4, ["Fantasy", "Action", "Sci-Fi"])
 movie4 = Movie.find(4);
 
-movie4.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dragonball_super_broly_logo.png'), filename: 'dragonball_super_broly_logo.png')
-movie4.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/d5.jpg'), filename: 'd5.jpg')
-movie4.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbs_broly_back.png'), filename: 'dbs_broly_back.png')
+movie4.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dragonball_super_broly_logo.png'), filename: 'dragonball_super_broly_logo.png')
+movie4.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/d5.jpg'), filename: 'd5.jpg')
+movie4.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbs_broly_back.png'), filename: 'dbs_broly_back.png')
 
-movie4.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+movie4.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
 
 # movie5 = Movie.create!(title: "Summer Wars", 
 #   yr: 2009, 
@@ -125,9 +125,9 @@ movie4.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_broly.m
 movie5 = Movie.find(5);
 
 
-movie5.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/summer_wars_logo.png'), filename: 'summer_wars_logo.png')
-movie5.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/summer_wars_thumb.png'), filename: 'summer_wars_thumb.png')
-movie5.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/summer_wars_back.jpg'), filename: 'summer_wars_back.jpg')
+movie5.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/summer_wars_logo.png'), filename: 'summer_wars_logo.png')
+movie5.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/summer_wars_thumb.png'), filename: 'summer_wars_thumb.png')
+movie5.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/summer_wars_back.jpg'), filename: 'summer_wars_back.jpg')
 # movie5.clip.attach(io: open('app/assets/images/video/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
 
 # movie6 = Movie.create!(title: "The Wind Rises", 
@@ -142,11 +142,11 @@ movie5.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/summe
 
 movie6 = Movie.find(6);
 
-movie6.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the-wind-rises-logo.png'), filename: 'the-wind-rises-logo.png')
-movie6.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the_wind_rises_thumb.png'), filename: 'the_wind_rises_thumb.png')
-movie6.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/thewindrises.jpg'), filename: 'thewindrises.jpg')
+movie6.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/the-wind-rises-logo.png'), filename: 'the-wind-rises-logo.png')
+movie6.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/the_wind_rises_thumb.png'), filename: 'the_wind_rises_thumb.png')
+movie6.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/thewindrises.jpg'), filename: 'thewindrises.jpg')
 
-movie6.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/wind_rise_clip.mp4'), filename: 'wind_rise_clip.mp4')
+movie6.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/wind_rise_clip.mp4'), filename: 'wind_rise_clip.mp4')
 
 
 #####
@@ -156,15 +156,15 @@ movie6.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/wind_rise_c
 #   rating: "NR", 
 #   runtime: 103, 
 #   score: 3.9,
-#   description: "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple.")
+#   description: "A swordsman becomes caught up in a struggle between morality, righteousness and seedsotion after he agrees to take a raggedy boy and his dog to a Buddhist temple.")
 # #7 Period, Action, Historical, Adventure
 # glinks(7, ["Adventure", "Action", "Period"])
 
 movie7 = Movie.find(7);
 
-movie7.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/sword_stranger_logo.png'), filename: 'sword_stranger_logo.png')
-movie7.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/sword_stranger_thumb.jpg'), filename: 'sword_stranger_thumb.jpg')
-movie7.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/sword_stranger_back.jpg'), filename: 'sword_stranger_back.jpg')
+movie7.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sword_stranger_logo.png'), filename: 'sword_stranger_logo.png')
+movie7.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sword_stranger_thumb.jpg'), filename: 'sword_stranger_thumb.jpg')
+movie7.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sword_stranger_back.jpg'), filename: 'sword_stranger_back.jpg')
 #######
 
 # movie8 = Movie.create!(title: "Howl's Moving Castle", 
@@ -179,11 +179,11 @@ movie7.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/sword
 
 movie8 = Movie.find(8);
 
-movie8.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/howls-moving-castle-logo.png'), filename: 'howls-moving-castle-logo.png')
-movie8.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/howl_thumb.png'), filename: 'howl_thumb.png')
-movie8.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/howl_back.jpg'), filename: 'howl_back.jpg')
+movie8.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/howls-moving-castle-logo.png'), filename: 'howls-moving-castle-logo.png')
+movie8.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/howl_thumb.png'), filename: 'howl_thumb.png')
+movie8.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/howl_back.jpg'), filename: 'howl_back.jpg')
 
-movie8.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/howl_clip.mp4'), filename: 'howl_clip.mp4')
+movie8.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/howl_clip.mp4'), filename: 'howl_clip.mp4')
 
 # movie9 = Movie.create!(title: "Ghost in the Shell", 
 #   yr: 1995, 
@@ -197,9 +197,9 @@ movie8.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/howl_clip.m
 
 movie9 = Movie.find(9);
 
-movie9.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/ghost-in-the-shell-logo.png'), filename: 'ghost-in-the-shell-logo.png')
-movie9.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/ghostintheshell_thumb.png'), filename: 'ghostintheshell_thumb.png')
-movie9.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/ghostintheshell_back.jpg'), filename: 'ghostintheshell_back.jpg')
+movie9.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/ghost-in-the-shell-logo.png'), filename: 'ghost-in-the-shell-logo.png')
+movie9.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/ghostintheshell_thumb.png'), filename: 'ghostintheshell_thumb.png')
+movie9.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/ghostintheshell_back.jpg'), filename: 'ghostintheshell_back.jpg')
 
 
 
@@ -215,11 +215,11 @@ movie9.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/ghost
 
 movie10 = Movie.find(10);
 
-movie10.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/princess-mononoke-logo-png.png'), filename: 'princess-mononoke-logo-png.png')
-movie10.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/princess_monoke_thumb.png'), filename: 'princess_monoke_thumb.png')
-movie10.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/princess_monoke_back.jpg'), filename: 'princess_monoke_back.jpg')
+movie10.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/princess-mononoke-logo-png.png'), filename: 'princess-mononoke-logo-png.png')
+movie10.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/princess_monoke_thumb.png'), filename: 'princess_monoke_thumb.png')
+movie10.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/princess_monoke_back.jpg'), filename: 'princess_monoke_back.jpg')
 
-movie10.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/princess_monoke_clip.mp4'), filename: 'princess_monoke_clip.mp4')
+movie10.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/princess_monoke_clip.mp4'), filename: 'princess_monoke_clip.mp4')
 
 
 # movie11 = Movie.create!(title: "My Neighbor Totoro", 
@@ -234,11 +234,11 @@ movie10.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/princess_m
 
 movie11 = Movie.find(11);
 
-movie11.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/totoro_logo.png'), filename: 'totoro_logo.png')
-movie11.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/totoro_thumb.png'), filename: 'totoro_thumb.png')
-movie11.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/totoro_back.jpg'), filename: 'totoro_back.jpg')
+movie11.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/totoro_logo.png'), filename: 'totoro_logo.png')
+movie11.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/totoro_thumb.png'), filename: 'totoro_thumb.png')
+movie11.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/totoro_back.jpg'), filename: 'totoro_back.jpg')
 
-movie11.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/totoro.mp4'), filename: 'totoro.mp4')
+movie11.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/totoro.mp4'), filename: 'totoro.mp4')
 
 
 
@@ -254,9 +254,9 @@ movie11.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/totoro.mp4
 
 movie12 = Movie.find(12);
 
-movie12.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/spirited_away_logo.png'), filename: 'spirited_away_logo.png')
-movie12.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/spiritedaway_thumb.png'), filename: 'spiritedaway_thumb.png')
-movie12.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/spiritedaway_back.jpg'), filename: 'spiritedaway_back.jpg')
+movie12.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/spirited_away_logo.png'), filename: 'spirited_away_logo.png')
+movie12.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/spiritedaway_thumb.png'), filename: 'spiritedaway_thumb.png')
+movie12.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/spiritedaway_back.jpg'), filename: 'spiritedaway_back.jpg')
 
 
 
@@ -273,9 +273,9 @@ movie12.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/spir
 
 movie13 = Movie.find(13);
 
-movie13.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kaguya_logo.png'), filename: 'kaguya_logo.png')
-movie13.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kaguya_thumb.jpg'), filename: 'kaguya_thumb.jpg')
-movie13.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kaguya_back.jpg'), filename: 'kaguya_back.jpg')
+movie13.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kaguya_logo.png'), filename: 'kaguya_logo.png')
+movie13.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kaguya_thumb.jpg'), filename: 'kaguya_thumb.jpg')
+movie13.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kaguya_back.jpg'), filename: 'kaguya_back.jpg')
 
 
 # movie14 = Movie.create!(title: "Porco Ross", 
@@ -290,9 +290,9 @@ movie13.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kagu
 
 movie14 = Movie.find(14);
 
-movie14.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/PorcoRosso_logo.png'), filename: 'PorcoRosso_logo.png')
-movie14.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/porcorosso_thumb.png'), filename: 'porcorosso_thumb.png')
-movie14.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/porcorosso_back.png'), filename: 'kaguya_back.jpg')
+movie14.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/PorcoRosso_logo.png'), filename: 'PorcoRosso_logo.png')
+movie14.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/porcorosso_thumb.png'), filename: 'porcorosso_thumb.png')
+movie14.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/porcorosso_back.png'), filename: 'kaguya_back.jpg')
 
 
 # movie15 = Movie.create!(title: "Whisper of the Heart", 
@@ -307,9 +307,9 @@ movie14.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/porc
 
 movie15 = Movie.find(15);
 
-movie15.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/whisper-of-the-heart-logo.png'), filename: 'whisper-of-the-heart-logo.png')
-movie15.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/whisper_of_heart_thumb.jpg'), filename: 'whisper_of_heart_thumb.jpg')
-movie15.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/whisper_of_heart_back.jpg'), filename: '/whisper_of_heart_back.jpg')
+movie15.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/whisper-of-the-heart-logo.png'), filename: 'whisper-of-the-heart-logo.png')
+movie15.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/whisper_of_heart_thumb.jpg'), filename: 'whisper_of_heart_thumb.jpg')
+movie15.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/whisper_of_heart_back.jpg'), filename: '/whisper_of_heart_back.jpg')
 
 
 # movie16 = Movie.create!(title: "The Girl Who Leapt Through Time", 
@@ -324,9 +324,9 @@ movie15.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/whis
 
 movie16 = Movie.find(16);
 
-movie16.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the-girl-who-leapt-through-time-54be509e77dd8.png'), filename: 'the-girl-who-leapt-through-time-54be509e77dd8.png')
-movie16.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the-girl-who-leapt-through-time_thumb.png'), filename: 'the-girl-who-leapt-through-time_thumb.png')
-movie16.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the-girl-who-leapt-through-time.jpg'), filename: 'the-girl-who-leapt-through-time.jpg')
+movie16.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/the-girl-who-leapt-through-time-54be509e77dd8.png'), filename: 'the-girl-who-leapt-through-time-54be509e77dd8.png')
+movie16.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/the-girl-who-leapt-through-time_thumb.png'), filename: 'the-girl-who-leapt-through-time_thumb.png')
+movie16.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/the-girl-who-leapt-through-time.jpg'), filename: 'the-girl-who-leapt-through-time.jpg')
 
 
 # movie17 = Movie.create!(title: "A Silent Voice", 
@@ -341,8 +341,8 @@ movie16.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/the-
 
 movie17 = Movie.find(17);
 
-movie17.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/a_silent_voice_logo.png'), filename: 'a_silent_voice_logo.png')
-movie17.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/a_silent_voice_back.png'), filename: 'a_silent_voice_back.png')
+movie17.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/a_silent_voice_logo.png'), filename: 'a_silent_voice_logo.png')
+movie17.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/a_silent_voice_back.png'), filename: 'a_silent_voice_back.png')
 ### movie17.background.attach(io: open('app/assets/images/movie_photos/a_silent_voice_back.png'), filename: 'a_silent_voice_back.png')
 
 
@@ -358,11 +358,11 @@ movie17.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/a_sil
 
 movie18 = Movie.find(18);
 
-movie18.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kiki_logo.png'), filename: 'kiki_logo.png')
-movie18.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kiki_thumb.png'), filename: 'kiki_thumb.png')
-movie18.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kiki_back.jpg'), filename: 'kiki_back.jpg')
+movie18.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kiki_logo.png'), filename: 'kiki_logo.png')
+movie18.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kiki_thumb.png'), filename: 'kiki_thumb.png')
+movie18.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kiki_back.jpg'), filename: 'kiki_back.jpg')
 
-movie18.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kiki_clip.mp4'), filename: 'kiki_clip.mp4')
+movie18.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/kiki_clip.mp4'), filename: 'kiki_clip.mp4')
 
 
 # movie19 = Movie.create!(title: "Samurai X: The Movie", 
@@ -377,9 +377,9 @@ movie18.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/kiki_clip.
 
 movie19 = Movie.find(19);
 
-movie19.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/samuraix_logo.png'), filename: 'samuraix_logo.png')
-movie19.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/samuraix_thumb.png'), filename: 'samuraix_thumb.png')
-movie19.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/samuraix_back.jpg'), filename: 'samuraix_back.jpg')
+movie19.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/samuraix_logo.png'), filename: 'samuraix_logo.png')
+movie19.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/samuraix_thumb.png'), filename: 'samuraix_thumb.png')
+movie19.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/samuraix_back.jpg'), filename: 'samuraix_back.jpg')
 
 
 
@@ -396,9 +396,9 @@ movie19.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/samu
 
 movie20 = Movie.find(20);
 
-movie20.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/my_hero_logo.png'), filename: 'my_hero_logo.png')
-movie20.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/my_hero_thumb.jpg'), filename: 'my_hero_thumb.jpg')
-movie20.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/my_hero_back.jpg'), filename: 'my_hero_back.jpg')
+movie20.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/my_hero_logo.png'), filename: 'my_hero_logo.png')
+movie20.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/my_hero_thumb.jpg'), filename: 'my_hero_thumb.jpg')
+movie20.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/my_hero_back.jpg'), filename: 'my_hero_back.jpg')
 
 
 # movie21 = Movie.create!(title: "Patema Inverted", 
@@ -413,11 +413,11 @@ movie20.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/my_h
 
 movie21 = Movie.find(21);
 
-movie21.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/patema-inverted-logo.png'), filename: 'patema-inverted-logo.png')
-movie21.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/patemainverted_thumb.jpg'), filename: 'patemainverted_thumb.jpg')
-movie21.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/patema_inverted_back.jpg'), filename: 'patema_inverted_back.jpg')
+movie21.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/patema-inverted-logo.png'), filename: 'patema-inverted-logo.png')
+movie21.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/patemainverted_thumb.jpg'), filename: 'patemainverted_thumb.jpg')
+movie21.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/patema_inverted_back.jpg'), filename: 'patema_inverted_back.jpg')
 
-movie21.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/patema_clip.mp4'), filename: 'patema_clip.mp4')
+movie21.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/patema_clip.mp4'), filename: 'patema_clip.mp4')
 
 
 # movie22 = Movie.create!(title: "Mary and the Witch's Flower", 
@@ -432,11 +432,11 @@ movie21.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/patema_cli
 
 movie22 = Movie.find(22);
 
-movie22.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mary-and-the-witchs-flower-logo.png'), filename: 'mary-and-the-witchs-flower-logo.png')
-movie22.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mary_and_flower_thumb.png'), filename: 'mary_and_flower_thumb.png')
-movie22.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/Mary2.jpg'), filename: 'Mary2.jpg')
+movie22.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mary-and-the-witchs-flower-logo.png'), filename: 'mary-and-the-witchs-flower-logo.png')
+movie22.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mary_and_flower_thumb.png'), filename: 'mary_and_flower_thumb.png')
+movie22.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/Mary2.jpg'), filename: 'Mary2.jpg')
 
-movie22.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mary_witch.mp4'), filename: 'mary_witch.mp4')
+movie22.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mary_witch.mp4'), filename: 'mary_witch.mp4')
 
 
 # movie23 = Movie.create!(title: "Dragon Ball Z: Battle of Gods", 
@@ -451,11 +451,11 @@ movie22.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mary_witch
 
 movie23 = Movie.find(23);
 
-movie23.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_bog_logo.png'), filename: 'dbz_bog_logo.png')
-movie23.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_bog_thumb.jpg'), filename: 'dbz_bog_thumb.jpg')
-movie23.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_bog_back.jpg'), filename: 'dbz_bog_back.jpg')
+movie23.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_bog_logo.png'), filename: 'dbz_bog_logo.png')
+movie23.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_bog_thumb.jpg'), filename: 'dbz_bog_thumb.jpg')
+movie23.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_bog_back.jpg'), filename: 'dbz_bog_back.jpg')
 
-movie23.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_bog_clip.mp4'), filename: 'dbz_bog_clip.mp4')
+movie23.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_bog_clip.mp4'), filename: 'dbz_bog_clip.mp4')
 
 
 
@@ -470,9 +470,9 @@ movie23.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dbz_bog_cl
 
 movie24 = Movie.find(24);
 
-movie24.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/millennium-actress-logo.png'), filename: 'millennium-actress-logo.png')
-movie24.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/millennium-actress_thumb.png'), filename: 'millennium-actress_thumb.png')
-movie24.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/millennium-actress2.jpg'), filename: 'millennium-actress2.jpg')
+movie24.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/millennium-actress-logo.png'), filename: 'millennium-actress-logo.png')
+movie24.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/millennium-actress_thumb.png'), filename: 'millennium-actress_thumb.png')
+movie24.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/millennium-actress2.jpg'), filename: 'millennium-actress2.jpg')
 
 
 
@@ -487,11 +487,11 @@ movie24.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mill
 
 movie25 = Movie.find(25);
 
-movie25.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_z_logo.png'), filename: 'one_piece_z_logo.png')
-movie25.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_z_thumb.png'), filename: 'one_piece_z_thumb.png')
-movie25.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_z_back.png'), filename: 'one_piece_z_back.png')
+movie25.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_z_logo.png'), filename: 'one_piece_z_logo.png')
+movie25.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_z_thumb.png'), filename: 'one_piece_z_thumb.png')
+movie25.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_z_back.png'), filename: 'one_piece_z_back.png')
 
-movie25.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_z.mp4'), filename: 'one_piece_z.mp4')
+movie25.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_z.mp4'), filename: 'one_piece_z.mp4')
 
 
 # movie26 = Movie.create!(title: "Pokémon: The First Movie", 
@@ -505,9 +505,9 @@ movie25.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_
 
 movie26 = Movie.find(26);
 
-movie26.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/pokemon_logo.png'), filename: 'pokemon_logo.png')
-movie26.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/pokemon_thumb.jpg'), filename: 'pokemon_thumb.jpg')
-movie26.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/pokemon_back.jpg'), filename: 'pokemon_back.jpg')
+movie26.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/pokemon_logo.png'), filename: 'pokemon_logo.png')
+movie26.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/pokemon_thumb.jpg'), filename: 'pokemon_thumb.jpg')
+movie26.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/pokemon_back.jpg'), filename: 'pokemon_back.jpg')
 
 
 
@@ -522,9 +522,9 @@ movie26.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/poke
 
 movie27 = Movie.find(27);
 
-movie27.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/perfect-blue-logo.png'), filename: 'perfect-blue-logo.png')
-movie27.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/perfect_blue_thumbnail.png'), filename: 'perfect_blue_thumbnail.png')
-movie27.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/perfect_blue_back.jpg'), filename: 'perfect_blue_back.jpg')
+movie27.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/perfect-blue-logo.png'), filename: 'perfect-blue-logo.png')
+movie27.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/perfect_blue_thumbnail.png'), filename: 'perfect_blue_thumbnail.png')
+movie27.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/perfect_blue_back.jpg'), filename: 'perfect_blue_back.jpg')
 
 
 # movie28 = Movie.create!(title: "Dragon Ball: The Path to Power", 
@@ -538,11 +538,11 @@ movie27.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/perf
 
 movie28 = Movie.find(28);
 
-movie28.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/db_power_logo.png'), filename: 'db_power_logo.png')
-movie28.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/db_power_thumb.jpg'), filename: 'db_power_thumb.jpg')
-movie28.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/dragonball_path_power_back.png'), filename: 'dragonball_path_power_back.png')
+movie28.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/db_power_logo.png'), filename: 'db_power_logo.png')
+movie28.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/db_power_thumb.jpg'), filename: 'db_power_thumb.jpg')
+movie28.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dragonball_path_power_back.png'), filename: 'dragonball_path_power_back.png')
 
-movie28.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/db_power_clip.mp4'), filename: 'db_power_clip.mp4')
+movie28.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/db_power_clip.mp4'), filename: 'db_power_clip.mp4')
 
 
 # movie29 = Movie.create!(title: "Mirai", 
@@ -556,9 +556,9 @@ movie28.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/db_power_c
 
 movie29 = Movie.find(29);
 
-movie29.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mirai_logo.png'), filename: 'mirai_logo.png')
-movie29.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mirai_thumb.png'), filename: 'mirai_thumb.png')
-movie29.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mirai-of-the-future.jpg'), filename: 'mirai-of-the-future.jpg')
+movie29.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mirai_logo.png'), filename: 'mirai_logo.png')
+movie29.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mirai_thumb.png'), filename: 'mirai_thumb.png')
+movie29.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/mirai-of-the-future.jpg'), filename: 'mirai-of-the-future.jpg')
 
 
 
@@ -573,11 +573,11 @@ movie29.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/mira
 
 movie30 = Movie.find(30);
 
-movie30.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one-piece-movie-10-strong-world-logo.png'), filename: 'one-piece-movie-10-strong-world-logo.png')
-movie30.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/op_strong_world_thumb.jpg'), filename: 'op_strong_world_thumb.jpg')
-movie30.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one-piece-strong-world.jpg'), filename: 'one-piece-strong-world.jpg')
+movie30.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one-piece-movie-10-strong-world-logo.png'), filename: 'one-piece-movie-10-strong-world-logo.png')
+movie30.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/op_strong_world_thumb.jpg'), filename: 'op_strong_world_thumb.jpg')
+movie30.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one-piece-strong-world.jpg'), filename: 'one-piece-strong-world.jpg')
 
-movie30.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_strong-clip.mp4'), filename: 'one_piece_strong-clip.mp4')
+movie30.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_strong-clip.mp4'), filename: 'one_piece_strong-clip.mp4')
 
 
 # movie31 = Movie.create!(title: "One Piece Film: Gold", 
@@ -591,11 +591,11 @@ movie30.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_
 
 movie31 = Movie.find(31);
 
-movie31.logo.attach(io: open('https://animetflix-dev.s3.amazonaws.com/onepiecegold_logo.png'), filename: 'onepiecegold_logo.png')
-movie31.thumbnail.attach(io: open('https://animetflix-dev.s3.amazonaws.com/onepiecegold_thumb.jpg'), filename: 'onepiecegold_thumb.jpg')
-movie31.background.attach(io: open('https://animetflix-dev.s3.amazonaws.com/onepiece_gold_back.jpeg'), filename: 'onepiece_gold_back.jpeg')
+movie31.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_logo.png'), filename: 'onepiecegold_logo.png')
+movie31.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_thumb.jpg'), filename: 'onepiecegold_thumb.jpg')
+movie31.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiece_gold_back.jpeg'), filename: 'onepiece_gold_back.jpeg')
 
-movie31.clip.attach(io: open('https://animetflix-dev.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+movie31.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
 
 
 # Movie.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
