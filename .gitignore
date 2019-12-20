@@ -15,7 +15,7 @@
 bundle.js
 bundle.js.map
 
-# app/assets/images/video
+app/assets/images/video
 
 
 public/assets/*

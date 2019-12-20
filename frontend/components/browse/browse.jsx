@@ -53,6 +53,8 @@ class Browse extends React.Component{
   renderHomeDetails(movie) {
     if (movie) {
       clearTimeout(this.showcaseDisplay);
+      // debugger
+      let sourceVid = movie.clip;
 
       let watchStatus = (this.state.watched) ? (
         <span className="button-icon">
@@ -66,15 +68,15 @@ class Browse extends React.Component{
       return (
         <>
           <div className="vid-container">
-              {/* <Video version="showcase" /> */}
+              <Video version="showcase" sourceVid={sourceVid}/>
           </div>
           <section className="showcase-container">
            
 
             <div className="logo-and-buttons">
               <div className={`showcase-logo-container`}>
-                {/* <img className={`movie-logo ${tab}`} src={movie.logo} alt=""/> */}
-                <img className={`movie-logo `} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" />
+                <img className={`movie-logo`} src={movie.logo} alt="logo"/>
+                {/* <img className={`movie-logo `} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
               </div>
 
               <div className="showcase-detail-buttons">
@@ -157,8 +159,7 @@ class Browse extends React.Component{
 
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            // if (genre.movie_ids.length > 12) {
-            if (genre.name === "Action") {
+            if (genre.movie_ids.length > 12) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >

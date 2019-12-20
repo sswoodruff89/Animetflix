@@ -233,6 +233,11 @@ runtimeRemaining(duration, vid) {
     }
 ///////
 
+///////VIDEO
+
+    let sourceVid = movie.clip; 
+
+
 ////////CONTROLS
     let vidControls = (
       <section className="video-controls" >
@@ -368,7 +373,8 @@ runtimeRemaining(duration, vid) {
           {/* <Video version="full" /> */}
 
         <video className="full"
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          // src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          src={sourceVid}
           id="video-player"
           // muted={mute} 
           autoPlay={true} 
