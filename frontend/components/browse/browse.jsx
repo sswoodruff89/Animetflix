@@ -53,7 +53,7 @@ class Browse extends React.Component{
   renderHomeDetails(movie) {
     if (movie) {
       clearTimeout(this.showcaseDisplay);
-      // debugger
+
       let sourceVid = movie.clip;
 
       let watchStatus = (this.state.watched) ? (
