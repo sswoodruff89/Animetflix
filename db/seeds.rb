@@ -86,6 +86,7 @@ glinks(2, ["Thriller", "Action", "Sci-Fi"])
 # movie2.clip.attach(io: File.open('app/assets/images/video/akira_clip.mp4'), filename: 'akira_clip.mp4')
 
 
+#########################################
 movie3 = Movie.create!(title: "Grave of the Fireflies", 
   yr: 1993, 
   director: "Isao Takahata", 
@@ -96,6 +97,12 @@ movie3 = Movie.create!(title: "Grave of the Fireflies",
 #3 Drama, War
 glinks(3, ["Drama", "War"])
 
+#####
+# movie3.logo.attach(io: File.open('app/assets/images/movie_photos/akira_logo.png'), filename: 'akira_logo.png')
+# movie3.thumbnail.attach(io: File.open('app/assets/images/movie_photos/akira_thumb.png'), filename: 'akira_thumb.png')
+# movie3.background.attach(io: File.open('app/assets/images/movie_photos/akira_back.jpg'), filename: 'akira_back.jpg')
+
+
 movie4 = Movie.create!(title: "Dragon Ball Super Broly", 
   yr: 2018, 
   director: "Tatsuya Nagamine", 
@@ -105,6 +112,10 @@ movie4 = Movie.create!(title: "Dragon Ball Super Broly",
   description: "One fateful day, a Saiyan appears before Goku and Vegeta who they have never seen before: Broly. With the return of Frieza from hell, a fierce battle awaits these three Saiyans who have followed completely different destinies.")
 #4 Action, Fantasy, Sci-fi
 glinks(4, ["Fantasy", "Action", "Sci-Fi"])
+
+# movie4.logo.attach(io: File.open('app/assets/images/movie_photos/dragonball_super_broly_logo.png'), filename: 'dragonball_super_broly_logo.png')
+# movie4.thumbnail.attach(io: File.open('app/assets/images/movie_photos/d5.jpg'), filename: 'd5.jpg')
+# movie4.background.attach(io: File.open('app/assets/images/movie_photos/dbs_broly_back.png'), filename: 'dbs_broly_back.png')
 
 # movie4.clip.attach(io: File.open('app/assets/images/video/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
 
@@ -118,6 +129,11 @@ movie5 = Movie.create!(title: "Summer Wars",
 #5 Action, Adventure, Sci-Fi, Comedy
 glinks(5, ["Adventure", "Action", "Sci-Fi", "Comedy"])
 
+# movie5.logo.attach(io: File.open('app/assets/images/movie_photos/summer_wars_logo.png'), filename: 'summer_wars_logo.png')
+# movie5.thumbnail.attach(io: File.open('app/assets/images/movie_photos/summer_wars_thumb.png'), filename: 'summer_wars_thumb.png')
+# movie5.background.attach(io: File.open('app/assets/images/movie_photos/summer_wars_back.jpg'), filename: 'summer_wars_back.jpg')
+# movie5.clip.attach(io: File.open('app/assets/images/video/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+
 movie6 = Movie.create!(title: "The Wind Rises", 
   yr: 2013, 
   director: "Hayao Miyazaki", 
@@ -127,7 +143,14 @@ movie6 = Movie.create!(title: "The Wind Rises",
   description: "A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi (Hideaki Anno), whose storied career includes the creation of the A6M World War II fighter plane.")
 #6 Drama, War, Romance, Period
 glinks(6, ["Drama", "War", "Romance", "Period"])
+# movie6.logo.attach(io: File.open('app/assets/images/movie_photos/the-wind-rises-logo.png'), filename: 'the-wind-rises-logo.png')
+# movie6.thumbnail.attach(io: File.open('app/assets/images/movie_photos/the_wind_rises_thumb.png'), filename: 'the_wind_rises_thumb.png')
+# movie6.background.attach(io: File.open('app/assets/images/movie_photos/thewindrises.jpg'), filename: 'thewindrises.jpg')
 
+# movie6.clip.attach(io: File.open('app/assets/images/video/wind_rise_clip.mp4'), filename: 'wind_rise_clip.mp4')
+
+
+#####
 movie7 = Movie.create!(title: "Sword of the Stranger", 
   yr: 2007, 
   director: "Masahiro Andô", 
@@ -137,6 +160,7 @@ movie7 = Movie.create!(title: "Sword of the Stranger",
   description: "A swordsman becomes caught up in a struggle between morality, righteousness and devotion after he agrees to take a raggedy boy and his dog to a Buddhist temple.")
 #7 Period, Action, Historical, Adventure
 glinks(7, ["Adventure", "Action", "Period"])
+########
 
 movie8 = Movie.create!(title: "Howl's Moving Castle", 
   yr: 2004, 
@@ -147,6 +171,11 @@ movie8 = Movie.create!(title: "Howl's Moving Castle",
   description: "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.")
 #8 Romance, Fantasy, Drama
 glinks(8, ["Drama", "Fantasy", "Romance"])
+# movie8.logo.attach(io: File.open('app/assets/images/movie_photos/howls-moving-castle-logo.png'), filename: 'howls-moving-castle-logo.png')
+# movie8.thumbnail.attach(io: File.open('app/assets/images/movie_photos/howl_thumb.png'), filename: 'howl_thumb.png')
+# movie8.background.attach(io: File.open('app/assets/images/movie_photos/howl_back.jpg'), filename: 'howl_back.jpg')
+
+# movie8.clip.attach(io: File.open('app/assets/images/video/howl_clip.mp4'), filename: 'howl_clip.mp4')
 
 movie9 = Movie.create!(title: "Ghost in the Shell", 
   yr: 1995, 
@@ -157,6 +186,11 @@ movie9 = Movie.create!(title: "Ghost in the Shell",
   description: 'Cyborg federal agent Maj. Motoko Kusanagi trails "The Puppet Master" , who illegally hacks into the computerized minds of cyborg-human hybrids.')
 #9 Action, Sci-Fi, Drama
 glinks(9, ["Action", "Sci-Fi", "Drama"])
+# movie9.logo.attach(io: File.open('app/assets/images/movie_photos/ghost-in-the-shell-logo.png'), filename: 'ghost-in-the-shell-logo.png')
+# movie9.thumbnail.attach(io: File.open('app/assets/images/movie_photos/ghostintheshell_thumb.png'), filename: 'ghostintheshell_thumb.png')
+# movie9.background.attach(io: File.open('app/assets/images/movie_photos/ghostintheshell_back.jpg'), filename: 'ghostintheshell_back.jpg')
+
+
 
 movie10 = Movie.create!(title: "Princess Mononoke", 
   yr: 1997, 
@@ -167,6 +201,12 @@ movie10 = Movie.create!(title: "Princess Mononoke",
   description: "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between San and the forest gods and Tatara, a mining colony.")
 #10 Drama, Fantasy, Action, Adventure
 glinks(10, ["Adventure", "Action", "Drama", "Fantasy"])
+# movie10.logo.attach(io: File.open('app/assets/images/movie_photos/princess-mononoke-logo-png.png'), filename: 'princess-mononoke-logo-png.png')
+# movie10.thumbnail.attach(io: File.open('app/assets/images/movie_photos/princess_monoke_thumb.png'), filename: 'princess_monoke_thumb.png')
+# movie10.background.attach(io: File.open('app/assets/images/movie_photos/princess_monoke_back.jpg'), filename: 'princess_monoke_back.jpg')
+
+# movie10.clip.attach(io: File.open('app/assets/images/video/princess_monoke_clip.mp4'), filename: 'princess_monoke_clip.mp4')
+
 
 movie11 = Movie.create!(title: "My Neighbor Totoro", 
   yr: 1988, 
@@ -177,6 +217,13 @@ movie11 = Movie.create!(title: "My Neighbor Totoro",
   description: "Satsuke and her younger sister, Mei, settle into an old country house with their father and wait for their mother to recover from an illness in an area hospital. As the sisters explore their new home, they encounter and befriend playful spirits in their house and the nearby forest, most notably the massive cuddly creature known as Totoro.")
 #11 Drama, Fantasy, Family
 glinks(11, ["Drama", "Fantasy", "Family", "Comedy"])
+# movie11.logo.attach(io: File.open('app/assets/images/movie_photos/totoro_logo.png'), filename: 'totoro_logo.png')
+# movie11.thumbnail.attach(io: File.open('app/assets/images/movie_photos/totoro_thumb.png'), filename: 'totoro_thumb.png')
+# movie11.background.attach(io: File.open('app/assets/images/movie_photos/totoro_back.jpg'), filename: 'totoro_back.jpg')
+
+# movie11.clip.attach(io: File.open('app/assets/images/video/totoro.mp4'), filename: 'totoro.mp4')
+
+
 
 movie12 = Movie.create!(title: "Spirited Away", 
   yr: 2001, 
@@ -187,6 +234,12 @@ movie12 = Movie.create!(title: "Spirited Away",
   description: "10-year-old Chihiro and her parents stumble upon a seemingly abandoned amusement park. After her mother and father are turned into giant pigs, Chihiro meets the mysterious Haku, who explains that the park is a resort for supernatural beings who need a break from their time spent in the earthly realm, and that she must work there to free herself and her parents.")
 #12 Fantasy, Family, Drama
 glinks(12, ["Drama", "Fantasy", "Family"])
+# movie12.logo.attach(io: File.open('app/assets/images/movie_photos/spirited_away_logo.png'), filename: 'spirited_away_logo.png')
+# movie12.thumbnail.attach(io: File.open('app/assets/images/movie_photos/spiritedaway_thumb.png'), filename: 'spiritedaway_thumb.png')
+# movie12.background.attach(io: File.open('app/assets/images/movie_photos/spiritedaway_back.jpg'), filename: 'spiritedaway_back.jpg')
+
+
+
 
 movie13 = Movie.create!(title: "The Tale of Princess Kaguya", 
   yr: 2013, 
@@ -197,6 +250,10 @@ movie13 = Movie.create!(title: "The Tale of Princess Kaguya",
   description: "A tiny nymph found inside a bamboo stalk grows into a beautiful and desirable young woman, who orders her suitors to prove their love by completing a series of near-impossible tasks.")
 #13 Drama, Fantasy, Period
 glinks(13, ["Drama", "Fantasy", "Period"])
+# movie13.logo.attach(io: File.open('app/assets/images/movie_photos/kaguya_logo.png'), filename: 'kaguya_logo.png')
+# movie13.thumbnail.attach(io: File.open('app/assets/images/movie_photos/kaguya_thumb.jpg'), filename: 'kaguya_thumb.jpg')
+# movie13.background.attach(io: File.open('app/assets/images/movie_photos/kaguya_back.jpg'), filename: 'kaguya_back.jpg')
+
 
 movie14 = Movie.create!(title: "Porco Ross", 
   yr: 1992, 
@@ -207,6 +264,10 @@ movie14 = Movie.create!(title: "Porco Ross",
   description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war.")
 #14 Drama, Fantasy, Period
 glinks(14, ["Drama", "Fantasy", "Period", "Action"])
+# movie14.logo.attach(io: File.open('app/assets/images/movie_photos/PorcoRosso_logo.png'), filename: 'PorcoRosso_logo.png')
+# movie14.thumbnail.attach(io: File.open('app/assets/images/movie_photos/porcorosso_thumb.png'), filename: 'porcorosso_thumb.png')
+# movie14.background.attach(io: File.open('app/assets/images/movie_photos/porcorosso_back.png'), filename: 'kaguya_back.jpg')
+
 
 movie15 = Movie.create!(title: "Whisper of the Heart", 
   yr: 1995, 
@@ -214,9 +275,13 @@ movie15 = Movie.create!(title: "Whisper of the Heart",
   rating: "PG", 
   runtime: 111, 
   score: 4.0,
-  description: "Based on the manga with the same title, this animated film follows Shizuku, an inquisitive young girl and a voracious reader, who longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
+  description: "Shizuku, an inquisitive young girl and a voracious reader, longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
 #15 Drama, Romance
 glinks(15, ["Drama", "Romance"])
+# movie15.logo.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_back.jpg'), filename: 'whisper_of_heart_back.jpg')
+# movie15.thumbnail.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_thumb.jpg'), filename: 'whisper_of_heart_thumb.jpg')
+# movie15.background.attach(io: File.open('app/assets/images/movie_photos/whisper_of_heart_back.jpg'), filename: '/whisper_of_heart_back.jpg')
+
 
 movie16 = Movie.create!(title: "The Girl Who Leapt Through Time", 
   yr: 2008, 
@@ -227,6 +292,10 @@ movie16 = Movie.create!(title: "The Girl Who Leapt Through Time",
   description: "When a young high school girl discovers that she has the unique ability to traverse space and time, her efforts to use the power as a means of preserving the relationships she shares with her closest friends reveals the perpetually shifting nature of personal relationships.")
 #16 Drama, Adventure, Family, Sci-Fi
 glinks(16, ["Drama", "Adventure", "Family", "Sci-Fi"])
+# movie16.logo.attach(io: File.open('app/assets/images/movie_photos/the-girl-who-leapt-through-time-54be509e77dd8.png'), filename: 'the-girl-who-leapt-through-time-54be509e77dd8.png')
+# movie16.thumbnail.attach(io: File.open('app/assets/images/movie_photos/the-girl-who-leapt-through-time_thumb.png'), filename: 'the-girl-who-leapt-through-time_thumb.png')
+# movie16.background.attach(io: File.open('app/assets/images/movie_photos/the-girl-who-leapt-through-time.jpg'), filename: 'the-girl-who-leapt-through-time.jpg')
+
 
 movie17 = Movie.create!(title: "A Silent Voice", 
   yr: 2016, 
