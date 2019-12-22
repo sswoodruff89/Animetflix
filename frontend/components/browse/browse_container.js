@@ -22,17 +22,17 @@ const msp = (state, ownProps) => {
     watchlist = sortByDateAdded(watchlist);
   }
 
-  let randomMovieId = Math.floor(Math.random() * 30);
+  // let randomMovieId = Math.floor(Math.random() * 31);
 
-  let showcaseMovie = state.entities.movies[randomMovieId];
-  let watched = (showcaseMovie && state.entities.watchlists[showcaseMovie.id]) ?
-    state.entities.watchlists[showcaseMovie.id] : null;
+  // let showcaseMovie = state.entities.movies[randomMovieId];
+  // let watched = (showcaseMovie && state.entities.watchlists[showcaseMovie.id]) ?
+  //   state.entities.watchlists[showcaseMovie.id] : null;
 
   return {
     session: state.session.id,
-    showcaseMovie: state.entities.movies[randomMovieId],
+    // showcaseMovie: state.entities.movies[randomMovieId],
     watchlist,
-    watched,
+    // watched,
     genres,
     loading: state.ui.loading.moviesLoading
   };

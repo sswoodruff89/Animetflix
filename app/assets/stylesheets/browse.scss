@@ -101,7 +101,18 @@
   height: 100%;
   bottom: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, transparent 75%, black 90%, black 100%);
+  background: linear-gradient(to bottom, transparent 75%, black 86%, black 100%);
+
+}
+
+.vid-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to right, black 16%, transparent 20%, transparent 80%, black 84%, black 100%);
 
 }
 

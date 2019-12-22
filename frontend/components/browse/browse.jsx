@@ -3,6 +3,7 @@ import React from "react";
 import MovieListContainer from "../movie_list/movie_list_container";
 import MovieDetailContainer from "../movie_list/movie_detai_view/movie_detail_container";
 import { Route, Link, Switch } from "react-router-dom";
+import BrowseShowcase from "./browse_showcase_container";
 import LoadingPage from "../loading_page";
 import Video from "../video/video";
 
@@ -145,7 +146,8 @@ class Browse extends React.Component{
           {/* {this.renderHomeDetails(this.props.showcaseMovie)} */}
 
           {/* {this.renderShowcaseDetails(this.props.showcaseMovie)} */}
-          {showcase}
+          {/* {showcase} */}
+          <BrowseShowcase movieId={Math.floor(Math.random() * 31)}/>
         </section>
 
         <section className="lists-container">

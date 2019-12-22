@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-
+    
+    protect_from_forgery with: :exception
     helper_method :current_user, :logged_in?, :login, :logout
 
     def current_user
@@ -20,6 +21,9 @@ class ApplicationController < ActionController::Base
         session[:session_token] = nil
     end
 
+    # def route_not_found
+    #     render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
+    # end
     # def ensure_logged_in
 
     # end

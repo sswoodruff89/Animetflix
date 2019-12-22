@@ -17,9 +17,7 @@ const msp = (state, ownProps) => {
       return state.entities.movies[watchedMovie.movie_id];
     }) : [];
   }
-  // movies= (ownProps.listName.length > 0 ) ? ownProps.listName.movie_ids.map((movieId) => {
-  //   return state.entities.movies[movieId];
-  // }) : [];
+
   
    return {
     movies: movies,

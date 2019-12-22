@@ -16,15 +16,16 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :genres, only: :index do
+      # resources :movies, only: :index
+    end
  
 
-    resources :genres, only: :index do
-      resources :movies, only: :index
-    end
 
     resources :watchlists, only: [:index, :destroy] do
       resources :movies, only: :index;
     end
+
     
   end
 end

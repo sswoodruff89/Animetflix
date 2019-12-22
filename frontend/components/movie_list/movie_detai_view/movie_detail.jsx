@@ -14,7 +14,7 @@ class MovieDetail extends React.Component{
       watched: (this.props.watched) ? true : false,
       closing: false
     };
-
+ 
     this.handleTab = this.handleTab.bind(this);
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
@@ -25,11 +25,12 @@ class MovieDetail extends React.Component{
   }
 
   componentDidMount() {
-    if (this.props.home) {
-      this.props.requestMovie(this.props.movieId);
-    } else {
-      this.props.requestMovie(this.props.match.params.movieId);
-    }
+     
+    // if (this.props.movieId) {
+    //   this.props.requestMovie(this.props.movieId);
+    // } else {
+      this.props.requestMovie(parseInt(this.props.match.params.movieId));
+    // }
     setTimeout(() => {
       this.setState({video: true});
     }, 1800);
@@ -37,7 +38,7 @@ class MovieDetail extends React.Component{
 
   componentDidUpdate() {
     ///For toggling between movies while Details is open
-    
+     
     let movieId = parseInt(this.props.match.params.movieId);
     if (this.state.currentId && movieId !== this.state.currentId) {
       this.props.requestMovie(this.props.match.params.movieId);

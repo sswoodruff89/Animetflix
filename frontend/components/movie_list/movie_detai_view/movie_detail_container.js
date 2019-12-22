@@ -7,6 +7,8 @@ import {withRouter} from "react-router-dom";
 
 
 const msp = (state, ownProps) => {
+   
+  let movieId = ownProps.movieId || null;
   let movie = state.entities.movies[ownProps.match.params.movieId];
 
   let genreCheck = (Object.entries(state.entities.genres).length > 0);
@@ -24,6 +26,7 @@ const msp = (state, ownProps) => {
 
   return {
     movie,
+    movieId,
     genres,
     watched,
     displayType
@@ -33,6 +36,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     requestMovie: (movieId) => {
+       
       return dispatch(requestMovie(movieId));
     },
     addToWatchList: (movieId) => {
