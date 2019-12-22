@@ -158,6 +158,10 @@ class MovieDetail extends React.Component{
     return (
       <section className="detail-content-container"
         style={fadeIn}  >
+        
+        <div className="director">
+          Directed by: {movie.director}
+        </div>
 
         <aside className="description">
           {movie.description}
