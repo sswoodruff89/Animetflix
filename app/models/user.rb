@@ -26,6 +26,8 @@ class User < ApplicationRecord
         through: :watchlists,
         source: :movie
 
+    has_many :profiles
+
     def self.find_by_cred(email, pw)
         user = User.find_by(email: email);
         return user if user && user.is_password?(pw)

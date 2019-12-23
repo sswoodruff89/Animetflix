@@ -3,7 +3,9 @@ class Api::SessionsController < ApplicationController
     # skip_before_action :verify_authenticity_token
 
     def create
-        @user = User.includes(:watchlists).find_by_cred(params[:user][:email], params[:user][:password])
+        #will have to get watchlists through profiles
+        
+        @user = User.includes(:watchlists, :profiles).find_by_cred(params[:user][:email], params[:user][:password])
         if @user
             login(@user)
             render "api/users/show"

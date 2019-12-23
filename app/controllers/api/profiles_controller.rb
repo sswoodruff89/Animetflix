@@ -1,4 +1,16 @@
 class Api::ProfilesController < ApplicationController
+     def index
+        @profiles = current_user.profiles
+        render :index
+    end
+   
+    def show
+        @profile = Profile.find(params[:id])
+        
+        profile_login(@profile)
+
+        render :show
+    end
 
     def create
         @profile = Profile.new(profile_params)

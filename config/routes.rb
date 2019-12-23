@@ -20,12 +20,12 @@ Rails.application.routes.draw do
       # resources :movies, only: :index
     end
  
-
+    resources :profiles, only: [:index, :show, :create, :update, :destroy]
 
     resources :watchlists, only: [:index, :destroy] do
       resources :movies, only: :index;
     end
-
+ 
     
   end
 end
