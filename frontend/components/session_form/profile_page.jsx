@@ -1,19 +1,23 @@
 import React from "react";
+import ProfileFormContainer from "./profile_form_container";
 
 class ProfilePage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            manage: false
+            manage: false,
+            formOpen: false,
+            formType: "",
+            editProfId: null
         }
         this.renderProfiles = this.renderProfiles.bind(this);
         this.loginProfile = this.loginProfile.bind(this);
         this.toggleProfile = this.toggleProfile.bind(this);
         this.renderManageProfiles = this.renderManageProfiles.bind(this);
+        this.renderProfileForm = this.renderProfileForm.bind(this);
     }
 
     componentDidMount() {
-        debugger
         if (!this.props.profile) {
             this.props.requestAllProfiles();
         }
@@ -36,6 +40,18 @@ class ProfilePage extends React.Component {
         }
         // this.setState({manage: true});
     }
+
+    renderProfileForm(type = "", profileId = null ) {
+        return (e) => {
+            e.preventDefault();
+            if (!this.state.formOpen) {
+                this.setState({formOpen: true, formType: type, });
+            } else {
+                this.setState({formOpen: false, formType: "", profileId})
+            }
+        }
+    }
+
 
     
 
@@ -74,12 +90,11 @@ class ProfilePage extends React.Component {
     }
 
     renderManageProfiles(profiles, addProfile) {
-        debugger
         if (profiles) {
 
             return (
                 <section className="profile-form">
-                    <div className="watching">Who's watching?</div >
+                    <div className="watching">Manage Profiles:</div >
                     <ul className="profile-list">
                         {profiles.map((profile, i) => {
                             return (
@@ -87,7 +102,7 @@ class ProfilePage extends React.Component {
                                     className="profile-block">
                                     <button className="profile-button"
                                         value={profile.id}
-                                        onClick={this.loginProfile}>
+                                        onClick={this.renderProfileForm("edit")}>
                                         {/* <div className="edit">
                                             <span>
                                                 <i className="fas fa-pencil-alt"></i>
@@ -121,16 +136,15 @@ class ProfilePage extends React.Component {
     }
 
     render() {
-        debugger
         let profiles = this.props.profiles;
         let manage = this.props.history.location.pathname.includes("/manage_profiles")
+        let {formOpen, formType } = this.state;
         let addProfile = (profiles.length < 5) ? (
             <li key="5"
                 className="profile-block">
                 <button className="profile-button"
                     // value={profile.id}
-                    // onClick={this.loginProfile}
-                    >
+                    onClick={this.renderProfileForm("new")} >
                 <div className="profile-icon add">
 
                 </div>
@@ -144,9 +158,16 @@ class ProfilePage extends React.Component {
         let profRender = (!manage) ? 
             this.renderProfiles(profiles, addProfile) :
             this.renderManageProfiles(profiles, addProfile);
+
+        let profFormRender = (formOpen) ? 
+            <ProfileFormContainer formType={formType}
+                renderProfileForm={this.renderProfileForm} /> :
+                profRender
+
+        
         return (
             <main className="profile-page">
-                {profRender}
+                {profFormRender}
             </main>
             )
         }

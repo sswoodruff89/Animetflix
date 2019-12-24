@@ -2,8 +2,7 @@ class Api::WatchlistsController < ApplicationController
   
   def index
     if logged_in?
-      @watchlist = current_user.watchlists
-      
+      @watchlist = current_profile.watchlists
       if @watchlist
         render :index
       else
@@ -13,7 +12,7 @@ class Api::WatchlistsController < ApplicationController
   end
 
   def create 
-    @watchlist = Watchlist.new(movie_id: params[:movie_id], user_id: current_user.id)
+    @watchlist = Watchlist.new(movie_id: params[:movie_id], profile_id: current_profile.id)
     if @watchlist.save
       render :show
     else

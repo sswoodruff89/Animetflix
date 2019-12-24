@@ -21,7 +21,7 @@
 
 .profile-form {
     max-width: 88%;
-    // border: 1px solid red;
+    border: 1px solid red;
     background-color: $blackblue;
     animation-name: zoom-fade;
     animation-duration: 350ms;
@@ -176,6 +176,104 @@
 }
 
 .done:hover {
+    background-color: $skyishblue;
+    border: 1px solid $skyishblue;
+}
+
+
+///////Form
+
+.profile-fill-out-form {
+    max-width:40vw;
+    // border: 1px solid ßred;
+    background-color: #000308;
+    animation-name: zoom-fade;
+    animation-duration: 350ms;
+}
+
+.form-heading {
+    // height: 8vw;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* align-items: center; */
+    border-bottom: 1px solid rgb(85, 85, 85);}
+
+.form-heading h2 {
+    font-size: 3.2em;
+}
+
+.form-heading span {
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2% 0;
+    border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+// .form-container .profile-form {
+//     width: 10vw;
+//     // height: 10vw;
+//     // border: 1px solid blue;
+//     max-width: 200px;
+//     min-width: 84px; 
+//     position: block;
+//     border: 1px solid blue;
+// }
+
+.form-container .profile-icon {
+    width: 10vw;
+    height: 10vw;
+    margin-right: 3vw;
+    border: 1px solid white;
+}
+
+
+
+.prof-name-input {
+    height: 1.5vw;
+    width: 21vw;
+    padding: 1%;
+    background-color: gray;
+}
+
+.prof-form-buttons {
+    width: 100%;
+    margin-top: 1vw;
+    border-top: 1px solid gray;
+    padding: 1vw 0;
+}
+
+.prof-form-buttons button {
+    width: 17%;
+    padding: 1.5% 2.5%;
+    text-align: center;
+    margin-right: 5%;
+    transform: scale(1);
+    background-color: black;
+    border: 1px solid white;
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+}
+
+button.save-profile, button.add-profile {
+    color: black;
+    background-color: white;
+}
+
+.prof-form-buttons button:hover {
+    opacity: 1;
+}
+
+button.save-profile:hover, button.add-profile:hover {
     background-color: $skyishblue;
     border: 1px solid $skyishblue;
 }

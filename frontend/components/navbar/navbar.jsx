@@ -55,7 +55,6 @@ class NavBar extends React.Component{
   }
 
   handleInput(e) {
-
       clearTimeout(this.searchTimeout);
       
       let query = this.state.query;
@@ -158,7 +157,9 @@ class NavBar extends React.Component{
           <aside className={`profile-drop-down ${this.state.dropDown}`}
             onMouseLeave={this.hideDropDown}>
             <section className="profile-section">
-              <span>Manage Profiles</span>
+              <span>
+                <Link to="/manage_profiles">Manage Profiles</Link>
+              </span>
             </section>
 
             <ul>

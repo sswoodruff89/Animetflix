@@ -37,10 +37,9 @@ class SessionForm extends React.Component{
     } else if (password === "") {
       this.handleBlur('password');
     } else {
-      debugger
       this.props.processForm(this.state.user).then(() => {
         // this.props.history.push("/browse");
-        this.props.history.push("/profile");
+        this.props.history.push("/profiles");
       });
     }
   }

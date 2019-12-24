@@ -48,13 +48,16 @@ class Movie < ApplicationRecord
     foreign_key: :movie_id,
     dependent: :destroy
   
-  has_many :users_watching,
+  has_many :profiles_watching,
     through: :watchlists,
-    source: :user
+    source: :profile
 
-  def is_watched_by_user?(user)
-    return self.users_watching_ids.include?(user.id)
+  def is_watched_by_profile?(profile)
+    return self.profiles_watching_ids.include?(profile.id)
   end
+  # def is_watched_by_user?(user)
+  #   return self.users_watching_ids.include?(user.id)
+  # end
 
   def get_runtime
     hr = (self.runtime / 60) > 0 ? (self.runtime / 60).to_s + "h" : ""

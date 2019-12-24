@@ -52,10 +52,10 @@ class MovieDetail extends React.Component{
       let {tab, video} = this.state;
 
       ///Pause or play video
-      // if (video) {
-      //   let vid = e.currentTarget.parentNode.parentNode.childNodes[0];
-      //   (tab === "overview") ? vid.pause() : vid.play();
-      // }
+      if (video) {
+        let vid = document.getElementById("video-player");
+        (tab === "overview") ? vid.pause() : vid.play();
+      }
 
       if (tab !== type) {
         this.setState({tab: type, changing: true});
@@ -182,7 +182,6 @@ class MovieDetail extends React.Component{
       transition: `opacity 100ms ease`
     } : {};
     ///fade in between renders
-
 
     switch (tab) {
       case "overview":

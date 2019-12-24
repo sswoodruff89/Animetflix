@@ -14,7 +14,6 @@ import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
-debugger
 
   if (window.currentUser) {
     let session = (window.currentUser && window.currentUser.profile) ?

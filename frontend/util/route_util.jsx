@@ -27,14 +27,14 @@ const ProfileProtected = ({ component: Component, path, withProfile, exact }) =>
     path={path}
     exact={exact}
     render={props =>
-      (withProfile) ? <Component {...props} /> : <Redirect to="/profile" />
+      (withProfile) ? <Component {...props} /> : <Redirect to="/profiles" />
     }
   />
 );
 
 const msp = state => {
   return {
-    loggedIn: Boolean(state.session.id && !state.session.profileId),
+    loggedIn: Boolean(state.session.id),
     withProfile: Boolean(state.session.id && state.session.profileId)
   };
 }

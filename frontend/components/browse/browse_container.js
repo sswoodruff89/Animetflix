@@ -32,6 +32,7 @@ const msp = (state, ownProps) => {
     session: state.session.id,
     // showcaseMovie: state.entities.movies[randomMovieId],
     watchlist,
+    profileId: state.session.profileId,
     // watched,
     genres,
     loading: state.ui.loading.moviesLoading
