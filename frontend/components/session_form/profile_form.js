@@ -3,8 +3,15 @@ import React from "react";
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.profile;
+        this.state = {
+            profile: this.props.profile,
+            nameActive: ""
+        }
         this.handleInput = this.handleInput.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleSumbit = this.handleSumbit.bind(this);
     }
 
     componentDidMount() {
@@ -15,8 +22,50 @@ class ProfileForm extends React.Component {
 
     handleInput(e) {
         debugger
-        let name = e.target.value;
-        this.setState({name});
+        let profile = this.state.profile;
+        profile.name = e.target.value;
+        this.setState({profile, nameActive: ""});
+    }
+
+    handleBlur(e) {
+        debugger
+        let name = this.state.profile.name;
+        if (name === "") {
+            this.setState({nameActive: "active"});
+        }
+    }
+
+    handleCancel(e) {
+        e.preventDefault();
+        debugger
+        this.props.renderProfileForm();
+        // this.props.history.push("/profiles");
+    }
+
+    handleSumbit(formType) {
+    
+        return (e) => {
+            e.preventDefault();
+            let profile = this.state.profile;
+            if (profile.name === "") {
+                this.handleBlur(e);
+            } else if (formType === "add") {
+                this.props.createProfile(profile).then(() => {
+                    this.props.history.push("/profiles");
+                });
+            } else {
+                this.props.updateProfile(profile).then(() => {
+                    this.props.history.push("/profiles");
+                })
+            }
+        }
+    }
+
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.deleteProfile(this.props.profile.id).then(() => {
+            this.props.history.push("/profiles");
+        })
     }
 
     renderForm(profile, type) {
@@ -39,15 +88,20 @@ class ProfileForm extends React.Component {
 
                         <input type="text"
                             value={profile.name}
-                            // placeholder="Name"
-                            className="prof-name-input"
+                            placeholder="Name"
+                            className={`prof-name-input ${this.state.nameActive}`}
+                            autoFocus
+                            onBlur={this.handleBlur}
                             onChange={this.handleInput} />
-
+                        <p className={`prof ${this.state.nameActive}`}>Please enter a name</p>
                         <div className="prof-form-buttons">
-                            <button className="add-profile">
+                            <button className="add-profile"
+                                onClick={this.handleSumbit(type)}
+                            >
                                 CONTINUE
                             </button>
-                            <button className="cancel">
+                            <button className="cancel"
+                                onClick={this.handleCancel}>
                                 CANCEL
                             </button>
                         </div>
@@ -64,38 +118,43 @@ class ProfileForm extends React.Component {
 
                 <div className="form-container">
       
-                        <div className="profile-icon">
-                            <div className="profile-edit">
-                                <span>
-                                </span>
-                            </div>
+                    <div className="profile-icon">
+                        <div className="profile-edit">
+                            <span>
+                            </span>
                         </div>
+                    </div>
 
-                        <input type="text"
-                            value={profile.name}
-                            placeholder="Name"
-                            className="prof-name-input" 
-                            onChange={this.handleInput}/>
+                    <input type="text"
+                        value={profile.name}
+                        placeholder="Name"
+                        className={`prof-name-input ${this.state.nameActive}`}
+                        onBlur={this.handleBlur}
+                        onChange={this.handleInput}/>
+                    <p className={`prof ${this.state.nameActive}`}>Please enter a name</p>
 
-                        <div className="prof-form-buttons">
-                            <button className="save-profile">
-                                SAVE
-                            </button>
-                            <button className="cancel">
-                                CANCEL
-                            </button>
-                            <button className="delete">
-                                DELETE
-                            </button>
-                        </div>
-
+                    <div className="prof-form-buttons">
+                        <button className="save-profile"
+                            onClick={this.handleSumbit(type)}>
+                            SAVE
+                        </button>
+                        <button className="cancel"
+                            onClick={this.handleCancel}>
+                            CANCEL
+                        </button>
+                        <button className="delete"
+                            onClick={this.handleDelete}>
+                            DELETE
+                        </button>
+                    </div>
                 </div>
             </section>
           )}
     }
 
     render() {
-        let {profile, formType} = this.props;
+        let {formType} = this.props;
+        let profile = this.state;
         debugger
         return (
            <>

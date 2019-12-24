@@ -43,6 +43,7 @@ class ProfilePage extends React.Component {
 
     renderProfileForm(type = "", profileId = null ) {
         return (e) => {
+            debugger
             e.preventDefault();
             if (!this.state.formOpen) {
                 this.setState({formOpen: true, formType: type, });
@@ -161,7 +162,7 @@ class ProfilePage extends React.Component {
 
         let profFormRender = (formOpen) ? 
             <ProfileFormContainer formType={formType}
-                renderProfileForm={this.renderProfileForm} /> :
+                renderProfileForm={() => {this.renderProfileForm}} /> :
                 profRender
 
         

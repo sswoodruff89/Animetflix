@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER} from "../actions/session_actions";
 import { RECEIVE_WATCHLIST, RECEIVE_NEW_WATCH, REMOVE_WATCH } from "../actions/watchlist_actions";
-
+import { RECEIVE_CURRENT_PROFILE } from "../actions/profile_actions";
 
 export default (state = {}, action) => {
   Object.freeze(state);
@@ -18,7 +18,7 @@ export default (state = {}, action) => {
       let newState = Object.assign({}, state);
       delete newState[action.movieId];
       return newState;
-    case RECEIVE_CURRENT_USER:
+    case RECEIVE_CURRENT_PROFILE:
       watchlist = action.payload.watchlist;
       return Object.assign({}, state, watchlist);
     case LOGOUT_CURRENT_USER:

@@ -1,6 +1,7 @@
 import ProfileForm from "./profile_form";
 import { requestProfile, createProfile, updateProfile, deleteProfile } from "../../actions/profile_actions";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const msp = (state, ownProps) => {
     let profile = state.entities.profiles[ownProps.profileId] || {name: ""};
@@ -13,9 +14,6 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        renderProfileForm: (type) => {
-            return ownProps.renderProfileForm(type);
-        },
         requestProfile: (profileId) => {
             return dispatch(requestProfile(profileId));
         },
@@ -31,4 +29,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(msp, mdp)(ProfileForm);
+export default withRouter(connect(msp, mdp)(ProfileForm));

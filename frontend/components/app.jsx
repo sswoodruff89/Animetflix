@@ -53,12 +53,12 @@ const App = (props) => {
       <AuthRoute path="/signup" component={SignupFormContainer} /> 
 
       <Route path="/search/:searchQuery" component={SearchPageContainer} />
+      <ProfileProtectedRoute path="/browse" component={BrowseContainer} />
     <Switch>
       <ProtectedRoute path="/profiles" component={ProfilePageContainer}/>
       <ProtectedRoute path="/manage_profiles" component={ProfilePageContainer}/>
     </Switch>
       {/* <ProtectedRoute path="/profile" component={ProfilePageContainer}/> */}
-      <ProfileProtectedRoute path="/browse" component={BrowseContainer} />
 
 <Switch>
       <Route path="/browse" render={() => {

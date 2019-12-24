@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
     def create
         #will have to get watchlists through profiles
         
-        @user = User.includes(:watchlists, :profiles).find_by_cred(params[:user][:email], params[:user][:password])
+        @user = User.includes(:profiles).find_by_cred(params[:user][:email], params[:user][:password])
         if @user
             login(@user)
             render "api/users/show"
