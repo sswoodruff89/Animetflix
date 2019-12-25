@@ -22,6 +22,22 @@ class Profile < ApplicationRecord
         source: :movie
 
     belongs_to :user
+
+    has_many :likes,
+        class_name: "Like",
+        dependent: :destroy
+    
+    has_many :liked_movies,
+        through: :likes,
+        source: :movie
+
+    has_many :liked_genres,
+        through: :liked_movies,
+        source: :genres
+
+    def genre_like_totals
+        genres = self.liked_genres.includes(:likes)
+    end
 end
 
 

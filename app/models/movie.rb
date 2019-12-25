@@ -52,6 +52,13 @@ class Movie < ApplicationRecord
     through: :watchlists,
     source: :profile
 
+  has_many :likes,
+    dependent: :destroy
+
+  has_many :profile_likes,
+    through: :likes,
+    source: :profile
+
   def is_watched_by_profile?(profile)
     return self.profiles_watching_ids.include?(profile.id)
   end
@@ -68,6 +75,10 @@ class Movie < ApplicationRecord
 
   def list_genres
     self.genres.map {|genre| genre.name}
+  end
+
+  def total_likes
+      return self.likes.count
   end
 
   has_one_attached :thumbnail

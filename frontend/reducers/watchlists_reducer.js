@@ -19,7 +19,7 @@ export default (state = {}, action) => {
       delete newState[action.movieId];
       return newState;
     case RECEIVE_CURRENT_PROFILE:
-      watchlist = action.payload.watchlist;
+      watchlist = action.profile.watchlist;
       return Object.assign({}, state, watchlist);
     case LOGOUT_CURRENT_USER:
       return {};
