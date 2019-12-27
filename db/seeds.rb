@@ -631,9 +631,9 @@ movie31.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piec
 
 
 
-
-
-
+#####Profile
+# Profile.create!(user_id: 1, name: "demo");
+# Profile.create!(user_id: 1, name: "demo2");
 
 
 

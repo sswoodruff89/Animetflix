@@ -55,7 +55,7 @@
   opacity: 0;
   min-width: 4.2%;
   max-width: 4.2%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(5, 19, 39, 0.5);
   font-size: 50px;
   text-align: center;
   // position: absolute;
@@ -106,16 +106,16 @@ img.left-arrow {
 .movie-item {
   // min-width: 230px;
   // width: 15.65%;
-  max-height: 8.35vw;
-  min-width: 14.77vw;
-  max-width: 14.77vw;
+  max-height: 8.4vw;
+  min-width: 14.85vw;
+  max-width: 14.85vw;
   margin: 0 0.12%;
   position: relative;
   transform: scale(1);
   transition-property: all;
   // transition-delay: 500ms;
   transition-duration: 0.5s;
-  border: 1px solid white;
+  // border: 1px solid white;
   display: flex;
   justify-content: center;
 

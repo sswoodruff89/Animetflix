@@ -1,8 +1,8 @@
-export const fetchWatchlist = () => {
+export const fetchWatchlist = (profileId) => {
   return $.ajax({
     method: "GET",
-    url: "/api/watchlists"
-    // data: {user_id: userId}
+    url: "/api/watchlists",
+    data: {profileId}
   });
 };
 

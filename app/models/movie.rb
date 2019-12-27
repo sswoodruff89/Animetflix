@@ -48,13 +48,23 @@ class Movie < ApplicationRecord
     foreign_key: :movie_id,
     dependent: :destroy
   
-  has_many :users_watching,
+  has_many :profiles_watching,
     through: :watchlists,
-    source: :user
+    source: :profile
 
-  def is_watched_by_user?(user)
-    return self.users_watching_ids.include?(user.id)
+  has_many :likes,
+    dependent: :destroy
+
+  has_many :profile_likes,
+    through: :likes,
+    source: :profile
+
+  def is_watched_by_profile?(profile)
+    return self.profiles_watching_ids.include?(profile.id)
   end
+  # def is_watched_by_user?(user)
+  #   return self.users_watching_ids.include?(user.id)
+  # end
 
   def get_runtime
     hr = (self.runtime / 60) > 0 ? (self.runtime / 60).to_s + "h" : ""
@@ -65,6 +75,10 @@ class Movie < ApplicationRecord
 
   def list_genres
     self.genres.map {|genre| genre.name}
+  end
+
+  def total_likes
+      return self.likes.count
   end
 
   has_one_attached :thumbnail

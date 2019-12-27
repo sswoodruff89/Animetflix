@@ -1,0 +1,2 @@
+class TvShow < ApplicationRecord
+end

@@ -38,7 +38,8 @@ class SessionForm extends React.Component{
       this.handleBlur('password');
     } else {
       this.props.processForm(this.state.user).then(() => {
-        this.props.history.push("/browse");
+        // this.props.history.push("/browse");
+        this.props.history.push("/profiles");
       });
     }
   }
@@ -48,10 +49,6 @@ class SessionForm extends React.Component{
   handleFocus(type) {
     return (e) => {
       e.preventDefault();
-      // const el = document.getElementById(type);
-      // const inputEl = document.getElementById(`input-${type}`);
-      // inputEl.className = "active";
-      // el.className = "active";
       this.setState({[`${type}Active`]: "active"});
     };
   }
@@ -61,13 +58,6 @@ class SessionForm extends React.Component{
       e.preventDefault();
       let input = this.state.user[type];
       if (input === "") {
-        // const el = document.getElementById(type);
-        // const inputEl = document.getElementById(`input-${type}`);
-        // const captionEl = document.getElementById(`enter-${type}`);
-        
-        // el.className = "";
-        // captionEl.className = "";
-        // inputEl.className = "active";
         this.setState({ 
           [`${type}Active`]: "",
           [`${type}Caption`]: "active",

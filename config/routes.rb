@@ -10,21 +10,23 @@ Rails.application.routes.draw do
 
     resources :movies, only: [:index, :show] do
       resources :watchlists, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
 
       collection do
         get 'search'
       end
     end
 
- 
-
     resources :genres, only: :index do
-      resources :movies, only: :index
+      # resources :movies, only: :index
     end
+ 
+    resources :profiles, only: [:index, :show, :create, :update, :destroy]
 
     resources :watchlists, only: [:index, :destroy] do
       resources :movies, only: :index;
     end
+ 
     
   end
 end

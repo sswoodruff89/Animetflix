@@ -22,9 +22,20 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   />
 );
 
+const ProfileProtected = ({ component: Component, path, withProfile, exact }) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={props =>
+      (withProfile) ? <Component {...props} /> : <Redirect to="/profiles" />
+    }
+  />
+);
+
 const msp = state => {
   return {
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.id),
+    withProfile: Boolean(state.session.id && state.session.profileId)
   };
 }
 
@@ -34,4 +45,8 @@ export const AuthRoute = withRouter(
 
 export const ProtectedRoute = withRouter(
   connect(msp)(Protected)
+);
+
+export const ProfileProtectedRoute = withRouter(
+  connect(msp)(ProfileProtected)
 );

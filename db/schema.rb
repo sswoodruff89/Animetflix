@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_192611) do
+ActiveRecord::Schema.define(version: 2019_12_24_215041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(version: 2019_12_16_192611) do
     t.index ["name"], name: "index_genres_on_name"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "profile_id", null: false
+    t.integer "movie_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id", "movie_id"], name: "index_likes_on_profile_id_and_movie_id", unique: true
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title", null: false
     t.integer "yr", null: false
@@ -68,6 +76,14 @@ ActiveRecord::Schema.define(version: 2019_12_16_192611) do
     t.index ["yr"], name: "index_movies_on_yr"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["name"], name: "index_profiles_on_name", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -79,11 +95,11 @@ ActiveRecord::Schema.define(version: 2019_12_16_192611) do
   end
 
   create_table "watchlists", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "movie_id"], name: "index_watchlists_on_user_id_and_movie_id", unique: true
+    t.integer "profile_id", null: false
+    t.index ["profile_id", "movie_id"], name: "index_watchlists_on_profile_id_and_movie_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

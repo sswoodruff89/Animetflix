@@ -68,7 +68,6 @@ class MovieList extends React.Component{
  ///RENDERS BASED ON BROWSE OR SEARCH
   browseOrSearch(displayType) {
 
-
     const listName = (this.props.listType === "genre") ? this.props.listName.name : 
       (this.props.listType === "watchlist") ? "Watchlist" : "";
     const { slideCount, tilEnd, lastMovie } = this.state;

@@ -8,11 +8,16 @@
       user: current_user
     ).html_safe %>;
   <% end %>
+  <% if logged_in_with_profile? %>
+  window.currentProfile = <%= render(
+    "api/profiles/profile.json.jbuilder",
+    profile: current_profile
+  ).html_safe %>;
+  <% end %>
   </script>
 
 
 
 <main id="root">
 
-<
-  /main>
+</main>

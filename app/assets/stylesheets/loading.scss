@@ -30,13 +30,16 @@
 }
 
 .loading div {
-  min-width: 16.43%;
-  max-width: 16.43%;
+  min-width: 14.85vw;
+  max-width: 14.85vw;
+  min-height: 8.4vw;
   margin: 0 0.12%;
+  display: flex;
+  justify-content: center;
   position: relative;
   transform: scale(1);
   filter: brightness(0);
-  background-color: rgb(75, 75, 75);
+  background-color: rgb(21, 35, 59);
   transition-property: all;
   // transition-delay: 500ms;
   transition-duration: 0.5s;
@@ -46,22 +49,55 @@
   animation-duration: 3s;
 }
 
+.loading .loadpic {
+  max-height: 100%;
+  width: auto;
+}
+.loadpic img {
+  height: 100%;
+  width: auto;
+}
+
 .loading-squares-1 {
+  // background-image: image-url("dragon_ball_sil.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 100ms;
 }
 .loading-squares-2 {
+  // background-image: image-url("naruto_sil.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 200ms;
 }
 .loading-squares-3 {
+  // background-image: image-url("sail_moon_sil.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 300ms;
 }
 .loading-squares-4 {
+  // background-image: image-url("titan_sil_bw.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 400ms;
 }
 .loading-squares-5 {
+  // background-image: image-url("one_piece_sil.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 500ms;
 }
 .loading-squares-6 {
+  // background-image: image-url("poke_sil.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   animation-delay: 600ms;
 }
 

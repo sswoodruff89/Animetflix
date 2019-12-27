@@ -6,8 +6,9 @@ import BrowseContainer from "./browse/browse_container";
 import HomePageContainer from "./homepage_container";
 import NavBarContainer from "./navbar/navbar_container";
 import SearchPageContainer from "./search_page/search_page_container";
-import {AuthRoute, ProtectedRoute} from "../util/route_util";
+import {AuthRoute, ProtectedRoute, ProfileProtectedRoute} from "../util/route_util";
 import LoadingPage from "./loading_page";
+import ProfilePageContainer from "./session_form/profile_container";
 import WatchPageContainer from "./video/watch_page_container";
 
 const App = (props) => {
@@ -52,7 +53,12 @@ const App = (props) => {
       <AuthRoute path="/signup" component={SignupFormContainer} /> 
 
       <Route path="/search/:searchQuery" component={SearchPageContainer} />
-      <ProtectedRoute path="/browse" component={BrowseContainer} />
+      <ProfileProtectedRoute path="/browse" component={BrowseContainer} />
+    <Switch>
+      <ProtectedRoute path="/profiles" component={ProfilePageContainer}/>
+      <ProtectedRoute path="/manage_profiles" component={ProfilePageContainer}/>
+    </Switch>
+      {/* <ProtectedRoute path="/profile" component={ProfilePageContainer}/> */}
 
 <Switch>
       <Route path="/browse" render={() => {

@@ -15,6 +15,14 @@ class Api::MoviesController < ApplicationController
     end
   end
 
+  def show
+    
+    @movie = Movie.find(params[:id])
+    # @movie = Movie.with_attached_thumbnail.with_attached_background.with_attached_logo.find(params[:id])
+
+    render :show
+  end
+  
   def search
       @query = params[:search_query];
       if @query.length > 0;
@@ -27,9 +35,4 @@ class Api::MoviesController < ApplicationController
       end
   end
 
-  def show
-    @movie = Movie.with_attached_thumbnail.with_attached_background.with_attached_logo.find(params[:id])
-
-    render :show
-  end
 end

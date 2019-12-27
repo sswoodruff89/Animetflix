@@ -14,7 +14,7 @@ class MovieDetail extends React.Component{
       watched: (this.props.watched) ? true : false,
       closing: false
     };
-
+ 
     this.handleTab = this.handleTab.bind(this);
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
@@ -25,11 +25,12 @@ class MovieDetail extends React.Component{
   }
 
   componentDidMount() {
-    if (this.props.home) {
-      this.props.requestMovie(this.props.movieId);
-    } else {
-      this.props.requestMovie(this.props.match.params.movieId);
-    }
+     
+    // if (this.props.movieId) {
+    //   this.props.requestMovie(this.props.movieId);
+    // } else {
+      this.props.requestMovie(parseInt(this.props.match.params.movieId));
+    // }
     setTimeout(() => {
       this.setState({video: true});
     }, 1800);
@@ -37,7 +38,7 @@ class MovieDetail extends React.Component{
 
   componentDidUpdate() {
     ///For toggling between movies while Details is open
-    
+     
     let movieId = parseInt(this.props.match.params.movieId);
     if (this.state.currentId && movieId !== this.state.currentId) {
       this.props.requestMovie(this.props.match.params.movieId);
@@ -51,10 +52,10 @@ class MovieDetail extends React.Component{
       let {tab, video} = this.state;
 
       ///Pause or play video
-      // if (video) {
-      //   let vid = e.currentTarget.parentNode.parentNode.childNodes[0];
-      //   (tab === "overview") ? vid.pause() : vid.play();
-      // }
+      if (video) {
+        let vid = document.getElementById("video-player");
+        (tab === "overview") ? vid.pause() : vid.play();
+      }
 
       if (tab !== type) {
         this.setState({tab: type, changing: true});
@@ -157,6 +158,10 @@ class MovieDetail extends React.Component{
     return (
       <section className="detail-content-container"
         style={fadeIn}  >
+        
+        <div className="director">
+          Directed by: {movie.director}
+        </div>
 
         <aside className="description">
           {movie.description}
@@ -177,7 +182,6 @@ class MovieDetail extends React.Component{
       transition: `opacity 100ms ease`
     } : {};
     ///fade in between renders
-
 
     switch (tab) {
       case "overview":

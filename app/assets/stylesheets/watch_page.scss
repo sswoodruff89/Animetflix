@@ -67,7 +67,7 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  height: 15vh;
+  height: 11vh;
   z-index: 15;
   display: flex;
   flex-wrap: wrap;
@@ -176,18 +176,19 @@ span.minutes-left {
 
 .volume-with-button {
     // transform: rotate(-90deg) translateY(-25px);
-    display: flex;
-    position:relative;
-    height: 300px;
-    align-items: center;
+  display: flex;
+    position: relative;
+    height: 90px;
+    align-items: flex-end;
     z-index: 15;
+    transform: translateY(-30px);
 }
 
 .volume-with-button img {
-  width: 45px;
-  height: auto;
-  position: relative;
-  z-index: 15;
+    max-width: 45px;
+    max-height: 4vh;
+    position: relative;
+    z-index: 15;
   
 }
 
@@ -202,8 +203,8 @@ span.minutes-left {
     border-radius: 5px;
     position: absolute;
     transform: rotate(-90deg);
-    left: -190%;
-    bottom: 28vh;
+    left: -250%;
+    bottom: 20vh;
     background-color: rgba(0, 0, 0, 0.5);
     transition-delay: 500ms;
     z-index: 15;
@@ -273,10 +274,15 @@ span.minutes-left {
   text-align: center;
 }
 
+.video-controls button:hover {
+  transform: scale(1.1);
+  color: rgb(19, 118, 248);
+}
+
 button.pause {
   // width: 3vw;
   letter-spacing: 0.15em;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 

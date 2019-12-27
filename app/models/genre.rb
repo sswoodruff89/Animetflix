@@ -18,4 +18,16 @@ class Genre < ApplicationRecord
     has_many :movies, 
       through: :genre_links, 
       source: :movie
+
+    has_many :likes,
+      through: :movies,
+      source: :likes
+    
+    def total_likes
+      return self.likes.count
+    end
+
+    def total_likes_per_profile(id)
+      self.likes.where("profile_id = ?", id).count
+    end
 end

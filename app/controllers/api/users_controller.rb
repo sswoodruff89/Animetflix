@@ -6,6 +6,8 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
+            name = @user.email.split("@").first
+            @profile = Profile.create(name: name, user_id: @user.id)
             login(@user)
             render :show
         else

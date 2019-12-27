@@ -6,6 +6,7 @@ export const fetchMovies = () => {
 };
 
 export const fetchMovie = (movieId) => {
+   
   return $.ajax({
     method: "GET",
     url: `/api/movies/${movieId}`
@@ -26,11 +27,3 @@ export const searchMovies = (searchQuery) => {
     data: { search_query: searchQuery }
   });
 };
-
-// export const searchMovies = (searchQuery) => {
-//   return $.ajax({
-//     method: "GET",
-//     url: "/api/movies",
-//     data: { search_query: searchQuery }
-//   });
-// };
