@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="logo" src="https://animetflix-app.herokuapp.com/assets/animetflix_logo_blue-5ea3158236bf6183d57c29cbc933b812f3c7ef2621e8e13457cff32416331ba3.png" width="600" height="120">
+  <img alt="logo" src="https://github.com/sswoodruff89/Animetflix/blob/master/app/assets/images/animetflix_logo_blue.png" width="600" height="120">
 </h1>
 <h3 align="center">ANIMETFLIX STREAMING</h3>
 
