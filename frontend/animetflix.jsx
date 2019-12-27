@@ -15,22 +15,33 @@ import Root from "./components/root";
 document.addEventListener("DOMContentLoaded", () => {
   let store;
 
-  if (window.currentUser) {
-    let session = (window.currentUser && window.currentUser.profile) ?
-      { id: window.currentUser.id, profileId: window.currentUser.profile.id } :
-      { id: window.currentUser.id}
-    const preloadedState = {
+  if (window.currentUser && window.currentProfile) {
+    let preloadedState = {
+      entities: {
+        movies: {},
+        genres: {},
+        users: { [window.currentUser.id]: window.currentUser },
+        profiles: { [window.currentProfile.id]: window.currentProfile },
+        search: []
+        // watchlist: 
+      },
+      session: {id: window.currentUser.id, profileId: window.currentProfile.id}
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+    delete window.currentProfile;
+  } else if (window.currentUser && !window.currentProfile) {
+    let preloadedState = {
       entities: {
         movies: {},
         genres: {},
         users: {[window.currentUser.id]: window.currentUser},
         search: []
       },
-      session
+      session: {id: window.currentUser.id}
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
-    delete window.currentProfile;
   } else {
     store = configureStore();
   }

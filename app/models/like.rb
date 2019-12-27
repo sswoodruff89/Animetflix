@@ -16,5 +16,7 @@ class Like < ApplicationRecord
 
     belongs_to :profile
 
-    
+    has_many :liked_genres,
+        through: :movie,
+        source: :genres
 end

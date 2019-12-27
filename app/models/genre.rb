@@ -27,7 +27,7 @@ class Genre < ApplicationRecord
       return self.likes.count
     end
 
-    def total_likes_per_profile(profile_id)
-      self.likes.where("profile_id == ?", profile_id)
+    def total_likes_per_profile(id)
+      self.likes.where("profile_id = ?", id).count
     end
 end

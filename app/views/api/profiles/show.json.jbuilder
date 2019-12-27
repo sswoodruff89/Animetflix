@@ -8,3 +8,12 @@ json.watchlist do
     end
   end
 end
+
+json.likes do
+  @profile.likes.each do |like|
+    json.set! like.movie_id do
+      json.id like.id
+      json.movie_id like.movie_id
+    end
+  end
+end

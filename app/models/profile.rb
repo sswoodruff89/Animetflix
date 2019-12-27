@@ -32,11 +32,12 @@ class Profile < ApplicationRecord
         source: :movie
 
     has_many :liked_genres,
-        through: :liked_movies,
-        source: :genres
+        through: :likes,
+        source: :liked_genres
+
 
     def genre_like_totals
-        genres = self.liked_genres.includes(:likes)
+        self.liked_genres.group(:name).order(count: :desc).count
     end
 end
 

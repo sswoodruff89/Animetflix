@@ -5,7 +5,7 @@ class Api::ProfilesController < ApplicationController
     end
    
     def show
-        @profile = Profile.find(params[:id])
+        @profile = Profile.includes(:likes).find(params[:id])
         
         profile_login(@profile)
 
