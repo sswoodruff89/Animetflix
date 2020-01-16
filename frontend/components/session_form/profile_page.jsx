@@ -43,7 +43,6 @@ class ProfilePage extends React.Component {
 
     renderProfileForm(type = "", profileId = null ) {
         return (e) => {
-            debugger
             e.preventDefault();
             if (!this.state.formOpen) {
                 this.setState({formOpen: true, formType: type, });

@@ -21,14 +21,14 @@ class ProfileForm extends React.Component {
     }
 
     handleInput(e) {
-        debugger
+        
         let profile = this.state.profile;
         profile.name = e.target.value;
         this.setState({profile, nameActive: ""});
     }
 
     handleBlur(e) {
-        debugger
+        
         let name = this.state.profile.name;
         if (name === "") {
             this.setState({nameActive: "active"});
@@ -37,7 +37,7 @@ class ProfileForm extends React.Component {
 
     handleCancel(e) {
         e.preventDefault();
-        debugger
+        
         this.props.renderProfileForm();
         // this.props.history.push("/profiles");
     }
@@ -155,7 +155,7 @@ class ProfileForm extends React.Component {
     render() {
         let {formType} = this.props;
         let profile = this.state;
-        debugger
+        
         return (
            <>
                 {this.renderForm(profile, formType)}

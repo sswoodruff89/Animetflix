@@ -11,8 +11,11 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    processForm: (sessionForm) => {
+    processForm: sessionForm => {
       return dispatch(login(sessionForm));
+    },
+    login: user => {
+      return dispatch(login(user));
     }
   };
 };

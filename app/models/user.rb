@@ -18,9 +18,9 @@ class User < ApplicationRecord
     after_initialize :ensure_token
     attr_reader :password
 
-    has_many :watchlists,
-        foreign_key: :user_id,
-        dependent: :destroy
+    # has_many :watchlists,
+    #     foreign_key: :user_id,
+    #     dependent: :destroy
 
     has_many :watched_movies,
         through: :watchlists,
