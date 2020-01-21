@@ -9,6 +9,7 @@ import SearchPageContainer from "./search_page/search_page_container";
 import {AuthRoute, ProtectedRoute, ProfileProtectedRoute} from "../util/route_util";
 import LoadingPage from "./loading_page";
 import ProfilePageContainer from "./session_form/profile_container";
+import WatchListPageContainer from "./watchlist_page/watchlist_page_container";
 import WatchPageContainer from "./video/watch_page_container";
 
 const App = (props) => {
@@ -23,6 +24,7 @@ const App = (props) => {
     <Switch>
       <Route path="/browse" component={NavBarContainer}/>
       <Route path="/search" component={NavBarContainer}/>
+      <Route path="/watchlist" component={NavBarContainer}/>
 
       <Route path="/watch" render={() => {
         return (<div></div>)
@@ -53,6 +55,7 @@ const App = (props) => {
       <AuthRoute path="/signup" component={SignupFormContainer} /> 
 
       <Route path="/search/:searchQuery" component={SearchPageContainer} />
+      <Route path="/watchlist" component={WatchListPageContainer} />
       <ProfileProtectedRoute path="/browse" component={BrowseContainer} />
     <Switch>
       <ProtectedRoute path="/profiles" component={ProfilePageContainer}/>

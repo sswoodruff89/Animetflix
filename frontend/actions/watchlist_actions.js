@@ -31,26 +31,6 @@ export const removeWatch = (movieId) => {
 
 
 
-// export const fetchWatchlist = () => dispatch => {
-//   // dispatch(startLoadingMovies());
-
-//   return WatchlistAPIUtil.fetchWatchlist().then((watchlist) => {
-//     return dispatch(receiveWatchlist(watchlist));
-//   });
-// };
-
-// export const addToWatchList = (movieId) => dispatch => {
-//   return WatchlistAPIUtil.createWatch(movieId).then((watch) => {
-//     return dispatch(receiveNewWatch(watch));
-//   });
-// };
-
-// export const removeFromWatchList = (watchId) => dispatch => {
-  
-//   return WatchlistAPIUtil.deleteWatch(watchId).then((watch) => {
-//     return dispatch(removeWatch(watch.movie_id));
-//   });
-// };
 export const fetchWatchlist = (profileId) => dispatch => {
   // dispatch(startLoadingMovies());
 

@@ -58,4 +58,4 @@ if (@searchlist.length < 10)
     end
 end
 
-json.searchlist @searchlist
+json.searchlist @searchlist.compact

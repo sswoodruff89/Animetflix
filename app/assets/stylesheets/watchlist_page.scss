@@ -1,0 +1,36 @@
+.watchlist-page{
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 125px;
+  position: relative;
+}
+
+
+
+
+
+.watchlist-list-detail-container {
+  margin-bottom: 4.5%;
+}
+
+.movie-slider.watchlist-list{
+  padding: 0 3.5%;
+  overflow: visible;
+}
+
+
+section.watchlist-errors {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  font-size: 0.75vw;
+  color: rgb(153, 153, 153);
+}
+
+.watchlist-errors p {
+  margin-bottom: 4%;
+  color: rgb(153, 153, 153);
+
+}
+

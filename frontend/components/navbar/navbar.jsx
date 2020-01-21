@@ -105,6 +105,20 @@ class NavBar extends React.Component{
     let queryFilled = (searchQuery === "") ? "" : "active";
 
     // let scroll = (scrolling) ? "active" : "";
+    let browse = (this.props.history.location.pathname.includes("browse")) ? (
+      <li className="current">Home</li>
+    ) : (
+        <Link to="/browse">
+          <li className="link">Home</li>
+        </Link>
+    )
+    let watchlist = (this.props.history.location.pathname.includes("watchlist")) ? (
+      <li className="current">My List</li>
+    ) : (
+        <Link to="/watchlist">
+          <li className="link">My List</li>
+        </Link>
+    )
 
     return (
       <header className={`browse-nav ${scroll}`} >
@@ -114,10 +128,8 @@ class NavBar extends React.Component{
           </Link>
           <ul className="nav-movie-links">
             {/* ADD LINKS LATER */}
-            <li>Home</li>
-            <li>TV Shows</li>
-            <li>Movies</li>
-            <li>My List</li>
+           {browse}
+           {watchlist}
           </ul>
         </nav>
 
@@ -143,8 +155,8 @@ class NavBar extends React.Component{
 
           <ul className="nav-profile-links">
             {/* ADD LINKS LATER */}
-            <li>KIDS</li>
-            <li>DVD</li>
+            {/* <li>KIDS</li>
+            <li>DVD</li> */}
             <li className="icon"><i className="fas fa-bell"></i></li>
 
        

@@ -3,6 +3,8 @@ import * as MovieAPIUtil from "../util/movie_api_util";
 export const RECEIVE_ALL_MOVIES = "RECEIVE_ALL_MOVIES";
 export const RECEIVE_SEARCHED_MOVIES = "RECEIVE_SEARCHED_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
+export const RECEIVE_WATCHLIST_MOVIES = "RECEIVE_WATCHLIST_MOVIES";
+export const RECEIVE_WATCHLIST_ERRORS = "RECEIVE_WATCHLIST_ERRORS";
 export const RECEIVE_SEARCH_ERRORS = "RECEIVE_SEARCH_ERRORS";
 export const START_LOADING_MOVIES = "START_LOADING_MOVIES";
 
@@ -36,6 +38,22 @@ export const receiveSearchErrors = (errors) => {
 };
 /////////
 
+//////FOR WATCHLIST
+export const receiveWatchlistMovies = (movies) => {
+
+  return {
+    type: RECEIVE_WATCHLIST_MOVIES,
+    movies
+  };
+};
+
+export const receiveWatchlistErrors = (errors) => {
+  return {
+    type: RECEIVE_WATCHLIST_ERRORS,
+    errors
+  };
+};
+/////////
 
 ///////FOR LOADING
 
@@ -59,7 +77,6 @@ export const requestAllMovies = () => dispatch => {
 
 export const requestMovie = (movieId) => dispatch => {
 
-   
   return MovieAPIUtil.fetchMovie(movieId).then((movie) => {
     return dispatch(receiveMovie(movie));
   });
@@ -74,6 +91,19 @@ export const requestSearchedMovies = (searchQuery) => dispatch => {
     return dispatch(receiveSearchedMovies(payload));
   }, (errors) => {
     return dispatch(receiveSearchErrors(errors.responseJSON));
+  });
+};
+
+
+//////FOR WATCHLIST PAGE
+
+export const requestWatchlistMovies = (profileId) => dispatch => {
+  dispatch(startLoadingMovies());
+
+  return MovieAPIUtil.watchlistMovies(profileId).then((movies) => {
+    return dispatch(receiveWatchlistMovies(movies));
+  }, (errors) => {
+    return dispatch(receiveWatchlistErrors(errors.responseJSON));
   });
 };
 

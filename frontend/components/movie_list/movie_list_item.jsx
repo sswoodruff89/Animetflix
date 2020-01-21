@@ -25,11 +25,18 @@ class MovieListItem extends React.Component{
           <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
         </Link>
       )
-    } else {
+    } else if (displayType === "search") {
       return (
         <Link to={`/search/${this.props.match.params.searchQuery}/${this.props.listNum}/${movie.id}`}>
           <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
         </Link>
+      )
+    } else if (displayType === "watchlist") {
+      return (
+        <Link to={`/watchlist/${this.props.listNum}/${movie.id}`}>
+          <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
+        </Link>
+
       )
     }
   }

@@ -27,3 +27,11 @@ export const searchMovies = (searchQuery) => {
     data: { search_query: searchQuery }
   });
 };
+
+export const watchlistMovies = (profileId) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/movies/watchlist",
+    data: { profile_id: profileId }
+  });
+};

@@ -82,7 +82,7 @@ class MovieList extends React.Component{
       let endPercentage = (tilEnd && tilEnd < 6 && lastMovie % 6 > 0) ? (
         (100 - ((lastMovie % 6) / 6) * 100)
       ) : 0;
-      slideMovePercentage = ((100 * (slideCount) - 0.35) - (endPercentage));
+      slideMovePercentage = ((100 * (slideCount)) - (endPercentage));
     }
     //////
 
@@ -116,6 +116,31 @@ class MovieList extends React.Component{
                   )
                 }
               })}
+          </ul>
+        </>
+      )
+    } else if (displayType === "watchlist") {
+      let listNum = this.props.listNum;
+      let checkOpenDetail = (this.props.history.location.pathname.includes(`watchlist/${listNum}`)) ? true : false;
+
+      return (
+        <>
+          <ul className="movie-slider watchlist-list" >
+            {movies.map((movie, i) => {
+              if (movie) {
+                return (
+                  <li key={i}
+                    id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
+                    className={(checkOpenDetail) ? `movie-item-${this.detailOpen(movie.id)}` : "movie-item"}>
+
+                    <MovieListItemContainer movie={movie}
+                      listNum={this.props.listNum}
+                      displayType={displayType} />
+
+                  </li>
+                )
+              }
+            })}
           </ul>
         </>
       )
