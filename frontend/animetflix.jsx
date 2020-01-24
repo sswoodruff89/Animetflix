@@ -47,25 +47,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.searchMovies = MovieAPIUtil.searchMovies;
-  window.sortBySearch = SortSelector.sortBySearch;
-  window.sortByScore = SortSelector.sortByScore;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.searchMovies = MovieAPIUtil.searchMovies;
+  // window.sortBySearch = SortSelector.sortBySearch;
+  // window.sortByScore = SortSelector.sortByScore;
   // window.fetchMovie = MovieAPIUtil.fetchMovie;
   // window.fetchGenres = MovieAPIUtil.fetchGenres;
-  window.requestMovie = requestMovie;
-  window.requestAllMovies = requestAllMovies;
-  window.requestSearchedMovies = requestSearchedMovies;
-  window.requestGenres = requestGenres;
-  window.createWatch = WatchAPIUtil.createWatch;
-  window.addToWatchList = addToWatchList;
-  window.removeFromWatchList = removeFromWatchList;
-  window.fetchWatchlist = fetchWatchlist;
+  // window.requestMovie = requestMovie;
+  // window.requestAllMovies = requestAllMovies;
+  // window.requestSearchedMovies = requestSearchedMovies;
+  // window.requestGenres = requestGenres;
+  // window.createWatch = WatchAPIUtil.createWatch;
+  // window.addToWatchList = addToWatchList;
+  // window.removeFromWatchList = removeFromWatchList;
+  // window.fetchWatchlist = fetchWatchlist;
 
-  window.login = SessionAPIUtil.login;
-  window.signup = SessionAPIUtil.signup;
-  window.logout = SessionAPIUtil.logout;
+  // window.login = SessionAPIUtil.login;
+  // window.signup = SessionAPIUtil.signup;
+  // window.logout = SessionAPIUtil.logout;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
