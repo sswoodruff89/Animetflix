@@ -33,6 +33,17 @@ video.thumbnail {
 
 }
 
+.movie-detail-page video.detail::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(to left, transparent 75%, black 86%, black 100%);
+
+}
+
 video.detail.paused {
   filter: brightness(50%);
 }

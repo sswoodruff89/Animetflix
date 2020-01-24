@@ -130,24 +130,22 @@ class NavBar extends React.Component{
     )
 
     return (
-      <header className={`browse-nav ${scroll}`} >
+      <header className={`browse-nav ${scroll}`}>
         <nav className="left-nav">
           <Link to="/browse">
             <img className="browse-logo" src={window.logo} alt="logo" />
           </Link>
           <ul className="nav-movie-links">
             {/* ADD LINKS LATER */}
-           {browse}
-           {watchlist}
+            {browse}
+            {watchlist}
           </ul>
         </nav>
 
         <nav className="right-nav">
           <section className={`search-field ${searchBar}`}>
-            <i className="fas fa-search"
-              onClick={this.searchBarToggle}
-              ></i>
-              {inputBar}
+            <i className="fas fa-search" onClick={this.searchBarToggle}></i>
+            {inputBar}
             {/* <input 
               type="text"
               id="search-bar"
@@ -157,26 +155,28 @@ class NavBar extends React.Component{
               onBlur={this.searchBarToggle}
               onChange={this.handleInput}
               /> */}
-            <i className={`fas fa-times ${queryFilled}`}
-              onClick={this.clearInput}></i>
+            <i
+              className={`fas fa-times ${queryFilled}`}
+              onClick={this.clearInput}
+            ></i>
           </section>
-
 
           <ul className="nav-profile-links">
             {/* ADD LINKS LATER */}
             {/* <li>KIDS</li>
             <li>DVD</li> */}
-            <li className="icon"><i className="fas fa-bell"></i></li>
+            <li className="icon">
+              <i className="fas fa-bell"></i>
+            </li>
 
-       
-            <li className="profile"
-              onMouseOver={this.dropDropDown}></li>
-
+            <li className="profile" onMouseOver={this.dropDropDown}></li>
           </ul>
 
           {/* DROPDOWN MENU */}
-          <aside className={`profile-drop-down ${this.state.dropDown}`}
-            onMouseLeave={this.hideDropDown}>
+          <aside
+            className={`profile-drop-down ${this.state.dropDown}`}
+            onMouseLeave={this.hideDropDown}
+          >
             <section className="profile-section">
               <span>
                 <Link to="/manage_profiles">Manage Profiles</Link>
@@ -184,17 +184,28 @@ class NavBar extends React.Component{
             </section>
 
             <ul>
-              <li>Account</li>
-              <li>Help Center</li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/seanswoodruff/"
+                  target="_blank"
+                >
+                  Account
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/sswoodruff89/Animetflix"
+                  target="_blank"
+                >
+                  Help Center
+                </a>
+              </li>
               <li onClick={this.handleLogOut}>Sign out of Animetflix</li>
             </ul>
-
           </aside>
-          
-
         </nav>
       </header>
-    )
+    );
   }
 }
 

@@ -7,13 +7,15 @@ const msp = (state, ownProps) => {
     if (ownProps.formType === "new") {
         return {
           profile: {},
-          formType: ownProps.formType
+          formType: ownProps.formType,
+          icon: state.ui.modal.icon
         };
     } else {
         return {
           profile: state.ui.modal.profile,
           profileId: state.ui.modal.profile.id,
-          formType: ownProps.formType
+          formType: ownProps.formType,
+          icon: state.ui.modal.icon
         };
 
     }

@@ -5,7 +5,7 @@ import { RECEIVE_PROFILES, RECEIVE_CURRENT_PROFILE, REMOVE_PROFILE } from "../ac
 
 export default (state = {}, action) => {
     Object.freeze(state);
-debugger
+
     switch (action.type) {
         case RECEIVE_CURRENT_PROFILE:
             return Object.assign({}, state, { [action.profile.id]: action.profile });

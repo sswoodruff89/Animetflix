@@ -34,6 +34,7 @@
 }
 
 .movie-slider {
+  // margin-left: 3.4vw;
   min-width: 900px;
   max-width: 100%;
   // height: 220px;
@@ -46,6 +47,7 @@
 .list-with-buttons {
   height: fit-content;
   display: flex;
+  position: relative;
 }
 
 
@@ -53,8 +55,11 @@
 
 .toggle-list-button {
   opacity: 0;
-  min-width: 4.2%;
-  max-width: 4.2%;
+  min-width: 3.81vw;
+  max-width: 3.81vw;
+  // min-width: 4.2%;
+  // max-width: 4.2%;
+  // min-width: 7.38vw;
   background-color: rgba(5, 19, 39, 0.5);
   font-size: 50px;
   text-align: center;
@@ -62,6 +67,8 @@
   z-index: 12;
   display: flex;
   justify-content: center;
+  // position: absolute;
+  // height: 100%;
   
 }
 

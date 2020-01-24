@@ -118,7 +118,7 @@ class ProfilePage extends React.Component {
                                 <button
                                   className="profile-button"
                                   value={profile.id}
-                                  onClick={() => this.props.openModal({ type: "editProfile", profile})}
+                                  onClick={() => this.props.openModal({ type: "editProfile", profile, icon: i})}
                                   //   onClick={this.renderProfileForm("edit")}
                                 >
                                   <div
@@ -164,7 +164,7 @@ class ProfilePage extends React.Component {
               <button
                 className="profile-button"
                 // value={profile.id}
-                onClick={() => this.props.openModal({ type: "newProfile" })}
+                onClick={() => this.props.openModal({ type: "newProfile", icon: profiles.length + 1 })}
               >
                 <div className="profile-icon add"></div>
                 <span className="profile-name">Add Profile</span>

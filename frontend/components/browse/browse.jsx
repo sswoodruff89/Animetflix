@@ -85,7 +85,7 @@ class Browse extends React.Component{
 
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            if (genre.movie_ids.length > 12) {
+            if (genre.movie_ids.length > 6) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >

@@ -1,5 +1,14 @@
 import React from "react";
 
+const COLORS = {
+  0: "red",
+  1: "blue",
+  2: "white",
+  3: "green",
+  4: "purple",
+  5: "yellow"
+};
+
 class ProfileForm extends React.Component {
     constructor(props) {
         super(props);
@@ -73,97 +82,122 @@ class ProfileForm extends React.Component {
         })
     }
 
-    renderForm(profile, type) {
+    renderForm(profile, type, icon) {
+        
         if (type === "new") {
             return (
-                <>
-                    <div className="form-heading">
-                        <h2>Add Profile</h2>
-                        <span>Add a profile for another person to watch Animetflix</span>
-                    </div>
-
-                    <div className="form-container">
-
-                        <div className="profile-icon">
-                            <div className="profile-edit">
-                                <span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <input type="text"
-                            value={profile.name}
-                            placeholder="Name"
-                            className={`prof-name-input ${this.state.nameActive}`}
-                            autoFocus
-                            onBlur={this.handleBlur}
-                            onChange={this.handleInput} />
-                        <p className={`prof ${this.state.nameActive}`}>Please enter a name</p>
-                        <div className="prof-form-buttons">
-                            <button className="add-profile"
-                                onClick={this.handleSumbit(type)}
-                            >
-                                CONTINUE
-                            </button>
-                            <button className="cancel"
-                                onClick={() => this.props.closeModal()}>
-                                CANCEL
-                            </button>
-                        </div>
-
-                    </div>
-                </>
-            )
-        } else {
-          return (
-            <>
+              <>
                 <div className="form-heading">
-                    <h2>Edit Profile</h2>
+                  <h2>Add Profile</h2>
+                  <span>
+                    Add a profile for another person to watch Animetflix
+                  </span>
                 </div>
 
                 <div className="form-container">
-      
-                    <div className="profile-icon">
-                        <div className="profile-edit">
-                            <span>
-                            </span>
-                        </div>
+                  <div
+                    className="profile-icon"
+                    style={{
+                      backgroundImage: `url(${window.miniLogos[icon]})`,
+                      backgroundColor: `${COLORS[icon]}`
+                    }}
+                  >
+                    <div className="profile-edit">
+                      <span></span>
                     </div>
+                  </div>
 
-                    <input type="text"
-                        value={this.props.profile.name}
-                        placeholder="Name"
-                        className={`prof-name-input ${this.state.nameActive}`}
-                        onBlur={this.handleBlur}
-                        onChange={this.handleInput}/>
-                    <p className={`prof ${this.state.nameActive}`}>Please enter a name</p>
-
-                    <div className="prof-form-buttons">
-                        <button className="save-profile"
-                            onClick={this.handleSumbit(type)}>
-                            SAVE
-                        </button>
-                        <button className="cancel"
-                            onClick={() => this.props.closeModal()}>
-                            CANCEL
-                        </button>
-                        <button className="delete"
-                            onClick={this.handleDelete}>
-                            DELETE
-                        </button>
-                    </div>
+                  <input
+                    type="text"
+                    value={profile.name}
+                    placeholder="Name"
+                    className={`prof-name-input ${this.state.nameActive}`}
+                    autoFocus
+                    onBlur={this.handleBlur}
+                    onChange={this.handleInput}
+                  />
+                  <p className={`prof ${this.state.nameActive}`}>
+                    Please enter a name
+                  </p>
+                  <div className="prof-form-buttons">
+                    <button
+                      className="add-profile"
+                      onClick={this.handleSumbit(type)}
+                    >
+                      CONTINUE
+                    </button>
+                    <button
+                      className="cancel"
+                      onClick={() => this.props.closeModal()}
+                    >
+                      CANCEL
+                    </button>
+                  </div>
                 </div>
+              </>
+            );
+        } else {
+          return (
+            <>
+              <div className="form-heading">
+                <h2>Edit Profile</h2>
+              </div>
+
+              <div className="form-container">
+                <div
+                  className="profile-icon"
+                  style={{
+                    backgroundImage: `url(${
+                      window.miniLogos[icon]
+                    })`,
+                    backgroundColor: `${COLORS[icon]}`
+                  }}
+                >
+                  <div className="profile-edit">
+                    <span></span>
+                  </div>
+                </div>
+
+                <input
+                  type="text"
+                  value={this.props.profile.name}
+                  placeholder="Name"
+                  className={`prof-name-input ${this.state.nameActive}`}
+                  onBlur={this.handleBlur}
+                  onChange={this.handleInput}
+                />
+                <p className={`prof ${this.state.nameActive}`}>
+                  Please enter a name
+                </p>
+
+                <div className="prof-form-buttons">
+                  <button
+                    className="save-profile"
+                    onClick={this.handleSumbit(type)}
+                  >
+                    SAVE
+                  </button>
+                  <button
+                    className="cancel"
+                    onClick={() => this.props.closeModal()}
+                  >
+                    CANCEL
+                  </button>
+                  <button className="delete" onClick={this.handleDelete}>
+                    DELETE
+                  </button>
+                </div>
+              </div>
             </>
-          )}
+          );}
     }
 
     render() {
-        let {formType} = this.props;
+        let {formType, icon} = this.props;
         let profile = this.state;
-        
         return (
            <>
-                {this.renderForm(profile, formType)}
+                {this.renderForm(profile, formType, icon)}
            </>
         )
     }
