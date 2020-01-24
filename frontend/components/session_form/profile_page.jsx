@@ -1,5 +1,15 @@
 import React from "react";
 import ProfileFormContainer from "./profile_form_container";
+import Modal from "../modal/modal";
+
+const COLORS = {
+    0: "red",
+    1: "blue",
+    2: "white",
+    3: "green",
+    4: "purple",
+    5: "yellow"
+};
 
 class ProfilePage extends React.Component {
     constructor(props){
@@ -14,7 +24,7 @@ class ProfilePage extends React.Component {
         this.loginProfile = this.loginProfile.bind(this);
         this.toggleProfile = this.toggleProfile.bind(this);
         this.renderManageProfiles = this.renderManageProfiles.bind(this);
-        this.renderProfileForm = this.renderProfileForm.bind(this);
+        // this.renderProfileForm = this.renderProfileForm.bind(this);
     }
 
     componentDidMount() {
@@ -41,16 +51,16 @@ class ProfilePage extends React.Component {
         // this.setState({manage: true});
     }
 
-    renderProfileForm(type = "", profileId = null ) {
-        return (e) => {
-            e.preventDefault();
-            if (!this.state.formOpen) {
-                this.setState({formOpen: true, formType: type, });
-            } else {
-                this.setState({formOpen: false, formType: "", profileId})
-            }
-        }
-    }
+    // renderProfileForm(type = "", profileId = null ) {
+    //     return (e) => {
+    //         e.preventDefault();
+    //         if (!this.state.formOpen) {
+    //             this.setState({formOpen: true, formType: type});
+    //         } else {
+    //             this.setState({formOpen: false, formType: "", profileId})
+    //         }
+    //     }
+    // }
 
 
     
@@ -70,7 +80,12 @@ class ProfilePage extends React.Component {
                                     value={profile.id}
                                     onClick={this.loginProfile}>
 
-                                    <div className="profile-icon"></div>
+                                    <div className="profile-icon"
+                                        style={{
+                                            backgroundImage: `url(${window.miniLogos[i]})`,
+                                            backgroundColor: `${COLORS[i]}`
+                                        }}
+                                    ></div>
                                     <span className="profile-name">
                                         {profile.name}
                                     </span>
@@ -93,36 +108,39 @@ class ProfilePage extends React.Component {
         if (profiles) {
 
             return (
+                <>
                 <section className="profile-form">
                     <div className="watching">Manage Profiles:</div >
                     <ul className="profile-list">
                         {profiles.map((profile, i) => {
                             return (
-                                <li key={i}
-                                    className="profile-block">
-                                    <button className="profile-button"
-                                        value={profile.id}
-                                        onClick={this.renderProfileForm("edit")}>
-                                        {/* <div className="edit">
-                                            <span>
-                                                <i className="fas fa-pencil-alt"></i>
-                                            </span>
-                                        </div> */}
+                              <li key={i} className="profile-block">
+                                <button
+                                  className="profile-button"
+                                  value={profile.id}
+                                  onClick={() => this.props.openModal({ type: "editProfile", profile})}
+                                  //   onClick={this.renderProfileForm("edit")}
+                                >
+                                  <div
+                                    className="profile-icon"
+                                    style={{
+                                      backgroundImage: `url(${window.miniLogos[i]})`,
+                                      backgroundColor: `${COLORS[i]}`
+                                    }}
+                                  >
+                                    <div className="edit">
+                                      <span>
+                                        <i className="fas fa-pencil-alt"></i>
+                                      </span>
+                                    </div>
+                                  </div>
 
-                                        <div className="profile-icon">
-                                            <div className="edit">
-                                                <span>
-                                                    <i className="fas fa-pencil-alt"></i>
-                                                </span>
-                                            </div>
-                                            
-                                        </div>
-                                        <span className="profile-name">
-                                            {profile.name}
-                                        </span>
-                                    </button>
-                                </li>
-                            )
+                                  <span className="profile-name">
+                                    {profile.name}
+                                  </span>
+                                </button>
+                              </li>
+                            );
                         })}
                         {addProfile}
                     </ul>
@@ -131,6 +149,7 @@ class ProfilePage extends React.Component {
                         DONE
                 </button>
                 </section>
+                </>
             )
         }
     }
@@ -139,21 +158,21 @@ class ProfilePage extends React.Component {
         let profiles = this.props.profiles;
         let manage = this.props.history.location.pathname.includes("/manage_profiles")
         let {formOpen, formType } = this.state;
-        let addProfile = (profiles.length < 5) ? (
-            <li key="5"
-                className="profile-block">
-                <button className="profile-button"
-                    // value={profile.id}
-                    onClick={this.renderProfileForm("new")} >
-                <div className="profile-icon add">
-
-                </div>
-                <span className="profile-name">
-                    Add Profile
-                </span>
-                </button>
+        let addProfile =
+          profiles.length < 6 ? (
+            <li key="6" className="profile-block">
+              <button
+                className="profile-button"
+                // value={profile.id}
+                onClick={() => this.props.openModal({ type: "newProfile" })}
+              >
+                <div className="profile-icon add"></div>
+                <span className="profile-name">Add Profile</span>
+              </button>
             </li>
-        ) : "";
+          ) : (
+            ""
+          );
 
         let profRender = (!manage) ? 
             this.renderProfiles(profiles, addProfile) :
@@ -167,6 +186,7 @@ class ProfilePage extends React.Component {
         
         return (
             <main className="profile-page">
+                <Modal />
                 {profFormRender}
             </main>
             )

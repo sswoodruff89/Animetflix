@@ -4,12 +4,19 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const msp = (state, ownProps) => {
-    let profile = state.entities.profiles[ownProps.profileId] || {name: ""};
-    return {
-        profile,
-        profileId: ownProps.profileId,
-        formType: ownProps.formType
-    };
+    if (ownProps.formType === "new") {
+        return {
+          profile: {},
+          formType: ownProps.formType
+        };
+    } else {
+        return {
+          profile: state.ui.modal.profile,
+          profileId: state.ui.modal.profile.id,
+          formType: ownProps.formType
+        };
+
+    }
 };
 
 const mdp = dispatch => {

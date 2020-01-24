@@ -19,6 +19,20 @@
     justify-content: center;
 }
 
+////Modal Background/////
+.profile-form-modal {
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+////
+
 .profile-form {
     max-width: 88%;
     // border: 1px solid red;
@@ -70,8 +84,8 @@
 
 }
 
-.profile-block:not(:last-child) .profile-icon {
-    background-image: image-url("one_piece_sil.png");
+.profile-block .profile-icon {
+    // background-image: image-url("one_piece_sil.png");
     height: 10vw;
     width: 10vw;
     max-height: 200px;
@@ -82,7 +96,7 @@
     position: relative;
     text-decoration: none;
     border: 0.1em solid rgba(0, 10, 27, 0.4);
-    background-color: $darkgrayblue;
+    // background-color: $darkgrayblue;
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
@@ -265,7 +279,6 @@
 
 .form-container p.prof.active {
     display: block;
-
 }
 
 

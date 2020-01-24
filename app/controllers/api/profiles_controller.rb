@@ -24,6 +24,7 @@ class Api::ProfilesController < ApplicationController
     end
 
     def update
+
         @profile = Profile.find(params[:id])
         
         if @profile.update_attributes(profile_params)

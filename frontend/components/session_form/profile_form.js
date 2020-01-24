@@ -38,7 +38,8 @@ class ProfileForm extends React.Component {
     handleCancel(e) {
         e.preventDefault();
         
-        this.props.renderProfileForm();
+        // this.props.renderProfileForm();
+        this.props.closeModal();
         // this.props.history.push("/profiles");
     }
 
@@ -49,12 +50,15 @@ class ProfileForm extends React.Component {
             let profile = this.state.profile;
             if (profile.name === "") {
                 this.handleBlur(e);
-            } else if (formType === "add") {
+            } else if (formType === "new") {
                 this.props.createProfile(profile).then(() => {
+                    this.props.closeModal();
+
                     this.props.history.push("/profiles");
                 });
             } else {
                 this.props.updateProfile(profile).then(() => {
+                    this.props.closeModal();
                     this.props.history.push("/profiles");
                 })
             }
@@ -64,6 +68,7 @@ class ProfileForm extends React.Component {
     handleDelete(e) {
         e.preventDefault();
         this.props.deleteProfile(this.props.profile.id).then(() => {
+            this.props.closeModal();
             this.props.history.push("/profiles");
         })
     }
@@ -71,7 +76,7 @@ class ProfileForm extends React.Component {
     renderForm(profile, type) {
         if (type === "new") {
             return (
-                <section className="profile-fill-out-form">
+                <>
                     <div className="form-heading">
                         <h2>Add Profile</h2>
                         <span>Add a profile for another person to watch Animetflix</span>
@@ -101,17 +106,17 @@ class ProfileForm extends React.Component {
                                 CONTINUE
                             </button>
                             <button className="cancel"
-                                onClick={this.handleCancel}>
+                                onClick={() => this.props.closeModal()}>
                                 CANCEL
                             </button>
                         </div>
 
                     </div>
-                </section>
+                </>
             )
         } else {
           return (
-            <section className="profile-fill-out-form">
+            <>
                 <div className="form-heading">
                     <h2>Edit Profile</h2>
                 </div>
@@ -126,7 +131,7 @@ class ProfileForm extends React.Component {
                     </div>
 
                     <input type="text"
-                        value={profile.name}
+                        value={this.props.profile.name}
                         placeholder="Name"
                         className={`prof-name-input ${this.state.nameActive}`}
                         onBlur={this.handleBlur}
@@ -139,7 +144,7 @@ class ProfileForm extends React.Component {
                             SAVE
                         </button>
                         <button className="cancel"
-                            onClick={this.handleCancel}>
+                            onClick={() => this.props.closeModal()}>
                             CANCEL
                         </button>
                         <button className="delete"
@@ -148,7 +153,7 @@ class ProfileForm extends React.Component {
                         </button>
                     </div>
                 </div>
-            </section>
+            </>
           )}
     }
 

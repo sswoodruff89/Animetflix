@@ -18,10 +18,10 @@ export const receiveProfiles = (profiles) => {
     };
 };
 
-export const removeProfile = (profileId) => {
+export const removeProfile = (profile) => {
     return {
         type: REMOVE_PROFILE,
-        profileId
+        profile
     }
 }
 
@@ -44,8 +44,8 @@ export const createProfile = (profile) => dispatch => {
 };
 
 export const updateProfile = (profile) => dispatch => {
-    return ProfileAPIUtil.createProfile(profile).then((profile) => {
-        return dispatch(receiveCurrentProfile(profile));
+    return ProfileAPIUtil.updateProfile(profile).then(profile => {
+      return dispatch(receiveCurrentProfile(profile));
     });
 };
 

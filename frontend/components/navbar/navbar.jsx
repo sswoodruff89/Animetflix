@@ -1,6 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+const COLORS = {
+  0: "red",
+  1: "blue",
+  2: "white",
+  3: "green",
+  4: "purple",
+  5: "yellow"
+};
+
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
