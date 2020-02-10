@@ -34,7 +34,7 @@ class WatchPage extends React.Component{
   }
 
   componentDidMount() {
-    this.props.requestMovie(this.props.match.params.movieId);
+    this.props.requestProgram(this.props.match.params.programId);
     this.videoLoaded();
   }
 
@@ -196,11 +196,11 @@ runtimeRemaining(duration, vid) {
 /////////RENDER///////////////////
 
   render() {
-    // let movie = (this.props.movie) ? this.props.movie: {};
+    // let program = (this.props.program) ? this.props.program: {};
 
     let {paused, volume, vidLength, currentTime, showControls} = this.state;
     
-    let movie = (this.props.movie) ? this.props.movie : {};
+    let program = (this.props.program) ? this.props.program : {};
     let vid = document.getElementById("video-player");
     let pausePlay = (paused) ? (
           <button className="play"
@@ -235,7 +235,7 @@ runtimeRemaining(duration, vid) {
 
 ///////VIDEO
 
-    let sourceVid = movie.clip; 
+    let sourceVid = program.clip; 
 
 
 ////////CONTROLS
@@ -311,7 +311,7 @@ runtimeRemaining(duration, vid) {
           </section>
           </div>
         <div className="now-playing">
-            {movie.title}
+            {program.title}
         </div>
 
         </section>
@@ -362,13 +362,13 @@ runtimeRemaining(duration, vid) {
         {vidControls}
       </section>
 
-        {/* <section className="current-movie-details" >
+        {/* <section className="current-program-details" >
 
 
         </section> */}
 
         {/* <section className="video-container"> */}
-          {/* <Video version="full" sourceVid={movie.clip}/> */}
+          {/* <Video version="full" sourceVid={program.clip}/> */}
 
           {/* <Video version="full" /> */}
 

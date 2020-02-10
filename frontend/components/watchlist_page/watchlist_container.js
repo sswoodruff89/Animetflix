@@ -1,25 +1,25 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import MovieList from "../movie_list/movie_list";
+import ProgramList from "../program_list/program_list";
 
 const msp = (state, ownProps) => {
 
-    let movies = ownProps.list.map((id) => {
-        return state.entities.movies[id];
+    let programs = ownProps.list.map((id) => {
+        return state.entities.programs[id];
     });
 
     return {
-        movies: movies,
+        programs: programs,
         displayType: "watchlist"
     };
 };
 
 const mdp = (dispatch) => {
     return {
-        receiveMovie: (movieId) => {
-            return dispatch(receiveMovie(movieId));
+        receiveProgram: (programId) => {
+            return dispatch(receiveProgram(programId));
         }
     };
 };
 
-export default withRouter(connect(msp, mdp)(MovieList));
+export default withRouter(connect(msp, mdp)(ProgramList));

@@ -22,13 +22,13 @@
   /* flex-direction: column; */
 }
 
-.nav-movie-links{
+.nav-program-links{
   display: inline-flex;
   margin-left: 20px;
   align-items: center;
 }
 
-.nav-movie-links li {
+.nav-program-links li {
   margin: 10px 15px;
   font-size: 13px;
   font-weight: 300;
@@ -36,7 +36,7 @@
   transition: all 500ms ease-in;
 }
 
-.nav-movie-links li.link:hover{
+.nav-program-links li.link:hover{
   color: rgb(200, 200, 200);
   cursor: pointer;
 }

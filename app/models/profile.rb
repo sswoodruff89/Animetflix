@@ -17,9 +17,9 @@ class Profile < ApplicationRecord
         foreign_key: :profile_id,
         dependent: :destroy
 
-    has_many :watched_movies,
+    has_many :watched_programs,
         through: :watchlists,
-        source: :movie
+        source: :program
 
     belongs_to :user
 
@@ -27,13 +27,15 @@ class Profile < ApplicationRecord
         class_name: "Like",
         dependent: :destroy
     
-    has_many :liked_movies,
+    has_many :liked_programs,
         through: :likes,
-        source: :movie
+        source: :program
 
     has_many :liked_genres,
         through: :likes,
         source: :liked_genres
+
+
 
 
     def genre_like_totals

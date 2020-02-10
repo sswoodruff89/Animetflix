@@ -12,7 +12,7 @@ class Api::WatchlistsController < ApplicationController
   end
 
   def create 
-    @watchlist = Watchlist.new(movie_id: params[:movie_id], profile_id: current_profile.id)
+    @watchlist = Watchlist.new(program_id: params[:program_id], profile_id: current_profile.id)
     if @watchlist.save
       render :show
     else

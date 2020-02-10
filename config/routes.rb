@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create]
 
-    resources :movies, only: [:index, :show] do
+    resources :programs, only: [:index, :show] do
       resources :watchlists, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
 
@@ -19,13 +19,13 @@ Rails.application.routes.draw do
     end
 
     resources :genres, only: :index do
-      # resources :movies, only: :index
+      # resources :programs, only: :index
     end
  
     resources :profiles, only: [:index, :show, :create, :update, :destroy]
 
     resources :watchlists, only: [:index, :destroy] do
-      resources :movies, only: :index;
+      resources :programs, only: :index;
     end
  
     

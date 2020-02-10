@@ -1,6 +1,6 @@
 import React from "react";
 import SearchListContainer from "./search_list_container";
-import MovieDetailContainer from "../movie_list/movie_detai_view/movie_detail_container";
+import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
 import { Route } from "react-router-dom";
 
 class SearchPage extends React.Component{
@@ -12,13 +12,13 @@ class SearchPage extends React.Component{
   }
 
   componentDidMount() {
-    this.props.requestSearchedMovies(this.props.match.params.searchQuery);
+    this.props.requestSearchedPrograms(this.props.match.params.searchQuery);
   }
 
   updateSearch(e) {
     e.preventDefault();
     let query = e.target.value;
-    this.props.requestSearchedMovies(query);
+    this.props.requestSearchedPrograms(query);
     this.props.history.push(`/search/${query}`);
   }
 
@@ -43,7 +43,7 @@ class SearchPage extends React.Component{
 
 /////////For ERRORS
 
-    if (this.props.errors[0] === "No movies found") {
+    if (this.props.errors[0] === "No programs found") {
 
       return (
         <section className="search-errors">
@@ -63,12 +63,12 @@ class SearchPage extends React.Component{
     }
 //////////////
 
-    let movieIds = this.props.movieIds || [];
+    let programIds = this.props.programIds || [];
 
 ////////
-    let movieLists = [];
-    for (let i = 0; i < movieIds.length; i += 6) {
-      movieLists.push(movieIds.slice(i, i+6));
+    let programLists = [];
+    for (let i = 0; i < programIds.length; i += 6) {
+      programLists.push(programIds.slice(i, i+6));
     }
 ////////
 
@@ -84,12 +84,12 @@ class SearchPage extends React.Component{
         </section>
           <section className="search-list">
             {
-              movieLists.map((list, i) => {
+              programLists.map((list, i) => {
 
                 return (
                 <section className="search-list-detail-container" key={i}>
                     <SearchListContainer list={list} listNum={i}/>
-                    <Route path={`/search/${query}/${i}/:movieId`} component={MovieDetailContainer} />
+                    <Route path={`/search/${query}/${i}/:programId`} component={ProgramDetailContainer} />
                 </section>
               )})
             }

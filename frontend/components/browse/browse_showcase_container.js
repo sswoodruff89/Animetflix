@@ -1,32 +1,32 @@
 import Showcase from "./browse_showcase";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { requestMovie } from "../../actions/movies_actions";
+import { requestProgram } from "../../actions/program_actions";
 import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
 
 
 
 const msp = (state, ownProps) => {
 
-    let showcaseMovie = state.entities.movies[ownProps.movieId] || {};
-    let watched = (showcaseMovie && state.entities.watchlists[showcaseMovie.id]) ?
-        state.entities.watchlists[showcaseMovie.id] : null;
+    let showcaseProgram = state.entities.programs[ownProps.programId] || {};
+    let watched = (showcaseProgram && state.entities.watchlists[showcaseProgram.id]) ?
+        state.entities.watchlists[showcaseProgram.id] : null;
 
     return {
         session: state.session.id,
-        showcaseMovie,
+        showcaseProgram,
         watched,
-        loading: state.ui.loading.moviesLoading
+        loading: state.ui.loading.programsLoading
     };
 };
 
 const mdp = dispatch => {
     return {
-        requestMovie: (movieId) => {
-            return dispatch(requestMovie(movieId));
+        requestProgram: (programId) => {
+            return dispatch(requestProgram(programId));
         },
-        addToWatchList: (movieId) => {
-            return dispatch(addToWatchList(movieId));
+        addToWatchList: (programId) => {
+            return dispatch(addToWatchList(programId));
         },
         removeFromWatchList: (watchId) => {
             return dispatch(removeFromWatchList(watchId));

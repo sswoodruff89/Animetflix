@@ -1,7 +1,7 @@
 import React from "react";
 // import {logout} from "../actions/session_actions";
-import MovieListContainer from "../movie_list/movie_list_container";
-import MovieDetailContainer from "../movie_list/movie_detai_view/movie_detail_container";
+import ProgramListContainer from "../program_list/program_list_container";
+import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
 import { Route, Link, Switch } from "react-router-dom";
 import BrowseShowcase from "./browse_showcase_container";
 import LoadingPage from "../loading_page";
@@ -22,7 +22,7 @@ class Browse extends React.Component{
   componentDidMount() {
     this.props.fetchWatchlist(this.props.profileId);
     this.props.requestGenres();
-    this.props.requestAllMovies();
+    this.props.requestAllPrograms();
   }
 
   handleLogOut(e) {
@@ -36,9 +36,9 @@ class Browse extends React.Component{
     let watchStatus = this.state.watched;
 
     if (watchStatus) {
-      this.props.removeFromWatchList(this.props.showcaseMovie.id);
+      this.props.removeFromWatchList(this.props.showcaseProgram.id);
     } else {
-      this.props.addToWatchList(this.props.showcaseMovie.id);
+      this.props.addToWatchList(this.props.showcaseProgram.id);
     }
     this.setState({ watched: !watchStatus });
   }
@@ -48,10 +48,10 @@ class Browse extends React.Component{
       return (
           <section className="list-and-detail-container">
             <section className="single-list-container" >
-              <MovieListContainer listName={watchlist} listType="watchlist" />
+              <ProgramListContainer listName={watchlist} listType="watchlist" />
             </section>
-            <Route path={`/browse/list_watchlist/:movieId`}
-              component={MovieDetailContainer}
+            <Route path={`/browse/list_watchlist/:programId`}
+              component={ProgramDetailContainer}
               displayType="browse" />
           </section>
       )
@@ -67,17 +67,17 @@ class Browse extends React.Component{
       return <LoadingPage />
     }
 
-    // let firstMovieId = (genres[0] !== undefined) ? genres[0].movie_ids[0] : null;
+    // let firstProgramId = (genres[0] !== undefined) ? genres[0].program_ids[0] : null;
 
     // let showcase = (this.props.history.location.pathname.includes("showcase")) ?
-    //   (<Route path="/browse/showcase/:movieId" component={MovieDetailContainer} displayType="showcase"/>) :
-    //   this.renderHomeDetails(this.props.showcaseMovie);
+    //   (<Route path="/browse/showcase/:programId" component={ProgramDetailContainer} displayType="showcase"/>) :
+    //   this.renderHomeDetails(this.props.showcaseProgram);
 
     return (
       <main className="browse-background">
 
         <section className="browse-display">
-          <BrowseShowcase movieId={Math.floor(Math.random() * 31)}/>
+          <BrowseShowcase programId={Math.floor(Math.random() * 31)}/>
         </section>
 
         <section className="lists-container">
@@ -85,14 +85,14 @@ class Browse extends React.Component{
 
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            if (genre.movie_ids.length > 6) {
+            if (genre.program_ids.length > 6) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >
-                    <MovieListContainer listName={genre} listType="genre"/>
+                    <ProgramListContainer listName={genre} listType="genre"/>
                   </section>
-                    <Route path={`/browse/list_${genre.name}/:movieId`} 
-                    component={MovieDetailContainer} 
+                    <Route path={`/browse/list_${genre.name}/:programId`} 
+                    component={ProgramDetailContainer} 
                     key={genre.id}
                     displayType="browse"/>
               </section>

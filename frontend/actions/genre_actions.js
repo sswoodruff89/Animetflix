@@ -1,4 +1,4 @@
-import {fetchGenres} from "../util/movie_api_util";
+import {fetchGenres} from "../util/program_api_util";
 
 
 export const RECEIVE_GENRES = "RECEIVE_GENRES";

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as SessionAPIUtil from "./util/session_api_util";
-import * as MovieAPIUtil from "./util/movie_api_util";
+import * as ProgramAPIUtil from "./util/program_api_util";
 import * as WatchAPIUtil from "./util/watchlist_api_util";
 import * as SortSelector from "./reducers/sort_selector";
-import {requestAllMovies, requestMovie, requestSearchedMovies} from "./actions/movies_actions";
+import {requestAllPrograms, requestProgram, requestSearchedPrograms} from "./actions/program_actions";
 import {requestGenres} from "./actions/genre_actions";
 import {addToWatchList, removeFromWatchList, fetchWatchlist}  from "./actions/watchlist_actions";
 import configureStore from "./store/store";
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.currentUser && window.currentProfile) {
     let preloadedState = {
       entities: {
-        movies: {},
+        programs: {},
         genres: {},
         users: { [window.currentUser.id]: window.currentUser },
         profiles: { [window.currentProfile.id]: window.currentProfile },
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (window.currentUser && !window.currentProfile) {
     let preloadedState = {
       entities: {
-        movies: {},
+        programs: {},
         genres: {},
         users: {[window.currentUser.id]: window.currentUser},
         search: []
@@ -49,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-  // window.searchMovies = MovieAPIUtil.searchMovies;
+  // window.searchPrograms = ProgramAPIUtil.searchPrograms;
   // window.sortBySearch = SortSelector.sortBySearch;
   // window.sortByScore = SortSelector.sortByScore;
-  // window.fetchMovie = MovieAPIUtil.fetchMovie;
-  // window.fetchGenres = MovieAPIUtil.fetchGenres;
-  // window.requestMovie = requestMovie;
-  // window.requestAllMovies = requestAllMovies;
-  // window.requestSearchedMovies = requestSearchedMovies;
+  // window.fetchProgram = ProgramAPIUtil.fetchProgram;
+  // window.fetchGenres = ProgramAPIUtil.fetchGenres;
+  // window.requestProgram = requestProgram;
+  // window.requestAllPrograms = requestAllPrograms;
+  // window.requestSearchedPrograms = requestSearchedPrograms;
   // window.requestGenres = requestGenres;
   // window.createWatch = WatchAPIUtil.createWatch;
   // window.addToWatchList = addToWatchList;

@@ -16,12 +16,12 @@ video.thumbnail {
   transition: opacity 300ms ease;
 }
 
-.movie-item:hover video.thumbnail {
+.program-item:hover video.thumbnail {
   opacity: 1;
   transition: opacity 300ms ease 500ms;
 }
 
-.movie-detail-page video.detail {
+.program-detail-page video.detail {
   position: absolute;
   right: 0;
   // height: 100%;
@@ -33,7 +33,7 @@ video.thumbnail {
 
 }
 
-.movie-detail-page video.detail::before {
+.program-detail-page video.detail::before {
   content: "";
   position: absolute;
   width: 100%;

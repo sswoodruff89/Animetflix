@@ -135,7 +135,7 @@ class NavBar extends React.Component{
           <Link to="/browse">
             <img className="browse-logo" src={window.logo} alt="logo" />
           </Link>
-          <ul className="nav-movie-links">
+          <ul className="nav-program-links">
             {/* ADD LINKS LATER */}
             {browse}
             {watchlist}

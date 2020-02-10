@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_201219) do
+ActiveRecord::Schema.define(version: 2020_02_10_014828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,13 +37,12 @@ ActiveRecord::Schema.define(version: 2019_12_27_201219) do
   end
 
   create_table "genre_links", force: :cascade do |t|
-    t.integer "movie_id", null: false
+    t.integer "program_id", null: false
     t.integer "genre_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["genre_id", "program_id"], name: "index_genre_links_on_genre_id_and_program_id", unique: true
     t.index ["genre_id"], name: "index_genre_links_on_genre_id"
-    t.index ["movie_id", "genre_id"], name: "index_genre_links_on_movie_id_and_genre_id", unique: true
-    t.index ["movie_id"], name: "index_genre_links_on_movie_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -55,13 +54,21 @@ ActiveRecord::Schema.define(version: 2019_12_27_201219) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "profile_id", null: false
-    t.integer "movie_id", null: false
+    t.integer "program_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id", "movie_id"], name: "index_likes_on_profile_id_and_movie_id", unique: true
+    t.index ["profile_id", "program_id"], name: "index_likes_on_profile_id_and_program_id", unique: true
   end
 
-  create_table "movies", force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["name"], name: "index_profiles_on_name", unique: true
+  end
+
+  create_table "programs", force: :cascade do |t|
     t.string "title", null: false
     t.integer "yr", null: false
     t.text "description", null: false
@@ -71,17 +78,11 @@ ActiveRecord::Schema.define(version: 2019_12_27_201219) do
     t.datetime "updated_at", null: false
     t.string "director", null: false
     t.float "score", null: false
-    t.index ["rating"], name: "index_movies_on_rating"
-    t.index ["title"], name: "index_movies_on_title"
-    t.index ["yr"], name: "index_movies_on_yr"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.index ["name"], name: "index_profiles_on_name", unique: true
+    t.string "program_type", null: false
+    t.string "production_company"
+    t.index ["rating"], name: "index_programs_on_rating"
+    t.index ["title"], name: "index_programs_on_title"
+    t.index ["yr"], name: "index_programs_on_yr"
   end
 
   create_table "tv_shows", force: :cascade do |t|
@@ -100,11 +101,11 @@ ActiveRecord::Schema.define(version: 2019_12_27_201219) do
   end
 
   create_table "watchlists", force: :cascade do |t|
-    t.integer "movie_id", null: false
+    t.integer "program_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "profile_id", null: false
-    t.index ["profile_id", "movie_id"], name: "index_watchlists_on_profile_id_and_movie_id", unique: true
+    t.index ["profile_id", "program_id"], name: "index_watchlists_on_profile_id_and_program_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

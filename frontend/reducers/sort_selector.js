@@ -45,7 +45,7 @@ export const sortByScore = (obj) => {
 
 export const sortByListLength = (obj) => {
   return obj.sort((a, b) => {
-    return (a.movie_ids.length < b.movie_ids.length) ? 1 : (a.movie_ids.length > b.movie_ids.length) ? -1 : 0;
+    return (a.program_ids.length < b.program_ids.length) ? 1 : (a.program_ids.length > b.program_ids.length) ? -1 : 0;
   });
 };
 

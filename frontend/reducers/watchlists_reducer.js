@@ -11,12 +11,12 @@ export default (state = {}, action) => {
       return action.watchlist;
     case RECEIVE_NEW_WATCH:
       let newWatch = {
-        [action.watch.movie_id]: action.watch
+        [action.watch.program_id]: action.watch
       };
       return Object.assign({}, state, newWatch);
     case REMOVE_WATCH:
       let newState = Object.assign({}, state);
-      delete newState[action.movieId];
+      delete newState[action.programId];
       return newState;
     case RECEIVE_CURRENT_PROFILE:
       watchlist = action.profile.watchlist;

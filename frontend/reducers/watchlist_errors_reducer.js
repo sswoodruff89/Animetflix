@@ -1,4 +1,4 @@
-import { RECEIVE_WATCHLIST_MOVIES, RECEIVE_WATCHLIST_ERRORS } from "../actions/movies_actions";
+import { RECEIVE_WATCHLIST_PROGRAMS, RECEIVE_WATCHLIST_ERRORS } from "../actions/program_actions";
 
 
 export default (state = [], action) => {
@@ -7,7 +7,7 @@ export default (state = [], action) => {
     switch (action.type) {
         case RECEIVE_WATCHLIST_ERRORS:
             return action.errors;
-        case RECEIVE_WATCHLIST_MOVIES:
+        case RECEIVE_WATCHLIST_PROGRAMS:
             return [];
         default:
             return state;

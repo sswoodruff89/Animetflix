@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
-import { requestSearchedMovies } from "../../actions/movies_actions";
+import { requestSearchedPrograms } from "../../actions/program_actions";
 import {sortBySearch} from "../../reducers/sort_selector";
 import SearchPage from "./search_page";
 
 const msp = (state, ownProps) => {
-  let {movieIds, searchlist} = state.entities.search; 
-  // let movieIds;
-  if (movieIds && movieIds.length > 0) {
-    movieIds = sortBySearch(state.entities.movies, movieIds, ownProps.match.params.searchQuery);
+  let {programIds, searchlist} = state.entities.search; 
+  // let programIds;
+  if (programIds && programIds.length > 0) {
+    programIds = sortBySearch(state.entities.programs, programIds, ownProps.match.params.searchQuery);
   }
   
 
   return {
-    // movies: movies,
+    // programs: programs,
     // matches: "",
-    movieIds,
+    programIds,
     searchlist,
     errors: state.errors.search
   };
@@ -22,8 +22,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    requestSearchedMovies: (searchQuery) => {
-      dispatch(requestSearchedMovies(searchQuery));
+    requestSearchedPrograms: (searchQuery) => {
+      dispatch(requestSearchedPrograms(searchQuery));
     }
   };
 };

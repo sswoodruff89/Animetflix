@@ -1,5 +1,5 @@
 import * as WatchlistAPIUtil from "../util/watchlist_api_util";
-import {startLoadingMovies} from "./movies_actions";
+import {startLoadingPrograms} from "./program_actions";
 
 export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
 export const RECEIVE_NEW_WATCH = "RECEIVE_NEW_WATCH";
@@ -22,25 +22,25 @@ export const receiveNewWatch = (watch) => {
 };
 
 
-export const removeWatch = (movieId) => {
+export const removeWatch = (programId) => {
   return {
     type: REMOVE_WATCH,
-    movieId
+    programId
   };
 };
 
 
 
 export const fetchWatchlist = (profileId) => dispatch => {
-  // dispatch(startLoadingMovies());
+  // dispatch(startLoadingPrograms());
 
   return WatchlistAPIUtil.fetchWatchlist(profileId).then((watchlist) => {
     return dispatch(receiveWatchlist(watchlist));
   });
 };
 
-export const addToWatchList = (movieId) => dispatch => {
-  return WatchlistAPIUtil.createWatch(movieId).then((watch) => {
+export const addToWatchList = (programId) => dispatch => {
+  return WatchlistAPIUtil.createWatch(programId).then((watch) => {
     return dispatch(receiveNewWatch(watch));
   });
 };
@@ -48,6 +48,6 @@ export const addToWatchList = (movieId) => dispatch => {
 export const removeFromWatchList = (watchId) => dispatch => {
   
   return WatchlistAPIUtil.deleteWatch(watchId).then((watch) => {
-    return dispatch(removeWatch(watch.movie_id));
+    return dispatch(removeWatch(watch.program_id));
   });
 };

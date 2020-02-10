@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchWatchlist } from "../../actions/watchlist_actions";
-import { requestWatchlistMovies } from "../../actions/movies_actions";
+import { requestWatchlistPrograms } from "../../actions/program_actions";
 import { sortByDateAdded } from "../../reducers/sort_selector";
 
 import WatchlistPage from "./watchlist_page";
@@ -13,15 +13,15 @@ const msp = (state, ownProps) => {
         watchlist = sortByDateAdded(watchlist);
     }
 
-    let movieIds = Object.values(watchlist).map((watch) => {
-        return watch.movie_id
+    let programIds = Object.values(watchlist).map((watch) => {
+        return watch.program_id
     });
 
     return {
-        // movies: movies,
+        // programs: programs,
         // matches: "",
         profileId: state.session.profileId,
-        movieIds,
+        programIds,
         watchlist
     };
 };
@@ -31,8 +31,8 @@ const mdp = dispatch => {
         fetchWatchlist: (profileId) => {
             dispatch(fetchWatchlist(profileId));
         },
-        requestWatchlistMovies: (profileId) => {
-            dispatch(requestWatchlistMovies(profileId));
+        requestWatchlistPrograms: (profileId) => {
+            dispatch(requestWatchlistPrograms(profileId));
         }
     };
 };

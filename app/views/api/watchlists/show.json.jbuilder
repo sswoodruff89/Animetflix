@@ -1,1 +1,1 @@
-json.extract! @watchlist, :movie_id, :id, :created_at
+json.extract! @watchlist, :program_id, :id, :created_at

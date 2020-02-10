@@ -6,10 +6,10 @@ export const fetchWatchlist = (profileId) => {
   });
 };
 
-export const createWatch = (movieId) => {
+export const createWatch = (programId) => {
   return $.ajax({
     method: "POST",
-    url: `/api/movies/${movieId}/watchlists`
+    url: `/api/programs/${programId}/watchlists`
     // data: {user_id: userId}
   });
 };

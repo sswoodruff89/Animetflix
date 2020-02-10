@@ -1,29 +1,29 @@
 import {
-  RECEIVE_ALL_MOVIES,
-  RECEIVE_MOVIE,
-  RECEIVE_SEARCHED_MOVIES,
+  RECEIVE_ALL_PROGRAMS,
+  RECEIVE_PROGRAM,
+  RECEIVE_SEARCHED_PROGRAMS,
   RECEIVE_SEARCH_ERRORS,
-  START_LOADING_MOVIES
-} from "../actions/movies_actions";
+  START_LOADING_PROGRAMS
+} from "../actions/program_actions";
 import {RECEIVE_WATCHLIST} from "../actions/watchlist_actions"; 
 // import {
 //   RECEIVE_GENRES, START_LOADING_GENRES
 // } from "../actions/genre_actions";
 
 const initialState = {
-  moviesLoading: false
+  programsLoading: false
 };
 
 export default (state = initialState, action) => {
   Object.freeze(state);
 
   switch (action.type) {
-    case START_LOADING_MOVIES:
-      return Object.assign({}, state, {moviesLoading: true});
-    case RECEIVE_ALL_MOVIES:
-    case RECEIVE_SEARCHED_MOVIES:
+    case START_LOADING_PROGRAMS:
+      return Object.assign({}, state, {programsLoading: true});
+    case RECEIVE_ALL_PROGRAMS:
+    case RECEIVE_SEARCHED_PROGRAMS:
     case RECEIVE_SEARCH_ERRORS:
-      return Object.assign({}, state, {moviesLoading: false});
+      return Object.assign({}, state, {programsLoading: false});
     default:
       return state;
   }

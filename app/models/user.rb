@@ -22,9 +22,9 @@ class User < ApplicationRecord
     #     foreign_key: :user_id,
     #     dependent: :destroy
 
-    has_many :watched_movies,
+    has_many :watched_programs,
         through: :watchlists,
-        source: :movie
+        source: :program
 
     has_many :profiles
 
