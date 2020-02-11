@@ -10,7 +10,7 @@
 #
 
 class Profile < ApplicationRecord
-    validates :name, presence: true
+    validates :name, :profile_num, presence: true
 
     has_many :watchlists,
         class_name: "Watchlist",

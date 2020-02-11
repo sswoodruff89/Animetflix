@@ -19,8 +19,8 @@ class Api::ProgramsController < ApplicationController
   end
 
   def show
-    
-    @movie = Program.find(params[:id])
+    # debugger
+    @program = Program.find(params[:id])
     # @movie = Program.with_attached_thumbnail.with_attached_background.with_attached_logo.find(params[:id])
 
     render :show
@@ -29,9 +29,9 @@ class Api::ProgramsController < ApplicationController
   def search
       @query = params[:search_query];
       if @query.length > 0
-        @movies = search_filter_list(params[:search_query])
-        if (@movies.length == 0)
-          render json: ["No movies found"], status: 404
+        @programs = search_filter_list(params[:search_query])
+        if (@programs.length == 0)
+          render json: ["No movies / shows found"], status: 404
         else
           render :search
         end
@@ -40,10 +40,10 @@ class Api::ProgramsController < ApplicationController
 
   def watchlist
 
-    @movies = Profile.find(params[:profile_id]).watched_movies.includes(:genres)
+    @programs = Profile.find(params[:profile_id]).watched_programs.includes(:genres)
     
-      if (@movies.length == 0)
-        render json: ["No movies found"], status: 404
+      if (@programs.length == 0)
+        render json: ["No movies / shows found"], status: 404
       else
         render :index
       end

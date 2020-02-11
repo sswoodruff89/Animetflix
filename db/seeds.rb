@@ -26,8 +26,8 @@ User.create!(email: "demo@demo.com", password: "anything")
 User.create!(email: "otaku@demo.com", password: "anything")
 
 ####Profile
-Profile.create!(user_id: 1, name: "demo");
-Profile.create!(user_id: 1, name: "demo2");
+Profile.create!(user_id: 1, name: "demo", profile_num: 1);
+Profile.create!(user_id: 1, name: "demo2", profile_num: 2);
 
 GENRES = [
   "Family", #1
@@ -41,7 +41,9 @@ GENRES = [
   "Action", #9
   "Comedy", #10
   "Thriller", #11
-  "Horror" #12
+  "Horror", #12,
+  "Crime",
+  "Mystery"
 ]
 
 GENRES.each do |genre|
@@ -678,6 +680,259 @@ program31.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/
 
 program31.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
 
+
+#############
+# program32 = Program.find(32);
+
+program32 = Program.create!(title: "Demon Slayer", 
+  yr: 2019, 
+  director: "Haruo Sotozaki", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 4.4,
+  production_company: "Aniplex, Shueisha",
+  program_type: "TV Show",
+  description: "A family is attacked by demons and only Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.")
+glinks(32, ["Fantasy", "Action", "Horror", "Adventure", "Thriller"])
+
+
+# program33 = Program.find(33);
+
+program33 = Program.create!(title: "Keep Your Hands Off Eizouken!", 
+  yr: 2020, 
+  director: "Masaaki Yuasa", 
+  rating: "NR", 
+  seasons: 1, 
+  score: 4.3,
+  production_company: "Science Saru",
+  program_type: "TV Show",
+  description: 'Three students who are fans of anime decide to come together and make the "greatest anime ever!"')
+glinks(33, ["Comedy", "Drama"])
+
+
+# program34 = Program.find(34);
+
+program34 = Program.create!(title: "One Piece", 
+  yr: 1999, 
+  director: "Eiichiro Oda", 
+  rating: "TV-14", 
+  seasons: 21, 
+  score: 4.3,
+  production_company: "Toei Animation",
+  program_type: "TV Show",
+  description: 'Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".')
+glinks(34, ["Comedy", "Action", "Adventure", "Fantasy"])
+
+
+# program35 = Program.find(35);
+
+program35 = Program.create!(title: "Yu Yu Hakusho: Ghost Files", 
+  yr: 1992, 
+  director: "Yoshihiro Togashi", 
+  rating: "TV-14", 
+  seasons: 4, 
+  score: 4.2,
+  production_company: "Pierrot, Shueisha, Fuji Television",
+  program_type: "TV Show",
+  description: "Resurrected from the dead, 14-year-old Yusuke Urameshi becomes a Spirit Detective and, along with his comrades, hunt down demons causing terror in the world.")
+glinks(35, ["Horror", "Action", "Adventure", "Fantasy"])
+
+
+# program36 = Program.find(36);
+
+program36 = Program.create!(title: "Attack on Titan", 
+  yr: 2013, 
+  director: "Tetsurô Araki", 
+  rating: "TV-MA", 
+  seasons: 4, 
+  score: 4.4,
+  production_company: "Wit Studio, Production I.G.",
+  program_type: "TV Show",
+  description: "After his hometown is destroyed and his mother is killed, young Eren Yeager vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.")
+glinks(36, ["Thriller", "Action", "Adventure", "Fantasy"])
+
+
+# program37 = Program.find(37);
+
+program37 = Program.create!(title: "Death Note", 
+  yr: 2006, 
+  director: "Tetsuro Araki", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 4.5,
+  production_company: "Madhouse",
+  program_type: "TV Show",
+  description: "An intelligent yet cynical high school student begins to cleanse the world from evil with the help of a magical notebook that can kill anyone whose name is written on it.")
+glinks(37, ["Thriller", "Action", "Drama", "Crime", "Mystery"])
+
+
+# program38 = Program.find(38);
+
+program38 = Program.create!(title: "Cowboy Bebop", 
+  yr: 1998, 
+  director: "Shin'ichirô Watanabe", 
+  rating: "TV-14", 
+  seasons: 1, 
+  score: 4.4,
+  production_company: "Bandai Visual Company, Sunrise",
+  program_type: "TV Show",
+  description: "The futuristic misadventures and tragedies of an easygoing bounty hunter and his partners.")
+glinks(38, ["Thriller", "Sci-Fi", "Action", "Crime", "Adventure"])
+
+
+# program39 = Program.find(39);
+
+program39 = Program.create!(title: "Food Wars", 
+  yr: 2016, 
+  director: "Yoshitomo Yonetani", 
+  rating: "TV-14", 
+  seasons: 4, 
+  score: 4.1,
+  production_company: "J.C. Staff",
+  program_type: "TV Show",
+  description: "To improve his cooking skills and to save the restaurant, Souma begins studying in Engetsu Teahouse Culinary Academy, which is regarded as Japan's top culinary academy.")
+glinks(39, ["Drama", "Comedy"])
+
+
+# program40 = Program.find(40);
+
+program40 = Program.create!(title: "Samurai Champloo", 
+  yr: 2016, 
+  director: "Mamoru Hosoda", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 4.2,
+  production_company: "Fuji Television Network, Barnum Studio, Madhouse",
+  program_type: "TV Show",
+  description: 'Fuu, a waitress who works in a teahouse, rescues two master swordsmen, Mugen and Jin, from their execution to help her find the "samurai who smells of sunflowers."')
+glinks(40, ["Period", "Comedy", "Action", "Adventure"])
+
+
+# program41 = Program.find(41);
+
+program41 = Program.create!(title: "Clannad", 
+  yr: 2007, 
+  director: "Tatsuya Ishihara", 
+  rating: "TV-PG", 
+  seasons: 1, 
+  score: 3.9,
+  production_company: "Kyoto Animation",
+  program_type: "TV Show",
+  description: "A high school student who cares little about school or others meets a lonely girl who had to repeat a year while all her friends finished high school. He decides to hang out with her and soon meets more friendly students.")
+glinks(41, ["Drama", "Romance", "Comedy"])
+
+
+
+# program42 = Program.find(42);
+
+program42 = Program.create!(title: "Dragon Ball", 
+  yr: 1986, 
+  director: "Akira Toriyama", 
+  rating: "TV-PG", 
+  seasons: 1, 
+  score: 4.2,
+  production_company: "Toei Animation",
+  program_type: "TV Show",
+  description: "Son Goku, a fighter with a monkey tail, goes on a quest with an assortment of odd characters in search of the Dragon Balls, a set of crystals that can give its bearer anything they desire.")
+glinks(42, ["Action", "Adventure", "Comedy", "Fantasy"])
+
+
+# program43 = Program.find(43);
+
+program43 = Program.create!(title: "Jojo's Bizarre Adventure", 
+  yr: 2012, 
+  director: "Akira Toriyama", 
+  rating: "TV-MA", 
+  seasons: 4, 
+  score: 4.2,
+  production_company: "David Production",
+  program_type: "TV Show",
+  description: "The story of the Joestar family, who are possessed with intense psychic strength, and the adventures each member encounters throughout their lives.")
+glinks(43, ["Action", "Adventure", "Sci-Fi", "Fantasy"])
+
+
+# program44 = Program.find(44);
+
+program44 = Program.create!(title: "One Punch Man", 
+  yr: 2015, 
+  director: "Shingo Natsume", 
+  rating: "TV-PG", 
+  seasons: 2, 
+  score: 4.4,
+  production_company: "J.C. Staff, Bandai Visual Company",
+  program_type: "TV Show",
+  description: "The story of Saitama, a hero that does it just for fun & can defeat his enemies with a single punch.")
+glinks(44, ["Action", "Comedy", "Sci-Fi", "Fantasy"])
+
+
+# program45 = Program.find(45);
+
+program45 = Program.create!(title: "Tokyo Ghoul", 
+  yr: 2014, 
+  director: "Shuhei Morita", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 3.9,
+  production_company: "Pierrot",
+  program_type: "TV Show",
+  description: "A Tokyo college student is attacked by a ghoul, a superpowered human who feeds on human flesh. He survives, but has become part ghoul and becomes a fugitive on the run.")
+glinks(45, ["Action", "Horror", "Thriller", "Fantasy"])
+
+
+# program46 = Program.find(46);
+
+program46 = Program.create!(title: "Sword Art Online", 
+  yr: 2012, 
+  director: "Tomohiko Itô", 
+  rating: "TV-14", 
+  seasons: 4, 
+  score: 3.8,
+  production_company: "A-1 Pictures, ASCII Mediaworks",
+  program_type: "TV Show",
+  description: "In the year 2022, thousands of people get trapped in a new virtual MMORPG and the lone wolf player, Kirito, works to escape.")
+glinks(46, ["Action", "Sci-Fi", "Adventure", "Fantasy"])
+
+
+# program47 = Program.find(47);
+
+program47 = Program.create!(title: "Naruto", 
+  yr: 2002, 
+  director: "Masashi Kishimoto", 
+  rating: "TV-Y7", 
+  seasons: 5, 
+  score: 4.1,
+  production_company: "Pierrot",
+  program_type: "TV Show",
+  description: "Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.")
+glinks(47, ["Action", "Comedy", "Adventure", "Fantasy"])
+
+
+# program48 = Program.find(48);
+
+program48 = Program.create!(title: "Fullmetal Alchemist: Brotherhood", 
+  yr: 2009, 
+  director: "Hiromu Arakawa", 
+  rating: "TV-14", 
+  seasons: 2, 
+  score: 4.5,
+  production_company: "Bones",
+  program_type: "TV Show",
+  description: "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.")
+glinks(48, ["Action", "Sci-Fi", "Adventure", "Fantasy"])
+
+
+# program49 = Program.find(49);
+
+program49 = Program.create!(title: "Future Diary", 
+  yr: 2011, 
+  director: "Naoto Hosoda", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 3.8,
+  production_company: "Kadokawa Pictures",
+  program_type: "TV Show",
+  description: "A young man competes with people around the world for a chance to become the succesor of God, with a diary that is able to tell the future.")
+glinks(49, ["Action", "Drama", "Adventure", "Thriller", "Fantasy"])
 
 # Program.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])

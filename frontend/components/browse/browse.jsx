@@ -77,7 +77,7 @@ class Browse extends React.Component{
       <main className="browse-background">
 
         <section className="browse-display">
-          <BrowseShowcase programId={Math.floor(Math.random() * 31)}/>
+          <BrowseShowcase programId={Math.floor(Math.random() * 49)}/>
         </section>
 
         <section className="lists-container">

@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     resources :watchlists, only: [:index, :destroy] do
       resources :programs, only: :index;
     end
+
+    resources :likes, only: [:create, :destroy]
+    resources :dislikes, only: [:create, :destroy]
  
     
   end

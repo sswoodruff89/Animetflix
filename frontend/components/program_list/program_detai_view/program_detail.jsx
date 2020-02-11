@@ -101,6 +101,10 @@ class ProgramDetail extends React.Component{
       width: `${(program.score / 5) * 100}%`
     };
 
+    let runtimeSeason = (program.runtime) ? program.runtime : 
+      (program.seasons > 1) ? `${program.seasons} seasons`:
+      `${program.seasons} season`
+
     let watchStatus = (this.state.watched) ? (
       <i className="fas fa-check"></i>
     ) : (
@@ -126,7 +130,7 @@ class ProgramDetail extends React.Component{
 
           <span>{program.yr}</span>
           <span className="rating">{program.rating}</span>
-          <span>{program.runtime}</span>
+          <span>{runtimeSeason}</span>
         </aside>
 
         <aside className="description">
@@ -196,7 +200,7 @@ class ProgramDetail extends React.Component{
 
   render() {
     let program = this.props.program || {};
-    
+    // debugger
     let genres = (this.props.genres) ? this.props.genres.join(", ") : "";
     let {tab, closing, video} = this.state;
     let paused = (tab !== "overview") ? "paused" : "";

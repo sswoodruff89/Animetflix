@@ -35,7 +35,7 @@ class Program < ApplicationRecord
     "NR"
   ]
 
-  validates :title, :yr, :description, :runtime, :director, :score, presence: true
+  validates :title, :yr, :description, :director, :score, presence: true
   validates :score, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
   validates :rating, inclusion: { in: RATINGS }
   validates :program_type, inclusion: { in: ["Movie", "TV Show"]}

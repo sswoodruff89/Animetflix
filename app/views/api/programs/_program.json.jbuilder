@@ -1,5 +1,12 @@
+
 json.extract! program, :title, :rating, :id
-json.runtime program.get_runtime
+
+if (program.program_type == "Movie") 
+  json.runtime program.get_runtime
+else 
+  json.seasons program.seasons
+end
+
 json.director program.director
 json.genreIds program.genre_ids
 
@@ -24,9 +31,11 @@ json.genreIds program.genre_ids
 # end
 #
 if (details)
+  
   json.description program.description
   json.yr program.yr
   json.score program.score
+  json.production_company program.production_company
 
 
 

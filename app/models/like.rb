@@ -10,7 +10,7 @@
 #
 
 class Like < ApplicationRecord
-    validates :profile_id, :movie_id, presence: true
+    validates :profile_id, :program_id, presence: true
 
     belongs_to :program
 

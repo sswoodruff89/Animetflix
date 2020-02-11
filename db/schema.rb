@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_014828) do
+ActiveRecord::Schema.define(version: 2020_02_10_215543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2020_02_10_014828) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "dislikes", force: :cascade do |t|
+    t.integer "profile_id", null: false
+    t.integer "program_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id", "program_id"], name: "index_dislikes_on_profile_id_and_program_id", unique: true
   end
 
   create_table "genre_links", force: :cascade do |t|
@@ -65,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_014828) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.integer "profile_num", null: false
     t.index ["name"], name: "index_profiles_on_name", unique: true
   end
 
@@ -73,13 +82,14 @@ ActiveRecord::Schema.define(version: 2020_02_10_014828) do
     t.integer "yr", null: false
     t.text "description", null: false
     t.string "rating", null: false
-    t.integer "runtime", null: false
+    t.integer "runtime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "director", null: false
     t.float "score", null: false
     t.string "program_type", null: false
     t.string "production_company"
+    t.integer "seasons"
     t.index ["rating"], name: "index_programs_on_rating"
     t.index ["title"], name: "index_programs_on_title"
     t.index ["yr"], name: "index_programs_on_yr"
