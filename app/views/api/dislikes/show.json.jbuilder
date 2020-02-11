@@ -1,0 +1,1 @@
+json.extract! @dislike, :program_id, :id, :created_at

@@ -82,8 +82,8 @@ class ProfilePage extends React.Component {
 
                                     <div className="profile-icon"
                                         style={{
-                                            backgroundImage: `url(${window.miniLogos[i]})`,
-                                            backgroundColor: `${COLORS[i]}`
+                                            backgroundImage: `url(${window.miniLogos[profile.profile_num - 1]})`,
+                                            backgroundColor: `${COLORS[profile.profile_num - 1]}`
                                         }}
                                     ></div>
                                     <span className="profile-name">
@@ -124,8 +124,8 @@ class ProfilePage extends React.Component {
                                   <div
                                     className="profile-icon"
                                     style={{
-                                      backgroundImage: `url(${window.miniLogos[i]})`,
-                                      backgroundColor: `${COLORS[i]}`
+                                      backgroundImage: `url(${window.miniLogos[profile.profile_num - 1]})`,
+                                      backgroundColor: `${COLORS[profile.profile_num - 1]}`
                                     }}
                                   >
                                     <div className="edit">

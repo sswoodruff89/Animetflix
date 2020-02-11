@@ -2,6 +2,7 @@ import Browse from "./browse"
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { requestGenres } from "../../actions/genre_actions";
+import { fetchLikes } from "../../actions/like_actions";
 import { requestAllPrograms } from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
 import { sortByListLength, sortByDateAdded } from "../../reducers/sort_selector";
@@ -22,11 +23,6 @@ const msp = (state, ownProps) => {
     watchlist = sortByDateAdded(watchlist);
   }
 
-  // let randomProgramId = Math.floor(Math.random() * 31);
-
-  // let showcaseProgram = state.entities.programs[randomProgramId];
-  // let watched = (showcaseProgram && state.entities.watchlists[showcaseProgram.id]) ?
-  //   state.entities.watchlists[showcaseProgram.id] : null;
 
   return {
     session: state.session.id,
@@ -50,15 +46,18 @@ const mdp = dispatch => {
     requestAllPrograms: () => {
       return dispatch(requestAllPrograms());
     },
-    fetchWatchlist: () => {
-      return dispatch(fetchWatchlist());
+    fetchWatchlist: (profileId) => {
+      return dispatch(fetchWatchlist(profileId));
     },
     addToWatchList: (programId) => {
       return dispatch(addToWatchList(programId));
     },
     removeFromWatchList: (watchId) => {
       return dispatch(removeFromWatchList(watchId));
-    }  
+    },
+    fetchLikes: (profileId) => {
+      return dispatch(fetchLikes(profileId));
+    }
   };
 };
 

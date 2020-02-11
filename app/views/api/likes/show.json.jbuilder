@@ -1,0 +1,1 @@
+json.extract! @like, :program_id, :id, :created_at

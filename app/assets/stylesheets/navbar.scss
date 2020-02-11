@@ -1,6 +1,7 @@
 .browse-nav {
   height: 70px;
-  background: transparent;
+  // background: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -145,13 +146,18 @@ li.current {
   height: 100px;
 } */
 
-li.profile {
-  width: 40px;
-  height: 40px;
-  background-color: blue;
+.profile, .profile-thumbnail {
+  width: 4vw;
+  height: 4vw;
+  max-width: 40px;
+  max-height: 40px;
+  background-size: cover;
+  // background-color: blue;
+  background-repeat: no-repeat;
+  background-position: center;
   border: 1px solid black;
   position: relative;
-  margin-left: 5px;
+  // margin-left: 5px;
 }
 
 .profile::after {
@@ -173,10 +179,13 @@ li.profile {
 
 .profile-drop-down {
   background-color: rgba(0, 0, 0, 0.5);
-  width: 150px;
+  min-width: 150px;
+  width: 18vw;
+  max-width: 200px;  
   position: absolute;
   z-index: -100;
   right: 7px;
+  color: rgba(255, 255, 255, .3);
   font-size: 12px;
   opacity: 0;
   top: 70px;
@@ -210,18 +219,54 @@ aside ul {
 
 .profile-section{
   width: 100%;
-  margin-bottom: 25px;
-  border-bottom: 1px solid rgb(80, 80, 80);
-  padding: 15px 10px;
+  // margin-bottom: 25px;
+  // border-bottom: 1px solid rgb(80, 80, 80);
+  padding: 5px 10px 15px;
+}
+
+.profile-drop-down ul.profile-list{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+  border-top: 0;}
+
+li.profile-item {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.profile-link {
+  margin-left: 1vw;
+  color: rgba(255, 255, 255, .8);
+
+}
+
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+.manage-profile, .manage-profile a {
+  // margin: 5px;
+  color: rgba(255, 255, 255, .8);
+
+  font-size: 1.05em;
+}
+
+.manage-profile a:hover {
+  text-decoration: underline;
 }
 
 .profile-drop-down ul {
-  padding: 15px 10px;
+  padding: 10px;
 }
 
-.profile-drop-down li {
+.profile-drop-down li,
+.profile-drop-down ul li a {
   margin: 10px 0px;
   font-size: 13px;
+  color: rgba(255, 255, 255, .8);
+
 }
 
 .profile-drop-down li:hover{

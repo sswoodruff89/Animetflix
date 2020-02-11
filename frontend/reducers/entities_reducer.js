@@ -4,6 +4,7 @@ import programsReducer from "./programs_reducer";
 import genresReducer from "./genres_reducer";
 import searchReducer from "./search_reducer";
 import watchlistsReducer from "./watchlists_reducer";
+import likesReducer from "./likes_reducer";
 import ProfilesReducer from "./profile_reducer";
 
 export default combineReducers({
@@ -12,5 +13,6 @@ export default combineReducers({
     search: searchReducer,
     users: usersReducer,
     profiles: ProfilesReducer,
-    watchlists: watchlistsReducer
+    watchlists: watchlistsReducer,
+    likes: likesReducer
 });

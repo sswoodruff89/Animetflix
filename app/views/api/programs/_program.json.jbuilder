@@ -7,6 +7,7 @@ else
   json.seasons program.seasons
 end
 
+json.program_type program.program_type
 json.director program.director
 json.genreIds program.genre_ids
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :programs, only: [:index, :show] do
       resources :watchlists, only: [:create, :destroy]
       resources :likes, only: [:create, :destroy]
+      resources :dislikes, only: [:create, :destroy]
 
       collection do
         get 'search'
@@ -28,8 +29,8 @@ Rails.application.routes.draw do
       resources :programs, only: :index;
     end
 
-    resources :likes, only: [:create, :destroy]
-    resources :dislikes, only: [:create, :destroy]
+    resources :likes, only: [:index, :destroy]
+    resources :dislikes, only: [:index, :destroy]
  
     
   end

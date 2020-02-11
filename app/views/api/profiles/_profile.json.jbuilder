@@ -1,1 +1,1 @@
-json.extract! profile, :name, :id, :user_id
+json.extract! profile, :name, :id, :user_id, :profile_num

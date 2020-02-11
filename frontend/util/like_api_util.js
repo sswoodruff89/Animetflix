@@ -1,22 +1,45 @@
 export const fetchLikes = (profileId) => {
     return $.ajax({
         method: "GET",
-        url: "/api/watchlists",
+        url: "/api/likes",
         data: { profileId }
     });
 };
 
-export const createWatch = (programId) => {
+export const createLike = (programId) => {
     return $.ajax({
         method: "POST",
-        url: `/api/programs/${programId}/watchlists`
+        url: `/api/programs/${programId}/likes`
         // data: {user_id: userId}
     });
 };
 
-export const deleteWatch = (watchlistId) => {
+export const deleteLike = (likeId) => {
     return $.ajax({
         method: "DELETE",
-        url: `/api/watchlists/${watchlistId}`
+        url: `/api/likes/${likeId}`
+    });
+};
+
+export const fetchDislikes = (profileId) => {
+    return $.ajax({
+        method: "GET",
+        url: "/api/dislikes",
+        data: { profileId }
+    });
+};
+
+export const createDislike = (programId) => {
+    return $.ajax({
+        method: "POST",
+        url: `/api/programs/${programId}/dislikes`
+        // data: {user_id: userId}
+    });
+};
+
+export const deleteDislike = (dislikeId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/dislikes/${dislikeId}`
     });
 };

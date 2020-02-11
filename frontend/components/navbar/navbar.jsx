@@ -30,7 +30,14 @@ class NavBar extends React.Component{
     this.searchBarToggle = this.searchBarToggle.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.clearInput = this.clearInput.bind(this);
+    this.loginProfile = this.loginProfile.bind(this);
     // this.dropDownToggle = this.dropDownToggle.bind(this);
+  }
+
+  componentDidMount() {
+    if (Object.keys(this.props.profiles).length <= 1) {
+      this.props.requestAllProfiles();
+    }
   }
 
   handleLogOut(e) {
@@ -93,9 +100,24 @@ class NavBar extends React.Component{
     this.setState({scrolling: true});
   }
 
+
+  loginProfile(e) {
+    e.preventDefault();
+    let profileId = e.currentTarget.value;
+
+    this.props.requestProfile(e.currentTarget.value).then(() => {
+      this.props.fetchWatchlist(profileId);
+      this.props.fetchLikes(profileId);
+      this.props.requestGenres();
+      this.props.requestAllPrograms();
+      // this.props.history.push("/profile");
+    });;
+  }
+
   render() {
 
     const {searchBar, searchBarClosing} = this.state;
+    const {profileId, profiles} = this.props;
     const {searchQuery} = this.state.query;
     const closing = (searchBarClosing) ? "closing" : "";
 
@@ -169,7 +191,13 @@ class NavBar extends React.Component{
               <i className="fas fa-bell"></i>
             </li>
 
-            <li className="profile" onMouseOver={this.dropDropDown}></li>
+            <li className="profile" 
+              style={{
+                backgroundImage: `url(${window.miniLogos[profiles[profileId].profile_num - 1]})`,
+                backgroundColor: `${COLORS[profiles[profileId].profile_num - 1]}`
+              }}
+              onMouseOver={this.dropDropDown}>
+            </li>
           </ul>
 
           {/* DROPDOWN MENU */}
@@ -178,7 +206,29 @@ class NavBar extends React.Component{
             onMouseLeave={this.hideDropDown}
           >
             <section className="profile-section">
-              <span>
+              <ul className="profile-list">
+                {Object.values(profiles).map((profile, i) => {
+                  if (profile.id !== profileId) {
+                    return (
+                      <li className="profile-item"
+                        value={profile.id}
+                        onClick={this.loginProfile}>
+                        <span className="profile-thumbnail"
+                          style={{
+                            backgroundImage: `url(${window.miniLogos[profile.profile_num - 1]})`,
+                            backgroundColor: `${COLORS[profile.profile_num - 1]}`
+                          }}>
+                        </span>
+                        <span className="profile-link">
+                          {profile.name}
+                        </span>
+
+                      </li>
+                    )
+                  }
+                })}
+              </ul>
+              <span className="manage-profile">
                 <Link to="/manage_profiles">Manage Profiles</Link>
               </span>
             </section>

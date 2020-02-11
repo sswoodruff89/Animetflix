@@ -1,4 +1,14 @@
 class Api::LikesController < ApplicationController
+    def index
+        if logged_in?
+            @likes = current_profile.likes
+            if @likes
+                render :index
+            else
+                render json: {}
+            end
+        end
+    end
 
     def create
         @like = Like.new(params[:movieId])

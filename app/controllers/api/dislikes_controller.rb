@@ -1,4 +1,14 @@
 class Api::DislikesController < ApplicationController
+    def index
+        if logged_in?
+            @dislikes = current_profile.dislikes
+            if @dislikes
+                render :index
+            else
+                render json: {}
+            end
+        end
+    end
 
     def create
         @dislike = Dislike.new(params[:movieId])

@@ -18,6 +18,7 @@ class ProgramDetail extends React.Component{
     this.handleTab = this.handleTab.bind(this);
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
+    this.renderEpisodes = this.renderEpisodes.bind(this);
     this.currentTabPage = this.currentTabPage.bind(this);
     this.handleWatchList = this.handleWatchList.bind(this);
     this.closeDetails = this.closeDetails.bind(this);
@@ -167,6 +168,10 @@ class ProgramDetail extends React.Component{
           Directed by: {program.director}
         </div>
 
+        <div className="production-company">
+          Production Company: {program.production_company}
+        </div>
+
         <aside className="description">
           {program.description}
         </aside>
@@ -178,6 +183,27 @@ class ProgramDetail extends React.Component{
       </section>
     )
 
+  }
+
+  renderEpisodes(program, fadeIn) {
+    return (
+      <section className="detail-content-container"
+        style={fadeIn}  >
+
+        <div className="director">
+          Directed by: {program.director}
+        </div>
+
+        <div className="production-company">
+          Production Company: {program.production_company}
+        </div>
+
+        <aside className="description">
+          {program.description}
+        </aside>
+
+      </section>
+    )
   }
 
   currentTabPage(tab, program, genre) {
@@ -192,6 +218,8 @@ class ProgramDetail extends React.Component{
         return this.renderOverview(program, genre, fadeIn);
       case "details":
         return this.renderDetails(program, genre, fadeIn);
+      case "episodes":
+        return this.renderEpisodes(program, fadeIn);
       default:
         return "";
     }
@@ -210,6 +238,15 @@ class ProgramDetail extends React.Component{
     let detailBackImage = {
       backgroundImage: `url("${program.background}")`
     }
+
+    let episodes = (program.program_type === "TV Show") ? (
+      <li key="3" className={(tab === 'episodes') ? "current-tab" : ""}
+        onClick={this.handleTab("episodes")}>
+        EPISODES
+            <span className={(tab === 'episodes') ? "current-tab" : ""}></span>
+      </li>
+    ) : "";
+
     return(
 
       <section className={`program-detail-page ${closer}`}
@@ -247,6 +284,9 @@ class ProgramDetail extends React.Component{
             DETAILS
             <span className={(tab === 'details') ? "current-tab" : ""}></span>
           </li>
+          
+          {episodes}
+
         </ul>
       </section>
     )

@@ -5,8 +5,20 @@ import { withRouter } from "react-router-dom";
 
 const msp = (state, ownProps) => {
     if (ownProps.formType === "new") {
+        
+        let profileIds = Object.values(state.entities.profiles).map((profile) => (profile.profile_num));
+        let newNum;
+        for (let i = 0; i < profileIds.length; i++) {
+            if (i + 1 !== profileIds[i]) {
+                newNum = i + 1;
+                break;
+            }
+        }
+
+        newNum = (!newNum) ? profileIds.length + 1 : newNum;
         return {
           profile: {},
+          newNum,
           formType: ownProps.formType,
           icon: state.ui.modal.icon
         };

@@ -60,6 +60,8 @@ class ProfileForm extends React.Component {
             if (profile.name === "") {
                 this.handleBlur(e);
             } else if (formType === "new") {
+              profile.profile_num = this.props.newNum;
+              
                 this.props.createProfile(profile).then(() => {
                     this.props.closeModal();
 
@@ -98,8 +100,8 @@ class ProfileForm extends React.Component {
                   <div
                     className="profile-icon"
                     style={{
-                      backgroundImage: `url(${window.miniLogos[icon]})`,
-                      backgroundColor: `${COLORS[icon]}`
+                      backgroundImage: `url(${window.miniLogos[this.props.newNum - 1]})`,
+                      backgroundColor: `${COLORS[this.props.newNum - 1]}`
                     }}
                   >
                     <div className="profile-edit">
@@ -148,9 +150,9 @@ class ProfileForm extends React.Component {
                   className="profile-icon"
                   style={{
                     backgroundImage: `url(${
-                      window.miniLogos[icon]
+                      window.miniLogos[profile.profile_num - 1]
                     })`,
-                    backgroundColor: `${COLORS[icon]}`
+                    backgroundColor: `${COLORS[profile.profile_num - 1]}`
                   }}
                 >
                   <div className="profile-edit">

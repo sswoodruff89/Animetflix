@@ -21,6 +21,7 @@ class Browse extends React.Component{
 
   componentDidMount() {
     this.props.fetchWatchlist(this.props.profileId);
+    this.props.fetchLikes(this.props.profileId);
     this.props.requestGenres();
     this.props.requestAllPrograms();
   }
@@ -85,7 +86,7 @@ class Browse extends React.Component{
 
           {genres.map((genre, i) => {
             //remove condition when done formatting
-            if (genre.program_ids.length > 6) {
+            if (genre.program_ids.length > 12) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >
