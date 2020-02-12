@@ -6,13 +6,18 @@ class ProgramListItem extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      watched: (this.props.watched) ? true : false
+      watched: (this.props.watched) ? true : false,
+      liked: (this.props.liked) ? true : false,
+      disliked: (this.props.disliked) ? true : false
     };
 
     this.detailsLink = this.detailsLink.bind(this);
     this.pauseThumbnail = this.pauseThumbnail.bind(this);
     this.playThumbnail = this.playThumbnail.bind(this);
     this.handleWatchList = this.handleWatchList.bind(this);
+    this.handleLike = this.handleLike.bind(this);
+    this.handleDislike = this.handleDislike.bind(this);
+    this.renderLikeButtons = this.renderLikeButtons.bind(this);
     // this.redirectFullPlay = this.redirectFullPlay.bind(this);
   }
 
@@ -67,10 +72,66 @@ class ProgramListItem extends React.Component{
     }
     this.setState({ watched: !watchStatus });
   }
-// redirectFullPlay(e) {
-//   e.preventDefault();
-//   this.props.history.push(`/watch/${this.props.program.id}`);
-// }
+
+  handleLike(e) {
+    e.preventDefault();
+    let likeStatus = this.state.liked;
+
+    if (likeStatus) {
+      this.props.removeFromLikes(this.props.liked.id);
+    } else {
+      this.props.addLike(this.props.program.id);
+    }
+    this.setState({ liked: !likeStatus });
+  }
+
+  handleDislike(e) {
+    e.preventDefault();
+    let dislikeStatus = this.state.disliked;
+
+    if (dislikeStatus) {
+      this.props.removeFromDislikes(this.props.disliked.id);
+    } else {
+      this.props.addDislike(this.props.program.id);
+    }
+    this.setState({ disliked: !dislikeStatus });
+  }
+
+  renderLikeButtons() {
+    let likeActive = (this.state.liked) ? "active" : "inactive";
+    let dislikeActive = (this.state.disliked) ? "active" : "inactive";
+
+    if (!this.state.liked && !this.state.disliked) {
+      return (
+        <div className="like-container">
+          <button className="like-dislike"
+            onClick={this.handleLike}>
+            <img className="like" src={window.like} alt="like" />
+          </button>
+
+          <button className="like-dislike"
+            onClick={this.handleDislike}>
+            <img className="dislike" src={window.dislike} alt="dislike" />
+          </button>
+        </div>
+      )
+    } else if (this.state.liked || this.state.disliked) {
+      return (
+        <div className="like-container">
+          <button className={`like-dislike ${likeActive}`}
+            onClick={this.handleLike}>
+            <img className="like" src={window.like} alt="like" />
+          </button>
+
+          <button className={`like-dislike ${dislikeActive}`}
+            onClick={this.handleDislike}>
+            <img className="dislike" src={window.dislike} alt="dislike" />
+          </button>
+        </div>
+
+      )
+    }
+  }
 
 
   render() {
@@ -86,6 +147,8 @@ class ProgramListItem extends React.Component{
           )
         })
     ) : "";
+      
+    let likeButtons = this.renderLikeButtons();
 
     let watchStatus = (this.state.watched) ? (
       <button className="watchlist" 
@@ -97,7 +160,13 @@ class ProgramListItem extends React.Component{
           onClick={this.handleWatchList}>
           <img className="add" src={window.add} alt="add" />
         </button>
-      )
+    )
+
+
+    let runtimeSeason = (program.runtime) ? program.runtime :
+      (program.seasons > 1) ? `${program.seasons} seasons` :
+        `${program.seasons} season`
+
 
     return (
       <>
@@ -124,14 +193,14 @@ class ProgramListItem extends React.Component{
               <h4>{program.title}</h4>
               <aside className="rating-runtime">
                 <span className="rating">{program.rating}</span>
-                <span>{program.runtime}</span>
+                <span>{runtimeSeason}</span>
               </aside>
               <ul className="genres">
                   {genres}
               </ul>
 
           </section>
-
+          {likeButtons}
           {watchStatus}
 
         </section>

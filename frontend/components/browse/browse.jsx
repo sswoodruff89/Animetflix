@@ -11,7 +11,8 @@ class Browse extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      watched: this.props.watched
+      watched: this.props.watched,
+      listCount: 6
     };
 
     this.handleLogOut = this.handleLogOut.bind(this);
@@ -84,9 +85,9 @@ class Browse extends React.Component{
         <section className="lists-container">
           {this.renderWatchlist(watchlist)}
 
-          {genres.map((genre, i) => {
+          {genres.slice(0, this.state.listCount).map((genre, i) => {
             //remove condition when done formatting
-            if (genre.program_ids.length > 12) {
+            if (genre.program_ids.length > 6) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >

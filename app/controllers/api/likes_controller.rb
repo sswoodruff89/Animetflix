@@ -11,7 +11,7 @@ class Api::LikesController < ApplicationController
     end
 
     def create
-        @like = Like.new(params[:movieId])
+        @like = Like.new(program_id: params[:program_id], profile_id: current_profile.id)
 
         if @like.save!
             render :show
@@ -21,7 +21,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        @like = Like.find(params[:likeId])
+        @like = Like.find(params[:id])
         @like.destroy
         render :show
     end

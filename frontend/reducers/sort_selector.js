@@ -49,6 +49,12 @@ export const sortByListLength = (obj) => {
   });
 };
 
+export const sortByViewerPoints = (obj) => {
+  return obj.sort((a, b) => {
+    return (a.viewer_points < b.viewer_points) ? 1 : (a.viewer_points > b.viewer_points) ? -1 : 0;
+  });
+};
+
 export const sortByDateAdded =  (obj) => {
   return obj.sort((a, b) => {
     return (a.created_at < b.created_at) ? 1 : (a.created_at > b.created_at) ? -1 : 0;

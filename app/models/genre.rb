@@ -23,10 +23,30 @@ class Genre < ApplicationRecord
       through: :programs,
       source: :likes
 
+    has_many :dislikes,
+      through: :programs,
+      source: :dislikes
+
+    has_many :watches,
+      through: :programs,
+      source: :watchlists
+
     
     
     def total_likes
       return self.likes.count
+    end
+
+    def total_dislikes
+      return self.dislikes.count
+    end
+
+    def total_watches
+      return self.watches.count
+    end
+
+    def viewer_points(likes, dislikes, watches)
+      return (likes * 2) + watches - dislikes
     end
 
     def get_movies

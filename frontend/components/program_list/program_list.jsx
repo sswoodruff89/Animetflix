@@ -9,8 +9,8 @@ class ProgramList extends React.Component{
     this.state = {
       displayType: this.props.displayType,
       lastProgram: 6,
-      nearEnd: (this.props.programs.length - 6) < 6,
-      tilEnd: ((this.props.programs.length - 6)),
+      nearEnd: (Math.min(18, this.props.programs.length) - 6) < 6,
+      tilEnd: (Math.min(18, this.props.programs.length - 6)),
       slideCount: 0
       // firstIdx: 0, //Index, not place, of first program in each slide
       // listLoop: 1,
@@ -62,6 +62,16 @@ class ProgramList extends React.Component{
     detailProgramId = parseInt(detailProgramId[detailProgramId.length - 1]);
 
     return (detailProgramId === i) ? "detail-open-true" : "detail-open-false";
+  }
+
+  ////Visualize slide page
+  renderSlidePage() {
+    let pageCount = Math.floor(Math.min(24, this.props.programs.length) / 6);
+
+    return (
+      <ul className="slide-page">
+      </ul>
+    )
   }
 
 
@@ -161,7 +171,7 @@ class ProgramList extends React.Component{
             <ul className="program-slider" style={listRange}>
 
               {
-                programs.map((program, i) => {
+                programs.slice(0, 24).map((program, i) => {
                   if (program) {
                     return (
                       <li key={i}
@@ -175,6 +185,8 @@ class ProgramList extends React.Component{
               }
 
             </ul>
+
+
 
             <button className={`toggle-list-button right`}
               onClick={this.toggleRight}>

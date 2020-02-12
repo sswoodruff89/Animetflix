@@ -5,6 +5,7 @@ import genresReducer from "./genres_reducer";
 import searchReducer from "./search_reducer";
 import watchlistsReducer from "./watchlists_reducer";
 import likesReducer from "./likes_reducer";
+import dislikesReducer from "./dislikes_reducer";
 import ProfilesReducer from "./profile_reducer";
 
 export default combineReducers({
@@ -14,5 +15,6 @@ export default combineReducers({
     users: usersReducer,
     profiles: ProfilesReducer,
     watchlists: watchlistsReducer,
-    likes: likesReducer
+    likes: likesReducer,
+    dislikes: dislikesReducer
 });

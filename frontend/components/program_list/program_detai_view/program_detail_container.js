@@ -24,12 +24,19 @@ const msp = (state, ownProps) => {
   let watched = (program && state.entities.watchlists[program.id]) ? 
     state.entities.watchlists[program.id] : null;
 
+  let liked = (ownProps.program && state.entities.likes[ownProps.program.id]) ?
+    state.entities.likes[ownProps.program.id] : null;
+
+  let disliked = (ownProps.program && state.entities.dislikes[ownProps.program.id]) ?
+    state.entities.dislikes[ownProps.program.id] : null;
   return {
     program,
     programId,
     genres,
     watched,
-    displayType
+    displayType,
+    liked,
+    disliked
   };
 };
 

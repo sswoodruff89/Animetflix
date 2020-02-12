@@ -5,7 +5,7 @@ import { requestGenres } from "../../actions/genre_actions";
 import { fetchLikes } from "../../actions/like_actions";
 import { requestAllPrograms } from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
-import { sortByListLength, sortByDateAdded } from "../../reducers/sort_selector";
+import { sortByListLength, sortByDateAdded, sortByViewerPoints } from "../../reducers/sort_selector";
 import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
 
 
@@ -14,7 +14,9 @@ const msp = (state, ownProps) => {
   let genres = Object.values(state.entities.genres);
 
   if (genres.length > 0) {
-    genres = sortByListLength(genres);
+    // genres = sortByListLength(genres);
+  
+    genres = sortByViewerPoints(genres);
   }
 
   let watchlist = Object.values(state.entities.watchlists);

@@ -12,7 +12,9 @@ class ProgramDetail extends React.Component{
       video: false,
       changing: false,
       watched: (this.props.watched) ? true : false,
-      closing: false
+      closing: false,
+      liked: (this.props.liked) ? true : false,
+      disliked: (this.props.disliked) ? true : false
     };
  
     this.handleTab = this.handleTab.bind(this);
@@ -22,6 +24,7 @@ class ProgramDetail extends React.Component{
     this.currentTabPage = this.currentTabPage.bind(this);
     this.handleWatchList = this.handleWatchList.bind(this);
     this.closeDetails = this.closeDetails.bind(this);
+    this.renderLikeButtons = this.renderLikeButtons.bind(this);
 
   }
 
@@ -96,6 +99,43 @@ class ProgramDetail extends React.Component{
       }, 600);
     }
   }
+
+
+  renderLikeButtons() {
+    let likeActive = (this.state.liked) ? "active" : "inactive";
+    let dislikeActive = (this.state.disliked) ? "active" : "inactive";
+
+    if (!this.state.liked && !this.state.disliked) {
+      return (
+        <div className="details-like-container">
+          <button className="like-dislike"
+            onClick={this.handleLike}>
+            <img className="like" src={window.like} alt="like" />
+          </button>
+
+          <button className="like-dislike"
+            onClick={this.handleDislike}>
+            <img className="dislike" src={window.dislike} alt="dislike" />
+          </button>
+        </div>
+      )
+    } else if (this.state.liked || this.state.disliked) {
+      return (
+        <div className="details-like-container">
+          <button className={`like-dislike ${likeActive}`}
+            onClick={this.handleLike}>
+            <img className="like" src={window.like} alt="like" />
+          </button>
+
+          <button className={`like-dislike ${dislikeActive}`}
+            onClick={this.handleDislike}>
+            <img className="dislike" src={window.dislike} alt="dislike" />
+          </button>
+        </div>
+
+      )
+    }
+  }
   
   renderOverview(program, genres, fadeIn) {
     let score = {
@@ -111,6 +151,8 @@ class ProgramDetail extends React.Component{
     ) : (
       <i className="fas fa-plus"></i>
     )
+
+    let likeButtons = this.renderLikeButtons();
 
     return (
       <section className="detail-content-container"
@@ -150,6 +192,7 @@ class ProgramDetail extends React.Component{
             {watchStatus}
             MY LIST
           </button>
+          {likeButtons}
         </div>
 
         <span className="genre-cap">

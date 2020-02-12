@@ -58,6 +58,11 @@ class Program < ApplicationRecord
   has_many :likes,
     dependent: :destroy
 
+  has_many :dislikes,
+    dependent: :destroy
+
+  
+
   has_many :profile_likes,
     through: :likes,
     source: :profile
