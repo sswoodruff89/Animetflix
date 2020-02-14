@@ -30,7 +30,8 @@ module ProgramFilter
       filter_query = filter_query.downcase
 
       results = self.joins(:genres).where("translate(genres.name, '%:;', '') ILIKE :start_query
-        OR translate(title, ':;%', '') ILIKE :start_query 
+        OR translate(title, ':;%', '') ILIKE :start_query
+        OR translate(production_company, ':;%', '') ILIKE :start_query
         OR translate(director, ':;', '') ILIKE :start_query", start_query: "#{filter_query}%")
     end
 
@@ -38,7 +39,8 @@ module ProgramFilter
       filter_query = filter_query.downcase
 
       results = self.where("translate(title, ':%;', '') ILIKE :start_query 
-        OR translate(director, ':;%', '') ILIKE :start_query", start_query: "%#{filter_query}%")
+        OR translate(director, ':;%', '') ILIKE :start_query
+        OR translate(production_company, ':;%', '') ILIKE :start_query", start_query: "%#{filter_query}%")
     end
 
     def movie_filter

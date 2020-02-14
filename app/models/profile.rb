@@ -35,7 +35,13 @@ class Profile < ApplicationRecord
         through: :likes,
         source: :liked_genres
 
+    has_many :dislikes,
+        class_name: "Dislike",
+        dependent: :destroy
 
+    has_many :disliked_programs,
+        through: :dislikes,
+        source: :program
 
 
     def genre_like_totals

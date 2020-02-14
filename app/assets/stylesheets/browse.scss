@@ -25,14 +25,14 @@
 }
 
 .browse-display {
-    margin-top: 5vh;
-    width: 100%;
-    height: 52vw;
-    position: relative;
-    background: linear-gradient(to bottom, black 90%, transparent);
-    display: flex;
-    align-items: center;
-
+  margin-top: 5vh;
+  width: 100%;
+  height: 52vw;
+  position: relative;
+  background: linear-gradient(to bottom, black 90%, transparent);
+  display: flex;
+  align-items: center;
+  z-index: 15;
 }
 
 .logo-and-buttons {

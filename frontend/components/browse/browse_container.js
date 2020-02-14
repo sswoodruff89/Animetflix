@@ -2,7 +2,7 @@ import Browse from "./browse"
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { requestGenres } from "../../actions/genre_actions";
-import { fetchLikes } from "../../actions/like_actions";
+import { fetchLikes, fetchDislikes } from "../../actions/like_actions";
 import { requestAllPrograms } from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
 import { sortByListLength, sortByDateAdded, sortByViewerPoints } from "../../reducers/sort_selector";
@@ -59,6 +59,9 @@ const mdp = dispatch => {
     },
     fetchLikes: (profileId) => {
       return dispatch(fetchLikes(profileId));
+    },
+    fetchDislikes: (profileId) => {
+      return dispatch(fetchDislikes(profileId));
     }
   };
 };

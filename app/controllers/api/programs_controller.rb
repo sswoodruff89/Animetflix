@@ -19,7 +19,7 @@ class Api::ProgramsController < ApplicationController
   end
 
   def show
-    # debugger
+
     @program = Program.find(params[:id])
     # @movie = Program.with_attached_thumbnail.with_attached_background.with_attached_logo.find(params[:id])
 
@@ -28,8 +28,9 @@ class Api::ProgramsController < ApplicationController
   
   def search
       @query = params[:search_query];
+
       if @query.length > 0
-        @programs = search_filter_list(params[:search_query])
+        @programs = search_filter_list(@query)
         if (@programs.length == 0)
           render json: ["No movies / shows found"], status: 404
         else

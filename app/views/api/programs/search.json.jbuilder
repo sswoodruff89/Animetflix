@@ -32,7 +32,7 @@ def include_searchlist(program, query)
       end
     end
   end
-  return nil
+  return program.title
 end
 
 @searchlist = []

@@ -21,9 +21,10 @@ class Browse extends React.Component{
   }
 
   componentDidMount() {
+    this.props.requestGenres();
     this.props.fetchWatchlist(this.props.profileId);
     this.props.fetchLikes(this.props.profileId);
-    this.props.requestGenres();
+    this.props.fetchDislikes(this.props.profileId);
     this.props.requestAllPrograms();
   }
 

@@ -9,6 +9,7 @@ class ProgramList extends React.Component{
     this.state = {
       displayType: this.props.displayType,
       lastProgram: 6,
+      lastHover: false,
       nearEnd: (Math.min(18, this.props.programs.length) - 6) < 6,
       tilEnd: (Math.min(18, this.props.programs.length - 6)),
       slideCount: 0
@@ -19,6 +20,7 @@ class ProgramList extends React.Component{
     this.toggleRight = this.toggleRight.bind(this);
     this.toggleLeft = this.toggleLeft.bind(this);
     this.browseOrSearch = this.browseOrSearch.bind(this);
+    this.handleLastHover = this.handleLastHover.bind(this);
     // this.detailOpen = this.detailOpen.bind(this);
     // this.showRange = this.showRange.bind(this);
     // this.alterList = this.alterList.bind(this);
@@ -55,6 +57,13 @@ class ProgramList extends React.Component{
     }
   }
 
+  handleLastHover(e) {
+    e.preventDefault();
+    if (e.currentTarget.id === "last-in-slide") {
+      this.setState({lastHover: !this.state.lastHover});
+    }
+  }
+
   
   ///CHECKS IF A DETAIL PAGE IS OPEN
   detailOpen(i) {
@@ -80,9 +89,15 @@ class ProgramList extends React.Component{
 
     const listName = (this.props.listType === "genre") ? this.props.listName.name : 
       (this.props.listType === "watchlist") ? "Watchlist" : "";
-    const { slideCount, tilEnd, lastProgram } = this.state;
+
+    const { slideCount, tilEnd, lastProgram, lastHover } = this.state;
+
     let programs = (this.props.programs) ? this.props.programs : [];
     const hide = (slideCount === 0) ? "hidden" : "";
+    
+    let selectedPrograms = programs.slice(0, Math.min(lastProgram + 7, 24, programs.length));
+    let pageCountArray = Array.from({ length: Math.ceil(Math.min(24, this.props.programs.length) / 6) }, (el, i) => i);
+
 
     ///how much to slide, depending on vicinity to End
     let slideMovePercentage;
@@ -111,12 +126,15 @@ class ProgramList extends React.Component{
       return (
         <>
           <ul className="program-slider search" >
-            {programs.map((program, i) => {
+            {selectedPrograms.map((program, i) => {
                 if (program) {
                   return (
                     <li key={i}
-                      id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
-                      className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` : "program-item"}>
+                      id={(i === lastProgram - 6 && !checkOpenDetail) ? "first-in-slide" : (i + 1 === lastProgram && !checkOpenDetail) ? "last-in-slide" : ""}
+                      className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` : 
+                        `program-item ${(i + 1 < lastProgram && !checkOpenDetail && lastHover) ? "last-hover" : ""}`}
+                      onMouseEnter={this.handleLastHover}
+                      onMouseLeave={this.handleLastHover}>
 
                       <ProgramListItemContainer program={program} 
                         listNum={this.props.listNum}
@@ -136,12 +154,15 @@ class ProgramList extends React.Component{
       return (
         <>
           <ul className="program-slider watchlist-list" >
-            {programs.map((program, i) => {
+            {selectedPrograms.map((program, i) => {
               if (program) {
                 return (
                   <li key={i}
-                    id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
-                    className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` : "program-item"}>
+                    id={(i === lastProgram - 6 && !checkOpenDetail) ? "first-in-slide" : (i + 1 === lastProgram && !checkOpenDetail) ? "last-in-slide" : ""}
+                    className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` :
+                      `program-item ${(i + 1 < lastProgram && !checkOpenDetail && lastHover) ? "last-hover" : ""}`}
+                    onMouseEnter={this.handleLastHover}
+                    onMouseLeave={this.handleLastHover}>
 
                     <ProgramListItemContainer program={program}
                       listNum={this.props.listNum}
@@ -171,13 +192,16 @@ class ProgramList extends React.Component{
             <ul className="program-slider" style={listRange}>
 
               {
-                programs.slice(0, 24).map((program, i) => {
+                selectedPrograms.map((program, i) => {
                   if (program) {
                     return (
                       <li key={i}
-                        id={(i === 0 && !checkOpenDetail) ? "first-in-slide" : ""}
-                        className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` : "program-item"}>
-                        <ProgramListItemContainer program={program} displayType={displayType} listName={listName} />
+                        id={(i === lastProgram - 6 && !checkOpenDetail) ? "first-in-slide" : (i + 1 === lastProgram && !checkOpenDetail) ? "last-in-slide" : ""}
+                        className={(checkOpenDetail) ? `program-item-${this.detailOpen(program.id)}` :
+                          `program-item ${(i + 1 < lastProgram && !checkOpenDetail && lastHover) ? "last-hover" : ""}`}
+                        onMouseEnter={this.handleLastHover}
+                        onMouseLeave={this.handleLastHover}>
+                          <ProgramListItemContainer program={program} displayType={displayType} listName={listName} />
                       </li>
                     )
                   }
@@ -186,12 +210,22 @@ class ProgramList extends React.Component{
 
             </ul>
 
+            <ul className="slide-counter">
+              {pageCountArray.map((slide) => {
+                return (
+                  <li key={slide}
+                    className={`slide-count ${(slide === slideCount) ? "current" : ""}`}>
 
+                  </li>
+                )
+              })}
+            </ul>
 
             <button className={`toggle-list-button right`}
               onClick={this.toggleRight}>
               <img className="right-arrow" src={window.rightArrow} alt="right-arrow" />
             </button>
+
           </ul>
         </>
       )

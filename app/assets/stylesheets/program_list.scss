@@ -1,3 +1,4 @@
+@import "colors";
 
 .lists-container{
   overflow-x: hidden;
@@ -6,7 +7,8 @@
   min-height: 100vh;
   // margin-top: 2vh;
   position: relative;
-  top: -2vh;
+  top: -15vh;
+  z-index: 20;
 }
 
 .single-list-container{
@@ -50,6 +52,30 @@
   position: relative;
 }
 
+///Slide Count
+
+.slide-counter {
+  position: absolute;
+  height: 3.5%;
+  display: flex;
+  right: 1%;
+  z-index: 1;
+  top: -13%;
+  opacity: 0;
+}
+
+li.slide-count {
+  width: 2vw;
+  height: 100%;
+  background-color: white;
+  margin: 0px 2px;
+  opacity: 0.5;
+}
+
+li.slide-count.current {
+  opacity: 1;
+  background-color: rgb(79, 176, 255);
+}
 
 ///BUTTONS
 
@@ -72,7 +98,7 @@
   
 }
 
-.list-with-buttons:hover .toggle-list-button {
+.list-with-buttons:hover .toggle-list-button, .list-with-buttons:hover .slide-counter {
   opacity: 1;
 }
 
@@ -144,6 +170,31 @@ li#first-in-slide:hover {
 }
 ////
 
+////Transition Last Slide
+#last-in-slide {
+transform-origin: right !important;
+}
+
+li#last-in-slide:hover {
+  position: relative;
+  transform: scale(1.6) !important;
+  transform-origin: right !important;
+  transition-property: all 1s ease;
+  // transition-delay: 2s0ms;
+  z-index: 10;
+}
+
+li#last-in-slide:hover ~ li.program-item {
+  transform: none;
+}
+
+li.program-item.last-hover {
+    transform: translateX(-59.6%) !important;
+    transition-property: all;
+    // transition-delay: 500ms;
+    transition-duration: 0.5s;
+}
+
 ///ALL THUMBNAILS BEFORE HOVERED THUMBNAIL
 
 // .program-slider:hover li#former-last{
@@ -154,16 +205,15 @@ li#first-in-slide:hover {
 //   // transition-duration: 0.5s;
 // }
 .program-slider:hover .program-item {
-    transform: translateX(-29.5%);
+    transform: translateX(-29.8%);
     transition-property: all;
     // transition-delay: 500ms;
     transition-duration: 0.5s;
-
 }
 
 //All THUMBNAILS TO THE RIGHT
 .program-item:hover ~ .program-item{
-  transform: translateX(29.5%);
+  transform: translateX(29.8%);
   transition-property: all 0.5s ease;
   // transition-delay: 500ms;
   transition-duration: 0.5s;

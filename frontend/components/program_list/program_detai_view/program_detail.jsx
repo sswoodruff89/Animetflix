@@ -271,7 +271,7 @@ class ProgramDetail extends React.Component{
 
   render() {
     let program = this.props.program || {};
-    // debugger
+
     let genres = (this.props.genres) ? this.props.genres.join(", ") : "";
     let {tab, closing, video} = this.state;
     let paused = (tab !== "overview") ? "paused" : "";

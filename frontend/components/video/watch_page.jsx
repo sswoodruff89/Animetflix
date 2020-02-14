@@ -26,7 +26,7 @@ class WatchPage extends React.Component{
     this.showControls = this.showControls.bind(this);
     this.videoLoaded = this.videoLoaded.bind(this);
     this.handleProgressBar = this.handleProgressBar.bind(this);
-    // this.fullScreen = this.fullScreen.bind(this);
+    this.fullScreen = this.fullScreen.bind(this);
     // this.mouseDown = this.mouseDown.bind(this);
     // this.mouseUp = this.mouseUp.bind(this);
     // this.mouseMove = this.mouseMove.bind(this);
@@ -158,12 +158,12 @@ class WatchPage extends React.Component{
   }
 
 
-  // fullScreen(vid) {
-  //   return (e) => {
-  //     e.preventDefault();
-  //     vid.requestFullScreen();
-  //   };
-  // }
+  fullScreen(vid) {
+    return (e) => {
+      e.preventDefault();
+      vid.requestFullScreen();
+    };
+  }
 
 ////REVEAL CONTROLS
   showControls(e) {
@@ -183,8 +183,9 @@ runtimeRemaining(duration, vid) {
   let time = Math.floor(duration) - Math.floor(vid.currentTime);
   
   let seconds = time % 60;
-  let minutes = (Math.floor(time / 60) > 1) ? (Math.floor(time / 60)) : 0;
-  let hours = (minutes > 60) ? (Math.floor(minutes / 60)) : 0;
+  let minutes = (Math.floor(time / 60));
+  // let minutes = (Math.floor(time / 60) > 1) ? (Math.floor(time / 60)) : 0;
+  let hours = (Math.floor(minutes / 60));
   seconds = (seconds < 10) ? `0${seconds}` : `${seconds}`;
   minutes = (minutes < 10 && minutes > 0) ? `0${minutes}` : `${minutes}`;
 
@@ -327,7 +328,8 @@ runtimeRemaining(duration, vid) {
               <i className="far fa-closed-captioning"></i>
             </button>
 
-            <button className="fullscreen-button" // onClick={this.fullScreen(vid)}
+            <button className="fullscreen-button" 
+            onClick={this.fullScreen(vid)}
             >
               <i className="fas fa-expand"></i>
             </button>
@@ -373,8 +375,8 @@ runtimeRemaining(duration, vid) {
           {/* <Video version="full" /> */}
 
         <video className="full"
-          // src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-          src={sourceVid}
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          // src={sourceVid}
           id="video-player"
           // muted={mute} 
           autoPlay={true} 

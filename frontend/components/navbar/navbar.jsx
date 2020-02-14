@@ -115,7 +115,11 @@ class NavBar extends React.Component{
   }
 
   render() {
-
+    if (!this.props.profileId) {
+      return (
+        <div></div>
+      );
+    }
     const {searchBar, searchBarClosing} = this.state;
     const {profileId, profiles} = this.props;
     const {searchQuery} = this.state.query;
