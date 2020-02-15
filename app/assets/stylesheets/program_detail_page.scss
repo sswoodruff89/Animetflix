@@ -71,7 +71,7 @@
   box-sizing: border-box;
   content: "";
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 15;
@@ -249,8 +249,8 @@ button.detail-closer.showcase{
 .detail-content-container aside.rating-runtime {
     display: inline-flex;
     font-size: 18px;
-    justify-content: space-evenly;
-    width: 35vw;
+    justify-content: space-between;
+    width: 80%;
     margin-top: 1%;
 }
 
@@ -262,8 +262,11 @@ button.detail-closer.showcase{
 }
 
 aside .rating {
-  padding: .1em .2em;
+  padding: .1em 0.2em;
+  min-width: 1em;
+  font-size: 1em;
   margin: 0;
+  text-align: center;
 }
 
 .director, .description, .production-company {
@@ -308,6 +311,12 @@ button.detail-play:hover {
   background-color: rgb(255, 34, 34);
 }
 
+.detail-play a:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .detail-watchlist {
   background-color: transparent;
   border: 1px solid white;
@@ -325,7 +334,7 @@ button.detail-play:hover {
 }
 
 
-.details-like-container .like-dislike {
+.details-like-container .details-like-dislike {
   // position: absolute;
   // z-index: 14;
   background: transparent;
@@ -333,20 +342,67 @@ button.detail-play:hover {
   opacity: 0.8;
   filter: saturate(0);
   transform: scale(1);
+  width: 35%;
   transition: all 100ms ease 100ms;
 }
 
-.like-dislike:first-child {
-  margin-bottom: 3px;
+.details-like-container {
+  width: 27%;
 }
 
-.details-like-container button.like-dislike:hover{
+.details-like-container button.details-like-dislike:hover{
   cursor: pointer;
   background: transparent;
 
   transform: scale(1.1);
   opacity: 1;
   transition: all 100ms ease 100ms
+}
+
+.like-container {
+  position: absolute;
+  z-index: 14;
+  display: flex;
+  flex-direction: column;
+  right: 2%;
+  bottom: 33%;
+  width: 8%;
+  /* height: 39%; */
+  justify-content: space-between;
+}
+
+.details-like-dislike {
+  // position: absolute;
+  // z-index: 14;
+  width: 40%;
+  height: auto;
+  opacity: 0.8;
+  filter: saturate(0);
+  transform: scale(1);
+  transition: all 100ms ease 100ms;
+}
+
+.details-like-dislike:first-child {
+  // margin-bottom: 10.5%;
+}
+
+.details-like-dislike:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 1;
+  transition: all 100ms ease 100ms
+}
+
+.details-like-dislike.active {
+  filter: saturate(1);
+  margin: 0;
+}
+.details-like-dislike.inactive {
+  display: none;
+}
+
+.details-like-dislike .like, .details-like-dislike .dislike {
+  background-color: transparent;
 }
 
 .genre-cap {

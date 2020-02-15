@@ -55,8 +55,8 @@ const mdp = dispatch => {
     addDislike: (programId) => {
       return dispatch(addDislike(programId));
     },
-    removeFromDislikes: (likeId) => {
-      return dispatch(removeFromDislikes(likeId));
+    removeFromDislikes: (dislikeId) => {
+      return dispatch(removeFromDislikes(dislikeId));
     } 
   };
 };

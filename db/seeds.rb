@@ -28,6 +28,11 @@ User.create!(email: "otaku@demo.com", password: "anything")
 ####Profile
 Profile.create!(user_id: 1, name: "demo", profile_num: 1);
 Profile.create!(user_id: 1, name: "demo2", profile_num: 2);
+Profile.create!(user_id: 1, name: "demo3", profile_num: 3);
+
+Profile.create!(user_id: 2, name: "Otaku", profile_num: 1);
+Profile.create!(user_id: 2, name: "Otaku2", profile_num: 2);
+Profile.create!(user_id: 2, name: "Otaku3", profile_num: 3);
 
 GENRES = [
   "Family", #1
@@ -78,9 +83,12 @@ program1 = Program.create!(title: "The Boy and the Beast",
   description: "When Kyuta stumbles into a fantastic world of beasts, he's taken in by Kumatetsu, a gruff, rough-around-the-edges warrior beast who's been searching for the perfect apprentice.")
 #1 
 glinks(1, ["Fantasy", "Action", "Adventure"])
+
+
 program1.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy-and-the-beast-bakemono-nlogo.png'), filename: 'boy-and-the-beast-bakemono-nlogo.png')
 program1.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy_and_beast_thumb.png'), filename: 'boy_and_beast_thumb.png')
 program1.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/boy_and_beast_back.jpg'), filename: 'boy_and_beast_back.jpg')
+
 
 program2 = Program.create!(title: "Akira", 
   yr: 1988, 
@@ -93,6 +101,8 @@ program2 = Program.create!(title: "Akira",
   description: "A secret military project endangers Neo-Tokyo when it turns a biker gang member into a rampaging psychic psychopath who can only be stopped by two teenagers and a group of psychics.")
 2 
 glinks(2, ["Thriller", "Action", "Sci-Fi"])
+
+
 # program2 = Program.find(2);
 
 program2.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/akira_logo.png'), filename: 'akira_logo.png')
@@ -114,6 +124,10 @@ program3 = Program.create!(title: "Grave of the Fireflies",
   description: "A seedsastating meditation on the human cost of war, this animated tale follows Seita, a teenager charged with the care of his younger sister, Setsuko, after an American firebombing during World War II separates the two children from their parents.")
 #3 Drama, War
 glinks(3, ["Drama", "War"])
+
+
+
+
 # program3 = Program.find(3);
 
 ####
@@ -140,6 +154,8 @@ program4.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/d5
 program4.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbs_broly_back.png'), filename: 'dbs_broly_back.png')
 
 program4.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dbz_broly.mp4'), filename: 'dbz_broly.mp4')
+
+
 
 program5 = Program.create!(title: "Summer Wars", 
   yr: 2009, 
@@ -352,7 +368,7 @@ program15 = Program.create!(title: "Whisper of the Heart",
   score: 4.0,
   production_company: "Studio Ghibli",
   program_type: "Movie",
-  description: "Shizuku, an inquisitive young girl and a voracious reader, longs to be a writer when she grows up. One day she notices that all of her library books have previously been taken out by one Seiji Amasawa. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
+  description: "Shizuku longs to be a writer when she grows up. Amid chasing after a large cat, befriending an eccentric antiques dealer and writing her first novel, Shizuku aims to find this mysterious boy who may well be her soul mate.")
 #15 Drama, Romance
 glinks(15, ["Drama", "Romance"])
 
@@ -430,7 +446,7 @@ program19 = Program.create!(title: "Samurai X: The Movie",
   score: 3.7,
   production_company: "Studio Gallop",
   program_type: "Movie",
-  description: "Himura Kenshin, the wandering samurai, was once known as Battousai, the \"Man Slayer,\" and used his unsurpassed prowess as a fighter to fight in the Japanese civil war and bring about the beginning of the Meiji period. That time is over now, however, and Kenshin has vowed to never kill again, and spend the rest of his life in atonement for all the lives that ended under his blade.")
+  description: "Himura Kenshin, the wandering samurai, was once known as Battousai, the \"Man Slayer,\" has vowed to never kill again, and spend the rest of his life in atonement for all the lives that ended under his blade.")
 #19 Drama, Action, Period
 glinks(19, ["Drama", "Action", "Period"])
 
@@ -940,6 +956,181 @@ glinks(49, ["Action", "Drama", "Adventure", "Thriller", "Fantasy"])
 
 # Program.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # #Drama, War
+
+#####LIKES######
+
+Like.create!(
+  profile_id: 1,
+  program_id: 21)
+Like.create!(
+  profile_id: 1,
+  program_id: 12)
+Like.create!(
+  profile_id: 1,
+  program_id: 10)
+Like.create!(
+  profile_id: 1,
+  program_id: 4)
+Like.create!(
+  profile_id: 1,
+  program_id: 35)
+Like.create!(
+  profile_id: 1,
+  program_id: 38)
+Like.create!(
+  profile_id: 1,
+  program_id: 42)
+Like.create!(
+  profile_id: 1,
+  program_id: 9)
+Like.create!(
+  profile_id: 1,
+  program_id: 5)
+Like.create!(
+  profile_id: 1,
+  program_id: 44)
+Like.create!(
+  profile_id: 1,
+  program_id: 2)
+Like.create!(
+  profile_id: 1,
+  program_id: 32)
+Like.create!(
+  profile_id: 2,
+  program_id: 12)
+Like.create!(
+  profile_id: 2,
+  program_id: 18)
+Like.create!(
+  profile_id: 2,
+  program_id: 33)
+Like.create!(
+  profile_id: 2,
+  program_id: 3)
+Like.create!(
+  profile_id: 2,
+  program_id: 9)
+Like.create!(
+  profile_id: 2,
+  program_id: 25)
+Like.create!(
+  profile_id: 2,
+  program_id: 16)
+Like.create!(
+  profile_id: 2,
+  program_id: 32)
+Like.create!(
+  profile_id: 2,
+  program_id: 45)
+Like.create!(
+  profile_id: 2,
+  program_id: 35)
+Like.create!(
+  profile_id: 2,
+  program_id: 27)
+Like.create!(
+  profile_id: 1,
+  program_id: 33)
+Like.create!(
+  profile_id: 3,
+  program_id: 10)
+Like.create!(
+  profile_id: 3,
+  program_id: 16)
+Like.create!(
+  profile_id: 3,
+  program_id: 14)
+Like.create!(
+  profile_id: 3,
+  program_id: 6)
+Like.create!(
+  profile_id: 3,
+  program_id: 19)
+Like.create!(
+  profile_id: 3,
+  program_id: 10)
+Like.create!(
+  profile_id: 3,
+  program_id: 16)
+Like.create!(
+  profile_id: 3,
+  program_id: 24)
+Like.create!(
+  profile_id: 3,
+  program_id: 13)
+Like.create!(
+  profile_id: 3,
+  program_id: 35)
+Like.create!(
+  profile_id: 3,
+  program_id: 40)
+Like.create!(
+  profile_id: 3,
+  program_id: 12)
+Like.create!(
+  profile_id: 3,
+  program_id: 8)
+Like.create!(
+  profile_id: 3,
+  program_id: 37)
+
+
+
+
+Disike.create!(
+  profile_id: 1,
+  program_id: 43)
+Disike.create!(
+  profile_id: 1,
+  program_id: 30)
+Disike.create!(
+  profile_id: 1,
+  program_id: 7)
+Disike.create!(
+  profile_id: 1,
+  program_id: 22)
+Disike.create!(
+ profile_id: 1,
+  program_id: 46)
+Disike.create!(
+  profile_id: 2,
+  program_id: 41)
+Disike.create!(
+  profile_id: 2,
+  program_id: 39)
+Disike.create!(
+  profile_id: 2,
+  program_id: 36)
+Disike.create!(
+  profile_id: 3,
+  program_id: 21)
+Disike.create!(
+  profile_id: 3,
+  program_id: 20)
+Disike.create!(
+  profile_id: 3,
+  program_id: 44)
+Disike.create!(
+  profile_id: 3,
+  program_id: 48)
+Disike.create!(
+  profile_id: 3,
+  program_id: 46)
+Disike.create!(
+  profile_id: 1,
+  program_id: 13)
+Disike.create!(
+  profile_id: 1,
+  program_id: 11)
+Disike.create!(
+  profile_id: 1,
+  program_id: 14)
+
+
+
+
+
+
 
 
 

@@ -3,69 +3,69 @@ import Video from "../../video/video";
 import {Link} from "react-router-dom";
 
 
-class ProgramDetail extends React.Component{
+class ProgramDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       tab: "overview",
-      currentId: (this.props.program) ? this.props.program.id : "",
+      currentId: this.props.program ? this.props.program.id : "",
       video: false,
       changing: false,
-      watched: (this.props.watched) ? true : false,
+      watched: this.props.watched ? true : false,
       closing: false,
-      liked: (this.props.liked) ? true : false,
-      disliked: (this.props.disliked) ? true : false
+      liked: this.props.liked ? true : false,
+      disliked: this.props.disliked ? true : false
     };
- 
+
     this.handleTab = this.handleTab.bind(this);
+    this.handleWatchList = this.handleWatchList.bind(this);
+    this.handleLike = this.handleLike.bind(this);
+    this.handleDislike = this.handleDislike.bind(this);
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
     this.renderEpisodes = this.renderEpisodes.bind(this);
     this.currentTabPage = this.currentTabPage.bind(this);
-    this.handleWatchList = this.handleWatchList.bind(this);
     this.closeDetails = this.closeDetails.bind(this);
     this.renderLikeButtons = this.renderLikeButtons.bind(this);
-
   }
 
   componentDidMount() {
-     
     // if (this.props.programId) {
     //   this.props.requestProgram(this.props.programId);
     // } else {
-      this.props.requestProgram(parseInt(this.props.match.params.programId));
+    this.props.requestProgram(parseInt(this.props.match.params.programId));
     // }
     setTimeout(() => {
-      this.setState({video: true});
+      this.setState({ video: true });
     }, 1800);
   }
 
   componentDidUpdate() {
     ///For toggling between programs while Details is open
-     
+
     let programId = parseInt(this.props.match.params.programId);
     if (this.state.currentId && programId !== this.state.currentId) {
       this.props.requestProgram(this.props.match.params.programId);
-      this.setState({currentId: programId});
+      this.setState({ currentId: programId });
     }
   }
 
   handleTab(type) {
-    return (e) => {
+    return e => {
       e.preventDefault();
-      let {tab, video} = this.state;
+      let { tab, video } = this.state;
 
       ///Pause or play video
       if (video) {
         let vid = document.getElementById("video-player");
-        (tab === "overview") ? vid.pause() : vid.play();
+        tab === "overview" ? vid.pause() : vid.play();
       }
 
       if (tab !== type) {
-        this.setState({tab: type, changing: true});
+        this.setState({ tab: type, changing: true });
 
         setTimeout(() => {
-          this.setState({changing: false});
+          this.setState({ changing: false });
         }, 50);
       }
     };
@@ -80,89 +80,121 @@ class ProgramDetail extends React.Component{
     } else {
       this.props.addToWatchList(this.props.program.id);
     }
-    this.setState({watched: !watchStatus});
+    this.setState({ watched: !watchStatus });
+  }
+
+  handleLike(e) {
+    e.preventDefault();
+    let likeStatus = this.state.liked;
+
+    if (likeStatus) {
+      this.props.removeFromLikes(this.props.liked.id).then(() => {
+        this.setState({ liked: !likeStatus });
+      });
+    } else {
+      this.props.addLike(this.props.program.id).then(() => {
+        this.setState({ liked: !likeStatus });
+      });
+    }
+  }
+
+  handleDislike(e) {
+    e.preventDefault();
+    let dislikeStatus = this.state.disliked;
+
+    if (dislikeStatus) {
+      this.props.removeFromDislikes(this.props.disliked.id).then(
+        () => {
+          this.setState({ disliked: !dislikeStatus });
+        }
+      );
+    } else {
+      this.props.addDislike(this.props.program.id).then(() => {
+        this.setState({ disliked: !dislikeStatus });
+      });
+    }
   }
 
   closeDetails(e) {
     e.preventDefault();
-    this.setState({closing: true, video: false});
-    
-    if (this.props.displayType === 'search') {
+    this.setState({ closing: true, video: false });
+
+    if (this.props.displayType === "search") {
       setTimeout(() => {
         let queryAddress = this.props.history.location.pathname.split("/");
-        this.props.history.push(`/search/${queryAddress[queryAddress.length - 2]}`);
+        this.props.history.push(
+          `/search/${queryAddress[queryAddress.length - 2]}`
+        );
       }, 600);
     } else {
-
       setTimeout(() => {
-          this.props.history.goBack();
+        this.props.history.goBack();
       }, 600);
     }
   }
 
-
   renderLikeButtons() {
-    let likeActive = (this.state.liked) ? "active" : "inactive";
-    let dislikeActive = (this.state.disliked) ? "active" : "inactive";
+    let likeActive = this.state.liked ? "active" : "inactive";
+    let dislikeActive = this.state.disliked ? "active" : "inactive";
 
+    
     if (!this.state.liked && !this.state.disliked) {
       return (
         <div className="details-like-container">
-          <button className="like-dislike"
-            onClick={this.handleLike}>
+          <button className="details-like-dislike" onClick={this.handleLike}>
             <img className="like" src={window.like} alt="like" />
           </button>
 
-          <button className="like-dislike"
-            onClick={this.handleDislike}>
+          <button className="details-like-dislike" onClick={this.handleDislike}>
             <img className="dislike" src={window.dislike} alt="dislike" />
           </button>
         </div>
-      )
+      );
     } else if (this.state.liked || this.state.disliked) {
       return (
         <div className="details-like-container">
-          <button className={`like-dislike ${likeActive}`}
-            onClick={this.handleLike}>
+          <button
+            className={`details-like-dislike ${likeActive}`}
+            onClick={this.handleLike}
+          >
             <img className="like" src={window.like} alt="like" />
           </button>
 
-          <button className={`like-dislike ${dislikeActive}`}
-            onClick={this.handleDislike}>
+          <button
+            className={`details-like-dislike ${dislikeActive}`}
+            onClick={this.handleDislike}
+          >
             <img className="dislike" src={window.dislike} alt="dislike" />
           </button>
         </div>
-
-      )
+      );
     }
   }
-  
+
   renderOverview(program, genres, fadeIn) {
     let score = {
       width: `${(program.score / 5) * 100}%`
     };
 
-    let runtimeSeason = (program.runtime) ? program.runtime : 
-      (program.seasons > 1) ? `${program.seasons} seasons`:
-      `${program.seasons} season`
+    let runtimeSeason = program.runtime
+      ? program.runtime
+      : program.seasons > 1
+      ? `${program.seasons} seasons`
+      : `${program.seasons} season`;
 
-    let watchStatus = (this.state.watched) ? (
+    let watchStatus = this.state.watched ? (
       <i className="fas fa-check"></i>
     ) : (
       <i className="fas fa-plus"></i>
-    )
+    );
 
     let likeButtons = this.renderLikeButtons();
 
     return (
-      <section className="detail-content-container"
-        style={fadeIn}   >
-
+      <section className="detail-content-container" style={fadeIn}>
         <aside className="rating-runtime">
-
-          <div className="score" >
-            <span className="stars"
-              style={score}>
+          <div className="score">
+            <span className="stars" style={score}>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
@@ -176,84 +208,64 @@ class ProgramDetail extends React.Component{
           <span>{runtimeSeason}</span>
         </aside>
 
-        <aside className="description">
-          {program.description}
-        </aside>
+        <aside className="description">{program.description}</aside>
 
         <div className="detail-buttons">
-            <button className="detail-play">
-          <Link to={`/watch/${program.id}`} >
+          <button className="detail-play">
+            <Link to={`/watch/${program.id}`}>
               <span>&#9654;</span>
               PLAY
-          </Link>
-            </button>
-          <button className="detail-watchlist"
-            onClick={this.handleWatchList}>
+            </Link>
+          </button>
+          <button className="detail-watchlist" onClick={this.handleWatchList}>
             {watchStatus}
-            MY LIST
+            {" "}MY LIST
           </button>
           {likeButtons}
         </div>
 
-        <span className="genre-cap">
-          Genres: {genres}
-        </span>
+        <span className="genre-cap">Genres: {genres}</span>
       </section>
-    )
+    );
   }
 
   renderDetails(program, genres, fadeIn) {
     return (
-      <section className="detail-content-container"
-        style={fadeIn}  >
-        
-        <div className="director">
-          Directed by: {program.director}
-        </div>
+      <section className="detail-content-container" style={fadeIn}>
+        <div className="director">Directed by: {program.director}</div>
 
         <div className="production-company">
           Production Company: {program.production_company}
         </div>
 
-        <aside className="description">
-          {program.description}
-        </aside>
+        <aside className="description">{program.description}</aside>
 
-
-        <span className="genre-cap">
-          Genres: {genres}
-        </span>
+        <span className="genre-cap">Genres: {genres}</span>
       </section>
-    )
-
+    );
   }
 
   renderEpisodes(program, fadeIn) {
     return (
-      <section className="detail-content-container"
-        style={fadeIn}  >
-
-        <div className="director">
-          Directed by: {program.director}
-        </div>
+      <section className="detail-content-container" style={fadeIn}>
+        <div className="director">Directed by: {program.director}</div>
 
         <div className="production-company">
           Production Company: {program.production_company}
         </div>
 
-        <aside className="description">
-          {program.description}
-        </aside>
-
+        <aside className="description">{program.description}</aside>
       </section>
-    )
+    );
   }
 
   currentTabPage(tab, program, genre) {
-    let fadeIn = (!this.state.changing) ? {
-      opacity: "1",
-      transition: `opacity 100ms ease`
-    } : {};
+    let fadeIn = !this.state.changing
+      ? {
+          opacity: "1",
+          transition: `opacity 100ms ease`
+        }
+      : {};
     ///fade in between renders
 
     switch (tab) {
@@ -268,74 +280,86 @@ class ProgramDetail extends React.Component{
     }
   }
 
-
   render() {
     let program = this.props.program || {};
 
-    let genres = (this.props.genres) ? this.props.genres.join(", ") : "";
-    let {tab, closing, video} = this.state;
-    let paused = (tab !== "overview") ? "paused" : "";
-    let closer = (closing) ? "closing" : "";
+    let genres = this.props.genres ? this.props.genres.join(", ") : "";
+    let { tab, closing, video } = this.state;
+    let paused = tab !== "overview" ? "paused" : "";
+    let closer = closing ? "closing" : "";
 
-    let videoRender = (video) ? (<Video version={`detail ${paused}`} sourceVid={program.clip} />) : "";
+    let videoRender = video ? (
+      <Video version={`detail ${paused}`} sourceVid={program.clip} />
+    ) : (
+      ""
+    );
     let detailBackImage = {
       backgroundImage: `url("${program.background}")`
-    }
+    };
 
-    let episodes = (program.program_type === "TV Show") ? (
-      <li key="3" className={(tab === 'episodes') ? "current-tab" : ""}
-        onClick={this.handleTab("episodes")}>
-        EPISODES
-            <span className={(tab === 'episodes') ? "current-tab" : ""}></span>
-      </li>
-    ) : "";
-
-    return(
-
-      <section className={`program-detail-page ${closer}`}
-        style={detailBackImage} 
+    let episodes =
+      program.program_type === "TV Show" ? (
+        <li
+          key="3"
+          className={tab === "episodes" ? "current-tab" : ""}
+          onClick={this.handleTab("episodes")}
         >
+          EPISODES
+          <span className={tab === "episodes" ? "current-tab" : ""}></span>
+        </li>
+      ) : (
+        ""
+      );
 
-          {videoRender}
+    return (
+      <section
+        className={`program-detail-page ${closer}`}
+        style={detailBackImage}
+      >
+        {videoRender}
 
-          <section className="inner-detail-container">
+        <section className="inner-detail-container">
+          <button className={`detail-closer `} onClick={this.closeDetails}>
+            &#10060;
+          </button>
 
-              <button className={`detail-closer `}
-                  onClick={this.closeDetails}>&#10060;</button>
+          <header className="detail-logo-header">
+            <div className={`logo-container ${tab}`}>
+              <img
+                className={`program-logo ${tab}`}
+                src={program.logo}
+                alt=""
+              />
+              {/* <img className={`program-logo ${tab}`} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
+            </div>
+          </header>
 
-            <header className="detail-logo-header">
-              <div className={`logo-container ${tab}`}>
-                <img className={`program-logo ${tab}`} src={program.logo} alt=""/>
-                {/* <img className={`program-logo ${tab}`} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
-              </div>
-          
-            </header>
-
-            {this.currentTabPage(tab, program, genres)}
-
-
+          {this.currentTabPage(tab, program, genres)}
         </section>
 
         <ul className="detail-tabs">
-          <li key="1" className={(tab === 'overview') ? "current-tab" : ""}
-            onClick={this.handleTab("overview")}>
+          <li
+            key="1"
+            className={tab === "overview" ? "current-tab" : ""}
+            onClick={this.handleTab("overview")}
+          >
             OVERVIEW
-            <span className={(tab === 'overview') ? "current-tab" : ""}></span>
+            <span className={tab === "overview" ? "current-tab" : ""}></span>
           </li>
-          <li key="2" className={(tab === 'details') ? "current-tab" : ""}
-            onClick={this.handleTab("details")}>
+          <li
+            key="2"
+            className={tab === "details" ? "current-tab" : ""}
+            onClick={this.handleTab("details")}
+          >
             DETAILS
-            <span className={(tab === 'details') ? "current-tab" : ""}></span>
+            <span className={tab === "details" ? "current-tab" : ""}></span>
           </li>
-          
-          {episodes}
 
+          {episodes}
         </ul>
       </section>
-    )
-
+    );
   }
-
 }
 
 export default ProgramDetail;

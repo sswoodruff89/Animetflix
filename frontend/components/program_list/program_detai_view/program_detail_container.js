@@ -1,8 +1,10 @@
 import { connect } from "react-redux";
 import { requestProgram } from "../../../actions/program_actions";
+import { addLike, removeFromLikes, addDislike, removeFromDislikes } from "../../../actions/like_actions";
 import { addToWatchList, removeFromWatchList } from "../../../actions/watchlist_actions";
 // import { requestGenres } from "../../../actions/genre_actions";
 import ProgramDetail from "./program_detail";
+
 import {withRouter} from "react-router-dom";
 
 
@@ -20,15 +22,16 @@ const msp = (state, ownProps) => {
   let displayType = (ownProps.displayType === "showcase") ? "showcase" : 
     (ownProps.history.location.pathname.includes("search")) ? "search" : 
       "browse";
-    
+
   let watched = (program && state.entities.watchlists[program.id]) ? 
     state.entities.watchlists[program.id] : null;
 
-  let liked = (ownProps.program && state.entities.likes[ownProps.program.id]) ?
-    state.entities.likes[ownProps.program.id] : null;
+  let liked = (program && state.entities.likes[program.id]) ?
+    state.entities.likes[program.id] : null;
 
-  let disliked = (ownProps.program && state.entities.dislikes[ownProps.program.id]) ?
-    state.entities.dislikes[ownProps.program.id] : null;
+  let disliked = (program && state.entities.dislikes[program.id]) ?
+    state.entities.dislikes[program.id] : null;
+
   return {
     program,
     programId,
@@ -51,7 +54,19 @@ const mdp = (dispatch) => {
     },
     removeFromWatchList: (watchId) => {
       return dispatch(removeFromWatchList(watchId));
-    }      
+    },
+    addLike: (programId) => {
+      return dispatch(addLike(programId));
+    },
+    removeFromLikes: (likeId) => {
+      return dispatch(removeFromLikes(likeId));
+    },
+    addDislike: (programId) => {
+      return dispatch(addDislike(programId));
+    },
+    removeFromDislikes: (dislikeId) => {
+      return dispatch(removeFromDislikes(dislikeId));
+    } 
 
   };
 };

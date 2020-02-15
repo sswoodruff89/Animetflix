@@ -22,7 +22,7 @@ class Api::DislikesController < ApplicationController
     end
 
     def destroy
-        @dislike = Like.find(params[:id])
+        @dislike = Dislike.find(params[:id])
         @dislike.destroy
         render :show
     end
