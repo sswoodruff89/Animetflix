@@ -48,7 +48,8 @@ GENRES = [
   "Thriller", #11
   "Horror", #12,
   "Crime",
-  "Mystery"
+  "Mystery",
+  "Supernatural"
 ]
 
 GENRES.each do |genre|
@@ -711,6 +712,13 @@ program32 = Program.create!(title: "Demon Slayer",
   description: "A family is attacked by demons and only Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.")
 glinks(32, ["Fantasy", "Action", "Horror", "Adventure", "Thriller"])
 
+program32.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_logo.png'), filename: 'demon_slayer_logo.png')
+program32.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_thumb.jpg'), filename: 'demon_slayer_thumb.jpg')
+program32.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_back.jpg'), filename: 'demon_slayer_back.jpg')
+
+program32.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_clip.mp4'), filename: 'demon_slayer_clip.mp4')
+program32.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_thumbclip.mp4'), filename: 'demon_slayer_thumbclip.mp4')
+
 
 # program33 = Program.find(33);
 
@@ -725,6 +733,13 @@ program33 = Program.create!(title: "Keep Your Hands Off Eizouken!",
   description: 'Three students who are fans of anime decide to come together and make the "greatest anime ever!"')
 glinks(33, ["Comedy", "Drama"])
 
+program33.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/keep_hands_logo.png'), filename: 'keep_hands_logo.png')
+program33.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/keep_hands_thumb.png'), filename: 'keep_hands_thumb.png')
+program33.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/keep_hands_back.jpg'), filename: 'keep_hands_back.jpg')
+
+program33.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/keep_hands_clip.mp4'), filename: 'keep_hands_clip.mp4')
+program33.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/keep_hands_thumbclip.mp4'), filename: 'keep_hands_thumbclip.mp4')
+
 
 # program34 = Program.find(34);
 
@@ -738,6 +753,13 @@ program34 = Program.create!(title: "One Piece",
   program_type: "TV Show",
   description: 'Follows the adventures of Monkey D. Luffy and his pirate crew in order to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".')
 glinks(34, ["Comedy", "Action", "Adventure", "Fantasy"])
+
+program34.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_logo.png'), filename: 'one_piece_logo.png')
+program34.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_thumbnail.jpg'), filename: 'one_piece_thumbnail.jpg')
+program34.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_back.png'), filename: 'one_piece_back.png')
+
+program34.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_clip.mp4'), filename: 'one_piece_clip.mp4')
+program34.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_thumbclip.mp4'), filename: 'one_piece_thumbclip.mp4')
 
 
 # program35 = Program.find(35);
@@ -754,6 +776,12 @@ program35 = Program.create!(title: "Yu Yu Hakusho: Ghost Files",
 glinks(35, ["Horror", "Action", "Adventure", "Fantasy"])
 
 
+program35.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/yu_yu_logo.png'), filename: 'yu_yu_logo.png')
+program35.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/yu_yu_thumb.jpg'), filename: 'yu_yu_thumb.jpg')
+program35.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/yu_yu_back.jpg'), filename: 'yu_yu_back.jpg')
+
+
+
 # program36 = Program.find(36);
 
 program36 = Program.create!(title: "Attack on Titan", 
@@ -766,6 +794,10 @@ program36 = Program.create!(title: "Attack on Titan",
   program_type: "TV Show",
   description: "After his hometown is destroyed and his mother is killed, young Eren Yeager vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.")
 glinks(36, ["Thriller", "Action", "Adventure", "Fantasy"])
+
+program36.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/attack_titan_logo.png'), filename: 'attack_titan_logo.png')
+program36.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/attack_titan_thumb.jpg'), filename: 'attack_titan_thumb.jpg')
+program36.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/attack_titan_back.jpg'), filename: 'attack_titan_back.jpg')
 
 
 # program37 = Program.find(37);
@@ -781,6 +813,10 @@ program37 = Program.create!(title: "Death Note",
   description: "An intelligent yet cynical high school student begins to cleanse the world from evil with the help of a magical notebook that can kill anyone whose name is written on it.")
 glinks(37, ["Thriller", "Action", "Drama", "Crime", "Mystery"])
 
+program37.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/deathnote_logo.png'), filename: 'deathnote_logo.png')
+program37.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/deathnote_thumb.jpg'), filename: 'deathnote_thumb.jpg')
+program37.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/deathnote_back.jpg'), filename: 'deathnote_back.jpg')
+
 
 # program38 = Program.find(38);
 
@@ -794,6 +830,12 @@ program38 = Program.create!(title: "Cowboy Bebop",
   program_type: "TV Show",
   description: "The futuristic misadventures and tragedies of an easygoing bounty hunter and his partners.")
 glinks(38, ["Thriller", "Sci-Fi", "Action", "Crime", "Adventure"])
+
+program38.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/cowboy_logo.png'), filename: 'cowboy_logo.png')
+program38.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/cowboy_thumb.png'), filename: 'cowboy_thumb.png')
+program38.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/cowboy_back.jpg'), filename: 'cowboy_back.jpg')
+
+program38.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/cowboy_thumbclip.mp4'), filename: 'cowboy_thumbclip.mp4')
 
 
 # program39 = Program.find(39);
@@ -809,6 +851,13 @@ program39 = Program.create!(title: "Food Wars",
   description: "To improve his cooking skills and to save the restaurant, Souma begins studying in Engetsu Teahouse Culinary Academy, which is regarded as Japan's top culinary academy.")
 glinks(39, ["Drama", "Comedy"])
 
+program39.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_logo.png'), filename: 'food_wars_logo.png')
+program39.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_thumb.jpg'), filename: 'food_wars_thumb.jpg')
+program39.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_back.png'), filename: 'food_wars_back.png')
+
+program39.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+program39.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_thumbclip.mp4'), filename: 'food_wars_thumbclip.mp4')
+
 
 # program40 = Program.find(40);
 
@@ -822,6 +871,13 @@ program40 = Program.create!(title: "Samurai Champloo",
   program_type: "TV Show",
   description: 'Fuu, a waitress who works in a teahouse, rescues two master swordsmen, Mugen and Jin, from their execution to help her find the "samurai who smells of sunflowers."')
 glinks(40, ["Period", "Comedy", "Action", "Adventure"])
+
+program40.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_logo.png'), filename: 'champloo_logo.png')
+program40.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumb.jpg'), filename: 'champloo_thumb.jpg')
+program40.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_back.jpg'), filename: 'champloo_back.jpg')
+
+# program40.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+program40.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 
 # program41 = Program.find(41);
@@ -837,6 +893,12 @@ program41 = Program.create!(title: "Clannad",
   description: "A high school student who cares little about school or others meets a lonely girl who had to repeat a year while all her friends finished high school. He decides to hang out with her and soon meets more friendly students.")
 glinks(41, ["Drama", "Romance", "Comedy"])
 
+program41.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/clannad_logo.png'), filename: 'clannad_logo.png')
+program41.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/clannad_thumb.jpg'), filename: 'clannad_thumb.jpg')
+program41.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/clannad_back.jpg'), filename: 'clannad_back.jpg')
+
+# program41.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program41.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 
 # program42 = Program.find(42);
@@ -949,6 +1011,62 @@ program49 = Program.create!(title: "Future Diary",
   program_type: "TV Show",
   description: "A young man competes with people around the world for a chance to become the succesor of God, with a diary that is able to tell the future.")
 glinks(49, ["Action", "Drama", "Adventure", "Thriller", "Fantasy"])
+
+
+# program50 = Program.find(50);
+
+program50 = Program.create!(title: "Hellsing Ultimate", 
+  yr: 2006, 
+  director: "Tomokazu Tokoro", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 4.1,
+  production_company: "Madhouse, Graphinica, Satelight",
+  program_type: "TV Show",
+  description: "The vampire Alucard, his master Sir Integra Hellsing, and his ward Seras Victoria, try to protect England from a war-crazed SS-Major and his vampire army.")
+glinks(50, ["Action", "Horror", "Thriller", "Supernatural"])
+
+
+# program51 = Program.find(51);
+
+program51 = Program.create!(title: "Junji Ito Collection", 
+  yr: 2018, 
+  director: "Shinobu Tagashira", 
+  rating: "TV-MA", 
+  seasons: 1, 
+  score: 3.2,
+  production_company: "Studio DEEN",
+  program_type: "TV Show",
+  description: "A collection of animated horror stories based on the works of Japanese artist Junji Ito.")
+glinks(51, ["Horror", "Thriller", "Supernatural"])
+
+
+# program52 = Program.find(52);
+
+program52 = Program.create!(title: "The Promised Neverland", 
+  yr: 2019, 
+  director: "Mamoru Kanbe", 
+  rating: "TV-14", 
+  seasons: 2, 
+  score: 4.4,
+  production_company: "Aniplex, CloverWorks, Fuji Television Network",
+  program_type: "TV Show",
+  description: "A group kids at a seemingly perfect orphanage uncover its dark truth when they break a rule to never leave the orphanage grounds. Once the truth is discovered, they begin to plan an escape to save all of the children.")
+glinks(52, ["Horror", "Thriller", "Fantasy", "Mystery"])
+
+
+# program53 = Program.find(53);
+
+program53 = Program.create!(title: "School-Live!", 
+  yr: 2015, 
+  director: "Masaomi Ando", 
+  rating: "TV-14", 
+  seasons: 1, 
+  score: 3.6,
+  production_company: "Houbunsha",
+  program_type: "TV Show",
+  description: "A young girl pretends to live a normal school life with her friends, unable to perceive what is truly happening around her.")
+glinks(53, ["Horror", "Thriller", "Drama", "Mystery"])
 
 # Program.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
