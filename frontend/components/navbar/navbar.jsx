@@ -147,11 +147,28 @@ class NavBar extends React.Component{
           <li className="link">Home</li>
         </Link>
     )
+
     let watchlist = (this.props.history.location.pathname.includes("watchlist")) ? (
       <li className="current">My List</li>
     ) : (
         <Link to="/watchlist">
           <li className="link">My List</li>
+        </Link>
+    )
+
+    let tv = (this.props.history.location.pathname.includes("tv")) ? (
+      <li className="current">TV Shows</li>
+    ) : (
+        <Link to="/tv">
+          <li className="link">TV Shows</li>
+        </Link>
+    )
+
+    let movies = (this.props.history.location.pathname.includes("movie")) ? (
+      <li className="current">Movies</li>
+    ) : (
+        <Link to="/movie">
+          <li className="link">Movies</li>
         </Link>
     )
 
@@ -164,6 +181,8 @@ class NavBar extends React.Component{
           <ul className="nav-program-links">
             {/* ADD LINKS LATER */}
             {browse}
+            {tv}
+            {movies}
             {watchlist}
           </ul>
         </nav>

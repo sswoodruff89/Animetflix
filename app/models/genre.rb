@@ -13,6 +13,8 @@ class Genre < ApplicationRecord
   
   validates :name, presence: true
 
+  attr_accessor :points
+
     has_many :genre_links
 
     has_many :programs, 

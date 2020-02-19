@@ -6,7 +6,7 @@ export default (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_ALL_PROGRAMS:
-      return action.programs;
+      return Object.assign({}, state, action.programs);
     case RECEIVE_PROGRAM:
       let newProgram = {
         [action.program.id]: action.program

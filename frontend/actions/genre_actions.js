@@ -1,5 +1,5 @@
 import {fetchGenres} from "../util/program_api_util";
-
+import { startLoadingPrograms } from "./program_actions";
 
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const START_LOADING_GENRES = "START_LOADING_GENRES";
@@ -12,14 +12,10 @@ export const receiveGenres = (genres) => {
   };
 };
 
-// export const startLoadingGenres = () => {
-//   return {
-//     type: START_LOADING_GENRES
-//   };
-// };
+
 
 export const requestGenres = () => dispatch => {
-  // dispatch(startLoadingGenres());
+  
   return fetchGenres().then((genres) => {
     return dispatch(receiveGenres(genres));
   });

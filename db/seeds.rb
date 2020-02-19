@@ -168,7 +168,7 @@ program5 = Program.create!(title: "Summer Wars",
   program_type: "Movie",
   description: "A student tries to fix a problem he accidentally caused in OZ, a digital world, while pretending to be the fiancé of his friend at her grandmother's 90th birthday.")
 #5 Action, Adventure, Sci-Fi, Comedy
-glinks(5, ["Adventure", "Action", "Sci-Fi", "Comedy"])
+glinks(5, ["Action", "Sci-Fi", "Comedy"])
 
 # program5 = Program.find(5);
 
@@ -249,7 +249,7 @@ program9 = Program.create!(title: "Ghost in the Shell",
   program_type: "Movie",
   description: 'Cyborg federal agent Maj. Motoko Kusanagi trails "The Puppet Master" , who illegally hacks into the computerized minds of cyborg-human hybrids.')
 #9 Action, Sci-Fi, Drama
-glinks(9, ["Action", "Sci-Fi", "Drama"])
+glinks(9, ["Action", "Sci-Fi", "Crime", "Mystery"])
 
 # program9 = Program.find(9);
 
@@ -352,7 +352,7 @@ program14 = Program.create!(title: "Porco Ross",
   program_type: "Movie",
   description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war.")
 #14 Drama, Fantasy, Period
-glinks(14, ["Drama", "Fantasy", "Period", "Action"])
+glinks(14, ["Drama", "Fantasy", "Period"])
 
 # program14 = Program.find(14);
 
@@ -390,7 +390,7 @@ program16 = Program.create!(title: "The Girl Who Leapt Through Time",
   program_type: "Movie",
   description: "When a young high school girl discovers that she has the unique ability to traverse space and time, her efforts to use the power as a means of preserving the relationships she shares with her closest friends reveals the perpetually shifting nature of personal relationships.")
 #16 Drama, Adventure, Family, Sci-Fi
-glinks(16, ["Drama", "Adventure", "Family", "Sci-Fi"])
+glinks(16, ["Drama", "Family", "Sci-Fi"])
 
 # program16 = Program.find(16);
 
@@ -470,7 +470,7 @@ program20 = Program.create!(title: "My Hero Academia: Two Heroes",
   program_type: "Movie",
   description: "Deku and All Might receive an invitation to I-Expo, The World's Leading Exhibition of Quirk Abilities and Hero Item Innovations. Suddenly, I-Expo's Top-Of-The-Line Security System gets hacked by villains and a sinister plan is set in motion.")
 #20 Action, Adventure, Fantasy, Sci-Fi
-glinks(20, ["Fantasy", "Adventure", "Action", "Family", "Sci-Fi"])
+glinks(20, ["Fantasy", "Action", "Family", "Sci-Fi"])
 
 # program20 = Program.find(20);
 
@@ -552,7 +552,7 @@ program24 = Program.create!(title: "Millennium Actress",
   production_company: "Madhouse",
   program_type: "Movie",
   description: "Filmmaker Genya Tachibana begins work on a documentary about famed Japanese actress Chiyoko Fujiwara. As the decades pass, Chiyoko is transformed from a teen with big dreams into a full-blown celebrity, while her cinematic characters span various eras, from ancient Japan to the distant future.")
-glinks(24, ["Period", "Drama", "Fantasy"])
+glinks(24, ["Period", "Drama"])
 
 # program24 = Program.find(24);
 
@@ -610,7 +610,7 @@ program27 = Program.create!(title: "Perfect Blue",
   production_company: "Madhouse",
   program_type: "Movie",
   description: "A retired pop singer turned actress' sense of reality is shaken when she is stalked by an obsessed fan and seemingly a ghost of her past.")
-glinks(27, ["Thriller", "Horror", "Drama"])
+glinks(27, ["Thriller", "Horror"])
 
 # program27 = Program.find(27);
 
@@ -710,7 +710,7 @@ program32 = Program.create!(title: "Demon Slayer",
   production_company: "Aniplex, Shueisha",
   program_type: "TV Show",
   description: "A family is attacked by demons and only Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.")
-glinks(32, ["Fantasy", "Action", "Horror", "Adventure", "Thriller"])
+glinks(32, ["Fantasy", "Supernatural", "Action", "Horror", "Adventure", "Thriller"])
 
 program32.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_logo.png'), filename: 'demon_slayer_logo.png')
 program32.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/demon_slayer_thumb.jpg'), filename: 'demon_slayer_thumb.jpg')
@@ -773,7 +773,7 @@ program35 = Program.create!(title: "Yu Yu Hakusho: Ghost Files",
   production_company: "Pierrot, Shueisha, Fuji Television",
   program_type: "TV Show",
   description: "Resurrected from the dead, 14-year-old Yusuke Urameshi becomes a Spirit Detective and, along with his comrades, hunt down demons causing terror in the world.")
-glinks(35, ["Horror", "Action", "Adventure", "Fantasy"])
+glinks(35, ["Horror", "Action", "Adventure", "Fantasy", "Supernatural"])
 
 
 program35.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/yu_yu_logo.png'), filename: 'yu_yu_logo.png')
@@ -793,7 +793,7 @@ program36 = Program.create!(title: "Attack on Titan",
   production_company: "Wit Studio, Production I.G.",
   program_type: "TV Show",
   description: "After his hometown is destroyed and his mother is killed, young Eren Yeager vows to cleanse the earth of the giant humanoid Titans that have brought humanity to the brink of extinction.")
-glinks(36, ["Thriller", "Action", "Adventure", "Fantasy"])
+glinks(36, ["Thriller", "Action", "Adventure", "Fantasy", "Horror"])
 
 program36.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/attack_titan_logo.png'), filename: 'attack_titan_logo.png')
 program36.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/attack_titan_thumb.jpg'), filename: 'attack_titan_thumb.jpg')
@@ -811,7 +811,7 @@ program37 = Program.create!(title: "Death Note",
   production_company: "Madhouse",
   program_type: "TV Show",
   description: "An intelligent yet cynical high school student begins to cleanse the world from evil with the help of a magical notebook that can kill anyone whose name is written on it.")
-glinks(37, ["Thriller", "Action", "Drama", "Crime", "Mystery"])
+glinks(37, ["Thriller", "Drama", "Crime", "Mystery"])
 
 program37.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/deathnote_logo.png'), filename: 'deathnote_logo.png')
 program37.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/deathnote_thumb.jpg'), filename: 'deathnote_thumb.jpg')
@@ -954,7 +954,7 @@ program45 = Program.create!(title: "Tokyo Ghoul",
   production_company: "Pierrot",
   program_type: "TV Show",
   description: "A Tokyo college student is attacked by a ghoul, a superpowered human who feeds on human flesh. He survives, but has become part ghoul and becomes a fugitive on the run.")
-glinks(45, ["Action", "Horror", "Thriller", "Fantasy"])
+glinks(45, ["Action", "Horror", "Thriller", "Fantasy", "Supernatural"])
 
 
 # program46 = Program.find(46);
@@ -1010,7 +1010,7 @@ program49 = Program.create!(title: "Future Diary",
   production_company: "Kadokawa Pictures",
   program_type: "TV Show",
   description: "A young man competes with people around the world for a chance to become the succesor of God, with a diary that is able to tell the future.")
-glinks(49, ["Action", "Drama", "Adventure", "Thriller", "Fantasy"])
+glinks(49, ["Action", "Adventure", "Thriller", "Fantasy"])
 
 
 # program50 = Program.find(50);
@@ -1074,6 +1074,9 @@ glinks(53, ["Horror", "Thriller", "Drama", "Mystery"])
 
 # Program.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # #Drama, War
+
+
+
 
 #####LIKES######
 

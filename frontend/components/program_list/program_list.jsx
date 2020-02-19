@@ -327,6 +327,136 @@ class ProgramList extends React.Component {
           </ul>
         </>
       );
+    } else if (displayType === "tv") {
+      let listNum = this.props.listNum;
+      let checkOpenDetail = this.props.history.location.pathname.includes(
+        `tv/${listNum}`
+      )
+        ? true
+        : false;
+
+      return (
+        <>
+          <ul className="program-slider tv-list">
+            {selectedPrograms.map((program, i) => {
+              if (program) {
+                return (
+                  <li
+                    key={i}
+                    id={
+                      i === lastProgram - 6 && !checkOpenDetail
+                        ? "first-in-slide"
+                        : i + 1 === lastProgram && !checkOpenDetail
+                        ? "last-in-slide"
+                        : ""
+                    }
+                    className={
+                      checkOpenDetail
+                        ? `program-item-${this.detailOpen(program.id)}`
+                        : `program-item ${
+                            i + 1 < lastProgram && !checkOpenDetail && lastHover
+                              ? "last-hover"
+                              : ""
+                          }`
+                    }
+                    onMouseEnter={this.handleHover(program.id)}
+                    onMouseLeave={this.handleHover(program.id)}
+                  >
+
+                    <img
+                      className="background-image"
+                      src={program.thumbnail}
+                      alt=""
+                    />
+
+                    <Video version="thumbnail" sourceVid={program.clip} />
+
+                    {this.renderProgramInfo(
+                      program,
+                      displayType,
+                      showProgramInfo
+                    )}
+
+                    <section className="down-arrow-container">
+                      {this.detailsLink(
+                        displayType,
+                        null,
+                        program.id,
+                        listNum
+                        )}
+                    </section>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </>
+      );
+    } else if (displayType === "movie") {
+      let listNum = this.props.listNum;
+      let checkOpenDetail = this.props.history.location.pathname.includes(
+        `movie/${listNum}`
+      )
+        ? true
+        : false;
+
+      return (
+        <>
+          <ul className="program-slider movie-list">
+            {selectedPrograms.map((program, i) => {
+              if (program) {
+                return (
+                  <li
+                    key={i}
+                    id={
+                      i === lastProgram - 6 && !checkOpenDetail
+                        ? "first-in-slide"
+                        : i + 1 === lastProgram && !checkOpenDetail
+                        ? "last-in-slide"
+                        : ""
+                    }
+                    className={
+                      checkOpenDetail
+                        ? `program-item-${this.detailOpen(program.id)}`
+                        : `program-item ${
+                            i + 1 < lastProgram && !checkOpenDetail && lastHover
+                              ? "last-hover"
+                              : ""
+                          }`
+                    }
+                    onMouseEnter={this.handleHover(program.id)}
+                    onMouseLeave={this.handleHover(program.id)}
+                  >
+
+                    <img
+                      className="background-image"
+                      src={program.thumbnail}
+                      alt=""
+                    />
+
+                    <Video version="thumbnail" sourceVid={program.clip} />
+
+                    {this.renderProgramInfo(
+                      program,
+                      displayType,
+                      showProgramInfo
+                    )}
+
+                    <section className="down-arrow-container">
+                      {this.detailsLink(
+                        displayType,
+                        null,
+                        program.id,
+                        listNum
+                        )}
+                    </section>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </>
+      );
     } else {
       let checkOpenDetail = this.props.history.location.pathname.includes(
         `list_${listName}`

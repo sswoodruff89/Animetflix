@@ -15,6 +15,7 @@ export const receiveAllPrograms = (programs) => {
   };
 };
 
+
 export const receiveProgram = (program) => {
   return {
     type: RECEIVE_PROGRAM,
@@ -75,8 +76,23 @@ export const requestAllPrograms = () => dispatch => {
   });
 };
 
-export const requestProgram = (programId) => dispatch => {
+export const requestProgramsByGenres = (genreIds) => dispatch => {
+  dispatch(startLoadingPrograms());
 
+  return ProgramAPIUtil.fetchProgramsByGenres(genreIds).then(programs => {
+    return dispatch(receiveAllPrograms(programs));
+  });
+};
+
+export const requestProgramsByType = (type) => dispatch => {
+  dispatch(startLoadingPrograms());
+
+  return ProgramAPIUtil.fetchProgramsByType(type).then(programs => {
+    return dispatch(receiveAllPrograms(programs));
+  });
+};
+
+export const requestProgram = (programId) => dispatch => {
   return ProgramAPIUtil.fetchProgram(programId).then((program) => {
     return dispatch(receiveProgram(program));
   });

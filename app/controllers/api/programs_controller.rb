@@ -2,11 +2,13 @@ class Api::ProgramsController < ApplicationController
   include ProgramsControllerFilter
 
   def index
-    if params[:genre_id]
+    if params[:genre_ids]
+      @programs = []
+      Genre.includes(:programs).find(params[:genre_ids]).each {|genre| @programs.push(*genre.programs)}
+      @programs = (@programs + current_profile.watched_programs).uniq
+    elsif params[:type]
+      @programs = Program.with_attached_logo.where(program_type: params[:type])
 
-      # refactor to fetch movies per list
-
-      @programs = Genre.find(params[:genre_id]).programs.with_attached_logo.includes(:genres)
     else
       @programs = Program.with_attached_logo.all.includes(:genres)
     end
@@ -16,6 +18,7 @@ class Api::ProgramsController < ApplicationController
     else
       render :index
     end
+
   end
 
   def show
@@ -40,7 +43,6 @@ class Api::ProgramsController < ApplicationController
   end 
 
   def watchlist
-
     @programs = Profile.find(params[:profile_id]).watched_programs.includes(:genres)
     
       if (@programs.length == 0)

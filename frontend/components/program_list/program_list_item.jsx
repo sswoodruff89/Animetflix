@@ -44,6 +44,18 @@ class ProgramListItem extends React.Component {
           <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
         </Link>
       );
+    } else if (displayType === "tv") {
+      return (
+        <Link to={`/tv/${this.props.listNum}/${program.id}`}>
+          <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
+        </Link>
+      );
+    } else if (displayType === "movie") {
+      return (
+        <Link to={`/movie/${this.props.listNum}/${program.id}`}>
+          <img className="down-arrow" src={window.downArrow} alt="down-arrow" />
+        </Link>
+      );
     }
   }
 

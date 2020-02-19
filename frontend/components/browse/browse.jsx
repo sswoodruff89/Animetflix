@@ -22,10 +22,19 @@ class Browse extends React.Component{
 
   componentDidMount() {
     this.props.requestGenres();
+    // if (this.props.genreIds) {
+    //   this.props.requestProgramsByGenres(this.props.genreIds);
+    // }
     this.props.fetchWatchlist(this.props.profileId);
     this.props.fetchLikes(this.props.profileId);
     this.props.fetchDislikes(this.props.profileId);
-    this.props.requestAllPrograms();
+    // this.props.requestAllPrograms();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.genreIds && this.props.genreIds) {
+      this.props.requestProgramsByGenres(this.props.genreIds.slice(0, 6));
+    }
   }
 
   handleLogOut(e) {

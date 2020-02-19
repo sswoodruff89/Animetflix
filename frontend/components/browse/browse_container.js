@@ -3,7 +3,7 @@ import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { requestGenres } from "../../actions/genre_actions";
 import { fetchLikes, fetchDislikes } from "../../actions/like_actions";
-import { requestAllPrograms } from "../../actions/program_actions";
+import { requestAllPrograms, requestProgramsByGenres } from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
 import { sortByListLength, sortByDateAdded, sortByViewerPoints } from "../../reducers/sort_selector";
 import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
@@ -12,12 +12,14 @@ import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_act
 
 const msp = (state, ownProps) => {
   let genres = Object.values(state.entities.genres);
-
+  let genreIds;
   if (genres.length > 0) {
     // genres = sortByListLength(genres);
-  
     genres = sortByViewerPoints(genres);
+    genreIds = genres.map((g) => g.id);
+    
   }
+  
 
   let watchlist = Object.values(state.entities.watchlists);
 
@@ -33,6 +35,7 @@ const msp = (state, ownProps) => {
     profileId: state.session.profileId,
     // watched,
     genres,
+    genreIds,
     loading: state.ui.loading.programsLoading
   };
 };
@@ -47,6 +50,9 @@ const mdp = dispatch => {
     },
     requestAllPrograms: () => {
       return dispatch(requestAllPrograms());
+    },
+    requestProgramsByGenres: (genreIds) => {
+      return dispatch(requestProgramsByGenres(genreIds));
     },
     fetchWatchlist: (profileId) => {
       return dispatch(fetchWatchlist(profileId));
