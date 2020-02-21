@@ -18,6 +18,7 @@ const msp = (state, ownProps) => {
   let genres = (program && genreCheck && program.genreIds.length > 0 && program.genreIds[0]) ? program.genreIds.map((id) => {
     return state.entities.genres[id].name;
   }) : [];
+
   
   let displayType = (ownProps.displayType === "showcase") ? "showcase" : 
     (ownProps.history.location.pathname.includes("search")) ? "search" : 

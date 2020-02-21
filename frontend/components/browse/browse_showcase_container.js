@@ -8,14 +8,25 @@ import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_act
 
 const msp = (state, ownProps) => {
 
-    let showcaseProgram = state.entities.programs[ownProps.programId] || {};
-    let watched = (showcaseProgram && state.entities.watchlists[showcaseProgram.id]) ?
-        state.entities.watchlists[showcaseProgram.id] : null;
+    let programs = Object.values(state.entities.programs);
+    let showcaseProgram = programs[Math.floor(Math.random() * (programs.length - 1))] || {};
+
+
+    let watched = (showcaseProgram.id && state.entities.watchlists[showcaseProgram.id ]) ?
+        state.entities.watchlists[showcaseProgram.id ] : null;
+
+    let liked = (showcaseProgram.id && state.entities.likes[showcaseProgram.id ]) ?
+        state.entities.likes[showcaseProgram.id ] : null;
+
+    let disliked = (showcaseProgram.id && state.entities.dislikes[showcaseProgram.id ]) ?
+        state.entities.dislikes[showcaseProgram.id ] : null;
 
     return {
         session: state.session.id,
         showcaseProgram,
         watched,
+        liked,
+        disliked,
         loading: state.ui.loading.programsLoading
     };
 };

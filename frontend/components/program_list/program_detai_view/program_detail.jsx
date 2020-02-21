@@ -30,11 +30,7 @@ class ProgramDetail extends React.Component {
   }
 
   componentDidMount() {
-    // if (this.props.programId) {
-    //   this.props.requestProgram(this.props.programId);
-    // } else {
     this.props.requestProgram(parseInt(this.props.match.params.programId));
-    // }
     setTimeout(() => {
       this.setState({ video: true });
     }, 1800);
@@ -313,6 +309,7 @@ class ProgramDetail extends React.Component {
 
     return (
       <section
+        id={(this.props.displayType === "showcase") ? "showcase" : ""}
         className={`program-detail-page ${closer}`}
         style={detailBackImage}
       >

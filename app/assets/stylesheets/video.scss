@@ -24,7 +24,8 @@ video.thumbnail {
 .program-detail-page video.detail {
   position: absolute;
   right: 0;
-  // height: 100%;
+  height: 100%;
+  background-color: black;
   width: 70vw;
   opacity: 1;
   z-index: -4;

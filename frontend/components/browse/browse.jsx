@@ -21,6 +21,7 @@ class Browse extends React.Component{
   }
 
   componentDidMount() {
+
     this.props.requestGenres();
     // if (this.props.genreIds) {
     //   this.props.requestProgramsByGenres(this.props.genreIds);
@@ -28,6 +29,9 @@ class Browse extends React.Component{
     this.props.fetchWatchlist(this.props.profileId);
     this.props.fetchLikes(this.props.profileId);
     this.props.fetchDislikes(this.props.profileId);
+    if (this.props.genreIds) {
+      this.props.requestProgramsByGenres(this.props.genreIds.slice(0, 6));
+    }
     // this.props.requestAllPrograms();
   }
 
@@ -87,9 +91,8 @@ class Browse extends React.Component{
 
     return (
       <main className="browse-background">
-
         <section className="browse-display">
-          <BrowseShowcase programId={Math.floor(Math.random() * 49)}/>
+          <BrowseShowcase />
         </section>
 
         <section className="lists-container">

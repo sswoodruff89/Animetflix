@@ -27,7 +27,8 @@
 .browse-display {
   margin-top: 5vh;
   width: 100%;
-  height: 52vw;
+  height: 50vw;
+  min-height: 600px;
   position: relative;
   background: linear-gradient(to bottom, black 90%, transparent);
   display: flex;
@@ -50,8 +51,6 @@
 .showcase-detail-buttons {
   display: flex;
   align-items: center;
-  // justify-content:;
-  // margin-right: 2%;
   margin-top: 4%;
 }
 
@@ -60,7 +59,7 @@
     width: 13vw;
     padding: 1.8%;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 100%;
     margin-right: 5%;
     transform: scale(1);
     background-color: rgba(0, 0, 0, 0.6);
@@ -133,3 +132,10 @@ video.showcase {
 
 // }
 
+#showcase {
+  transform: translateY(-5%);
+}
+
+#showcase video.detail {
+
+}

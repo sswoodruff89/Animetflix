@@ -11,6 +11,7 @@ class Showcase extends React.Component {
         };
         this.renderHomeDetails = this.renderHomeDetails.bind(this);
         this.handleWatchList = this.handleWatchList.bind(this);
+        this.handleMute = this.handleMute.bind(this);
     }
 
     handleWatchList(e) {
@@ -23,6 +24,20 @@ class Showcase extends React.Component {
             this.props.addToWatchList(this.props.showcaseProgram.id);
         }
         this.setState({ watched: !watchStatus });
+    }
+
+    handleMute(e) {
+        e.preventDefault();
+        let vid = document.getElementById("video-player");
+        // let { volume, lastVol } = this.state;
+
+        // if (volume > 0) {
+        //     vid.volume = 0;
+        //     this.setState({ volume: 0 });
+        // } else {
+        //     vid.volume = this.state.lastVol / 100;
+        //     this.setState({ volume: lastVol });
+        // }
     }
 
     renderHomeDetails(program) {
@@ -54,7 +69,7 @@ class Showcase extends React.Component {
                                 <img className={`program-logo`} src={program.logo} alt="logo"/>
                                 {/* <img className={`program-logo `} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
                             </div>
-
+                            <div>{program.title}</div>
                             <div className="showcase-detail-buttons">
                                 <button className="showcase-play">
                                     <Link to={`/watch/${program.id}`} >
@@ -97,10 +112,12 @@ class Showcase extends React.Component {
         
         let showcase = (this.props.history.location.pathname.includes("showcase")) ?
             (<Route path="/browse/showcase/:programId" 
-                component={ProgramDetailContainer} 
-                    displayType="showcase" 
-                        programId={showcaseProgram.id}
-                        />) :
+                render={() => <ProgramDetailContainer displayType="showcase" programId={showcaseProgram.id} />}
+                // component={ProgramDetailContainer} 
+                //     displayType="showcase" 
+                //         programId={showcaseProgram.id}
+                        />
+                        ) :
             this.renderHomeDetails(showcaseProgram);
 
         return (

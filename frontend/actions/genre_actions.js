@@ -15,7 +15,8 @@ export const receiveGenres = (genres) => {
 
 
 export const requestGenres = () => dispatch => {
-  
+  dispatch(startLoadingPrograms());
+
   return fetchGenres().then((genres) => {
     return dispatch(receiveGenres(genres));
   });

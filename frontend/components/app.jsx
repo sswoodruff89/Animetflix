@@ -52,7 +52,6 @@ const App = (props) => {
 
 
 
-      <Route exact path="/loading" component={LoadingPage} />
       
       <AuthRoute exact path="/" component={HomePageContainer} /> 
 
