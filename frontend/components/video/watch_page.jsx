@@ -342,7 +342,7 @@ runtimeRemaining(duration, vid) {
 
 ////////////////////////
 ////////////////////////
-
+debugger
 
 
     return (
@@ -375,8 +375,8 @@ runtimeRemaining(duration, vid) {
           {/* <Video version="full" /> */}
 
         <video className="full"
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-          // src={sourceVid}
+          // src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          src={sourceVid}
           id="video-player"
           // muted={mute} 
           autoPlay={true} 

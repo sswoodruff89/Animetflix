@@ -9,11 +9,12 @@
 
 video.thumbnail {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
   top: 0;
   opacity: 0;
   transition: opacity 300ms ease;
+  background: black;
 }
 
 .program-item:hover video.thumbnail {

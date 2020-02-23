@@ -251,7 +251,7 @@ class ProgramList extends React.Component {
                       alt=""
                     />
 
-                    <Video version="thumbnail" sourceVid={program.clip} />
+                    <Video version="thumbnail" sourceVid={program.thumbclip} />
 
                     {this.renderProgramInfo(
                       program,
@@ -316,7 +316,7 @@ class ProgramList extends React.Component {
                       alt=""
                     />
 
-                    <Video version="thumbnail" sourceVid={program.clip} />
+                    <Video version="thumbnail" sourceVid={program.thumbclip} />
 
                     {this.renderProgramInfo(
                       program,
@@ -381,7 +381,7 @@ class ProgramList extends React.Component {
                       alt=""
                     />
 
-                    <Video version="thumbnail" sourceVid={program.clip} />
+                    <Video version="thumbnail" sourceVid={program.thumbclip} />
 
                     {this.renderProgramInfo(
                       program,
@@ -446,7 +446,7 @@ class ProgramList extends React.Component {
                       alt=""
                     />
 
-                    <Video version="thumbnail" sourceVid={program.clip} />
+                    <Video version="thumbnail" sourceVid={program.thumbclip} />
 
                     {this.renderProgramInfo(
                       program,
@@ -529,7 +529,7 @@ class ProgramList extends React.Component {
 
                       <Video
                         version="thumbnail"
-                        sourceVid={program.clip}
+                        sourceVid={program.thumbclip}
                       />
 
 

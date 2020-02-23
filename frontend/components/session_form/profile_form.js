@@ -20,7 +20,7 @@ class ProfileForm extends React.Component {
         this.handleBlur = this.handleBlur.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        this.handleSumbit = this.handleSumbit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -52,7 +52,7 @@ class ProfileForm extends React.Component {
         // this.props.history.push("/profiles");
     }
 
-    handleSumbit(formType) {
+    handleSubmit(formType) {
     
         return (e) => {
             e.preventDefault();
@@ -124,7 +124,7 @@ class ProfileForm extends React.Component {
                   <div className="prof-form-buttons">
                     <button
                       className="add-profile"
-                      onClick={this.handleSumbit(type)}
+                      onClick={this.handleSubmit(type)}
                     >
                       CONTINUE
                     </button>
@@ -175,7 +175,7 @@ class ProfileForm extends React.Component {
                 <div className="prof-form-buttons">
                   <button
                     className="save-profile"
-                    onClick={this.handleSumbit(type)}
+                    onClick={this.handleSubmit(type)}
                   >
                     SAVE
                   </button>

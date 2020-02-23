@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         search: []
         // watchlist: 
       },
-      session: {id: window.currentUser.id, profileId: window.currentProfile.id}
+      session: {id: window.currentUser.id, profileId: window.currentProfile.id, showcaseIdx: window.currentProfile.showcase_idx}
     };
     store = configureStore(preloadedState);
     delete window.currentUser;

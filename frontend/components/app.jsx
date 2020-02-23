@@ -22,7 +22,7 @@ const App = (props) => {
 
 
     <main>
-    <Route exact path="/watch/:movieId" component={WatchPageContainer}/>
+    <Route exact path="/watch/:programId" component={WatchPageContainer}/>
 
     <Switch>
       <Route path="/browse" component={NavBarContainer}/>

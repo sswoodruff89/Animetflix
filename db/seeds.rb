@@ -912,7 +912,14 @@ program42 = Program.create!(title: "Dragon Ball",
   production_company: "Toei Animation",
   program_type: "TV Show",
   description: "Son Goku, a fighter with a monkey tail, goes on a quest with an assortment of odd characters in search of the Dragon Balls, a set of crystals that can give its bearer anything they desire.")
-glinks(42, ["Action", "Adventure", "Comedy", "Fantasy"])
+glinks(42, ["Action", "Adventure", "Fantasy"])
+
+program42.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dragon_ball_logo.png'), filename: 'dragon_ball_logo.png')
+program42.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dragon_ball_thumb.jpg'), filename: 'dragon_ball_thumb.jpg')
+program42.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/dragon_ball_back.jpg'), filename: 'dragon_ball_back.jpg')
+
+# program42.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program42.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 
 # program43 = Program.find(43);
@@ -929,6 +936,14 @@ program43 = Program.create!(title: "Jojo's Bizarre Adventure",
 glinks(43, ["Action", "Adventure", "Sci-Fi", "Fantasy"])
 
 
+program43.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/jojo_logo.png'), filename: 'jojo_logo.png')
+program43.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/jojo_thumb.jpg'), filename: 'jojo_thumb.jpg')
+program43.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/jojo_back.jpg'), filename: 'jojo_back.jpg')
+
+# program43.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program43.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
+
+
 # program44 = Program.find(44);
 
 program44 = Program.create!(title: "One Punch Man", 
@@ -940,8 +955,15 @@ program44 = Program.create!(title: "One Punch Man",
   production_company: "J.C. Staff, Bandai Visual Company",
   program_type: "TV Show",
   description: "The story of Saitama, a hero that does it just for fun & can defeat his enemies with a single punch.")
-glinks(44, ["Action", "Comedy", "Sci-Fi", "Fantasy"])
-
+  glinks(44, ["Action", "Comedy", "Sci-Fi", "Fantasy"])
+  
+  program44.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_punch_logo.png'), filename: 'one_punch_logo.png')
+  program44.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_punch_thumb.jpg'), filename: 'one_punch_thumb.jpg')
+  program44.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_punch_back.jpg'), filename: 'one_punch_back.jpg')
+  
+  # program44.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+  # program44.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
+  
 
 # program45 = Program.find(45);
 
@@ -955,6 +977,14 @@ program45 = Program.create!(title: "Tokyo Ghoul",
   program_type: "TV Show",
   description: "A Tokyo college student is attacked by a ghoul, a superpowered human who feeds on human flesh. He survives, but has become part ghoul and becomes a fugitive on the run.")
 glinks(45, ["Action", "Horror", "Thriller", "Fantasy", "Supernatural"])
+  
+program45.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/tokyo_logo.png'), filename: 'tokyo_logo.png')
+program45.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/tokyo_thumb.jpg'), filename: 'tokyo_thumb.jpg')
+program45.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/tokyo_back.jpg'), filename: 'tokyo_back.jpg')
+
+# program45.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program45.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
+
 
 
 # program46 = Program.find(46);
@@ -969,7 +999,13 @@ program46 = Program.create!(title: "Sword Art Online",
   program_type: "TV Show",
   description: "In the year 2022, thousands of people get trapped in a new virtual MMORPG and the lone wolf player, Kirito, works to escape.")
 glinks(46, ["Action", "Sci-Fi", "Adventure", "Fantasy"])
+  
+program46.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sao_logo.png'), filename: 'sao_logo.png')
+program46.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sao_thumb.jpg'), filename: 'sao_thumb.jpg')
+program46.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/sao_back.jpg'), filename: 'sao_back.jpg')
 
+# program46.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program46.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 # program47 = Program.find(47);
 
@@ -983,7 +1019,13 @@ program47 = Program.create!(title: "Naruto",
   program_type: "TV Show",
   description: "Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.")
 glinks(47, ["Action", "Comedy", "Adventure", "Fantasy"])
+  
+program47.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/naruto_logo.png'), filename: 'naruto_logo.png')
+program47.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/naruto_thumb.jpg'), filename: 'naruto_thumb.jpg')
+program47.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/naruto_back.jpg'), filename: 'naruto_back.jpg')
 
+# program47.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program47.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 # program48 = Program.find(48);
 
@@ -997,7 +1039,13 @@ program48 = Program.create!(title: "Fullmetal Alchemist: Brotherhood",
   program_type: "TV Show",
   description: "Two brothers search for a Philosopher's Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.")
 glinks(48, ["Action", "Sci-Fi", "Adventure", "Fantasy"])
+  
+program48.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/full_metal_logo.png'), filename: 'full_metal_logo.png')
+program48.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/full_metal_thumb.jpg'), filename: 'full_metal_thumb.jpg')
+program48.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/full_metal_back.jpg'), filename: 'full_metal_back.jpg')
 
+# program48.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/food_wars_clip.mp4'), filename: 'food_wars_clip.mp4')
+# program48.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/champloo_thumbclip.mp4'), filename: 'champloo_thumbclip.mp4')
 
 # program49 = Program.find(49);
 
@@ -1011,7 +1059,13 @@ program49 = Program.create!(title: "Future Diary",
   program_type: "TV Show",
   description: "A young man competes with people around the world for a chance to become the succesor of God, with a diary that is able to tell the future.")
 glinks(49, ["Action", "Adventure", "Thriller", "Fantasy"])
+ 
+program49.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_logo.png'), filename: 'future_d_logo.png')
+program49.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_thumb.jpg'), filename: 'future_d_thumb.jpg')
+program49.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_back.jpg'), filename: 'future_d_back.jpg')
 
+program49.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
+program49.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_thumbclip.mp4'), filename: 'future_d_thumbclip.mp4')
 
 # program50 = Program.find(50);
 
@@ -1025,6 +1079,14 @@ program50 = Program.create!(title: "Hellsing Ultimate",
   program_type: "TV Show",
   description: "The vampire Alucard, his master Sir Integra Hellsing, and his ward Seras Victoria, try to protect England from a war-crazed SS-Major and his vampire army.")
 glinks(50, ["Action", "Horror", "Thriller", "Supernatural"])
+ 
+program50.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_logo.png'), filename: 'hellsing_logo.png')
+program50.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_thumb.jpg'), filename: 'hellsing_thumb.jpg')
+program50.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_back.jpg'), filename: 'hellsing_back.jpg')
+
+# program50.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
+program50.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_thumbclip.mp4'), filename: 'hellsing_thumbclip.mp4')
+
 
 
 # program51 = Program.find(51);
@@ -1038,8 +1100,14 @@ program51 = Program.create!(title: "Junji Ito Collection",
   production_company: "Studio DEEN",
   program_type: "TV Show",
   description: "A collection of animated horror stories based on the works of Japanese artist Junji Ito.")
-glinks(51, ["Horror", "Thriller", "Supernatural"])
+glinks(51, ["Horror", "Supernatural"])
 
+program51.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/junji_logo.png'), filename: 'junji_logo.png')
+program51.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/junji_thumb.jpg'), filename: 'junji_thumb.jpg')
+program51.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/junji_back.jpg'), filename: 'junji_back.jpg')
+
+# program51.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
+# program51.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_thumbclip.mp4'), filename: 'hellsing_thumbclip.mp4')
 
 # program52 = Program.find(52);
 
@@ -1054,6 +1122,13 @@ program52 = Program.create!(title: "The Promised Neverland",
   description: "A group kids at a seemingly perfect orphanage uncover its dark truth when they break a rule to never leave the orphanage grounds. Once the truth is discovered, they begin to plan an escape to save all of the children.")
 glinks(52, ["Horror", "Thriller", "Fantasy", "Mystery"])
 
+program52.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/promised_logo.png'), filename: 'promised_logo.png')
+program52.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/promised_thumb.jpg'), filename: 'promised_thumb.jpg')
+program52.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/promised_back.jpg'), filename: 'promised_back.jpg')
+
+# program52.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
+# program52.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_thumbclip.mp4'), filename: 'hellsing_thumbclip.mp4')
+
 
 # program53 = Program.find(53);
 
@@ -1067,6 +1142,15 @@ program53 = Program.create!(title: "School-Live!",
   program_type: "TV Show",
   description: "A young girl pretends to live a normal school life with her friends, unable to perceive what is truly happening around her.")
 glinks(53, ["Horror", "Thriller", "Drama", "Mystery"])
+
+program53.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/school_logo.png'), filename: 'school_logo.png')
+program53.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/school_thumb.jpg'), filename: 'school_thumb.jpg')
+program53.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/school_back.jpg'), filename: 'school_back.jpg')
+
+# program53.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
+# program53.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/hellsing_thumbclip.mp4'), filename: 'hellsing_thumbclip.mp4')
+
+
 
 # Program.create!(title: "", yr: , director: "", rating: "", runtime: , description: "")
 # glinks(25, ["Fantasy", "Action", "Adventure", "Comedy"])
