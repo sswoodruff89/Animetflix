@@ -2,7 +2,7 @@ import React from "react";
 // import {logout} from "../actions/session_actions";
 import ProgramListContainer from "../program_list/program_list_container";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import BrowseShowcase from "./browse_showcase_container";
 import LoadingPage from "../loading_page";
 import Video from "../video/video";
@@ -21,18 +21,15 @@ class Browse extends React.Component{
   }
 
   componentDidMount() {
-
     this.props.requestGenres();
-    // if (this.props.genreIds) {
-    //   this.props.requestProgramsByGenres(this.props.genreIds);
-    // }
+
     this.props.fetchWatchlist(this.props.profileId);
     this.props.fetchLikes(this.props.profileId);
     this.props.fetchDislikes(this.props.profileId);
+
     if (this.props.genreIds) {
       this.props.requestProgramsByGenres(this.props.genreIds.slice(0, 6));
     }
-    // this.props.requestAllPrograms();
   }
 
   componentDidUpdate(prevProps) {
@@ -82,12 +79,6 @@ class Browse extends React.Component{
     if (loading) {
       return <LoadingPage />
     }
-
-    // let firstProgramId = (genres[0] !== undefined) ? genres[0].program_ids[0] : null;
-
-    // let showcase = (this.props.history.location.pathname.includes("showcase")) ?
-    //   (<Route path="/browse/showcase/:programId" component={ProgramDetailContainer} displayType="showcase"/>) :
-    //   this.renderHomeDetails(this.props.showcaseProgram);
 
     return (
       <main className="browse-background">

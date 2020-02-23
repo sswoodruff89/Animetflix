@@ -4,13 +4,12 @@
 [class^="program-item-detail-open"] {
   min-width: 16.43%;
   max-width: 16.43%;
+  max-height: 8.4vw;
   margin: 0 0.12%;
   position: relative;
   transform: scale(1);
   display: flex;
 }
-
-
 
 .program-item-detail-open-false .background-image{
   filter: brightness(0.5);
@@ -202,13 +201,13 @@ button.detail-closer.showcase{
   // // display: flex;
   // // max-height: 12vw;
 
-    transition: all 500ms ease-out;
-    width: auto;
-    max-width: 34%;
-    display: flex;
-    height: auto;
-    transform: scale(1);
-    transform-origin: left;
+  transition: all 500ms ease-out;
+  width: auto;
+  max-width: 34%;
+  display: flex;
+  height: auto;
+  transform: scale(1);
+  transform-origin: left;
 
 }
 
@@ -218,14 +217,14 @@ button.detail-closer.showcase{
   // max-height: 7vw;
   // transition: all 500ms ease-out;
   max-width: 32%;
-    transition: all 500ms ease-out;
-    height: auto;
-    width: auto;
-    max-height: 100%;
-    transform: scale(.75);
-    transform-origin: left;
-    display: flex;
-    margin: 0;
+  transition: all 500ms ease-out;
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  transform: scale(.75);
+  transform-origin: left;
+  display: flex;
+  margin: 0;
 
 }
 
@@ -235,13 +234,6 @@ button.detail-closer.showcase{
     width: auto;
   // width: auto;
   // height: 100%;
-  // transition: all 500ms ease-out;
-}
-
-//logo on other tabs
-.program-logo {
-  // width: auto;
-  // height: 70%;
   // transition: all 500ms ease-out;
 }
 
@@ -335,8 +327,6 @@ button.detail-play:hover {
 
 
 .details-like-container .details-like-dislike {
-  // position: absolute;
-  // z-index: 14;
   background: transparent;
   height: auto;
   opacity: 0.8;
@@ -367,23 +357,16 @@ button.detail-play:hover {
   right: 2%;
   bottom: 33%;
   width: 8%;
-  /* height: 39%; */
   justify-content: space-between;
 }
 
 .details-like-dislike {
-  // position: absolute;
-  // z-index: 14;
   width: 40%;
   height: auto;
   opacity: 0.8;
   filter: saturate(0);
   transform: scale(1);
   transition: all 100ms ease 100ms;
-}
-
-.details-like-dislike:first-child {
-  // margin-bottom: 10.5%;
 }
 
 .details-like-dislike:hover {
@@ -403,6 +386,16 @@ button.detail-play:hover {
 
 .details-like-dislike .like, .details-like-dislike .dislike {
   background-color: transparent;
+}
+
+.details-mute, .details-volume {
+  position: absolute;
+  right: 2%;
+  width: 3%;
+}
+
+.details-mute:hover, .details-volume:hover {
+  cursor: pointer;
 }
 
 .genre-cap {

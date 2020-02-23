@@ -7,10 +7,28 @@
   }
 }
 
+@-webkit-keyframes loading-pulsate {
+  0%, 36%, 54%, 90% {
+    filter: brightness(0);
+  }
+ 18%, 72% {
+    filter: brightness(100%)
+  }
+}
+
+@-moz-keyframes loading-pulsate {
+  0%, 36%, 54%, 90% {
+    filter: brightness(0);
+  }
+ 18%, 72% {
+    filter: brightness(100%)
+  }
+}
+
+
 .loading {
   min-width: 900px;
   max-width: 100%;
-  // height: 220px;
   overflow: visible;
   display: flex;
   position: relative;
@@ -22,7 +40,6 @@
 
 .loading-back {
   height: 100vh;
-  // background-color: rgb(0, 3, 8);
   background-color: black;
   width: 100%;
   position: relative;
@@ -41,12 +58,17 @@
   filter: brightness(0);
   background-color: rgb(21, 35, 59);
   transition-property: all;
-  // transition-delay: 500ms;
   transition-duration: 0.5s;
+
   animation-name: loading-pulsate;
   animation-iteration-count: infinite;
-  // animation-delay: 400ms;
   animation-duration: 3s;
+  -webkit-animation-name: loading-pulsate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -moz-animation-name: loading-pulsate;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 3s;
 }
 
 .loading .loadpic {
@@ -59,46 +81,57 @@
 }
 
 .loading-squares-1 {
-  // background-image: image-url("dragon_ball_sil.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 100ms;
+  -webkit-animation-delay: 100ms;
+  -moz-animation-delay: 100ms; 
 }
+
 .loading-squares-2 {
-  // background-image: image-url("naruto_sil.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 200ms;
+  -webkit-animation-delay: 200ms;
+  -moz-animation-delay: 200ms; 
 }
+
 .loading-squares-3 {
-  // background-image: image-url("sail_moon_sil.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 300ms;
+  -webkit-animation-delay: 300ms;
+  -moz-animation-delay: 300ms; 
 }
+
 .loading-squares-4 {
-  // background-image: image-url("titan_sil_bw.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 400ms;
+  -webkit-animation-delay: 400ms;
+  -moz-animation-delay: 400ms; 
 }
+
 .loading-squares-5 {
-  // background-image: image-url("one_piece_sil.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+  -moz-animation-delay: 500ms; 
 }
+
 .loading-squares-6 {
-  // background-image: image-url("poke_sil.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
   animation-delay: 600ms;
+  -webkit-animation-delay: 600ms;
+  -moz-animation-delay: 600ms; 
 }
 
 

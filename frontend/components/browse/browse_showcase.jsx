@@ -7,15 +7,42 @@ class Showcase extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            watched: this.props.watched
+            watched: this.props.watched,
+            muted: true
         };
         this.renderHomeDetails = this.renderHomeDetails.bind(this);
         this.handleWatchList = this.handleWatchList.bind(this);
         this.handleMute = this.handleMute.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.playShowcase = this.playShowcase.bind(this);
+        this.pauseShowcase = this.pauseShowcase.bind(this);
     }
 
     componentDidMount() {
         this.props.requestProgram(this.props.showcaseProgram.id);
+        window.addEventListener("scroll", this.handleScroll);
+    }
+
+    componentDidUpdate() {
+        let vid = document.getElementById("video-player-showcase");
+
+        if (this.props.history.location.pathname.endsWith("browse")) {
+            this.playShowcase();
+        } else if (vid) {
+            this.pauseShowcase();
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll(e) {
+        if (window.scrollY > 250) {
+            this.pauseShowcase();
+        } else {
+            this.playShowcase();
+        }
     }
 
     handleWatchList(e) {
@@ -32,27 +59,35 @@ class Showcase extends React.Component {
 
     handleMute(e) {
         e.preventDefault();
-        let vid = document.getElementById("video-player");
-        // let { volume, lastVol } = this.state;
 
-        // if (volume > 0) {
-        //     vid.volume = 0;
-        //     this.setState({ volume: 0 });
-        // } else {
-        //     vid.volume = this.state.lastVol / 100;
-        //     this.setState({ volume: lastVol });
-        // }
+        let vid = document.getElementById("video-player-showcase");
+        let muted;
+
+        if (!this.state.muted) {
+            muted = true;
+        } else {
+            muted = false;
+            vid.volume = 0.2;
+        }
+        vid.muted = muted;
+        this.setState({ muted });
+    }
+
+    playShowcase() {
+        let vid = document.getElementById("video-player-showcase");
+        vid.play();
+    }
+
+    pauseShowcase() {
+        let vid = document.getElementById("video-player-showcase");
+        vid.pause();
     }
 
     renderHomeDetails(program) {
         if (program) {
             clearTimeout(this.showcaseDisplay);
  
-            ////////////
-            // let sourceVid = program.clip || null;
-            ////////////
             let sourceVid = program.clip || null;
-
 
             let watchStatus = (this.state.watched) ? (
                 <span className="button-icon">
@@ -62,7 +97,14 @@ class Showcase extends React.Component {
                 <span className="button-icon">
                     <i className="fas fa-plus"></i>
                 </span>
-                )
+            )
+
+            let muteButton = (this.state.muted) ? (
+                <img className="showcase-mute" src={window.muteCir} alt="mute" onClick={this.handleMute} />
+            ) : (
+                <img className="showcase-volume" src={window.volumeCir} alt="volume" onClick={this.handleMute} />
+            )
+
             return (
                 <>
                     <div className="vid-container">
@@ -74,7 +116,6 @@ class Showcase extends React.Component {
                         <div className="logo-and-buttons">
                             <div className={`showcase-logo-container`}>
                                 <img className={`program-logo`} src={program.logo} alt="logo"/>
-                                {/* <img className={`program-logo `} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
                             </div>
                             {/* <div>{program.title}</div> */}
                             <div className="showcase-detail-buttons">
@@ -99,8 +140,12 @@ class Showcase extends React.Component {
                             </div>
                         </div>
                     </section>
-                    {/* }} /> */}
-                    {/* <Route path={`/showcase/:programId`} component={ProgramDetailContainer} displayType="showcase"/> */}
+                    <div className="showcase-mute-rating">
+                        {muteButton}
+                        <div className="showcase-rating">
+                            {program.rating}
+                        </div>
+                    </div>
                 </>
             )
         } else {
@@ -115,17 +160,11 @@ class Showcase extends React.Component {
     render() {
         let {showcaseProgram} = this.props;
         
-         
-        
         let showcase = (this.props.history.location.pathname.includes("showcase")) ?
             (<Route path="/browse/showcase/:programId" 
                 render={() => <ProgramDetailContainer displayType="showcase" programId={showcaseProgram.id} />}
-                // component={ProgramDetailContainer} 
-                //     displayType="showcase" 
-                //         programId={showcaseProgram.id}
-                        />
-                        ) :
-            this.renderHomeDetails(showcaseProgram);
+            />)
+            : this.renderHomeDetails(showcaseProgram);
 
         return (
             <>

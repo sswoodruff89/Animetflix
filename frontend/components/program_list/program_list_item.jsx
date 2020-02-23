@@ -8,7 +8,8 @@ class ProgramListItem extends React.Component {
     this.state = {
       watched: this.props.watched ? true : false,
       liked: this.props.liked ? true : false,
-      disliked: this.props.disliked ? true : false
+      disliked: this.props.disliked ? true : false,
+      muted: true
     };
 
     this.detailsLink = this.detailsLink.bind(this);
@@ -18,7 +19,6 @@ class ProgramListItem extends React.Component {
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
     this.renderLikeButtons = this.renderLikeButtons.bind(this);
-    // this.redirectFullPlay = this.redirectFullPlay.bind(this);
   }
 
   detailsLink(displayType) {
@@ -112,6 +112,7 @@ class ProgramListItem extends React.Component {
       });
     }
   }
+
 
   renderLikeButtons() {
     let likeActive = this.state.liked ? "active" : "inactive";

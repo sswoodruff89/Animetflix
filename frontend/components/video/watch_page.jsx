@@ -27,9 +27,6 @@ class WatchPage extends React.Component{
     this.videoLoaded = this.videoLoaded.bind(this);
     this.handleProgressBar = this.handleProgressBar.bind(this);
     this.fullScreen = this.fullScreen.bind(this);
-    // this.mouseDown = this.mouseDown.bind(this);
-    // this.mouseUp = this.mouseUp.bind(this);
-    // this.mouseMove = this.mouseMove.bind(this);
     this.updateProgressBar = this.updateProgressBar.bind(this);
   }
 
@@ -40,7 +37,7 @@ class WatchPage extends React.Component{
 
   
   videoLoaded() {
-    let vid = document.getElementById("video-player");
+    let vid = document.getElementById("video-player-full");
     if (!isNaN(vid.duration)) {
       let vidLength = vid.duration;
       let currentTime = vid.currentTime;
@@ -56,7 +53,7 @@ class WatchPage extends React.Component{
 
   handlePlayPause(e) {
     e.preventDefault();
-    let vid = document.getElementById("video-player");
+    let vid = document.getElementById("video-player-full");
     let {paused, vidLength} = this.state;
   
     if (paused) {
@@ -75,14 +72,14 @@ class WatchPage extends React.Component{
 
   handleVolume(e) {
     e.preventDefault();
-    let vid = document.getElementById("video-player");
+    let vid = document.getElementById("video-player-full");
     this.setState({volume: e.target.value, lastVol: e.target.value});
     vid.volume = this.state.volume / 100;
   }
 
   handleMute(e) {
     e.preventDefault();
-    let vid = document.getElementById("video-player");
+    let vid = document.getElementById("video-player-full");
     let {volume, lastVol} = this.state;
     
     if (volume > 0) {
@@ -97,7 +94,7 @@ class WatchPage extends React.Component{
   handleSecondSkip(dir) {
     return (e) => {
       e.preventDefault();
-      let vid = document.getElementById("video-player");
+      let vid = document.getElementById("video-player-full");
       if (dir === "forward") {
         this.setState({currentTime: vid.currentTime += 10});
 
@@ -111,31 +108,6 @@ class WatchPage extends React.Component{
       this.setState({currentTime: vid.currentTime});
       vid.play();
   }
-
-  // mouseDown(vid) {
-  //   return (e) => {
-  //     // e.preventDefault();
-  //     vid.pause();
-  //     this.setState({mouseDown: true});
-  //   };
-  // }
-
-  // mouseMove(e) {
-  //   if (this.state.mouseDown) {
-  //     this.setState({mouseMove: true});
-
-  //   }
-  // }
-
-  // mouseUp(vid) {
-  //   return (e) => {
-  //     // e.preventDefault();
-  //     vid.play();
-  //     this.setState({ mouseDown: false, mouseMove: false});
-  //   };
-  // }
-
-  
 
   handleProgressBar(vid) {
     return (e) => {
@@ -202,7 +174,7 @@ runtimeRemaining(duration, vid) {
     let {paused, volume, vidLength, currentTime, showControls} = this.state;
     
     let program = (this.props.program) ? this.props.program : {};
-    let vid = document.getElementById("video-player");
+    let vid = document.getElementById("video-player-full");
     let pausePlay = (paused) ? (
           <button className="play"
           onClick={this.handlePlayPause} >
@@ -236,7 +208,7 @@ runtimeRemaining(duration, vid) {
 
 ///////VIDEO
 
-    let sourceVid = program.clip; 
+    let sourceVid = program.clip || "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"; 
 
 
 ////////CONTROLS
@@ -377,7 +349,7 @@ debugger
         <video className="full"
           // src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
           src={sourceVid}
-          id="video-player"
+          id="video-player-full"
           // muted={mute} 
           autoPlay={true} 
           onTimeUpdate={this.updateProgressBar(vid)} 

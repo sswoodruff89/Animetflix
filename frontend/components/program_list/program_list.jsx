@@ -22,12 +22,14 @@ class ProgramList extends React.Component {
 
     this.toggleRight = this.toggleRight.bind(this);
     this.toggleLeft = this.toggleLeft.bind(this);
-    this.browseOrSearch = this.browseOrSearch.bind(this);
+    this.renderListType = this.renderListType.bind(this);
     this.handleLastHover = this.handleLastHover.bind(this);
     this.handleHover = this.handleHover.bind(this);
     this.clearProgramInfo = this.clearProgramInfo.bind(this);
     this.detailsLink = this.detailsLink.bind(this);
     this.renderProgramInfo = this.renderProgramInfo.bind(this);
+    this.slidePositionId = this.slidePositionId.bind(this);
+
     this.clearProgramInfoTimeOut;
 
     // this.detailOpen = this.detailOpen.bind(this);
@@ -38,19 +40,27 @@ class ProgramList extends React.Component {
   //Scroll right
   toggleRight(e) {
     e.preventDefault();
-    let { slideCount, lastProgram, tilEnd, firstIdx } = this.state;
+    debugger
+    let { slideCount, lastProgram, tilEnd } = this.state;
 
     if (tilEnd <= 0) {
       slideCount = 0;
       lastProgram = 6;
-      tilEnd = this.props.programs.length - 6;
+      tilEnd = Math.min(18, this.props.programs.length - 6);
+      this.setState({ slideCount, tilEnd });
+
+      ///Delay on trimming listing
+      setTimeout(() => {
+        this.setState({ lastProgram });
+      }, 500);
+
     } else {
       slideCount += 1;
       lastProgram += tilEnd < 6 ? tilEnd : 6;
       tilEnd -= 6;
+      this.setState({ lastProgram, slideCount, tilEnd });
     }
 
-    this.setState({ lastProgram, slideCount, tilEnd });
   }
 
   toggleLeft(e) {
@@ -160,9 +170,20 @@ class ProgramList extends React.Component {
     }
   }
 
+  slidePositionId(i, lastProgram, checkOpenDetail) {
+    return i === lastProgram - 6 && !checkOpenDetail
+      ? "first-in-slide"
+      : i + 1 === lastProgram && !checkOpenDetail
+        ? "last-in-slide"
+        : i === lastProgram - 7
+          ? "before-first"
+          : i + 1 === lastProgram + 1
+            ? "after-last"
+            : ""
+  }
 
-  ///RENDERS BASED ON BROWSE OR SEARCH
-  browseOrSearch(displayType) {
+  ///RENDERS BASED ON BROWSE / SEARCH
+  renderListType(displayType) {
     const listName =
       this.props.listType === "genre"
         ? this.props.listName.name
@@ -179,18 +200,29 @@ class ProgramList extends React.Component {
     } = this.state;
 
     let programs = this.props.programs ? this.props.programs : [];
-    const hide = slideCount === 0 ? "hidden" : "";
 
+    /////Hide Buttons and Slide Count for short lists////
+    const hideLeft = slideCount === 0 ? "hidden" : "";
+    const hideRight = programs.length <= 6 ? "hidden" : "";
+    /////////
+
+    const shortList = programs.length === 1 ? "short" : "";
+
+    ////Renders Pieces of List at a Time////
     let selectedPrograms = programs.slice(
       0,
       Math.min(lastProgram + 7, 24, programs.length)
     );
+    /////
+
+    /////For Slide Counter CSS////
     let pageCountArray = Array.from(
       { length: Math.ceil(Math.min(24, this.props.programs.length) / 6) },
       (el, i) => i
     );
+    //////
 
-    ///how much to slide, depending on vicinity to End
+    /////How much to slide, depending on vicinity to End
     let slideMovePercentage;
     if (slideCount === 0) {
       slideMovePercentage = 0;
@@ -212,6 +244,7 @@ class ProgramList extends React.Component {
     if (displayType === "search") {
       let searchQuery = this.props.match.params.searchQuery;
       let listNum = this.props.listNum;
+
       let checkOpenDetail = this.props.history.location.pathname.includes(
         `${searchQuery}/${listNum}`
       )
@@ -220,19 +253,13 @@ class ProgramList extends React.Component {
 
       return (
         <>
-          <ul className="program-slider search">
+          <ul className={`program-slider search ${shortList}`}>
             {selectedPrograms.map((program, i) => {
               if (program) {
                 return (
                   <li
                     key={i}
-                    id={
-                      i === lastProgram - 6 && !checkOpenDetail
-                        ? "first-in-slide"
-                        : i + 1 === lastProgram && !checkOpenDetail
-                        ? "last-in-slide"
-                        : ""
-                    }
+                    id={() => this.slidePositionId(i)}
                     className={
                       checkOpenDetail
                         ? `program-item-${this.detailOpen(program.id)}`
@@ -276,6 +303,7 @@ class ProgramList extends React.Component {
       );
     } else if (displayType === "watchlist") {
       let listNum = this.props.listNum;
+
       let checkOpenDetail = this.props.history.location.pathname.includes(
         `watchlist/${listNum}`
       )
@@ -284,19 +312,13 @@ class ProgramList extends React.Component {
 
       return (
         <>
-          <ul className="program-slider watchlist-list">
+          <ul className={`program-slider watchlist-list ${shortList}`}>
             {selectedPrograms.map((program, i) => {
               if (program) {
                 return (
                   <li
                     key={i}
-                    id={
-                      i === lastProgram - 6 && !checkOpenDetail
-                        ? "first-in-slide"
-                        : i + 1 === lastProgram && !checkOpenDetail
-                        ? "last-in-slide"
-                        : ""
-                    }
+                    id={() => this.slidePositionId(i)}
                     className={
                       checkOpenDetail
                         ? `program-item-${this.detailOpen(program.id)}`
@@ -339,94 +361,23 @@ class ProgramList extends React.Component {
           </ul>
         </>
       );
-    } else if (displayType === "tv") {
+    } else if (displayType === "tv" || displayType === "movie") {
       let listNum = this.props.listNum;
       let checkOpenDetail = this.props.history.location.pathname.includes(
-        `tv/${listNum}`
+        `${displayType}/${listNum}`
       )
         ? true
         : false;
 
       return (
         <>
-          <ul className="program-slider tv-list">
+          <ul className={`program-slider ${displayType}-list ${shortList}`}>
             {selectedPrograms.map((program, i) => {
               if (program) {
                 return (
                   <li
                     key={i}
-                    id={
-                      i === lastProgram - 6 && !checkOpenDetail
-                        ? "first-in-slide"
-                        : i + 1 === lastProgram && !checkOpenDetail
-                        ? "last-in-slide"
-                        : ""
-                    }
-                    className={
-                      checkOpenDetail
-                        ? `program-item-${this.detailOpen(program.id)}`
-                        : `program-item ${
-                            i + 1 < lastProgram && !checkOpenDetail && lastHover
-                              ? "last-hover"
-                              : ""
-                          }`
-                    }
-                    onMouseEnter={this.handleHover(program.id)}
-                    onMouseLeave={this.handleHover(program.id)}
-                  >
-
-                    <img
-                      className="background-image"
-                      src={program.thumbnail}
-                      alt=""
-                    />
-
-                    <Video version="thumbnail" sourceVid={program.thumbclip} />
-
-                    {this.renderProgramInfo(
-                      program,
-                      displayType,
-                      showProgramInfo
-                    )}
-
-                    <section className="down-arrow-container">
-                      {this.detailsLink(
-                        displayType,
-                        null,
-                        program.id,
-                        listNum
-                        )}
-                    </section>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </>
-      );
-    } else if (displayType === "movie") {
-      let listNum = this.props.listNum;
-      let checkOpenDetail = this.props.history.location.pathname.includes(
-        `movie/${listNum}`
-      )
-        ? true
-        : false;
-
-      return (
-        <>
-          <ul className="program-slider movie-list">
-            {selectedPrograms.map((program, i) => {
-              if (program) {
-                return (
-                  <li
-                    key={i}
-                    id={
-                      i === lastProgram - 6 && !checkOpenDetail
-                        ? "first-in-slide"
-                        : i + 1 === lastProgram && !checkOpenDetail
-                        ? "last-in-slide"
-                        : ""
-                    }
+                    id={() => this.slidePositionId(i)}
                     className={
                       checkOpenDetail
                         ? `program-item-${this.detailOpen(program.id)}`
@@ -484,7 +435,7 @@ class ProgramList extends React.Component {
             className="list-with-buttons"
           >
             <button
-              className={`toggle-list-button left ${hide}`}
+              className={`toggle-list-button left ${hideLeft}`}
               onClick={this.toggleLeft}
             >
               <img
@@ -494,19 +445,13 @@ class ProgramList extends React.Component {
               />
             </button>
 
-            <ul className="program-slider" style={listRange}>
+            <ul className={`program-slider ${shortList}`} style={listRange}>
               {selectedPrograms.map((program, i) => {
                 if (program) {
                   return (
                     <li
                       key={i}
-                      id={
-                        i === lastProgram - 6 && !checkOpenDetail
-                          ? "first-in-slide"
-                          : i + 1 === lastProgram && !checkOpenDetail
-                          ? "last-in-slide"
-                          : ""
-                      }
+                      id={this.slidePositionId(i, lastProgram, checkOpenDetail)}
                       className={
                         checkOpenDetail
                           ? `program-item-${this.detailOpen(program.id)}`
@@ -552,7 +497,7 @@ class ProgramList extends React.Component {
               })}
             </ul>
 
-            <ul className="slide-counter">
+            <ul className={`slide-counter ${hideRight}`}>
               {pageCountArray.map(slide => {
                 return (
                   <li
@@ -566,7 +511,7 @@ class ProgramList extends React.Component {
             </ul>
 
             <button
-              className={`toggle-list-button right`}
+              className={`toggle-list-button right ${hideRight}`}
               onClick={this.toggleRight}
             >
               <img
@@ -584,45 +529,9 @@ class ProgramList extends React.Component {
   render() {
     const { displayType } = this.state;
 
-    return <>{this.browseOrSearch(displayType)}</>;
+    return <>{this.renderListType(displayType)}</>;
   }
 }
 
 export default ProgramList;
 
-
-
-  // showRange(i) {
-  //   let startIdx = this.state.lastProgram - 6;
-  //   let endIdx = this.state.lastProgram;
-  //   ///for thumbnail trailing off edge
-
-  //   return (i === startIdx) ? "i0" :
-  //     (i === endIdx) ? "i6" :
-  //       (i > startIdx && i <= endIdx) ? `i${i % 6}` : "";
-  // }
-
-  // alterList() {
-  //   let numPrograms = this.props.programs.length;
-  //   let {listLoop, lastProgram} = this.state;
-
-  //   if (((numPrograms * listLoop) - lastProgram) < 12) {
-  //     listLoop += 1;
-  //     this.setState({listLoop});
-  //   }
-  // }
-
-     // let programItemClass = ;
-    /////Check if near end of list & duplicate list
-    // if (this.props.programs) {
-    //   programs = this.props.programs;
-
-    //   if (listLoop > 1) {
-    //     for (let i = 1; i <= listLoop; i++) {
-    //       programs = programs.concat(programs);
-    //     }
-    //   }
-    // } else {
-    //   programs = [];
-    // }
-    ///////

@@ -4,9 +4,6 @@ class Video extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   version: this.props.version
-    // };
 
   }
 
@@ -21,7 +18,7 @@ class Video extends React.Component {
       <>
         <video className={version}
           src={sourceVid}
-          id="video-player"
+          id={`video-player-${(version.includes("detail")) ? "detail" : version}`}
            muted={mute}
            autoPlay={autoplay} />
       </>

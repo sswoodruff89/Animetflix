@@ -6,6 +6,7 @@ class Api::ProgramsController < ApplicationController
       @programs = []
       Genre.includes(:programs).find(params[:genre_ids]).each {|genre| @programs.push(*genre.programs)}
       @programs = (@programs + current_profile.watched_programs).uniq
+      
     elsif params[:type]
       @programs = Program.with_attached_logo.where(program_type: params[:type])
 

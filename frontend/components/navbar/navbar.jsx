@@ -90,10 +90,11 @@ class NavBar extends React.Component{
       }
   }
 
-  clearInput(e) {
+  clearInput() {
     this.props.history.push("/browse");
     let query = {searchQuery: ""};
     this.setState({query});
+    setTimeout(this.searchBarToggle, 50);
   }
 
   handleScroll(e) {
@@ -191,15 +192,6 @@ class NavBar extends React.Component{
           <section className={`search-field ${searchBar}`}>
             <i className="fas fa-search" onClick={this.searchBarToggle}></i>
             {inputBar}
-            {/* <input 
-              type="text"
-              id="search-bar"
-              placeholder="Titles, people, genres"
-              value={searchQuery}
-              autofocus={(searchBar === "active") ? "true" : ""}
-              onBlur={this.searchBarToggle}
-              onChange={this.handleInput}
-              /> */}
             <i
               className={`fas fa-times ${queryFilled}`}
               onClick={this.clearInput}

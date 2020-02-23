@@ -14,13 +14,15 @@ class ProgramDetail extends React.Component {
       watched: this.props.watched ? true : false,
       closing: false,
       liked: this.props.liked ? true : false,
-      disliked: this.props.disliked ? true : false
+      disliked: this.props.disliked ? true : false,
+      muted: true
     };
 
     this.handleTab = this.handleTab.bind(this);
     this.handleWatchList = this.handleWatchList.bind(this);
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
+    this.handleMute = this.handleMute.bind(this);
     this.renderOverview = this.renderOverview.bind(this);
     this.renderDetails = this.renderDetails.bind(this);
     this.renderEpisodes = this.renderEpisodes.bind(this);
@@ -53,7 +55,7 @@ class ProgramDetail extends React.Component {
 
       ///Pause or play video
       if (video) {
-        let vid = document.getElementById("video-player");
+        let vid = document.getElementById("video-player-detail");
         tab === "overview" ? vid.pause() : vid.play();
       }
 
@@ -110,6 +112,24 @@ class ProgramDetail extends React.Component {
       });
     }
   }
+
+
+  handleMute(e) {
+    e.preventDefault();
+
+    let vid = document.getElementById("video-player-detail");
+    let muted;
+
+    if (!this.state.muted) {
+      muted = true;
+    } else {
+      muted = false;
+      vid.volume = 0.2;
+    }
+    vid.muted = muted;
+    this.setState({ muted });
+  }
+
 
   closeDetails(e) {
     e.preventDefault();
@@ -186,6 +206,13 @@ class ProgramDetail extends React.Component {
 
     let likeButtons = this.renderLikeButtons();
 
+
+    let muteButton = (this.state.muted) ? (
+      <img className="details-mute" src={window.muteCir} alt="mute" onClick={this.handleMute} />
+    ) : (
+        <img className="details-volume" src={window.volumeCir} alt="volume" onClick={this.handleMute} />
+    )
+
     return (
       <section className="detail-content-container" style={fadeIn}>
         <aside className="rating-runtime">
@@ -219,7 +246,7 @@ class ProgramDetail extends React.Component {
           </button>
           {likeButtons}
         </div>
-
+        {muteButton}
         <span className="genre-cap">Genres: {genres}</span>
       </section>
     );
