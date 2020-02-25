@@ -27,13 +27,6 @@ class SessionForm extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   debugger
-  //   if (prevProps.formType !== this.props.formType) {
-  //     this.props.removeErrors();
-  //   }
-  // }
-
   loginDemo(e) {
     e.preventDefault();
     let demo = { email: "demo@demo.com", password: "anything" };
