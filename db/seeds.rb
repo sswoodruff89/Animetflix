@@ -1277,97 +1277,97 @@ end
 #   program_type: "Movie",
 #   description: "In an alternate history where the Soviet Union occupies half of Japan, two childhood friends who grow apart after one of their friends disappears; as international tension rises and a mysterious tower built by the Union starts replacing matter around it with matter from other universes, they cross paths once again and realize their missing friend might be the key to save the world.")
 
-program56 = Program.find(56);
-# glinks(56, ["Romance", "War", "Drama", "Sci-Fi"])
+# program56 = Program.find(56);
+# # glinks(56, ["Romance", "War", "Drama", "Sci-Fi"])
 
-  program56.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_logo.png'), filename: 'place_promised_logo.png')
-  program56.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_thumb.jpg'), filename: 'place_promised_thumb.jpg')
-  program56.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_back.jpg'), filename: 'place_promised_back.jpg')
+#   program56.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_logo.png'), filename: 'place_promised_logo.png')
+#   program56.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_thumb.jpg'), filename: 'place_promised_thumb.jpg')
+#   program56.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_back.jpg'), filename: 'place_promised_back.jpg')
   
-  program56.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_clip.mp4'), filename: 'place_promised_clip.mp4')
-  program56.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promsed_thumbclip.mp4'), filename: 'place_promised_thumbclip.mp4')
+#   program56.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_clip.mp4'), filename: 'place_promised_clip.mp4')
+#   program56.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promsed_thumbclip.mp4'), filename: 'place_promised_thumbclip.mp4')
   
   
-  #####
-  program57 = Program.create!(title: "When Marnie Was There", 
-    yr: 2014, 
-    director: "Hiromasa Yonebayashi", 
-    rating: "PG", 
-    runtime: 103, 
-    score: 3.8,
-    production_company: "Studio Ghibli",
-    program_type: "Movie",
-    description: "A 12-year-old girl is sent to the country for health reasons, where she meets an unlikely friend in the form of Marnie, a young girl with long, flowing blonde hair. As the friendship unravels it is possible that Marnie has closer ties to the protagonist than we might expect.")
-  glinks(57, ["Mystery", "Family", "Drama", "Supernatural"])
+#   #####
+#   program57 = Program.create!(title: "When Marnie Was There", 
+#     yr: 2014, 
+#     director: "Hiromasa Yonebayashi", 
+#     rating: "PG", 
+#     runtime: 103, 
+#     score: 3.8,
+#     production_company: "Studio Ghibli",
+#     program_type: "Movie",
+#     description: "A 12-year-old girl is sent to the country for health reasons, where she meets an unlikely friend in the form of Marnie, a young girl with long, flowing blonde hair. As the friendship unravels it is possible that Marnie has closer ties to the protagonist than we might expect.")
+#   glinks(57, ["Mystery", "Family", "Drama", "Supernatural"])
   
-  # program57 = Program.find(57);
+#   # program57 = Program.find(57);
   
-  program57.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_logo.png'), filename: 'marnie_logo.png')
-  program57.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_thumb.jpg'), filename: 'marnie_thumb.jpg')
-  program57.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_back.jpg'), filename: 'marnie_back.jpg')
+#   program57.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_logo.png'), filename: 'marnie_logo.png')
+#   program57.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_thumb.jpg'), filename: 'marnie_thumb.jpg')
+#   program57.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_back.jpg'), filename: 'marnie_back.jpg')
   
-  # program57.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+#   # program57.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
   
-  #####
-  program58 = Program.create!(title: "Professor Layton and the Eternal Diva", 
-    yr: 2009, 
-    director: "Masakazu Hashimoto", 
-    rating: "NR", 
-    runtime: 99, 
-    score: 3.3,
-    production_company: "P.A. Works, Oriental Light and Magic (OLM)",
-    program_type: "Movie",
-    description: "Layton and Luke are caught up in an adventure, when a masked figure steals an entire opera house and forces those in attendance to play a high-stakes game. The winner will receive eternal life, but it could mean death for the losers.")
-  glinks(58, ["Mystery", "Crime", "Family", "Supernatural", "Adventure"])
+#   #####
+#   program58 = Program.create!(title: "Professor Layton and the Eternal Diva", 
+#     yr: 2009, 
+#     director: "Masakazu Hashimoto", 
+#     rating: "NR", 
+#     runtime: 99, 
+#     score: 3.3,
+#     production_company: "P.A. Works, Oriental Light and Magic (OLM)",
+#     program_type: "Movie",
+#     description: "Layton and Luke are caught up in an adventure, when a masked figure steals an entire opera house and forces those in attendance to play a high-stakes game. The winner will receive eternal life, but it could mean death for the losers.")
+#   glinks(58, ["Mystery", "Crime", "Family", "Supernatural", "Adventure"])
   
-  # program58 = Program.find(58);
+#   # program58 = Program.find(58);
   
-  program58.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_logo.png'), filename: 'layton_logo.png')
-  program58.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_thumb.jpg'), filename: 'layton_thumb.jpg')
-  program58.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_back.jpg'), filename: 'layton_back.jpg')
+#   program58.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_logo.png'), filename: 'layton_logo.png')
+#   program58.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_thumb.jpg'), filename: 'layton_thumb.jpg')
+#   program58.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_back.jpg'), filename: 'layton_back.jpg')
   
-  # program58.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+#   # program58.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
 
   
-  #####
-  program59 = Program.create!(title: "Psycho-Pass: The Movie", 
-    yr: 2015, 
-    director: "Naoyoshi Shiotani", 
-    rating: "NR", 
-    runtime: 113, 
-    score: 3.6,
-    production_company: "Dentsu, Fuji Television Network, Production I.G.",
-    program_type: "Movie",
-    description: "Inspector Tsunemori is sent to a neighboring war-torn nation, where the Sibyl System is being introduced as an experiment, to find Shinya Kogami, her former enforcer who went rogue three years ago.")
-  glinks(59, ["Crime", "Mystery", "Sci-Fi", "War", "Action"])
+#   #####
+#   program59 = Program.create!(title: "Psycho-Pass: The Movie", 
+#     yr: 2015, 
+#     director: "Naoyoshi Shiotani", 
+#     rating: "NR", 
+#     runtime: 113, 
+#     score: 3.6,
+#     production_company: "Dentsu, Fuji Television Network, Production I.G.",
+#     program_type: "Movie",
+#     description: "Inspector Tsunemori is sent to a neighboring war-torn nation, where the Sibyl System is being introduced as an experiment, to find Shinya Kogami, her former enforcer who went rogue three years ago.")
+#   glinks(59, ["Crime", "Mystery", "Sci-Fi", "War", "Action"])
   
-  # program59 = Program.find(59);
+#   # program59 = Program.find(59);
   
-  program59.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_logo.png'), filename: 'psycho_logo.png')
-  program59.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumb.jpg'), filename: 'psycho_thumb.jpg')
-  program59.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_back.jpg'), filename: 'psycho_back.jpg')
+#   program59.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_logo.png'), filename: 'psycho_logo.png')
+#   program59.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumb.jpg'), filename: 'psycho_thumb.jpg')
+#   program59.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_back.jpg'), filename: 'psycho_back.jpg')
   
-  program59.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_clip.mp4'), filename: 'psycho_clip.mp4')
-  program59.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumbclip.mp4'), filename: 'psycho_thumbclip.mp4')
+#   program59.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_clip.mp4'), filename: 'psycho_clip.mp4')
+#   program59.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumbclip.mp4'), filename: 'psycho_thumbclip.mp4')
 
 
-  #####
-  program60 = Program.create!(title: "Genocidal Organ", 
-    yr: 2017, 
-    director: "Shuko Murase", 
-    rating: "R", 
-    runtime: 115, 
-    score: 3.2,
-    production_company: "Geno Studio, Manglobe",
-    program_type: "Movie",
-    description: "Set in a time when Sarajevo was obliterated by a homemade nuclear device, an American man by the name of John Paul seems to be responsible for all of this and intelligence agent Clavis Shepherd treks across the wasteland of the world to find him.")
-  glinks(60, ["War", "Sci-Fi", "Action"])
+#   #####
+#   program60 = Program.create!(title: "Genocidal Organ", 
+#     yr: 2017, 
+#     director: "Shuko Murase", 
+#     rating: "R", 
+#     runtime: 115, 
+#     score: 3.2,
+#     production_company: "Geno Studio, Manglobe",
+#     program_type: "Movie",
+#     description: "Set in a time when Sarajevo was obliterated by a homemade nuclear device, an American man by the name of John Paul seems to be responsible for all of this and intelligence agent Clavis Shepherd treks across the wasteland of the world to find him.")
+#   glinks(60, ["War", "Sci-Fi", "Action"])
   
-  # program60 = Program.find(60);
+  program60 = Program.find(60);
   
-  program60.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_logo.png'), filename: 'psycho_logo.png')
-  program60.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumb.jpg'), filename: 'psycho_thumb.jpg')
-  program60.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_back.jpg'), filename: 'psycho_back.jpg')
+  program60.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/genocidal_logo.png'), filename: 'genocidal_logo.png')
+  program60.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/genocidal_thumb.jpg'), filename: 'genocidal_thumb.jpg')
+  program60.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/genocidal_back.jpg'), filename: 'genocidal_back.jpg')
   
   # program60.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_clip.mp4'), filename: 'psycho_clip.mp4')
   # program60.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumbclip.mp4'), filename: 'psycho_thumbclip.mp4')
