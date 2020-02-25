@@ -19,4 +19,12 @@ class Like < ApplicationRecord
     has_many :liked_genres,
         through: :program,
         source: :genres
+
+    
+    private
+    def no_dislike
+        if Dislike.exists?(profile_id: :profile_id, program_id: :program_id)
+        errors[:discount] << 'can\'t be greater than total value'
+        end
+    end
 end

@@ -13,7 +13,7 @@ class Api::LikesController < ApplicationController
     def create
         @like = Like.new(program_id: params[:program_id], profile_id: current_profile.id)
 
-        if @like.save!
+        if !Dislike.exists?(program_id: @like.program_id, profile_id: current_profile.id) && @like.save!
             render :show
         else
             render json: {}
