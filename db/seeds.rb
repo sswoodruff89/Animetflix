@@ -26,11 +26,11 @@ User.create!(email: "demo@demo.com", password: "anything")
 User.create!(email: "otaku@demo.com", password: "anything")
 
 ####Profile
-Profile.create!(user_id: 1, name: "demo", profile_num: 1);
-Profile.create!(user_id: 1, name: "demo2", profile_num: 2);
-Profile.create!(user_id: 1, name: "demo3", profile_num: 3);
-Profile.create!(user_id: 1, name: "demo4", profile_num: 4);
-Profile.create!(user_id: 1, name: "demo5", profile_num: 5);
+Profile.create!(user_id: 1, name: "Demo", profile_num: 1);
+Profile.create!(user_id: 1, name: "Demo2", profile_num: 2);
+Profile.create!(user_id: 1, name: "Demo3", profile_num: 3);
+Profile.create!(user_id: 1, name: "Demo4", profile_num: 4);
+Profile.create!(user_id: 1, name: "Demo5", profile_num: 5);
 
 Profile.create!(user_id: 2, name: "Otaku", profile_num: 1);
 Profile.create!(user_id: 2, name: "Otaku2", profile_num: 2);
@@ -243,7 +243,7 @@ program8 = Program.create!(title: "Howl's Moving Castle",
   program_type: "Movie",
   description: "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.")
 #8 Romance, Fantasy, Drama
-glinks(8, ["Drama", "Fantasy", "Romance"])
+glinks(8, ["Drama", "Fantasy", "Romance", "War"])
 
 # program8 = Program.find(8);
 
@@ -381,7 +381,7 @@ program14 = Program.create!(title: "Porco Ross",
   program_type: "Movie",
   description: "In Italy in the 1930s, sky pirates in biplanes terrorize wealthy cruise ships as they sail the Adriatic Sea. The only pilot brave enough to stop the scourge is the mysterious Porco Rosso, a former World War I flying ace who was somehow turned into a pig during the war.")
 #14 Drama, Fantasy, Period
-glinks(14, ["Drama", "Fantasy", "Period", "Family"])
+glinks(14, ["Drama", "Fantasy", "Period", "Family", "War"])
 
 # program14 = Program.find(14);
 
@@ -498,7 +498,7 @@ program19 = Program.create!(title: "Samurai X: The Movie",
   program_type: "Movie",
   description: "Himura Kenshin, the wandering samurai, was once known as Battousai, the \"Man Slayer,\" has vowed to never kill again, and spend the rest of his life in atonement for all the lives that ended under his blade.")
 #19 Drama, Action, Period
-glinks(19, ["Action", "Period"])
+glinks(19, ["Action", "Period", "War"])
 
 # program19 = Program.find(19);
 
@@ -1263,6 +1263,115 @@ program55.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/
 
 # program55.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/future_d_clip.mp4'), filename: 'future_d_clip.mp4')
 # program55.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/school_live_thumbclip.mp4'), filename: 'school_live_thumbclip.mp4')
+
+
+
+#####
+program56 = Program.create!(title: "The Place Promised in Our Early Days", 
+  yr: 2004, 
+  director: "Makoto Shinkai", 
+  rating: "PG", 
+  runtime: 91, 
+  score: 3.5,
+  production_company: "CoMix Wave",
+  program_type: "Movie",
+  description: "In an alternate history where the Soviet Union occupies half of Japan, two childhood friends who grow apart after one of their friends disappears; as international tension rises and a mysterious tower built by the Union starts replacing matter around it with matter from other universes, they cross paths once again and realize their missing friend might be the key to save the world.")
+  glinks(56, ["Romance", "War", "Drama", "Sci-fi"])
+  
+  # program56 = Program.find(56);
+  
+  program56.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_logo.png'), filename: 'onepiecegold_logo.png')
+  program56.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_thumb.jpg'), filename: 'onepiecegold_thumb.jpg')
+  program56.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiece_gold_back.jpeg'), filename: 'onepiece_gold_back.jpeg')
+  
+  program56.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_clip.mp4'), filename: 'place_promised_clip.mp4')
+  program56.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_thumbclip.mp4'), filename: 'place_promised_thumbclip.mp4')
+  
+  
+  #####
+  program57 = Program.create!(title: "When Marnie Was There", 
+    yr: 2014, 
+    director: "Hiromasa Yonebayashi", 
+    rating: "PG", 
+    runtime: 103, 
+    score: 3.8,
+    production_company: "Studio Ghibli",
+    program_type: "Movie",
+    description: "A 12-year-old girl is sent to the country for health reasons, where she meets an unlikely friend in the form of Marnie, a young girl with long, flowing blonde hair. As the friendship unravels it is possible that Marnie has closer ties to the protagonist than we might expect.")
+  glinks(57, ["Mystery", "Family", "Drama", "Supernatural"])
+  
+  # program57 = Program.find(57);
+  
+  program57.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_logo.png'), filename: 'marnie_logo.png')
+  program57.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_thumb.jpg'), filename: 'marnie_thumb.jpg')
+  program57.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/marnie_back.jpg'), filename: 'marnie_back.jpg')
+  
+  # program57.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+  
+  #####
+  program58 = Program.create!(title: "Professor Layton and the Eternal Diva", 
+    yr: 2009, 
+    director: "Masakazu Hashimoto", 
+    rating: "NR", 
+    runtime: 99, 
+    score: 3.3,
+    production_company: "P.A. Works, Oriental Light and Magic (OLM)",
+    program_type: "Movie",
+    description: "Layton and Luke are caught up in an adventure, when a masked figure steals an entire opera house and forces those in attendance to play a high-stakes game. The winner will receive eternal life, but it could mean death for the losers.")
+  glinks(58, ["Mystery", "Crime", "Family", "Supernatural", "Adventure"])
+  
+  # program58 = Program.find(58);
+  
+  program58.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_logo.png'), filename: 'layton_logo.png')
+  program58.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_thumb.jpg'), filename: 'layton_thumb.jpg')
+  program58.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/layton_back.jpg'), filename: 'layton_back.jpg')
+  
+  # program58.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/one_piece_gold_opening_clip.mp4'), filename: 'one_piece_gold_opening_clip.mp4')
+
+  
+  #####
+  program59 = Program.create!(title: "Psycho-Pass: The Movie", 
+    yr: 2015, 
+    director: "Naoyoshi Shiotani", 
+    rating: "NR", 
+    runtime: 113, 
+    score: 3.6,
+    production_company: "Dentsu, Fuji Television Network, Production I.G.",
+    program_type: "Movie",
+    description: "Inspector Tsunemori is sent to a neighboring war-torn nation, where the Sibyl System is being introduced as an experiment, to find Shinya Kogami, her former enforcer who went rogue three years ago.")
+  glinks(59, ["Crime", "Mystery", "Sci-Fi", "War", "Action"])
+  
+  # program59 = Program.find(59);
+  
+  program59.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_logo.png'), filename: 'psycho_logo.png')
+  program59.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumb.jpg'), filename: 'psycho_thumb.jpg')
+  program59.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_back.jpg'), filename: 'psycho_back.jpg')
+  
+  program59.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_clip.mp4'), filename: 'psycho_clip.mp4')
+  program59.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumbclip.mp4'), filename: 'psycho_thumbclip.mp4')
+
+
+  #####
+  program60 = Program.create!(title: "Genocidal Organ", 
+    yr: 2017, 
+    director: "Shuko Murase", 
+    rating: "R", 
+    runtime: 115, 
+    score: 3.2,
+    production_company: "Geno Studio, Manglobe",
+    program_type: "Movie",
+    description: "Set in a time when Sarajevo was obliterated by a homemade nuclear device, an American man by the name of John Paul seems to be responsible for all of this and intelligence agent Clavis Shepherd treks across the wasteland of the world to find him.")
+  glinks(60, ["War", "Sci-Fi", "Action"])
+  
+  # program60 = Program.find(60);
+  
+  program60.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_logo.png'), filename: 'psycho_logo.png')
+  program60.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumb.jpg'), filename: 'psycho_thumb.jpg')
+  program60.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_back.jpg'), filename: 'psycho_back.jpg')
+  
+  # program60.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_clip.mp4'), filename: 'psycho_clip.mp4')
+  # program60.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/psycho_thumbclip.mp4'), filename: 'psycho_thumbclip.mp4')
+
 
 
 

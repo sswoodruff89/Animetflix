@@ -108,15 +108,15 @@ class Browse extends React.Component{
   }
 
   addtoList() {
-    if ((window.scrollY + window.innerHeight) >= (document.getElementById("root").offsetHeight * .9)) {
+    if ((window.scrollY + window.innerHeight) >= (document.getElementById("root").offsetHeight * .75)) {
       const {listCount, loadMorePrograms} = this.state;
 
       if (listCount < 12 && !loadMorePrograms) {
         this.setState({ loadMorePrograms: true });
 
-        const genreIds = this.props.genreIds.slice(listCount, listCount + 2);
+        const genreIds = this.props.genreIds.slice(listCount, listCount + 6);
         this.props.requestProgramsByGenres(genreIds).then(() => {
-          this.setState({ listCount: listCount + 2, loadMorePrograms: false })
+          this.setState({ listCount: listCount + 6, loadMorePrograms: false })
         });
       } else if (listCount === 12 && !loadMorePrograms) {
         window.removeEventListener("scroll", this.addtoList);
