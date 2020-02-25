@@ -300,7 +300,7 @@ runtimeRemaining(duration, vid) {
 ////////////////////////
 
     return (
-      <main className="fullscreen"
+      <main className="fullscreen" 
         onMouseMove={this.showControls}
         >
 

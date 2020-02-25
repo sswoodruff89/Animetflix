@@ -11,6 +11,28 @@
     }
 }
 
+@-webkit-keyframes zoom-fade {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes zoom-fade {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .profile-page {
     height: 100vh;
     width: 100%;
@@ -35,10 +57,13 @@
 
 .profile-form {
     max-width: 88%;
-    // border: 1px solid red;
     background-color: $blackblue;
     animation-name: zoom-fade;
     animation-duration: 350ms;
+    -webkit-animation-name: zoom-fade;
+    -webkit-animation-duration: 350ms;
+    -moz-animation-name: zoom-fade;
+    -moz-animation-duration: 350ms;
 }
 
 .profile-form .watching{
@@ -49,7 +74,6 @@
 
 .profile-list {
     margin: 2em 0;
-    // display: inline-block;
 }
 
 
@@ -59,8 +83,6 @@
     vertical-align: top;
     position: relative;
     width: 10vw;
-    // height: 10vw;
-    // border: 1px solid blue;
     max-width: 200px;
     min-width: 84px;   
 }
@@ -85,7 +107,6 @@
 }
 
 .profile-block .profile-icon {
-    // background-image: image-url("one_piece_sil.png");
     height: 10vw;
     width: 10vw;
     max-height: 200px;
@@ -96,7 +117,6 @@
     position: relative;
     text-decoration: none;
     border: 0.1em solid rgba(0, 10, 27, 0.4);
-    // background-color: $darkgrayblue;
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
@@ -123,7 +143,6 @@
 }
 
 .profile-name{
-    // border: 1px solid green;
     color: rgb(87, 87, 87);
     width: 100%;
     display: block;
@@ -131,7 +150,6 @@
     justify-content: center;
     font-size: 1.3vw;
     margin: .6em 0;
-
 }
 
 .manage {
@@ -145,8 +163,7 @@
     bottom: 1vw;
     border: 1px solid white;
     opacity: 0.7;
-    letter-spacing: 0.2em;
-    
+    letter-spacing: 0.2em;   
 }
 
 .manage:hover {
@@ -199,18 +216,18 @@
 
 .profile-fill-out-form {
     max-width:45vw;
-    // border: 1px solid ßred;
     background-color: #000308;
     animation-name: zoom-fade;
     animation-duration: 350ms;
+    -webkit-animation-name: zoom-fade;
+    -webkit-animation-duration: 350ms;
+    -moz-animation-name: zoom-fade;
+    -moz-animation-duration: 350ms;
 }
 
 .form-heading {
-    // height: 8vw;
     display: flex;
     flex-wrap: wrap;
-
-    /* align-items: center; */
     border-bottom: 1px solid rgb(85, 85, 85);}
 
 .form-heading h2 {
@@ -233,16 +250,6 @@
     border-bottom: 1px solid rgb(85, 85, 85);
     position: relative;
 }
-
-// .form-container .profile-form {
-//     width: 10vw;
-//     // height: 10vw;
-//     // border: 1px solid blue;
-//     max-width: 200px;
-//     min-width: 84px; 
-//     position: block;
-//     border: 1px solid blue;
-// }
 
 .form-container .profile-icon {
     width: 10vw;

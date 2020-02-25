@@ -162,7 +162,6 @@ li#first-in-slide:hover {
   transform: scale(1.6) !important;
   transform-origin: left !important;
   transition-property: all 1s ease;
-  // transition-delay: 500ms;
   z-index: 10;
 }
 
@@ -187,10 +186,9 @@ li#last-in-slide:hover ~ li#after-last {
 }
 
 li.program-item.last-hover {
-    transform: translateX(-59.6%) !important;
-    transition-property: all;
-    // transition-delay: 500ms;
-    transition-duration: 0.5s;
+  transform: translateX(-59.6%) !important;
+  transition-property: all;
+  transition-duration: 0.5s;
 }
 
 ///ALL THUMBNAILS BEFORE HOVERED THUMBNAIL

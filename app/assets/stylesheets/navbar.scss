@@ -93,19 +93,37 @@ li.current {
   }
 }
 
+@-webkit-keyframes open-input {
+  from {
+    width: 0
+  }
+  to {
+    width: 265px;
+  }
+}
+
+@-moz-keyframes open-input {
+  from {
+    width: 0
+  }
+  to {
+    width: 265px;
+  }
+}
+
 .search-field input {
-  /* border: 1px solid white; */
-  
-  /* display: none; */
   width: 265px;
   font-size: 14px;
   padding: 5px 2px;
   font-weight: 300;
   letter-spacing: 0.05em;
   vertical-align: middle;
-  /* transition: width 1s ease; */
   animation-name: open-input;
   animation-duration: .5s;
+  -webkit-animation-name: open-input;
+  -webkit-animation-duration: .5s;
+  -moz-animation-name: open-input;
+  -moz-animation-duration: .5s;
 }
 
 .search-field .fa-times {

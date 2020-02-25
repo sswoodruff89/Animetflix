@@ -58,7 +58,7 @@ if (@searchlist.length < 10)
     @programs.each do |program|
       search_item = include_searchlist(program, @query);
       @searchlist.push(*search_item)
-      # break if (@searchlist.length == 10)
+      break if (@searchlist.length >= 20)
     end
 end
 
