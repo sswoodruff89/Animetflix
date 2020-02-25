@@ -59,11 +59,11 @@ require 'open-uri'
 #   Genre.create!(name: genre)
 # end
 
-# def glinks(program_id, genreArr)
-#   genreArr.each do |genre|
-#      GenreLink.create!(program_id: program_id, genre_id: Genre.find_by(name: genre).id)
-#   end
-# end
+def glinks(program_id, genreArr)
+  genreArr.each do |genre|
+     GenreLink.create!(program_id: program_id, genre_id: Genre.find_by(name: genre).id)
+  end
+end
 
 # #  id          :bigint           not null, primary key
 # #  title       :string           not null
