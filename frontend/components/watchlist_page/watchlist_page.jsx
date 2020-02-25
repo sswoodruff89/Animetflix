@@ -1,5 +1,6 @@
 import React from "react";
 import WatchListContainer from "./watchlist_container";
+import LoadingPage from "../loading_page";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
 import { Route } from "react-router-dom";
 
@@ -16,19 +17,34 @@ class WatchlistPage extends React.Component {
         }
         this.props.fetchWatchlist(this.props.profileId);
         this.props.requestWatchlistPrograms(this.props.profileId);
+        this.props.endLoadingPrograms();
+
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.profileId !== this.props.profileId) {
+            this.props.requestWatchlistPrograms(this.props.profileId);
+        }
+    }
+
+
     render() {
+
+        if (this.props.loading) {
+            return <LoadingPage />;
+        }
         /////////For ERRORS
 
         if (this.props.programIds.length === 0) {
-
             return (
-                <section className="watchlist-errors">
+                <section className="watchlist-page">
+                    <section className="watchlist-errors">
 
-                    <p>Your watchlist is empty.</p>
+                        <p>Your watchlist is empty.</p>
 
-                    <p>Add a movie or show to your list</p>
+                        <p>Add a movie or show to your list</p>
+
+                    </section>
 
                 </section>
             )

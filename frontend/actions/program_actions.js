@@ -7,6 +7,7 @@ export const RECEIVE_WATCHLIST_PROGRAMS = "RECEIVE_WATCHLIST_PROGRAMS";
 export const RECEIVE_WATCHLIST_ERRORS = "RECEIVE_WATCHLIST_ERRORS";
 export const RECEIVE_SEARCH_ERRORS = "RECEIVE_SEARCH_ERRORS";
 export const START_LOADING_PROGRAMS = "START_LOADING_PROGRAMS";
+export const END_LOADING_PROGRAMS = "END_LOADING_PROGRAMS";
 
 export const receiveAllPrograms = (programs) => {
   return { 
@@ -61,6 +62,12 @@ export const receiveWatchlistErrors = (errors) => {
 export const startLoadingPrograms = () => {
   return {
     type: START_LOADING_PROGRAMS
+  };
+};
+
+export const endLoadingPrograms = () => {
+  return {
+    type: END_LOADING_PROGRAMS
   };
 };
 

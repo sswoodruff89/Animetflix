@@ -28,7 +28,8 @@ const msp = (state, ownProps) => {
           profile: state.ui.modal.profile,
           profileId: state.ui.modal.profile.id,
           formType: ownProps.formType,
-          icon: state.ui.modal.icon
+          icon: state.ui.modal.icon,
+          profileCount: Object.keys(state.entities.profiles).length
         };
 
     }

@@ -14,10 +14,8 @@ const msp = (state, ownProps) => {
   let genres = Object.values(state.entities.genres);
   let genreIds;
   if (genres.length > 0) {
-    // genres = sortByListLength(genres);
     genres = sortByViewerPoints(genres);
     genreIds = genres.map((g) => g.id);
-    
   }
   
 
@@ -30,10 +28,8 @@ const msp = (state, ownProps) => {
 
   return {
     session: state.session.id,
-    // showcaseProgram: state.entities.programs[randomProgramId],
     watchlist,
     profileId: state.session.profileId,
-    // watched,
     genres,
     genreIds,
     loading: state.ui.loading.programsLoading

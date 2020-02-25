@@ -115,11 +115,16 @@ p.active, p.active {
   font-size: 18px;
   position: absolute;
   bottom: 40px;
+  display: flex;
+}
+
+#form-redirect{
+  margin-left: .5em;
 }
 
 #form-redirect:hover {
   text-decoration: underline;
-  
+  cursor: hover;
 }
 
 .session-error {

@@ -20,7 +20,8 @@ const msp = (state, ownProps) => {
   return {
     profileId: state.session.profileId,
     programIds,
-    genresLoaded
+    genresLoaded,
+    loading: state.ui.loading.programsLoading
   };
 };
 

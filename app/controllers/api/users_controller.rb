@@ -5,11 +5,13 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
 
-        if @user.save
+        if @user.save!
             name = @user.email.split("@").first
-            @profile = Profile.create(name: name, user_id: @user.id)
-            login(@user)
-            render :show
+            @profile = Profile.new(name: name, user_id: @user.id, profile_num: 1)
+            if @profile.save!
+                login(@user)
+                render :show
+            end
         else
             render json: ["Invalid email / password"], status: 404
         end

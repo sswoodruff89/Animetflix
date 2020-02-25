@@ -19,12 +19,20 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleRedirect = this.handleRedirect.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+
+  // componentDidUpdate(prevProps) {
+  //   debugger
+  //   if (prevProps.formType !== this.props.formType) {
+  //     this.props.removeErrors();
+  //   }
+  // }
 
   loginDemo(e) {
     e.preventDefault();
@@ -74,6 +82,17 @@ class SessionForm extends React.Component {
     };
   }
 
+  handleRedirect(e) {
+    e.preventDefault();
+
+    if (this.props.formType === "signup") {
+      this.props.history.push("/login");
+    } else {
+      this.props.history.push("/signup");
+    }
+    this.props.removeErrors();
+  }
+
   render() {
     const { formType, errors } = this.props;
 
@@ -91,16 +110,16 @@ class SessionForm extends React.Component {
       formType === "login" ? (
         <section className="redirect">
           New to Animetflix?{" "}
-          <Link to="/signup" id="form-redirect">
-            Sign up now!
-          </Link>
+          <div id="form-redirect" onClick={this.handleRedirect}>
+            {`${" "}Sign up now!`}
+          </div>
         </section>
       ) : (
         <section className="redirect">
           Have an account?{" "}
-          <Link to="/login" id="form-redirect">
-            Sign in!
-          </Link>
+          <div id="form-redirect" onClick={this.handleRedirect}>
+            {`${" "}Sign in!`}
+          </div>
         </section>
       );
 
@@ -110,10 +129,10 @@ class SessionForm extends React.Component {
         errors.session[0] === "Invalid email" ? (
           <section className="session-error">
             Sorry, we can't find an account with this email address. Please try
-            again or{" "}
-            <Link to="/signup" id="form-redirect">
+            again or
+            <span id="form-redirect" onClick={this.handleRedirect}>
               <u>create a new account.</u>
-            </Link>
+            </span>
           </section>
         ) : errors.session[0] === "Invalid password" ? (
           <section className="session-error">

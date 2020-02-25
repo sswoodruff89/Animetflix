@@ -48,10 +48,16 @@ class Browse extends React.Component{
   componentDidUpdate(prevProps) {
     if (prevProps.profileId !== this.props.profileId) {
       this.setState({ listCount: 6 });
-      setTimeout(() => {
-        window.addEventListener("scroll", this.addtoList);
-        this.setState({ listsLoaded: true });
-      }, 1500);
+      this.props
+        .requestProgramsByGenres(
+          this.props.genreIds.slice(0, this.state.listCount)
+        )
+        .then(() => {
+          setTimeout(() => {
+            window.addEventListener("scroll", this.addtoList);
+            this.setState({ listsLoaded: true });
+          }, 1500);
+        });
     }
 
     if (!prevProps.genreIds && this.props.genreIds) {

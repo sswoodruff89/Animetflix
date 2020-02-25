@@ -4,7 +4,12 @@ import { connect } from "react-redux";
 import { requestAllProfiles, requestProfile } from "../../actions/profile_actions";
 import { requestGenres } from "../../actions/genre_actions";
 import { fetchLikes } from "../../actions/like_actions";
-import { requestAllPrograms } from "../../actions/program_actions";
+import {
+  requestAllPrograms,
+  requestProgramsByGenres,
+  startLoadingPrograms,
+  endLoadingPrograms
+} from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
 
 const msp = (state, ownProps) => {
@@ -32,11 +37,20 @@ const mdp = dispatch => {
     requestAllPrograms: () => {
       return dispatch(requestAllPrograms());
     },
+    requestProgramsByGenres: (genreIds) => {
+      return dispatch(requestProgramsByGenres(genreIds));
+    },
     fetchWatchlist: (profileId) => {
       return dispatch(fetchWatchlist(profileId));
     },
     fetchLikes: (profileId) => {
       return dispatch(fetchLikes(profileId));
+    },
+    startLoadingPrograms: () => {
+      return dispatch(startLoadingPrograms());
+    },
+    endLoadingPrograms: () => {
+      return dispatch(endLoadingPrograms());
     }
   };
 };

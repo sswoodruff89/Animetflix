@@ -250,7 +250,7 @@ class ProgramList extends React.Component {
                 return (
                   <li
                     key={i}
-                    id={() => this.slidePositionId(i)}
+                    id={this.slidePositionId(i, lastProgram, checkOpenDetail)}
                     className={
                       checkOpenDetail
                         ? `program-item-${this.detailOpen(program.id)}`
@@ -308,7 +308,7 @@ class ProgramList extends React.Component {
                 return (
                   <li
                     key={i}
-                    id={() => this.slidePositionId(i)}
+                    id={this.slidePositionId(i, lastProgram, checkOpenDetail)}
                     className={
                       checkOpenDetail
                         ? `program-item-${this.detailOpen(program.id)}`
@@ -321,7 +321,6 @@ class ProgramList extends React.Component {
                     onMouseEnter={this.handleHover(program.id)}
                     onMouseLeave={this.handleHover(program.id)}
                   >
-
                     <img
                       className="background-image"
                       src={program.thumbnail}
@@ -337,12 +336,7 @@ class ProgramList extends React.Component {
                     )}
 
                     <section className="down-arrow-container">
-                      {this.detailsLink(
-                        displayType,
-                        null,
-                        program.id,
-                        listNum
-                        )}
+                      {this.detailsLink(displayType, null, program.id, listNum)}
                     </section>
                   </li>
                 );

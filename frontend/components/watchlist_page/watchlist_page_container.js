@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { isEmpty } from "lodash"
 import { requestGenres } from "../../actions/genre_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
-import { requestWatchlistPrograms } from "../../actions/program_actions";
+import { requestWatchlistPrograms, endLoadingPrograms } from "../../actions/program_actions";
 import { sortByDateAdded } from "../../reducers/sort_selector";
 
 import WatchlistPage from "./watchlist_page";
@@ -22,10 +22,11 @@ const msp = (state, ownProps) => {
     let genresLoaded = (isEmpty(state.entities.genres)) ? false : true;
 
     return {
-        profileId: state.session.profileId,
-        programIds,
-        watchlist,
-        genresLoaded
+      profileId: state.session.profileId,
+      programIds,
+      watchlist,
+      genresLoaded,
+      loading: state.ui.loading.programsLoading
     };
 };
 
@@ -39,6 +40,9 @@ const mdp = dispatch => {
         },
         requestGenres: () => {
             dispatch(requestGenres());
+        },
+        endLoadingPrograms: () => {
+            dispatch(endLoadingPrograms());
         }
     };
 };

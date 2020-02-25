@@ -20,7 +20,7 @@ export default (state = {}, action) => {
       return newState;
     case RECEIVE_CURRENT_PROFILE:
       watchlist = action.profile.watchlist;
-      return Object.assign({}, state, watchlist);
+      return Object.assign({}, watchlist);
     case LOGOUT_CURRENT_USER:
       return {};
     default:

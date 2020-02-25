@@ -1,5 +1,6 @@
 import React from "react";
 import TvListContainer from "./tv_list_container";
+import LoadingPage from "../loading_page";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
 import { Route } from "react-router-dom";
 
@@ -16,7 +17,17 @@ class TvPage extends React.Component {
     this.props.requestProgramsByType("TV Show");
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.profileId !== this.props.profileId) {
+      this.props.requestProgramsByType("TV Show");
+    }
+  }
+
   render() {
+    if (this.props.loading) {
+      return <LoadingPage />;
+    }
+
     let programIds = this.props.programIds || [];
 
     ////////
@@ -28,7 +39,6 @@ class TvPage extends React.Component {
 
     return (
       <main className="tv-page">
-
         <section className="tv-list">
           {programLists.map((list, i) => {
             return (

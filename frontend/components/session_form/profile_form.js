@@ -46,10 +46,7 @@ class ProfileForm extends React.Component {
 
     handleCancel(e) {
         e.preventDefault();
-        
-        // this.props.renderProfileForm();
         this.props.closeModal();
-        // this.props.history.push("/profiles");
     }
 
     handleSubmit(formType) {
@@ -84,7 +81,7 @@ class ProfileForm extends React.Component {
         })
     }
 
-    renderForm(profile, type, icon) {
+    renderForm(profile, type, icon, profileCount) {
         
         if (type === "new") {
             return (
@@ -185,9 +182,12 @@ class ProfileForm extends React.Component {
                   >
                     CANCEL
                   </button>
-                  <button className="delete" onClick={this.handleDelete}>
-                    DELETE
-                  </button>
+                  {(profileCount > 1) ? (
+                    <button className="delete" onClick={this.handleDelete}>
+                      DELETE
+                    </button>
+                    ) : ""
+                  }
                 </div>
               </div>
             </>
@@ -195,11 +195,11 @@ class ProfileForm extends React.Component {
     }
 
     render() {
-        let {formType, icon} = this.props;
+        let {formType, icon, profileCount} = this.props;
         let profile = this.state;
         return (
            <>
-                {this.renderForm(profile, formType, icon)}
+                {this.renderForm(profile, formType, icon, profileCount)}
            </>
         )
     }

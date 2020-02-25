@@ -20,7 +20,7 @@ export default (state = {}, action) => {
             return newState;
         case RECEIVE_CURRENT_PROFILE:
             dislikes = action.profile.dislikes;
-            return Object.assign({}, state, dislikes);
+            return Object.assign({}, dislikes);
         case LOGOUT_CURRENT_USER:
             return {};
         default:
