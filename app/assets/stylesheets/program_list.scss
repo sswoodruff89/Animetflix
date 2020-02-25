@@ -2,17 +2,20 @@
 
 .lists-container{
   overflow-x: hidden;
-  // overflow-y: visible;
   width: 100%;
   min-height: 100vh;
-  // margin-top: 2vh;
   position: relative;
-  top: -90px;
+  top: -9vh;
   z-index: 20;
 }
 
-.single-list-container{
-  // margin-bottom: 4%;
+.lists-container.false {
+  opacity: 0;
+}
+
+.lists-container.true {
+  opacity: 1;
+  transition: all 500ms ease;
 }
 
 .program-list-container{
@@ -87,18 +90,13 @@ li.slide-count.current {
   opacity: 0;
   min-width: 3.81vw;
   max-width: 3.81vw;
-  // min-width: 4.2%;
-  // max-width: 4.2%;
-  // min-width: 7.38vw;
   background-color: rgba(5, 19, 39, 0.5);
   font-size: 50px;
   text-align: center;
-  // position: absolute;
   z-index: 12;
   display: flex;
   justify-content: center;
-  // position: absolute;
-  // height: 100%;
+
   
 }
 

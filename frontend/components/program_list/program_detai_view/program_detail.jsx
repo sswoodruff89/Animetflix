@@ -33,8 +33,14 @@ class ProgramDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestProgram(parseInt(this.props.match.params.programId));
+    
+    
     setTimeout(() => {
       this.setState({ video: true });
+      let vid = document.getElementById("video-player-detail");
+      vid.onended = () => {
+        this.setState({ video: false });
+      }
     }, 1800);
   }
 
@@ -296,8 +302,8 @@ class ProgramDetail extends React.Component {
         return this.renderOverview(program, genre, fadeIn);
       case "details":
         return this.renderDetails(program, genre, fadeIn);
-      case "episodes":
-        return this.renderEpisodes(program, fadeIn);
+      // case "episodes":
+      //   return this.renderEpisodes(program, fadeIn);
       default:
         return "";
     }
@@ -354,7 +360,6 @@ class ProgramDetail extends React.Component {
                 src={program.logo}
                 alt=""
               />
-              {/* <img className={`program-logo ${tab}`} src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8bf49eb-f01d-4851-810a-6aa6fc317107/dcgr6jq-e77501a0-57a5-4004-aa2f-b912f3ed9b9d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4YmY0OWViLWYwMWQtNDg1MS04MTBhLTZhYTZmYzMxNzEwN1wvZGNncjZqcS1lNzc1MDFhMC01N2E1LTQwMDQtYWEyZi1iOTEyZjNlZDliOWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RQcx0ZILiVpao-0a3VhorEaJDPXQPa9tK8s7-6bXe8I" alt="" /> */}
             </div>
           </header>
 

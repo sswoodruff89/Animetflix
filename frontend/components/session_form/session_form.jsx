@@ -20,7 +20,10 @@ class SessionForm extends React.Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
+  }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   loginDemo(e) {
@@ -46,7 +49,6 @@ class SessionForm extends React.Component {
       this.handleBlur("password");
     } else {
       this.props.processForm(this.state.user).then(() => {
-        // this.props.history.push("/browse");
         this.props.history.push("/profiles");
       });
     }
@@ -142,7 +144,6 @@ class SessionForm extends React.Component {
 
             <input
               type="text"
-              // id="input-email"
               value={this.state.user.email}
               className={emailCaption}
               onChange={this.handleInput("email")}

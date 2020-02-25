@@ -4,7 +4,7 @@ class Api::ProgramsController < ApplicationController
   def index
     if params[:genre_ids]
       @programs = []
-      Genre.includes(:programs).find(params[:genre_ids]).each {|genre| @programs.push(*genre.programs)}
+      Genre.includes(:programs).find(params[:genre_ids]).each {|genre| @programs.push(*genre.programs.limit(24))}
       @programs = (@programs + current_profile.watched_programs).uniq
       
     elsif params[:type]

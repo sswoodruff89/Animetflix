@@ -8,7 +8,8 @@ class Showcase extends React.Component {
         super(props);
         this.state = {
             watched: this.props.watched,
-            muted: true
+            muted: true,
+            showcaseLoaded: false
         };
         this.renderHomeDetails = this.renderHomeDetails.bind(this);
         this.handleWatchList = this.handleWatchList.bind(this);
@@ -20,6 +21,9 @@ class Showcase extends React.Component {
 
     componentDidMount() {
         this.props.requestProgram(this.props.showcaseProgram.id);
+        setTimeout(() => {
+            this.setState({ showcaseLoaded: true })
+        }, 1000);
         window.addEventListener("scroll", this.handleScroll);
     }
 
@@ -106,48 +110,55 @@ class Showcase extends React.Component {
             )
 
             return (
-                <>
-                    <div className="vid-container">
-                        <Video version="showcase" sourceVid={sourceVid} />
+              <>
+                <div className="vid-container">
+                  <Video version="showcase" sourceVid={sourceVid} />
+                </div>
+                <section className="showcase-container">
+                  <div
+                    className={`logo-and-buttons ${this.state.showcaseLoaded}`}
+                  >
+                    <div className={`showcase-logo-container`}>
+                      <img
+                        className={`program-logo`}
+                        src={program.logo}
+                        alt="logo"
+                      />
                     </div>
-                    <section className="showcase-container">
 
+                    <div className="showcase-detail-buttons">
+                      <button className="showcase-play">
+                        <Link to={`/watch/${program.id}`}>
+                          <span className="button-icon">&#9654;</span>
+                          <span>Play</span>
+                        </Link>
+                      </button>
 
-                        <div className="logo-and-buttons">
-                            <div className={`showcase-logo-container`}>
-                                <img className={`program-logo`} src={program.logo} alt="logo"/>
-                            </div>
-                            {/* <div>{program.title}</div> */}
-                            <div className="showcase-detail-buttons">
-                                <button className="showcase-play">
-                                    <Link to={`/watch/${program.id}`} >
-                                        <span className="button-icon">&#9654;</span>
-                                        <span>Play</span>
-                                    </Link>
-                                </button>
+                      <button
+                        className="showcase-watchlist"
+                        onClick={this.handleWatchList}
+                      >
+                        {watchStatus}
+                        <span>My List</span>
+                      </button>
 
-                                <button className="showcase-watchlist" onClick={this.handleWatchList}>
-                                    {watchStatus}
-                                    <span>My List</span>
-                                </button>
-
-                                <button className="showcase-more-info">
-                                    <Link to={`/browse/showcase/${program.id}`} >
-                                        <span className="button-icon">&#x24D8;</span>
-                                        <span>More Info</span>
-                                    </Link>
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-                    <div className="showcase-mute-rating">
-                        {muteButton}
-                        <div className="showcase-rating">
-                            {program.rating}
-                        </div>
+                      <button className="showcase-more-info">
+                        <Link to={`/browse/showcase/${program.id}`}>
+                          <span className="button-icon">&#x24D8;</span>
+                          <span>More Info</span>
+                        </Link>
+                      </button>
                     </div>
-                </>
-            )
+                  </div>
+                </section>
+                <div
+                  className={`showcase-mute-rating ${this.state.showcaseLoaded}`}
+                >
+                  {muteButton}
+                  <div className="showcase-rating">{program.rating}</div>
+                </div>
+              </>
+            );
         } else {
             this.showcaseDisplay = setTimeout(() => {
                 this.renderHomeDetails(program)

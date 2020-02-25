@@ -31,6 +31,8 @@ class WatchPage extends React.Component{
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     this.props.requestProgram(this.props.match.params.programId);
     this.videoLoaded();
   }
@@ -58,16 +60,11 @@ class WatchPage extends React.Component{
   
     if (paused) {
       vid.play();
-      // this.runtime = setInterval(() => {
-      //   this.startRuntime(vid);
-      // }, 50);
     } else {
-      // clearInterval(this.runtime);
       vid.pause();
     }
 
     this.setState({paused: !paused});
-    
   }
 
   handleVolume(e) {
@@ -112,9 +109,7 @@ class WatchPage extends React.Component{
   handleProgressBar(vid) {
     return (e) => {
       e.preventDefault();
-      
-      // let {mouseDown, mouseMove} = this.state;
-      // if (mouseDown && mouseMove) {
+
       if (e.currentTarget.value > vid.currentTime) {
         vid.currentTime = e.currentTarget.value;
         this.setState({ currentTime: e.currentTarget.value});
@@ -169,8 +164,6 @@ runtimeRemaining(duration, vid) {
 /////////RENDER///////////////////
 
   render() {
-    // let program = (this.props.program) ? this.props.program: {};
-
     let {paused, volume, vidLength, currentTime, showControls} = this.state;
     
     let program = (this.props.program) ? this.props.program : {};
@@ -189,11 +182,6 @@ runtimeRemaining(duration, vid) {
     
     let control = (showControls) ? "" : "hidden";
     
-//////PROGRESS BAR
-    let runtimeRatio = (Math.floor(currentTime) / Math.floor(vidLength))
-    // let videoColorMeter = {
-    //   width: `${runtimeRatio * 100}%`
-    // }
  ///////VOLUME       
     let volumeButton = (volume === 0) ? (
         <img className="mute" src={window.mute} alt="mute" onClick={this.handleMute}/>
@@ -229,10 +217,6 @@ runtimeRemaining(duration, vid) {
 
             <progress className="progress-meter" min="0" 
               value={this.state.currentTime} max={vidLength}></progress>
-
-            {/* <div className="video-progress-meter"
-              style={videoColorMeter}>
-            </div> */}
 
             {/* <div className="bar">
             <div className="video-progress-meter"
@@ -289,7 +273,7 @@ runtimeRemaining(duration, vid) {
 
         </section>
 
-
+{/* AUDIO AND FULLSCREEN BUTTONS
         <section className="right-controls">
 
             <button className="questions">
@@ -306,7 +290,7 @@ runtimeRemaining(duration, vid) {
               <i className="fas fa-expand"></i>
             </button>
 
-        </section>
+        </section> */}
 
       </section> 
     );
@@ -314,8 +298,6 @@ runtimeRemaining(duration, vid) {
 
 ////////////////////////
 ////////////////////////
-debugger
-
 
     return (
       <main className="fullscreen"

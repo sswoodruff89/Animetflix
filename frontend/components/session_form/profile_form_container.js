@@ -22,6 +22,7 @@ const msp = (state, ownProps) => {
           formType: ownProps.formType,
           icon: state.ui.modal.icon
         };
+        
     } else {
         return {
           profile: state.ui.modal.profile,

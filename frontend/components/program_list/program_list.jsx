@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 
 class ProgramList extends React.Component {
-  // maybe have a util function requesting backend for programs through this given genre
   constructor(props) {
     super(props);
     this.state = {
@@ -16,8 +15,6 @@ class ProgramList extends React.Component {
       nearEnd: Math.min(18, this.props.programs.length) - 6 < 6,
       tilEnd: Math.min(18, this.props.programs.length - 6),
       slideCount: 0
-      // firstIdx: 0, //Index, not place, of first program in each slide
-      // listLoop: 1,
     };
 
     this.toggleRight = this.toggleRight.bind(this);
@@ -31,16 +28,12 @@ class ProgramList extends React.Component {
     this.slidePositionId = this.slidePositionId.bind(this);
 
     this.clearProgramInfoTimeOut;
-
-    // this.detailOpen = this.detailOpen.bind(this);
-    // this.showRange = this.showRange.bind(this);
-    // this.alterList = this.alterList.bind(this);
   }
 
   //Scroll right
   toggleRight(e) {
     e.preventDefault();
-    debugger
+
     let { slideCount, lastProgram, tilEnd } = this.state;
 
     if (tilEnd <= 0) {
@@ -69,7 +62,6 @@ class ProgramList extends React.Component {
 
     if (slideCount > 0) {
       slideCount -= 1;
-      // firstIdx -= 6;
       tilEnd += 6;
       lastProgram -= tilEnd < 6 ? tilEnd : 6;
       this.setState({ slideCount, lastProgram, tilEnd });
@@ -120,9 +112,8 @@ class ProgramList extends React.Component {
     return detailProgramId === i ? "detail-open-true" : "detail-open-false";
   }
 
-  detailsLink(displayType, listName, programId, listNum) {
-    // const program = this.props.program ? this.props.program : {};
 
+  detailsLink(displayType, listName, programId, listNum) {
     if (displayType === "browse") {
       return (
         <Link to={`/browse/list_${listName}/${programId}`}>
@@ -182,7 +173,7 @@ class ProgramList extends React.Component {
             : ""
   }
 
-  ///RENDERS BASED ON BROWSE / SEARCH
+  ///RENDERS BASED ON BROWSE / SEARCH / MEDIA PAGES
   renderListType(displayType) {
     const listName =
       this.props.listType === "genre"
@@ -301,67 +292,7 @@ class ProgramList extends React.Component {
           </ul>
         </>
       );
-    } else if (displayType === "watchlist") {
-      let listNum = this.props.listNum;
-
-      let checkOpenDetail = this.props.history.location.pathname.includes(
-        `watchlist/${listNum}`
-      )
-        ? true
-        : false;
-
-      return (
-        <>
-          <ul className={`program-slider watchlist-list ${shortList}`}>
-            {selectedPrograms.map((program, i) => {
-              if (program) {
-                return (
-                  <li
-                    key={i}
-                    id={() => this.slidePositionId(i)}
-                    className={
-                      checkOpenDetail
-                        ? `program-item-${this.detailOpen(program.id)}`
-                        : `program-item ${
-                            i + 1 < lastProgram && !checkOpenDetail && lastHover
-                              ? "last-hover"
-                              : ""
-                          }`
-                    }
-                    onMouseEnter={this.handleHover(program.id)}
-                    onMouseLeave={this.handleHover(program.id)}
-                  >
-
-                    <img
-                      className="background-image"
-                      src={program.thumbnail}
-                      alt=""
-                    />
-
-                    <Video version="thumbnail" sourceVid={program.thumbclip} />
-
-                    {this.renderProgramInfo(
-                      program,
-                      displayType,
-                      showProgramInfo
-                    )}
-
-                    <section className="down-arrow-container">
-                      {this.detailsLink(
-                        displayType,
-                        null,
-                        program.id,
-                        listNum
-                        )}
-                    </section>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </>
-      );
-    } else if (displayType === "tv" || displayType === "movie") {
+    } else if (displayType === "tv" || displayType === "movie" || displayType === "watchlist") {
       let listNum = this.props.listNum;
       let checkOpenDetail = this.props.history.location.pathname.includes(
         `${displayType}/${listNum}`

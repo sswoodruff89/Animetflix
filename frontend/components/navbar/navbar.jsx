@@ -20,7 +20,6 @@ class NavBar extends React.Component{
       dropDown: "",
       searchBar: "",
       searchBarClosing: false,
-      // scrolling: false
     };
 
     this.searchTimeout;
@@ -31,7 +30,6 @@ class NavBar extends React.Component{
     this.handleInput = this.handleInput.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.loginProfile = this.loginProfile.bind(this);
-    // this.dropDownToggle = this.dropDownToggle.bind(this);
   }
 
   componentDidMount() {
@@ -47,10 +45,15 @@ class NavBar extends React.Component{
 
   dropDropDown(e) {
     this.setState({ dropDown: "active" });
+    this.dropDownTimeout = setTimeout(() => {
+      this.setState({ dropDown: "" })
+    }, 3000);
   }
 
   hideDropDown(e) {
-    this.setState({ dropDown: "" });
+    this.dropDownTimeout = setTimeout(() => {
+      this.setState({ dropDown: "" });
+    }, 2000);
   }
 
   searchBarToggle(e) {
@@ -71,23 +74,22 @@ class NavBar extends React.Component{
   }
 
   handleInput(e) {
-      clearTimeout(this.searchTimeout);
+    clearTimeout(this.searchTimeout);
+    
+    let query = this.state.query;
+    query.searchQuery = e.target.value;
+    this.setState({ query });
+    
+    if (query.searchQuery === "") {
+      this.props.history.push("/browse");
+    } else {
+      this.props.history.push(`/search/`);
       
-      let query = this.state.query;
-      query.searchQuery = e.target.value;
-      this.setState({ query });
-      
-      if (query.searchQuery === "") {
-        this.props.history.push("/browse");
-      } else {
-        this.props.history.push(`/search/`);
-        
-//////figure out Warning: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.
-        this.searchTimeout = setTimeout(() => {
-          this.props.history.push(`/search/${query.searchQuery}`);
+      this.searchTimeout = setTimeout(() => {
+        this.props.history.push(`/search/${query.searchQuery}`);
 
-        }, 300);
-      }
+      }, 300);
+    }
   }
 
   clearInput() {
@@ -140,7 +142,6 @@ class NavBar extends React.Component{
 
     let queryFilled = (searchQuery === "") ? "" : "active";
 
-    // let scroll = (scrolling) ? "active" : "";
     let browse = (this.props.history.location.pathname.includes("browse")) ? (
       <li className="current">Home</li>
     ) : (
@@ -180,7 +181,6 @@ class NavBar extends React.Component{
             <img className="browse-logo" src={window.logo} alt="logo" />
           </Link>
           <ul className="nav-program-links">
-            {/* ADD LINKS LATER */}
             {browse}
             {tv}
             {movies}
@@ -199,12 +199,9 @@ class NavBar extends React.Component{
           </section>
 
           <ul className="nav-profile-links">
-            {/* ADD LINKS LATER */}
-            {/* <li>KIDS</li>
-            <li>DVD</li> */}
-            <li className="icon">
+            {/* <li className="icon">
               <i className="fas fa-bell"></i>
-            </li>
+            </li> */}
 
             <li className="profile" 
               style={{
@@ -218,6 +215,7 @@ class NavBar extends React.Component{
           {/* DROPDOWN MENU */}
           <aside
             className={`profile-drop-down ${this.state.dropDown}`}
+            onMouseOver={() => { clearTimeout(this.dropDownTimeout)}}
             onMouseLeave={this.hideDropDown}
           >
             <section className="profile-section">

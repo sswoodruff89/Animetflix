@@ -1,6 +1,6 @@
 .browse-background::after{
   background-image: image-url("animetflix_home_edited.png");
-  background-size: 2500px 1400px;
+  background-size: 100%;
   content: "";
   opacity: 0.5;
   top: 0;
@@ -36,10 +36,20 @@
   z-index: 15;
 }
 
+
 .logo-and-buttons {
   width: 100%;
   margin-left: 3.5vw;
   transform: translateY(5vh);
+}
+
+.logo-and-buttons.false, .showcase-mute-rating.false {
+  opacity: 0;
+}
+
+.logo-and-buttons.true, .showcase-mute-rating.true {
+  opacity: 1;
+  transition: all 500ms ease;
 }
 
 .showcase-logo-container {
@@ -130,7 +140,9 @@ video.showcase {
   display: flex;
   height: 6%;
   align-items: center;
-  width: 15%;}
+  width: 15%;
+}
+
 
 .showcase-mute, .showcase-volume {
   width: auto;

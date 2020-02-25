@@ -12,30 +12,64 @@ class Browse extends React.Component{
     super(props);
     this.state = {
       watched: this.props.watched,
-      listCount: 6
+      listsLoaded: false,
+      listCount: 6,
+      loadMorePrograms: false
     };
 
     this.handleLogOut = this.handleLogOut.bind(this);
     this.handleWatchList = this.handleWatchList.bind(this);
     this.renderWatchlist = this.renderWatchlist.bind(this);
+    this.addtoList = this.addtoList.bind(this);
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.requestGenres();
+    if (this.props.genreIds) {
+      this.props.startLoadingPrograms();
+      this.props
+        .requestProgramsByGenres(
+          this.props.genreIds.slice(0, this.state.listCount)
+        )
+        .then(() => {
+          setTimeout(() => {
+            window.addEventListener("scroll", this.addtoList);
+            this.setState({ listsLoaded: true });
+          }, 1500);
+        });
+    }
 
     this.props.fetchWatchlist(this.props.profileId);
     this.props.fetchLikes(this.props.profileId);
     this.props.fetchDislikes(this.props.profileId);
-
-    if (this.props.genreIds) {
-      this.props.requestProgramsByGenres(this.props.genreIds.slice(0, 6));
-    }
   }
 
   componentDidUpdate(prevProps) {
-    if (!prevProps.genreIds && this.props.genreIds) {
-      this.props.requestProgramsByGenres(this.props.genreIds.slice(0, 6));
+    if (prevProps.profileId !== this.props.profileId) {
+      this.setState({ listCount: 6 });
+      setTimeout(() => {
+        window.addEventListener("scroll", this.addtoList);
+        this.setState({ listsLoaded: true });
+      }, 1500);
     }
+
+    if (!prevProps.genreIds && this.props.genreIds) {
+      this.props
+        .requestProgramsByGenres(
+          this.props.genreIds.slice(0, this.state.listCount)
+        )
+        .then(() => {
+          setTimeout(() => {
+            window.addEventListener("scroll", this.addtoList);
+            this.setState({ listsLoaded: true });
+          }, 1500);
+        });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.addtoList);
   }
 
   handleLogOut(e) {
@@ -73,6 +107,23 @@ class Browse extends React.Component{
     }
   }
 
+  addtoList() {
+    if ((window.scrollY + window.innerHeight) >= (document.getElementById("root").offsetHeight * .9)) {
+      const {listCount, loadMorePrograms} = this.state;
+
+      if (listCount < 12 && !loadMorePrograms) {
+        this.setState({ loadMorePrograms: true });
+
+        const genreIds = this.props.genreIds.slice(listCount, listCount + 2);
+        this.props.requestProgramsByGenres(genreIds).then(() => {
+          this.setState({ listCount: listCount + 2, loadMorePrograms: false })
+        });
+      } else if (listCount === 12 && !loadMorePrograms) {
+        window.removeEventListener("scroll", this.addtoList);
+      }
+    }
+  }
+
   render() {
     const {genres, watchlist, loading} = this.props;
 
@@ -86,12 +137,13 @@ class Browse extends React.Component{
           <BrowseShowcase />
         </section>
 
-        <section className="lists-container">
+        <section className={`lists-container ${this.state.listsLoaded}`}>
           {this.renderWatchlist(watchlist)}
 
           {genres.slice(0, this.state.listCount).map((genre, i) => {
-            //remove condition when done formatting
-            if (genre.program_ids.length > 6) {
+
+////////////////Main Lists////////////////////////////
+          if (genre.program_ids.length > 6) {
             return (
                 <section className="list-and-detail-container" key={i}>
                   <section className="single-list-container" >
@@ -104,10 +156,10 @@ class Browse extends React.Component{
               </section>
               )
           }
+//////////////////////////////////////////////////////
+
         })}
-
         </section>
-
       </main>
     );
   };

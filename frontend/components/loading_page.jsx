@@ -1,23 +1,32 @@
 import React from "react";
 
 
-const LoadingPage = (props) => {
+class LoadingPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <section className="loading-back">
-      <section className="loading">
-        {window.miniLogos.map((logo, i) => {
-          return (
-            <div key={i} className={`loading-squares-${i}`}>
-              <div className="loadpic">
-                <img src={logo} alt="load"/>
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <section className="loading-back">
+        <section className="loading">
+          {window.miniLogos.map((logo, i) => {
+            return (
+              <div key={i} className={`loading-squares-${i}`}>
+                <div className="loadpic">
+                  <img src={logo} alt="load"/>
+                </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </section>
       </section>
-    </section>
-  );
+    );
+  }
 
 
 };

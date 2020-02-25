@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
         users: { [window.currentUser.id]: window.currentUser },
         profiles: { [window.currentProfile.id]: window.currentProfile },
         search: []
-        // watchlist: 
       },
       session: {id: window.currentUser.id, profileId: window.currentProfile.id, showcaseIdx: window.currentProfile.showcase_idx}
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
     delete window.currentProfile;
+    
   } else if (window.currentUser && !window.currentProfile) {
     let preloadedState = {
       entities: {

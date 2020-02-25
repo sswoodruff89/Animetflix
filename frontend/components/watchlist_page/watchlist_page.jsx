@@ -7,15 +7,15 @@ class WatchlistPage extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.listOptions = this.listOptions.bind(this);
-        // this.updateSearch = this.updateSearch.bind(this);
     }
 
     componentDidMount() {
-        // if (this.props.watchlist.length === 0) {
-            this.props.fetchWatchlist(this.props.profileId);
-            this.props.requestWatchlistPrograms(this.props.profileId);
-        // }
+        window.scrollTo(0, 0);
+        if (!this.props.genresLoaded) {
+            this.props.requestGenres();
+        }
+        this.props.fetchWatchlist(this.props.profileId);
+        this.props.requestWatchlistPrograms(this.props.profileId);
     }
 
     render() {
@@ -46,13 +46,6 @@ class WatchlistPage extends React.Component {
 
         return (
             <main className="watchlist-page">
-                {/* <section className="search-header">
-                    <div className="expected-results">
-                        Explore titles related to:
-                     </div>
-                    <section className="search-options">
-                    </section>
-                </section> */}
                 <section className="watchlist-list">
                     {
                         programLists.map((list, i) => {

@@ -187,11 +187,6 @@ class ProgramListItem extends React.Component {
 
     return (
       <>
-        {/* for testing */}
-        {/* <img className="background-image" src="https://i.ytimg.com/vi/oGTK1e1aewY/maxresdefault.jpg" alt=""/> */}
-
-        {/* <img className="background-image" src={program.thumbnail} alt=""/> */}
-
         <section
           className="program-item-info"
           onMouseEnter={this.playThumbnail}
@@ -214,9 +209,6 @@ class ProgramListItem extends React.Component {
           {likeButtons}
           {watchStatus}
         </section>
-        {/* <section className="down-arrow-container">
-          {this.detailsLink(this.props.displayType)}
-        </section> */}
       </>
     );
   }

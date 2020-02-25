@@ -12,7 +12,7 @@ export default (state = _nullSession, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { id: action.payload.user.id });
         case RECEIVE_CURRENT_PROFILE:
-            return Object.assign({}, state, {profileId: action.profile.id, showcaseId: action.profile.showcase_id})
+            return Object.assign({}, state, { profileId: action.profile.id, showcaseIdx: action.profile.showcase_idx})
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         default:

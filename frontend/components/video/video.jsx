@@ -1,19 +1,11 @@
 import React from "react";
 
-class Video extends React.Component {
+const Video = ({version, sourceVid}) => {
 
-  constructor(props) {
-    super(props);
-
-  }
-
-  render() {
-
-    let {version} = this.props;
-    let sourceVid = this.props.sourceVid || "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" 
+    sourceVid = (!sourceVid) ? "https://media.w3.org/2010/05/sintel/trailer_hd.mp4" : sourceVid 
     let mute = (version === "full") ? false : true;
     let autoplay = (version.includes("detail") || version === "full" || version == "showcase") ? true : false;
-    // let controls = (version === "full") ? true: false;
+
     return (
       <>
         <video className={version}
@@ -23,7 +15,6 @@ class Video extends React.Component {
            autoPlay={autoplay} />
       </>
     )
-  }
 }
 
 export default Video;

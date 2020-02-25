@@ -6,11 +6,13 @@ import { Route } from "react-router-dom";
 class TvPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.listOptions = this.listOptions.bind(this);
-    // this.updateSearch = this.updateSearch.bind(this);
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    if (!this.props.genresLoaded) {
+      this.props.requestGenres();
+    }
     this.props.requestProgramsByType("TV Show");
   }
 

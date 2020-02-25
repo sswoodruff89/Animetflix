@@ -33,7 +33,6 @@ export const createDislike = (programId) => {
     return $.ajax({
         method: "POST",
         url: `/api/programs/${programId}/dislikes`
-        // data: {user_id: userId}
     });
 };
 

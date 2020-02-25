@@ -7,20 +7,21 @@ class HomePage extends React.Component {
     super(props);
     this.loginDemo = this.loginDemo.bind(this);
   }
-
+  
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   loginDemo(e) {
     e.preventDefault();
-    let demo = {email: "demo@demo.com", password: "anything"};
+    let demo = { email: "demo@demo.com", password: "anything" };
     this.props.login(demo);
   }
-  
+
   render() {
     return (
-
       <main className="homepage-background">
         <section className="homepage">
-
           {/* <Link to="/login"><button type="submit">Sign In</button></Link> */}
 
           <div className="welcome">
@@ -32,16 +33,13 @@ class HomePage extends React.Component {
             <button className="free">Sign up for a Free Trial</button>
           </Link>
 
-          <button className="demo"
-            onClick={this.loginDemo}
-          >Demo</button>
-
-
+          <button className="demo" onClick={this.loginDemo}>
+            Demo
+          </button>
         </section>
       </main>
     );
   }
-
 }
 
 export default HomePage;

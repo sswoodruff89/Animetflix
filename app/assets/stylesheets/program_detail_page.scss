@@ -61,12 +61,12 @@
 }
 
 .program-item-detail-open-true::after {
-  // box-sizing: border-box;
-  // outline: 0.75vw solid white;
   width: 100%;
   height: 100%;
   opacity: 1;
-  border: 0.4em solid rgb(43, 160, 255);
+  margin: 0;
+  padding: 0;
+  border: 0.3em solid rgb(43, 160, 255);
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -75,9 +75,6 @@
   transform: translate(-50%, -50%);
   z-index: 15;
   transition: opacity 500ms ease;
-  // animation-name: fade-in;
-  // animation-delay: 700ms;
-  // animation-duration: 500ms;
 }
 
 
@@ -91,12 +88,11 @@
   border-right: 1.1vw solid transparent;
   border-bottom: 0;
   z-index: 41;
-  bottom: -11%;
+  top: 99%;
   left: 50%;
   transform: translateX(-50%);
   transition: opacity 500ms ease;
-  // animation-name: fade-in;
-  // animation-duration: 500ms;
+
 }
 
 
@@ -128,10 +124,8 @@
     position: relative;
     animation-name: slidingin;
     animation-duration: .5s;
-    // align-items: center;
     box-sizing: border-box;
     overflow: hidden;
-    // background-image: url("https://www.knowledge4world.com/wp-content/uploads/2019/04/Screenshot_20190418-1408352-1024x528.png");
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: center;
@@ -140,12 +134,11 @@
 }
 
 .closing {
-    height: 0;
-    opacity: 0;
-    z-index: -3;
-    transform: translateY(-100px);
-    transition: all 600ms ease-out;
-
+  height: 0;
+  opacity: 0;
+  z-index: -3;
+  transform: translateY(-100px);
+  transition: all 600ms ease-out;
 }
 
 .inner-detail-container {
@@ -157,9 +150,6 @@
 
 
 header.detail-logo-header{
-  // position: relative;
-  // height: 19vh;
-  // width: 100%;
   position: relative;
   height: 33%;
   width: 100%;
@@ -185,22 +175,11 @@ button.detail-closer.showcase{
   opacity: 0;
   height: 100%;
   width: 450px;
-  // animation-name: fader;
-  // animation-duration: 1s;
-  // transition: opacity 100ms ease;
 }
 
 ///logo on main tab
 
 .detail-logo-header .logo-container.overview {
-  // height: 100%;
-  // max-width: 36vw;
-  // max-height: 8vw;
-  // transition: all 500ms ease-out;
-  // // max-width: 36vw;
-  // // display: flex;
-  // // max-height: 12vw;
-
   transition: all 500ms ease-out;
   width: auto;
   max-width: 34%;
@@ -213,9 +192,6 @@ button.detail-closer.showcase{
 
 
 .detail-logo-header .logo-container {
-  // max-width: 27vw;
-  // max-height: 7vw;
-  // transition: all 500ms ease-out;
   max-width: 32%;
   transition: all 500ms ease-out;
   height: auto;
@@ -232,9 +208,6 @@ button.detail-closer.showcase{
     max-width: 100%;
     max-height: 100%;
     width: auto;
-  // width: auto;
-  // height: 100%;
-  // transition: all 500ms ease-out;
 }
 
 /////OVERVIEW

@@ -7,19 +7,28 @@ class SearchPage extends React.Component{
 
   constructor(props) {
     super(props);
+    this.state = {
+      expectedResultsClicked: false
+    }
     this.listOptions = this.listOptions.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    if (!this.props.genresLoaded) {
+      this.props.requestGenres();
+    }
     this.props.requestSearchedPrograms(this.props.match.params.searchQuery);
   }
 
   updateSearch(e) {
     e.preventDefault();
     let query = e.target.value;
+    query = query.split(":").join("")
     this.props.requestSearchedPrograms(query);
     this.props.history.push(`/search/${query}`);
+    this.setState({ expectedResultsClicked: true })
   }
 
   listOptions() {
@@ -44,7 +53,6 @@ class SearchPage extends React.Component{
 /////////For ERRORS
 
     if (this.props.errors[0] === "No programs found") {
-
       return (
         <section className="search-errors">
 
@@ -73,30 +81,26 @@ class SearchPage extends React.Component{
 ////////
 
     return (
-        <main className="search-page">
-        <section className="search-header">
-            <div className="expected-results">
-              Explore titles related to:
-            </div>
-            <section className="search-options">
-                {this.listOptions()}
-            </section>
+      <main className="search-page">
+        <section className={`search-header`}>
+          <div className="expected-results">Explore titles related to:</div>
+          <section className="search-options">{this.listOptions()}</section>
         </section>
-          <section className="search-list">
-            {
-              programLists.map((list, i) => {
-
-                return (
-                <section className="search-list-detail-container" key={i}>
-                    <SearchListContainer list={list} listNum={i}/>
-                    <Route path={`/search/${query}/${i}/:programId`} component={ProgramDetailContainer} />
-                </section>
-              )})
-            }
-
-          </section>
-        </main>
-      )
+        <section className="search-list">
+          {programLists.map((list, i) => {
+            return (
+              <section className="search-list-detail-container" key={i}>
+                <SearchListContainer list={list} listNum={i} />
+                <Route
+                  path={`/search/${query}/${i}/:programId`}
+                  component={ProgramDetailContainer}
+                />
+              </section>
+            );
+          })}
+        </section>
+      </main>
+    );
   }
 }
 

@@ -77,7 +77,7 @@ export const requestAllPrograms = () => dispatch => {
 };
 
 export const requestProgramsByGenres = (genreIds) => dispatch => {
-  dispatch(startLoadingPrograms());
+  // dispatch(startLoadingPrograms());
 
   return ProgramAPIUtil.fetchProgramsByGenres(genreIds).then(programs => {
     return dispatch(receiveAllPrograms(programs));

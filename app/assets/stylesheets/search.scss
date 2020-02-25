@@ -7,9 +7,12 @@
 
 section.search-header {
   display: flex;
-  /* width: 100%; */
   margin: 0 4vw;
   margin-bottom: 3vh;
+}
+
+section.search-header.true {
+  display: none;
 }
 
 .expected-results {

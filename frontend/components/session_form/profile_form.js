@@ -150,9 +150,9 @@ class ProfileForm extends React.Component {
                   className="profile-icon"
                   style={{
                     backgroundImage: `url(${
-                      window.miniLogos[profile.profile_num - 1]
+                      window.miniLogos[this.props.icon]
                     })`,
-                    backgroundColor: `${COLORS[profile.profile_num - 1]}`
+                    backgroundColor: `${COLORS[this.props.icon]}`
                   }}
                 >
                   <div className="profile-edit">

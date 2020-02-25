@@ -10,8 +10,6 @@ const msp = (state, ownProps) => {
 
     let programs = Object.values(state.entities.programs);
     let showcaseProgram = programs[state.session.showcaseIdx % programs.length] || {};
-    // let showcaseProgram = programs[Math.floor(Math.random() * (programs.length - 1))] || {};
-
 
     let watched = (showcaseProgram.id && state.entities.watchlists[showcaseProgram.id ]) ?
         state.entities.watchlists[showcaseProgram.id ] : null;

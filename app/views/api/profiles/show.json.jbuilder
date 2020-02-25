@@ -1,5 +1,5 @@
 json.partial! "profile", profile: @profile
-json.showcase_id rand(Program.count + 1)
+json.showcase_idx rand(Program.count + 1)
 
 json.watchlist do
   @profile.watchlists.each do |watch|

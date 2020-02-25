@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
+import { isEmpty } from "lodash";
+import { requestGenres } from "../../actions/genre_actions";
 import { requestProgramsByType } from "../../actions/program_actions";
-// import { sortByDateAdded } from "../../reducers/sort_selector";
 
 import TvPage from "./tv_page";
 
@@ -13,9 +14,12 @@ const msp = (state, ownProps) => {
     }
   });
 
+  let genresLoaded = isEmpty(state.entities.genres) ? false : true;
+
   return {
     profileId: state.session.profileId,
-    programIds
+    programIds,
+    genresLoaded
   };
 };
 
@@ -23,6 +27,9 @@ const mdp = dispatch => {
   return {
     requestProgramsByType: type => {
       dispatch(requestProgramsByType(type));
+    },
+    requestGenres: () => {
+        dispatch(requestGenres());
     }
   };
 };

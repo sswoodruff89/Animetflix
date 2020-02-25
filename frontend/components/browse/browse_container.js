@@ -3,7 +3,7 @@ import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { requestGenres } from "../../actions/genre_actions";
 import { fetchLikes, fetchDislikes } from "../../actions/like_actions";
-import { requestAllPrograms, requestProgramsByGenres } from "../../actions/program_actions";
+import { requestAllPrograms, requestProgramsByGenres, startLoadingPrograms } from "../../actions/program_actions";
 import { fetchWatchlist } from "../../actions/watchlist_actions";
 import { sortByListLength, sortByDateAdded, sortByViewerPoints } from "../../reducers/sort_selector";
 import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
@@ -68,6 +68,9 @@ const mdp = dispatch => {
     },
     fetchDislikes: (profileId) => {
       return dispatch(fetchDislikes(profileId));
+    },
+    startLoadingPrograms: () => {
+      return dispatch(startLoadingPrograms());
     }
   };
 };

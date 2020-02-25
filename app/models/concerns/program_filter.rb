@@ -3,9 +3,6 @@ module ProgramFilter
 
   module ClassMethods
     def title_filter(filter_query)
-
-      # results = self.where("lower(:filter) LIKE :query", filter: "#{filter}", query: "#{filter_query}%")
-      # table_query = self.arel_table
       filter_query = filter_query.downcase
 
       results = self.where("translate(title, ':;%', '') ILIKE :start_query", start_query: "#{filter_query}%")
@@ -24,9 +21,6 @@ module ProgramFilter
     ##
 
     def all_filter(filter_query)
-
-      # results = self.where("lower(:filter) LIKE :query", filter: "#{filter}", query: "#{filter_query}%")
-      # table_query = self.arel_table
       filter_query = filter_query.downcase
 
       results = self.joins(:genres).where("translate(genres.name, '%:;', '') ILIKE :start_query
