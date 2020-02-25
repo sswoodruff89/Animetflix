@@ -1387,172 +1387,172 @@ program56 = Program.find(56);
 
 #####LIKES######
 
-Like.create!(
-  profile_id: 1,
-  program_id: 21)
-Like.create!(
-  profile_id: 1,
-  program_id: 12)
-Like.create!(
-  profile_id: 1,
-  program_id: 10)
-Like.create!(
-  profile_id: 1,
-  program_id: 4)
-Like.create!(
-  profile_id: 1,
-  program_id: 35)
-Like.create!(
-  profile_id: 1,
-  program_id: 38)
-Like.create!(
-  profile_id: 1,
-  program_id: 42)
-Like.create!(
-  profile_id: 1,
-  program_id: 9)
-Like.create!(
-  profile_id: 1,
-  program_id: 5)
-Like.create!(
-  profile_id: 1,
-  program_id: 44)
-Like.create!(
-  profile_id: 1,
-  program_id: 2)
-Like.create!(
-  profile_id: 1,
-  program_id: 32)
-Like.create!(
-  profile_id: 2,
-  program_id: 12)
-Like.create!(
-  profile_id: 2,
-  program_id: 18)
-Like.create!(
-  profile_id: 2,
-  program_id: 33)
-Like.create!(
-  profile_id: 2,
-  program_id: 3)
-Like.create!(
-  profile_id: 2,
-  program_id: 9)
-Like.create!(
-  profile_id: 2,
-  program_id: 25)
-Like.create!(
-  profile_id: 2,
-  program_id: 16)
-Like.create!(
-  profile_id: 2,
-  program_id: 32)
-Like.create!(
-  profile_id: 2,
-  program_id: 45)
-Like.create!(
-  profile_id: 2,
-  program_id: 35)
-Like.create!(
-  profile_id: 2,
-  program_id: 27)
-Like.create!(
-  profile_id: 1,
-  program_id: 33)
-Like.create!(
-  profile_id: 3,
-  program_id: 10)
-Like.create!(
-  profile_id: 3,
-  program_id: 16)
-Like.create!(
-  profile_id: 3,
-  program_id: 14)
-Like.create!(
-  profile_id: 3,
-  program_id: 6)
-Like.create!(
-  profile_id: 3,
-  program_id: 19)
-Like.create!(
-  profile_id: 3,
-  program_id: 10)
-Like.create!(
-  profile_id: 3,
-  program_id: 16)
-Like.create!(
-  profile_id: 3,
-  program_id: 24)
-Like.create!(
-  profile_id: 3,
-  program_id: 13)
-Like.create!(
-  profile_id: 3,
-  program_id: 35)
-Like.create!(
-  profile_id: 3,
-  program_id: 40)
-Like.create!(
-  profile_id: 3,
-  program_id: 12)
-Like.create!(
-  profile_id: 3,
-  program_id: 8)
-Like.create!(
-  profile_id: 3,
-  program_id: 37)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 21)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 12)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 10)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 4)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 35)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 38)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 42)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 9)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 5)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 44)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 2)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 32)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 12)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 18)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 33)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 3)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 9)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 25)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 16)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 32)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 45)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 35)
+# Like.create!(
+#   profile_id: 2,
+#   program_id: 27)
+# Like.create!(
+#   profile_id: 1,
+#   program_id: 33)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 10)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 16)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 14)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 6)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 19)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 10)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 16)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 24)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 13)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 35)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 40)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 12)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 8)
+# Like.create!(
+#   profile_id: 3,
+#   program_id: 37)
 
 
 
 
-Disike.create!(
-  profile_id: 1,
-  program_id: 43)
-Disike.create!(
-  profile_id: 1,
-  program_id: 30)
-Disike.create!(
-  profile_id: 1,
-  program_id: 7)
-Disike.create!(
-  profile_id: 1,
-  program_id: 22)
-Disike.create!(
- profile_id: 1,
-  program_id: 46)
-Disike.create!(
-  profile_id: 2,
-  program_id: 41)
-Disike.create!(
-  profile_id: 2,
-  program_id: 39)
-Disike.create!(
-  profile_id: 2,
-  program_id: 36)
-Disike.create!(
-  profile_id: 3,
-  program_id: 21)
-Disike.create!(
-  profile_id: 3,
-  program_id: 20)
-Disike.create!(
-  profile_id: 3,
-  program_id: 44)
-Disike.create!(
-  profile_id: 3,
-  program_id: 48)
-Disike.create!(
-  profile_id: 3,
-  program_id: 46)
-Disike.create!(
-  profile_id: 1,
-  program_id: 13)
-Disike.create!(
-  profile_id: 1,
-  program_id: 11)
-Disike.create!(
-  profile_id: 1,
-  program_id: 14)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 43)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 30)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 7)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 22)
+# Disike.create!(
+#  profile_id: 1,
+#   program_id: 46)
+# Disike.create!(
+#   profile_id: 2,
+#   program_id: 41)
+# Disike.create!(
+#   profile_id: 2,
+#   program_id: 39)
+# Disike.create!(
+#   profile_id: 2,
+#   program_id: 36)
+# Disike.create!(
+#   profile_id: 3,
+#   program_id: 21)
+# Disike.create!(
+#   profile_id: 3,
+#   program_id: 20)
+# Disike.create!(
+#   profile_id: 3,
+#   program_id: 44)
+# Disike.create!(
+#   profile_id: 3,
+#   program_id: 48)
+# Disike.create!(
+#   profile_id: 3,
+#   program_id: 46)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 13)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 11)
+# Disike.create!(
+#   profile_id: 1,
+#   program_id: 14)
 
 
 

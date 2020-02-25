@@ -152,6 +152,12 @@ img.left-arrow {
 
 }
 
+.program-slider.short #first-in-slide {
+  max-height: 8.4vw;
+  min-width: 15.25vw;
+  max-width: 15.25vw;
+}
+
 //TRANSITION FROM FIRST SLIDE
 #first-in-slide {
 transform-origin: left !important;
