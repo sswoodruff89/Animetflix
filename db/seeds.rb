@@ -1278,16 +1278,14 @@ end
 #   description: "In an alternate history where the Soviet Union occupies half of Japan, two childhood friends who grow apart after one of their friends disappears; as international tension rises and a mysterious tower built by the Union starts replacing matter around it with matter from other universes, they cross paths once again and realize their missing friend might be the key to save the world.")
 
 program56 = Program.find(56);
-glinks(56, [
-  # "Romance", "War", "Drama",
-   "Sci-Fi"])
+# glinks(56, ["Romance", "War", "Drama", "Sci-Fi"])
 
-  program56.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_logo.png'), filename: 'onepiecegold_logo.png')
-  program56.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiecegold_thumb.jpg'), filename: 'onepiecegold_thumb.jpg')
-  program56.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/onepiece_gold_back.jpeg'), filename: 'onepiece_gold_back.jpeg')
+  program56.logo.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_logo.png'), filename: 'place_promised_logo.png')
+  program56.thumbnail.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_thumb.jpg'), filename: 'place_promised_thumb.jpg')
+  program56.background.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_back.jpg'), filename: 'place_promised_back.jpg')
   
   program56.clip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_clip.mp4'), filename: 'place_promised_clip.mp4')
-  program56.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promised_thumbclip.mp4'), filename: 'place_promised_thumbclip.mp4')
+  program56.thumbclip.attach(io: open('https://animetflix-seeds.s3.amazonaws.com/place_promsed_thumbclip.mp4'), filename: 'place_promised_thumbclip.mp4')
   
   
   #####
