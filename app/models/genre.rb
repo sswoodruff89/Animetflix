@@ -15,7 +15,9 @@ class Genre < ApplicationRecord
 
   attr_accessor :points
 
-    has_many :genre_links
+    has_many :genre_links,
+      dependent: :destroy
+
 
     has_many :programs, 
       through: :genre_links, 

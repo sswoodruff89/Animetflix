@@ -26,7 +26,8 @@ class User < ApplicationRecord
         through: :watchlists,
         source: :program
 
-    has_many :profiles
+    has_many :profiles,
+        dependent: :destroy
 
     def self.find_by_cred(email, pw)
         user = User.find_by(email: email);
