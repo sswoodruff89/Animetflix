@@ -53,8 +53,10 @@
 }
 
 .showcase-logo-container {
-  max-height: 33vh;
-  max-width: 30vw;
+  height: 33vh;
+  max-height: 240px;
+  max-width: 50vw;
+  display: flex;
   position: relative;
 }
 

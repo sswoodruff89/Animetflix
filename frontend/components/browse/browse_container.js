@@ -1,6 +1,7 @@
 import Browse from "./browse"
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
+import { isEmpty } from "lodash";
 import { requestGenres } from "../../actions/genre_actions";
 import { fetchLikes, fetchDislikes } from "../../actions/like_actions";
 import { requestAllPrograms, requestProgramsByGenres, startLoadingPrograms } from "../../actions/program_actions";
@@ -26,10 +27,12 @@ const msp = (state, ownProps) => {
   }
 
 
+
   return {
     session: state.session.id,
     watchlist,
     profileId: state.session.profileId,
+    programsLoaded: isEmpty(state.entities.programs),
     genres,
     genreIds,
     loading: state.ui.loading.programsLoading

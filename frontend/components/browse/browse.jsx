@@ -54,20 +54,24 @@ class Browse extends React.Component{
         )
         .then(() => {
           setTimeout(() => {
-            window.addEventListener("scroll", this.addtoList);
+            // window.addEventListener("scroll", this.addtoList);
             this.setState({ listsLoaded: true });
           }, 1500);
         });
     }
 
-    if (!prevProps.genreIds && this.props.genreIds) {
+    if (
+      !prevProps.genreIds &&
+      this.props.genreIds &&
+      this.props.programsLoaded
+    ) {
       this.props
         .requestProgramsByGenres(
           this.props.genreIds.slice(0, this.state.listCount)
         )
         .then(() => {
           setTimeout(() => {
-            window.addEventListener("scroll", this.addtoList);
+            // window.addEventListener("scroll", this.addtoList);
             this.setState({ listsLoaded: true });
           }, 1500);
         });
@@ -75,7 +79,7 @@ class Browse extends React.Component{
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.addtoList);
+    // window.removeEventListener("scroll", this.addtoList);
   }
 
   handleLogOut(e) {
