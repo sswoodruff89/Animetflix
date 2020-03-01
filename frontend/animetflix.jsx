@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
       entities: {
         programs: {},
         genres: {},
-        users: { [window.currentUser.id]: window.currentUser },
-        profiles: { [window.currentProfile.id]: window.currentProfile },
+        users: {[window.currentUser.id]: window.currentUser},
+        profiles: {[window.currentProfile.id]: window.currentProfile},
         search: []
       },
       session: {id: window.currentUser.id, profileId: window.currentProfile.id, showcaseIdx: window.currentProfile.showcase_idx}

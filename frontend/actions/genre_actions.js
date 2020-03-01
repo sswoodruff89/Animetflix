@@ -1,5 +1,5 @@
 import {fetchGenres} from "../util/program_api_util";
-import { startLoadingPrograms } from "./program_actions";
+import {startLoadingPrograms} from "./program_actions";
 
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const START_LOADING_GENRES = "START_LOADING_GENRES";

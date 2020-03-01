@@ -15,8 +15,8 @@ import { fetchWatchlist } from "../../actions/watchlist_actions";
 const msp = (state, ownProps) => {
   return {
     session: state.session.id,
-    profileId: state.session.profileId,
-    profiles: state.entities.profiles
+    currentProfile: state.entities.profiles[state.session.profileId],
+    profiles: Object.values(state.entities.profiles)
   };
 };
 

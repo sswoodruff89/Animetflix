@@ -1,13 +1,13 @@
 import Browse from "./browse"
-import { logout } from "../../actions/session_actions";
-import { connect } from "react-redux";
-import { isEmpty } from "lodash";
-import { requestGenres } from "../../actions/genre_actions";
-import { fetchLikes, fetchDislikes } from "../../actions/like_actions";
-import { requestAllPrograms, requestProgramsByGenres, startLoadingPrograms } from "../../actions/program_actions";
-import { fetchWatchlist } from "../../actions/watchlist_actions";
-import { sortByListLength, sortByDateAdded, sortByViewerPoints } from "../../reducers/sort_selector";
-import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
+import {logout} from "../../actions/session_actions";
+import {connect} from "react-redux";
+import {isEmpty} from "lodash";
+import {requestGenres} from "../../actions/genre_actions";
+import {fetchLikes, fetchDislikes} from "../../actions/like_actions";
+import {requestAllPrograms, requestProgramsByGenres, startLoadingPrograms} from "../../actions/program_actions";
+import {fetchWatchlist} from "../../actions/watchlist_actions";
+import {sortByListLength, sortByDateAdded, sortByViewerPoints} from "../../reducers/sort_selector";
+import {addToWatchList, removeFromWatchList} from "../../actions/watchlist_actions";
 
 
 
@@ -19,12 +19,7 @@ const msp = (state, ownProps) => {
     genreIds = genres.map((g) => g.id);
   }
   
-
-  let watchlist = Object.values(state.entities.watchlists);
-
-  if (watchlist.length > 0 ) {
-    watchlist = sortByDateAdded(watchlist);
-  }
+  let watchlist = sortByDateAdded(Object.values(state.entities.watchlists));
 
 
 

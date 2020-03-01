@@ -1,5 +1,5 @@
 import * as ProfileAPIUtil from "../util/profile_api_util";
-import { startLoadingPrograms } from "./program_actions";
+import {startLoadingPrograms} from "./program_actions";
 
 export const RECEIVE_CURRENT_PROFILE = "RECEIVE_CURRENT_PROFILE";
 export const RECEIVE_PROFILES = "RECEIVE_PROFILES";

@@ -10,7 +10,7 @@ export const START_LOADING_PROGRAMS = "START_LOADING_PROGRAMS";
 export const END_LOADING_PROGRAMS = "END_LOADING_PROGRAMS";
 
 export const receiveAllPrograms = (programs) => {
-  return { 
+  return {
     type: RECEIVE_ALL_PROGRAMS,
     programs
   };

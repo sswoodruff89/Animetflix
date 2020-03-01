@@ -2,7 +2,7 @@ import React from "react";
 // import {logout} from "../actions/session_actions";
 import ProgramListContainer from "../program_list/program_list_container";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
-import { Route } from "react-router-dom";
+import {Route} from "react-router-dom";
 import BrowseShowcase from "./browse_showcase_container";
 import LoadingPage from "../loading_page";
 import Video from "../video/video";
@@ -26,6 +26,7 @@ class Browse extends React.Component{
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.requestGenres();
+    
     if (this.props.genreIds) {
       this.props.startLoadingPrograms();
       this.props
@@ -35,7 +36,7 @@ class Browse extends React.Component{
         .then(() => {
           setTimeout(() => {
             window.addEventListener("scroll", this.addtoList);
-            this.setState({ listsLoaded: true });
+            this.setState({listsLoaded: true});
           }, 1500);
         });
     }
@@ -47,7 +48,7 @@ class Browse extends React.Component{
 
   componentDidUpdate(prevProps) {
     if (prevProps.profileId !== this.props.profileId) {
-      this.setState({ listCount: 6 });
+      this.setState({listCount: 6});
       this.props
         .requestProgramsByGenres(
           this.props.genreIds.slice(0, this.state.listCount)
@@ -55,7 +56,7 @@ class Browse extends React.Component{
         .then(() => {
           setTimeout(() => {
             // window.addEventListener("scroll", this.addtoList);
-            this.setState({ listsLoaded: true });
+            this.setState({listsLoaded: true });
           }, 1500);
         });
     }
@@ -72,7 +73,7 @@ class Browse extends React.Component{
         .then(() => {
           setTimeout(() => {
             // window.addEventListener("scroll", this.addtoList);
-            this.setState({ listsLoaded: true });
+            this.setState({listsLoaded: true});
           }, 1500);
         });
     }
@@ -97,7 +98,7 @@ class Browse extends React.Component{
     } else {
       this.props.addToWatchList(this.props.showcaseProgram.id);
     }
-    this.setState({ watched: !watchStatus });
+    this.setState({watched: !watchStatus});
   }
 
   renderWatchlist(watchlist) {
@@ -122,11 +123,11 @@ class Browse extends React.Component{
       const {listCount, loadMorePrograms} = this.state;
 
       if (listCount < 12 && !loadMorePrograms) {
-        this.setState({ loadMorePrograms: true });
+        this.setState({loadMorePrograms: true});
 
         const genreIds = this.props.genreIds.slice(listCount, listCount + 6);
         this.props.requestProgramsByGenres(genreIds).then(() => {
-          this.setState({ listCount: listCount + 6, loadMorePrograms: false })
+          this.setState({listCount: listCount + 6, loadMorePrograms: false })
         });
       } else if (listCount === 12 && !loadMorePrograms) {
         window.removeEventListener("scroll", this.addtoList);

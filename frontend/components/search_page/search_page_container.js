@@ -14,7 +14,6 @@ const msp = (state, ownProps) => {
 
   let genresLoaded = isEmpty(state.entities.genres) ? false : true;
 
-
   return {
     programIds,
     searchlist,

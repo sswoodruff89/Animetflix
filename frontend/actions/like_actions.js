@@ -1,5 +1,5 @@
 import * as LikeAPIUtil from "../util/like_api_util";
-import { startLoadingPrograms } from "./program_actions";
+import {startLoadingPrograms} from "./program_actions";
 
 export const RECEIVE_LIKES = "RECEIVE_LIKES";
 export const RECEIVE_NEW_LIKE = "RECEIVE_NEW_LIKE";

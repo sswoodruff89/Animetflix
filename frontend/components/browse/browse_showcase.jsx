@@ -1,7 +1,7 @@
 import React from "react";
 import Video from "../video/video";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
-import { Link, Route } from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 
 class Showcase extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Showcase extends React.Component {
     componentDidMount() {
         this.props.requestProgram(this.props.showcaseProgram.id);
         setTimeout(() => {
-            this.setState({ showcaseLoaded: true })
+            this.setState({showcaseLoaded: true})
         }, 1000);
         window.addEventListener("scroll", this.handleScroll);
     }
@@ -58,7 +58,7 @@ class Showcase extends React.Component {
         } else {
             this.props.addToWatchList(this.props.showcaseProgram.id);
         }
-        this.setState({ watched: !watchStatus });
+        this.setState({watched: !watchStatus});
     }
 
     handleMute(e) {
@@ -74,7 +74,7 @@ class Showcase extends React.Component {
             vid.volume = 0.2;
         }
         vid.muted = muted;
-        this.setState({ muted });
+        this.setState({muted});
     }
 
     playShowcase() {

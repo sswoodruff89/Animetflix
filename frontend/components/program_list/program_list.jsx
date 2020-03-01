@@ -208,7 +208,7 @@ class ProgramList extends React.Component {
 
     /////For Slide Counter CSS////
     let pageCountArray = Array.from(
-      { length: Math.ceil(Math.min(24, this.props.programs.length) / 6) },
+      {length: Math.ceil(Math.min(24, this.props.programs.length) / 6)},
       (el, i) => i
     );
     //////

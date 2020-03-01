@@ -33,7 +33,7 @@ class NavBar extends React.Component{
   }
 
   componentDidMount() {
-    if (Object.keys(this.props.profiles).length <= 1) {
+    if (this.props.profiles.length <= 1) {
       this.props.requestAllProfiles();
     }
   }
@@ -44,15 +44,15 @@ class NavBar extends React.Component{
   }
 
   dropDropDown(e) {
-    this.setState({ dropDown: "active" });
+    this.setState({dropDown: "active" });
     this.dropDownTimeout = setTimeout(() => {
-      this.setState({ dropDown: "" })
+      this.setState({dropDown: ""})
     }, 3000);
   }
 
   hideDropDown(e) {
     this.dropDownTimeout = setTimeout(() => {
-      this.setState({ dropDown: "" });
+      this.setState({dropDown: ""});
     }, 2000);
   }
 
@@ -61,12 +61,12 @@ class NavBar extends React.Component{
 
     if (this.state.query.searchQuery === "") {
 
-      if (searchBar === "") { 
-        this.setState({ searchBar: "active" })
-      } else { 
+      if (searchBar === "") {
+        this.setState({searchBar: "active"})
+      } else {
         this.setState({searchBarClosing: true});
         setTimeout(() => {
-          this.setState({ searchBar: "", searchBarClosing: false });
+          this.setState({searchBar: "", searchBarClosing: false});
         }, 500);
 
       }
@@ -78,7 +78,7 @@ class NavBar extends React.Component{
     
     let query = this.state.query;
     query.searchQuery = e.target.value;
-    this.setState({ query });
+    this.setState({query});
     
     if (query.searchQuery === "") {
       this.props.history.push("/browse");
@@ -103,7 +103,6 @@ class NavBar extends React.Component{
     this.setState({scrolling: true});
   }
 
-
   loginProfile(e) {
     e.preventDefault();
     let profileId = e.currentTarget.value;
@@ -119,13 +118,13 @@ class NavBar extends React.Component{
   }
 
   render() {
-    if (!this.props.profileId) {
+    if (!this.props.currentProfile) {
       return (
         <div></div>
       );
     }
     const {searchBar, searchBarClosing} = this.state;
-    const {profileId, profiles} = this.props;
+    const {currentProfile, profiles} = this.props;
     const {searchQuery} = this.state.query;
     const closing = (searchBarClosing) ? "closing" : "";
 
@@ -226,10 +225,10 @@ class NavBar extends React.Component{
               className="profile"
               style={{
                 backgroundImage: `url(${
-                  window.miniLogos[profiles[profileId].profile_num - 1]
+                  window.miniLogos[currentProfile.profile_num - 1]
                 })`,
                 backgroundColor: `${
-                  COLORS[profiles[profileId].profile_num - 1]
+                  COLORS[currentProfile.profile_num - 1]
                 }`
               }}
               onMouseOver={this.dropDropDown}
@@ -246,8 +245,8 @@ class NavBar extends React.Component{
           >
             <section className="profile-section">
               <ul className="profile-list">
-                {Object.values(profiles).map((profile, i) => {
-                  if (profile.id !== profileId) {
+                {profiles.map((profile, i) => {
+                  if (profile.id !== currentProfile.id) {
                     return (
                       <li
                         key={i}

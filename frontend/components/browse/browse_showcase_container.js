@@ -1,8 +1,10 @@
 import Showcase from "./browse_showcase";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { requestProgram } from "../../actions/program_actions";
-import { addToWatchList, removeFromWatchList } from "../../actions/watchlist_actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
+import {requestProgram} from "../../actions/program_actions";
+import {addToWatchList, removeFromWatchList} from "../../actions/watchlist_actions";
+
+import {checkLikeDislikeWatchlist} from "../../util/helper_util";
 
 
 
@@ -11,15 +13,11 @@ const msp = (state, ownProps) => {
     let programs = Object.values(state.entities.programs);
     let showcaseProgram = programs[state.session.showcaseIdx % programs.length] || {};
 
-    let watched = (showcaseProgram.id && state.entities.watchlists[showcaseProgram.id ]) ?
-        state.entities.watchlists[showcaseProgram.id ] : null;
-
-    let liked = (showcaseProgram.id && state.entities.likes[showcaseProgram.id ]) ?
-        state.entities.likes[showcaseProgram.id ] : null;
-
-    let disliked = (showcaseProgram.id && state.entities.dislikes[showcaseProgram.id ]) ?
-        state.entities.dislikes[showcaseProgram.id ] : null;
-
+    let {watched, liked, disliked} = checkLikeDislikeWatchlist(
+      showcaseProgram,
+      state
+    );
+    
     return {
         session: state.session.id,
         showcaseProgram,

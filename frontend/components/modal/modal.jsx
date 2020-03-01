@@ -1,9 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
-import { closeModal } from "../../actions/modal_actions";
+import {connect} from "react-redux";
+import {closeModal} from "../../actions/modal_actions";
 import ProfileFormContainer from "../session_form/profile_form_container";
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({modal, closeModal}) => {
 
   if (!modal) {
     return null;
@@ -42,7 +42,7 @@ const Modal = ({ modal, closeModal }) => {
 
 };
 
-const msp = (state, ownProps) => { 
+const msp = (state, ownProps) => {
     return {
         modal: state.ui.modal
     }

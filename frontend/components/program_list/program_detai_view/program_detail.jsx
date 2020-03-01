@@ -3,7 +3,8 @@ import Video from "../../video/video";
 import {Link} from "react-router-dom";
 
 
-class ProgramDetail extends React.Component {
+// class ProgramDetail extends React.Component {
+class ProgramDetail extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +30,18 @@ class ProgramDetail extends React.Component {
     this.currentTabPage = this.currentTabPage.bind(this);
     this.closeDetails = this.closeDetails.bind(this);
     this.renderLikeButtons = this.renderLikeButtons.bind(this);
+
+    // this.tabObject = {
+    //   'overview': (program, genres, fadeIn) => {
+    //     return this.renderOverview(program, genres, fadeIn);
+    //   },
+    //   'details': (program, genres, fadeIn) => {
+    //     return this.renderDetails(program, genres, fadeIn);
+    //   },
+    //   'episodes': (program, genres, fadeIn) => {
+    //     return this.renderEpisodes(program, genres, fadeIn);
+    //   }
+    // };
   }
 
   componentDidMount() {
@@ -48,7 +61,12 @@ class ProgramDetail extends React.Component {
     ///For toggling between programs while Details is open
 
     let programId = parseInt(this.props.match.params.programId);
-    if (this.state.currentId && programId !== this.state.currentId) {
+    if (
+      this.state.currentId && 
+      programId !== this.state.currentId &&
+      !this.props.program.description
+      ) {
+
       this.props.requestProgram(this.props.match.params.programId);
       this.setState({ currentId: programId });
     }
@@ -150,7 +168,10 @@ class ProgramDetail extends React.Component {
       }, 600);
     } else {
       setTimeout(() => {
-        this.props.history.goBack();
+        this.props.history.push(
+          `/${this.props.history.location.pathname.split("/")[1]}`
+        );
+        // this.props.history.goBack();
       }, 600);
     }
   }
@@ -296,7 +317,8 @@ class ProgramDetail extends React.Component {
         }
       : {};
     ///fade in between renders
-
+        // debugger
+    // return this.tabObject[tab]((program, genre, fadeIn));
     switch (tab) {
       case "overview":
         return this.renderOverview(program, genre, fadeIn);

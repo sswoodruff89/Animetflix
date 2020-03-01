@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {login} from "../actions/session_actions";
+import {connect} from "react-redux";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class HomePage extends React.Component {
 
   loginDemo(e) {
     e.preventDefault();
-    let demo = { email: "demo@demo.com", password: "anything" };
+    let demo = {email: "demo@demo.com", password: "anything"};
     this.props.login(demo);
   }
 
@@ -42,4 +43,12 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+const mdp = dispatch => {
+  return {
+    login: user => {
+      return dispatch(login(user));
+    }
+  };
+};
+
+export default connect(null, mdp)(HomePage);
