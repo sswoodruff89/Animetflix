@@ -27,7 +27,7 @@ const msp = (state, ownProps) => {
     session: state.session.id,
     watchlist,
     profileId: state.session.profileId,
-    programsLoaded: isEmpty(state.entities.programs),
+    programsLoaded: !isEmpty(state.entities.programs),
     genres,
     genreIds,
     loading: state.ui.loading.programsLoading

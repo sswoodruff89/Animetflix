@@ -26,7 +26,10 @@ class ProgramPage extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.profileId !== this.props.profileId) {
+    if (
+      (prevProps.profileId !== this.props.profileId) ||
+      (prevProps.displayType !== this.props.displayType)
+    ) {
       this.handleComponentMountUpdate(this.props.displayType);
     }
   }
@@ -34,7 +37,7 @@ class ProgramPage extends React.Component {
   handleComponentMountUpdate(displayType) {
     switch (displayType) {
         case "watchlist":
-            if (!this.prop.programIds.length) {
+            if (!this.props.programIds.length) {
                 this.props.fetchWatchlist(this.props.profileId);
             }
             this.props.requestWatchlistPrograms(this.props.profileId);

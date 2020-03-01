@@ -82,16 +82,16 @@ const App = (props) => {
 
         <Switch>
           <Route
-            path={["/", "/browse", "/search", "/watchlist", "/tv", "/movie"]}
-            component={Footer}
-          />
-
-          <Route
-            path="/watch"
+            exact path="/watch"
             render={() => {
               return <div></div>;
             }}
           />
+          <Route
+            exact path={["/", "/login", "/signup", "/browse", "/search", "/watchlist", "/tv", "/movie"]}
+            component={Footer}
+          />
+
 
         </Switch>
       </main>

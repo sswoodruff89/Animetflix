@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
     programIds,
     searchlist,
     errors: state.errors.search,
-    genresLoaded
+    genresLoaded,
+    loading: state.ui.loading.programsLoading
   };
 };
 

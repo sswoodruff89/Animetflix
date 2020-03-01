@@ -44,7 +44,9 @@ class WatchPage extends React.Component{
       let vidLength = vid.duration;
       let currentTime = vid.currentTime;
       this.setState({vidLength, currentTime, videoPresent: true});
-      vid.play();
+      if (vid) {
+        vid.play();
+      }
     } else {
       setTimeout(() => {
         this.videoLoaded();

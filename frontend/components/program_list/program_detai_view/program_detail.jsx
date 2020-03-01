@@ -317,8 +317,6 @@ class ProgramDetail extends React.PureComponent {
         }
       : {};
     ///fade in between renders
-        // debugger
-    // return this.tabObject[tab]((program, genre, fadeIn));
     switch (tab) {
       case "overview":
         return this.renderOverview(program, genre, fadeIn);

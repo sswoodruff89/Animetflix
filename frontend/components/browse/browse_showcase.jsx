@@ -3,7 +3,7 @@ import Video from "../video/video";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
 import {Link, Route} from "react-router-dom";
 
-class Showcase extends React.Component {
+class Showcase extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,17 +23,19 @@ class Showcase extends React.Component {
         this.props.requestProgram(this.props.showcaseProgram.id);
         setTimeout(() => {
             this.setState({showcaseLoaded: true})
-        }, 1000);
+        }, 2000);
         window.addEventListener("scroll", this.handleScroll);
     }
 
     componentDidUpdate() {
         let vid = document.getElementById("video-player-showcase");
 
-        if (this.props.history.location.pathname.endsWith("browse")) {
-            this.playShowcase();
-        } else if (vid) {
-            this.pauseShowcase();
+        if (vid) {
+            if (this.props.history.location.pathname.endsWith("browse")) {
+                this.playShowcase();
+            } else {
+                this.pauseShowcase();
+            }
         }
     }
 
@@ -79,12 +81,16 @@ class Showcase extends React.Component {
 
     playShowcase() {
         let vid = document.getElementById("video-player-showcase");
-        vid.play();
+        if (vid) {
+            vid.play();
+        }
     }
 
     pauseShowcase() {
         let vid = document.getElementById("video-player-showcase");
-        vid.pause();
+        if (vid) {
+            vid.pause();
+        }
     }
 
     renderHomeDetails(program) {

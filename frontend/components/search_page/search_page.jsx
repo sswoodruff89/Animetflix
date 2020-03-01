@@ -1,6 +1,7 @@
 import React from "react";
 import SearchListContainer from "./search_list_container";
 import ProgramDetailContainer from "../program_list/program_detai_view/program_detail_container";
+import LoadingPage from "../loading_page";
 import { Route } from "react-router-dom";
 
 class SearchPage extends React.Component {
@@ -62,6 +63,10 @@ class SearchPage extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return <LoadingPage />;
+    }
+
     let query = this.props.match.params.searchQuery;
 
     /////////For ERRORS

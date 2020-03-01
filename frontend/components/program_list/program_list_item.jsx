@@ -62,12 +62,16 @@ class ProgramListItem extends React.Component {
   /////////HOVER VIDEO START/STOP
   playThumbnail(e) {
     let vid = e.currentTarget.previousSibling;
-    vid.play();
+    if (vid) {
+      vid.play();
+    }
   }
 
   pauseThumbnail(e) {
     let vid = e.currentTarget.previousSibling;
-    vid.pause();
+    if (vid) {
+      vid.pause();
+    }
   }
   /////////
 

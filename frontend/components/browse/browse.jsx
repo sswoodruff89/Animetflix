@@ -25,8 +25,10 @@ class Browse extends React.Component{
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.requestGenres();
-    
+    if (this.props.genres.length < 13) {
+      this.props.requestGenres();
+    }
+
     if (this.props.genreIds) {
       this.props.startLoadingPrograms();
       this.props
@@ -55,7 +57,7 @@ class Browse extends React.Component{
         )
         .then(() => {
           setTimeout(() => {
-            // window.addEventListener("scroll", this.addtoList);
+            window.addEventListener("scroll", this.addtoList);
             this.setState({listsLoaded: true });
           }, 1500);
         });
@@ -64,7 +66,7 @@ class Browse extends React.Component{
     if (
       !prevProps.genreIds &&
       this.props.genreIds &&
-      this.props.programsLoaded
+      !this.props.programsLoaded
     ) {
       this.props
         .requestProgramsByGenres(
@@ -72,7 +74,7 @@ class Browse extends React.Component{
         )
         .then(() => {
           setTimeout(() => {
-            // window.addEventListener("scroll", this.addtoList);
+            window.addEventListener("scroll", this.addtoList);
             this.setState({listsLoaded: true});
           }, 1500);
         });
@@ -80,7 +82,7 @@ class Browse extends React.Component{
   }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.addtoList);
+    window.removeEventListener("scroll", this.addtoList);
   }
 
   handleLogOut(e) {
@@ -144,7 +146,7 @@ class Browse extends React.Component{
 
     return (
       <main className="browse-background">
-        <section className="browse-display">
+        <section className={`browse-display ${this.state.listsLoaded}`}>
           <BrowseShowcase />
         </section>
 
@@ -152,24 +154,24 @@ class Browse extends React.Component{
           {this.renderWatchlist(watchlist)}
 
           {genres.slice(0, this.state.listCount).map((genre, i) => {
-
-////////////////Main Lists////////////////////////////
-          if (genre.program_ids.length > 6) {
-            return (
+            ////////////////Main Lists////////////////////////////
+            if (genre.program_ids.length > 6) {
+              return (
                 <section className="list-and-detail-container" key={i}>
-                  <section className="single-list-container" >
-                    <ProgramListContainer listName={genre} listType="genre"/>
+                  <section className="single-list-container">
+                    <ProgramListContainer listName={genre} listType="genre" />
                   </section>
-                    <Route path={`/browse/list_${genre.name}/:programId`} 
-                    component={ProgramDetailContainer} 
+                  <Route
+                    path={`/browse/list_${genre.name}/:programId`}
+                    component={ProgramDetailContainer}
                     key={genre.id}
-                    displayType="browse"/>
-              </section>
-              )
-          }
-//////////////////////////////////////////////////////
-
-        })}
+                    displayType="browse"
+                  />
+                </section>
+              );
+            }
+            //////////////////////////////////////////////////////
+          })}
         </section>
       </main>
     );

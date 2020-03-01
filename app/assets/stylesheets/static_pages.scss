@@ -10,9 +10,13 @@ html{
 body {
   background-color: black;
   font-family: -apple-system, 'Helvetica Neue', sans-serif;
-  min-height: 100% !important;
+  min-height: 100vh !important;
   height: 100%;
   width: 100%;
+}
+
+main.root {
+  min-height: 100vh;
 }
 
 .homepage-background::after{
@@ -83,6 +87,14 @@ header {
   font-weight: bold;
   position: relative;
   top: 300px;
+
+  button{
+    background-color: rgb(47, 113, 255);
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 30px;
+  }
 }
 
 .welcome {
@@ -90,14 +102,6 @@ header {
   font-size: 48px;
 }
 
-
-.homepage button{
-  background-color: rgb(47, 113, 255);
-  text-align: center;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 30px;
-}
 
 .free {
   width: 350px;
@@ -122,6 +126,7 @@ header {
   position: absolute;
   bottom: -70vh;
   background-color: rgba(0, 0, 0, .5);
+  transition: all 300ms ease;
 }
 
 .browse-footer {
@@ -130,23 +135,23 @@ header {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  transition: all 300ms ease;
 }
 
 .footer-stuff{
   margin: 0 13%;
   padding-top: 30px;
   color: rgb(119, 119, 119);
-}
 
-.footer-stuff p, .footer-stuff ul, .footer-stuff a {
-  color: rgb(105, 105, 105);
-  border-top: 0;
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.footer-stuff ul{
-  margin-top: 40px;
+  p, ul, a {
+    color: rgb(105, 105, 105);
+    border-top: 0;
+    font-size: 16px;
+    margin-bottom: 5px; 
+  }
+  ul {
+    margin-top: 40px;
+  }
 }
 
 .footer-stuff a:hover {

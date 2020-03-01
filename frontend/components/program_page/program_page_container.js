@@ -17,7 +17,7 @@ const msp = (state, ownProps) => {
 
   if (displayType === "watchlist") {
 
-        let watchlist = sortByDateAdded(Object.values(state.entities.watchlists)); 
+        let watchlist = sortByDateAdded(Object.values(state.entities.watchlists));
 
         Object.values(watchlist).forEach(watch => {
             programIds.push(watch.program_id);

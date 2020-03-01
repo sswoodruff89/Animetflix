@@ -112,7 +112,7 @@ class NavBar extends React.Component{
       this.props.fetchLikes(profileId);
       this.props.requestGenres();
       // this.props.requestAllPrograms();
-      // this.props.history.push("/profile");
+      this.props.history.push("/browse");
 
     });
   }
