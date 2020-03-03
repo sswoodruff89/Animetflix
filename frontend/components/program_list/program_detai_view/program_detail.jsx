@@ -80,14 +80,14 @@ class ProgramDetail extends React.PureComponent {
       ///Pause or play video
       if (video) {
         let vid = document.getElementById("video-player-detail");
-        tab === "overview" ? vid.pause() : vid.play();
+        type === "overview" ? vid.play() : vid.pause();
       }
 
       if (tab !== type) {
-        this.setState({ tab: type, changing: true });
+        this.setState({tab: type, changing: true});
 
         setTimeout(() => {
-          this.setState({ changing: false });
+          this.setState({changing: false});
         }, 50);
       }
     };

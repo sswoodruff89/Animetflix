@@ -1,7 +1,12 @@
 .browse-nav {
   height: 70px;
-  // background: transparent;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(
+    to bottom, 
+    black 12%,
+    rgba(0, 0, 0, 0.8) 55%, 
+    rgba(0, 0, 0, 0.4) 85%, 
+    transparent 100%
+  );
   box-sizing: border-box;
   display: flex;
   align-items: center;

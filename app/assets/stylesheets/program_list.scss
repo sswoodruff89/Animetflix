@@ -160,32 +160,33 @@ img.left-arrow {
 
 //TRANSITION FROM FIRST SLIDE
 #first-in-slide {
-transform-origin: left !important;
+  transform-origin: left !important;
+
+  &:hover {
+    position: relative;
+    transform: scale(1.6) !important;
+    transform-origin: left !important;
+    transition-property: all 1s ease;
+    z-index: 10;
+  }
 }
 
-li#first-in-slide:hover {
-  position: relative;
-  transform: scale(1.6) !important;
-  transform-origin: left !important;
-  transition-property: all 1s ease;
-  z-index: 10;
-}
 
 ////
 
 ////Transition Last Slide
 #last-in-slide {
-transform-origin: right !important;
+  transform-origin: right !important;
+
+  &:hover {
+    position: relative;
+    transform: scale(1.6) !important;
+    transform-origin: right !important;
+    transition-property: all 1s ease;
+    z-index: 10;
+  }
 }
 
-li#last-in-slide:hover {
-  position: relative;
-  transform: scale(1.6) !important;
-  transform-origin: right !important;
-  transition-property: all 1s ease;
-  // transition-delay: 2s0ms;
-  z-index: 10;
-}
 
 li#last-in-slide:hover ~ li#after-last {
   transform: none;
@@ -269,11 +270,11 @@ li#first-in-slide:hover ~ li.program-item{
   transition-duration: .3s;
   display: flex;
   align-items: flex-end;
+
 }
 
 .program-item:hover .background-image {
   transition-property: all;
-  // transition-delay: 200ms;
   transition-duration: .3s;
 }
 
@@ -315,13 +316,13 @@ img.item-play {
   bottom: 17%;
   opacity: 0.8;
   transform: scale(1);
-  transition: all 100ms ease 100ms
-}
+  transition: all 100ms ease 100ms;
 
-.watchlist:hover {
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 100ms ease 100ms
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 100ms ease 100ms
+  }
 }
 
 .like-container {
@@ -339,14 +340,15 @@ img.item-play {
 .thumbnail-mute, .thumbnail-volume {
   transform: scale(1);
   transition: all 100ms ease 100ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 100ms ease 100ms 
+  }
 }
 
-.thumbnail-mute:hover, .thumbnail-volume:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 100ms ease 100ms 
-}
 
 .like-dislike {
   width: 100%;
@@ -355,17 +357,17 @@ img.item-play {
   filter: saturate(0);
   transform: scale(1);
   transition: all 100ms ease 100ms;
-}
 
-.like-dislike:first-of-type {
-  margin-bottom: 2px;
-}
+  &:first-of-type {
+    margin-bottom: 2px;
+  }
 
-.like-dislike:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 100ms ease 100ms
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 100ms ease 100ms
+  }
 }
 
 .like-dislike.active, .like-dislike.active:first-of-type {
@@ -381,7 +383,6 @@ img.item-play {
   background-color: transparent;
 }
 
-// .program-item:hover 
 .program-item-info h4 {
   color: white;
   width: 100%;
@@ -397,12 +398,13 @@ img.item-play {
   width: 100%;
   font-size: .6vw;
   margin-bottom: 1%;
+
+  .rating {
+    border: 1px solid white;
+    margin-right: 2%;
+  }
 }
 
-.rating-runtime .rating {
-  border: 1px solid white;
-  margin-right: 2%;
-}
 
 .genres{
   display: flex;
@@ -410,47 +412,26 @@ img.item-play {
   border: none;
   font-size: 0.6vw;
   margin-bottom: 3%;
-}
 
-.genres div{
-  // list-style-type: disc;
-  display: flex;
-  align-items: center;
-  opacity: .9;
-}
-
-.genres li {
-  padding: 0;
-}
-
-
-///bullets
-.genres span {
-  opacity: .8;
-  font-size: 1em;
-  padding: 0 4px;
-}
-////
-
-
-img.down-arrow{
-  opacity: 0;
-  width: 15%;
-  height: 48%;
-  filter: saturate(0) brightness(6);
-  padding-top: 1%;
-}
-
-.down-arrow-container a {
+  div {
     display: flex;
-    justify-content: center;
-    height: 90%
+    align-items: center;
+    opacity: .9;
+  }
+
+  li {
+    padding: 0;
+  }
+
+  ///bullets///
+  span {
+    opacity: .8;
+    font-size: 1em;
+    padding: 0 4px;
+  }
 }
 
-.program-item:hover img.down-arrow{
-  opacity: 1;
-  position: static;
-}
+
 
 .down-arrow-container {
   display: flex;
@@ -461,17 +442,41 @@ img.down-arrow{
   align-items: center;
   padding: 1% 0;
   justify-content: center;
+  background: transparent;
+
+  a {
+    display: flex;
+    justify-content: center;
+    height: 90%
+  }
 }
 
-.program-item:hover .down-arrow-container {
-  background: linear-gradient(to top, black, transparent);
-  transition: background 300ms ease-in;
-  z-index: 20;
-  
+
+
+img.down-arrow{
+  opacity: 0;
+  width: 15%;
+  height: 48%;
+  filter: saturate(0) brightness(6);
+  padding-top: 1%;
 }
 
-.program-item:hover li {
-  transition-duration: 1s;
+
+.program-item:hover {
+  img.down-arrow {
+    opacity: 1;
+    position: static;
+  }
+
+  .down-arrow-container {
+    background: linear-gradient(to top, black, transparent);
+    transition: background 300ms ease-in;
+    z-index: 20;
+  }
+
+  li {
+    transition-duration: 1s;
+  }
 }
 
 

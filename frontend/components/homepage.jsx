@@ -23,8 +23,6 @@ class HomePage extends React.Component {
     return (
       <main className="homepage-background">
         <section className="homepage">
-          {/* <Link to="/login"><button type="submit">Sign In</button></Link> */}
-
           <div className="welcome">
             <h1>All of Animetflix</h1>
             <h1>Right on your browser!</h1>

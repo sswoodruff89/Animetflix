@@ -88,7 +88,7 @@ const App = (props) => {
             }}
           />
           <Route
-            exact path={["/", "/login", "/signup", "/browse", "/search", "/watchlist", "/tv", "/movie"]}
+            exact path={["/", "/login", "/signup", "/browse", "/search", "/watchlist", "/tv", "/movie", "/search/:searchQuery"]}
             component={Footer}
           />
 

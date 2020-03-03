@@ -38,6 +38,38 @@
   transform: scale(1);
   transition-property: all;
   transition-duration: 0.5s;
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+    border: 0.3em solid rgb(43, 160, 255);
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    transition: opacity 500ms ease;
+  }
+
+/////TOOLTIP
+  &::before {
+    content: "";
+    position: absolute;
+    border-top: 1.1vw solid rgb(43, 160, 255);
+    border-left: 1.1vw solid transparent;
+    border-right: 1.1vw solid transparent;
+    border-bottom: 0;
+    z-index: 41;
+    top: 99%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 500ms ease;
+  }
 }
 
 .program-item::before {
@@ -46,49 +78,15 @@
   transition: opacity 500ms ease;
 }
 
-.program-item::after, .program-item::before, .program-item-detail-open-false::before, .program-item-detail-open-false::after {
+.program-item::after, 
+.program-item::before, 
+.program-item-detail-open-false::before, 
+.program-item-detail-open-false::after {
   content: "";
   opacity: 0;
   transition: opacity 500ms ease;
 }
 
-.program-item-detail-open-true::after {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  margin: 0;
-  padding: 0;
-  border: 0.3em solid rgb(43, 160, 255);
-  box-sizing: border-box;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 15;
-  transition: opacity 500ms ease;
-}
-
-
-//TOOLTIP
-
-.program-item-detail-open-true::before {
-  content: "";
-  position: absolute;
-  border-top: 1.1vw solid rgb(43, 160, 255);
-  border-left: 1.1vw solid transparent;
-  border-right: 1.1vw solid transparent;
-  border-bottom: 0;
-  z-index: 41;
-  top: 99%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity 500ms ease;
-
-}
-
-
-/////////
 
 ///MOVIE DETAIL PAGE
 @keyframes slidingin {
@@ -177,6 +175,28 @@ header.detail-logo-header{
   width: 100%;
   display: flex;
   align-items: center;
+
+  .logo-container.overview {
+    transition: all 500ms ease-out;
+    width: auto;
+    max-width: 34%;
+    display: flex;
+    height: auto;
+    transform: scale(1);
+    transform-origin: left;
+  }
+
+  .logo-container {
+    max-width: 32%;
+    transition: all 500ms ease-out;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    transform: scale(.75);
+    transform-origin: left;
+    display: flex;
+    margin: 0;
+  }
 }
 
 button.detail-closer {
@@ -199,32 +219,6 @@ button.detail-closer.showcase{
   width: 450px;
 }
 
-///logo on main tab
-
-.detail-logo-header .logo-container.overview {
-  transition: all 500ms ease-out;
-  width: auto;
-  max-width: 34%;
-  display: flex;
-  height: auto;
-  transform: scale(1);
-  transform-origin: left;
-
-}
-
-
-.detail-logo-header .logo-container {
-  max-width: 32%;
-  transition: all 500ms ease-out;
-  height: auto;
-  width: auto;
-  max-height: 100%;
-  transform: scale(.75);
-  transform-origin: left;
-  display: flex;
-  margin: 0;
-
-}
 
 .program-logo {
   max-width: 100%;
@@ -266,35 +260,34 @@ aside .rating {
 .detail-buttons {
   display: flex;
   align-items: center;
-  // justify-content:;
-  // margin-right: 2%;
   margin-top: 4%;
+
+  button {
+    width: 27%;
+    padding: 1.8%;
+    text-align: center;
+    font-size: 1em;
+    margin-right: 5%;
+    transform: scale(1);
+    background-color: black;
+    filter: brightness(1);
+
+    &:hover {
+      background-color: rgb(22, 22, 22);
+      transform: scale(1.05);
+      transition: scale 200ms ease;
+      transition-delay: 300ms;
+    }
+  }
 }
 
-.detail-buttons button {
-  width: 27%;
-  padding: 1.8%;
-  text-align: center;
-  font-size: 1em;
-  margin-right: 5%;
-  transform: scale(1);
-  background-color: black;
-  filter: brightness(1);
-}
-
-.detail-buttons button:hover {
-  background-color: rgb(22, 22, 22);
-  transform: scale(1.05);
-  transition: scale 200ms ease;
-  transition-delay: 300ms;
-}
 
 button.detail-play {
   background-color: red;
-}
 
-button.detail-play:hover {
-  background-color: rgb(255, 34, 34);
+  &:hover {
+    background-color: rgb(255, 34, 34);
+  }
 }
 
 .detail-play a:first-child {
@@ -318,28 +311,28 @@ button.detail-play:hover {
 }
 
 
-.details-like-container .details-like-dislike {
-  background: transparent;
-  height: auto;
-  opacity: 0.8;
-  filter: saturate(0);
-  transform: scale(1);
-  width: 35%;
-  transition: all 100ms ease 100ms;
-}
-
 .details-like-container {
   width: 27%;
+
+  .details-like-dislike {
+    background: transparent;
+    height: auto;
+    opacity: 0.8;
+    filter: saturate(0);
+    transform: scale(1);
+    width: 35%;
+    transition: all 100ms ease 100ms;
+  }
+
+  button.details-like-dislike:hover{
+    cursor: pointer;
+    background: transparent;
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 100ms ease 100ms
+  }
 }
 
-.details-like-container button.details-like-dislike:hover{
-  cursor: pointer;
-  background: transparent;
-
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 100ms ease 100ms
-}
 
 .like-container {
   position: absolute;
@@ -359,14 +352,19 @@ button.detail-play:hover {
   filter: saturate(0);
   transform: scale(1);
   transition: all 100ms ease 100ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 100ms ease 100ms
+  }
+
+  .like, .dislike{
+    background-color: transparent;
+  }
 }
 
-.details-like-dislike:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 100ms ease 100ms
-}
 
 .details-like-dislike.active {
   filter: saturate(1);
@@ -376,19 +374,17 @@ button.detail-play:hover {
   display: none;
 }
 
-.details-like-dislike .like, .details-like-dislike .dislike {
-  background-color: transparent;
-}
 
 .details-mute, .details-volume {
   position: absolute;
   right: 2%;
   width: 3%;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.details-mute:hover, .details-volume:hover {
-  cursor: pointer;
-}
 
 .genre-cap {
   display: inline-block;
@@ -400,43 +396,39 @@ button.detail-play:hover {
 ///////TABS
 
 .detail-tabs {
-    position: absolute;
-    display: inline-flex;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+  position: absolute;
+  display: inline-flex;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
-.detail-tabs li {
-  padding: 1em 1.5em 0;
-  font-size: 1vw;
-  letter-spacing: 0.15em;
-  color: rgb(170, 170, 170); 
-  cursor: pointer;
-}
+  li {
+    padding: 1em 1.5em 0;
+    font-size: 1vw;
+    letter-spacing: 0.15em;
+    color: rgb(170, 170, 170); 
+    cursor: pointer;
 
+    /////CURRENT TAB BAR DEFAULT
+    span {
+      width: 100%;
+      display: block;
+      height: .3em;
+      margin-top: .5em;
+      background-color: rgb(51,157, 255);
+      transform: translateY(10px);
+      transition: none;
+    }
 
-
-
-
-//CURRENT TAB BAR DEFAULT
-.detail-tabs li span {
-  width: 100%;
-  display: block;
-  height: .3em;
-  margin-top: .5em;
-  background-color: rgb(51,157, 255);
-  transform: translateY(10px);
-  transition: none;
+    span.current-tab {
+      transform: translateY(0);
+      transition: transform 400ms ease-out;
+    }
+  }
 }
 
 
 ///CURRENT TAB FORMAT
 .detail-tabs li:hover, .detail-tabs li.current-tab {
   color: white;
-}
-
-.detail-tabs li span.current-tab {
-  transform: translateY(0);
-  transition: transform 400ms ease-out;
 }

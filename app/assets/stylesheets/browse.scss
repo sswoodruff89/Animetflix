@@ -105,12 +105,13 @@
 }
 
 .vid-container {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    height: 90%;
-    top: 0;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
 }
 
 .vid-container::before {
