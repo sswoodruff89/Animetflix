@@ -151,6 +151,84 @@ Since the user will be hovering over the .movie-slider container that is holding
 
 As for rendering the details of a given movie when selected, I placed a MovieDetail component after each .movie-slider container and wrapped them both is a 'section' tag. The details only render when the URL pathname has the list name and the movie ID, which is pushed to the history by the thumbnail's down-arrow button.  Any lists that follow are pushed down as the detail's page fades and slides in, thanks to keyframe animations. To animate it's exit, it's class is changed by the component state, reducing it's height and opacity to 0 before the previous pathname is pushed back to the history.
 
+
+### Search Page
+
+<h1 align="center">
+  <img src="https://media.giphy.com/media/kDqkmLmVtOQhydPqxI/giphy.gif" width="600" height="auto" align="center"/>
+</h1>
+
+
+For the search engine, I redirect to the search page the moment the user starts typing in the nav bar, and I the query isn't sent to the back end until the user stops typing. The request is sent to a collection route "search", and the controller diverts the fetched data to the "search" view. As the response is being built by Jbuilder, a recommendations list of titles, directors, and genres is created based on specific matches, starting with matches that begin with the query. If the list is underfilled, then the list will be filled with matches that include the query.
+
+```javascript
+def searchlist(program, query)
+  if (program.title.downcase.starts_with?(query.downcase))
+    return program.title
+  elsif (program.director.downcase.starts_with?(query.downcase))
+    return program.director
+  else
+    genres = program.genres
+    genres.each do |genre|
+      if (genre.name.downcase.starts_with?(query.downcase))
+        return genre.name
+      else
+        next
+      end
+    end
+  end
+  return nil
+end
+
+def include_searchlist(program, query)
+  if (!program.title.downcase.starts_with?(query.downcase) && program.title.downcase.include?(query.downcase))
+    return [program.title]
+  elsif (!program.director.downcase.starts_with?(query.downcase) && program.director.downcase.include?(query.downcase))
+    return [program.director]
+  else
+    genres = program.genres
+    genreNames = [];
+    genres.each do |genre, i|
+      if (!genre.name.downcase.starts_with?(query.downcase) && genre.name.downcase.include?(query.downcase))
+        return [genre.name]
+      else
+        genreNames.push(genre.name);
+        next
+      end
+    end
+    return [program.title, program.director, *genreNames.uniq]
+  end
+end
+
+########
+
+@searchlist = []
+
+json.programs do
+  @programs.each do |program|
+    if (@searchlist.length < 10)
+      search_item = searchlist(program, @query);
+      @searchlist.push(search_item) if (!@searchlist.include?(search_item))
+    end 
+
+    json.set! program.id do
+      json.partial! "program", program: program, details: false
+    end
+  end
+end
+
+if (@searchlist.length < 12)
+    @programs.each do |program|
+      search_item = include_searchlist(program, @query);
+      @searchlist.push(*search_item)
+      break if (@searchlist.length >= 20)
+    end
+end
+
+json.searchlist @searchlist.compact.uniq.take(12)
+```
+Once the frontend receives the response, the search page renders not only the matching movies and shows but also turns that list of recommendations into a separate links that will update the search page when clicked. If a search result returns only one film or show, the recommendations list will include the director and genres, so when the user is going through the searches, they will never feel like they have hit a dead end.
+
 ### Watch Page Movie Controller
 
 <h1 align="center">
