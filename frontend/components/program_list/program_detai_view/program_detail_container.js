@@ -26,23 +26,9 @@ const msp = (state, ownProps) => {
       : [];
 
   
-  // let displayType = (ownProps.displayType === "showcase") ? "showcase" : 
-  //   (ownProps.history.location.pathname.includes("search")) ? "search" : 
-  //     "browse";
-  
   let displayType = ownProps.history.location.pathname.includes("search")
     ? "search"
     : ownProps.displayType;
-
-
-  // let watched = (program && state.entities.watchlists[program.id]) ? 
-  //   state.entities.watchlists[program.id] : null;
-
-  // let liked = (program && state.entities.likes[program.id]) ?
-  //   state.entities.likes[program.id] : null;
-
-  // let disliked = (program && state.entities.dislikes[program.id]) ?
-  //   state.entities.dislikes[program.id] : null;
 
   let { watched, liked, disliked } = checkLikeDislikeWatchlist(
     program,

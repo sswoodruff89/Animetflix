@@ -82,7 +82,7 @@ const App = (props) => {
 
         <Switch>
           <Route
-            exact path="/watch"
+            exact path={"/watch", "/search"}
             render={() => {
               return <div></div>;
             }}

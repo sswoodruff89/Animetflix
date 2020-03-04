@@ -31,21 +31,12 @@ class ProgramDetail extends React.PureComponent {
     this.closeDetails = this.closeDetails.bind(this);
     this.renderLikeButtons = this.renderLikeButtons.bind(this);
 
-    // this.tabObject = {
-    //   'overview': (program, genres, fadeIn) => {
-    //     return this.renderOverview(program, genres, fadeIn);
-    //   },
-    //   'details': (program, genres, fadeIn) => {
-    //     return this.renderDetails(program, genres, fadeIn);
-    //   },
-    //   'episodes': (program, genres, fadeIn) => {
-    //     return this.renderEpisodes(program, genres, fadeIn);
-    //   }
-    // };
   }
 
   componentDidMount() {
-    this.props.requestProgram(parseInt(this.props.match.params.programId));
+    if (!this.props.program.description) {
+      this.props.requestProgram(parseInt(this.props.match.params.programId));
+    }
     
     
     setTimeout(() => {

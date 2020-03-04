@@ -12,9 +12,6 @@ import ProgramListItem from "./program_list_item";
 
 const msp = (state, ownProps) => {
 
-  // let genreCheck = !isEmpty(state.entities.genres);
-  // let genreCheck = (Object.entries(state.entities.genres).length > 0);
-
   let genres =
     ownProps.program &&
     !isEmpty(state.entities.genres) &&
@@ -25,14 +22,6 @@ const msp = (state, ownProps) => {
         })
       : [];
 
-  // let watched = (ownProps.program && state.entities.watchlists[ownProps.program.id]) ?
-  //   state.entities.watchlists[ownProps.program.id] : null;
-
-  // let liked = (ownProps.program && state.entities.likes[ownProps.program.id]) ?
-  //   state.entities.likes[ownProps.program.id] : null;
-
-  // let disliked = (ownProps.program && state.entities.dislikes[ownProps.program.id]) ?
-  //   state.entities.dislikes[ownProps.program.id] : null;
     let { watched, liked, disliked } = checkLikeDislikeWatchlist(
       ownProps.program,
       state
