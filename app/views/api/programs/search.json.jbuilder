@@ -20,11 +20,14 @@ end
 def include_searchlist(program, query)
   if (!program.title.downcase.starts_with?(query.downcase) && program.title.downcase.include?(query.downcase))
     return [program.title]
+
   elsif (!program.director.downcase.starts_with?(query.downcase) && program.director.downcase.include?(query.downcase))
     return [program.director]
+
   else
     genres = program.genres
     genreNames = [];
+
     genres.each do |genre, i|
       if (!genre.name.downcase.starts_with?(query.downcase) && genre.name.downcase.include?(query.downcase))
         return [genre.name]
@@ -35,9 +38,11 @@ def include_searchlist(program, query)
       end
     end
 
-    return [program.title, *genreNames]
+    return [program.title, program.director, *genreNames.uniq]
   end
 end
+
+########
 
 @searchlist = []
 
@@ -54,7 +59,7 @@ json.programs do
   end
 end
 
-if (@searchlist.length < 10)
+if (@searchlist.length < 12)
     @programs.each do |program|
       search_item = include_searchlist(program, @query);
       @searchlist.push(*search_item)
@@ -62,4 +67,4 @@ if (@searchlist.length < 10)
     end
 end
 
-json.searchlist @searchlist.compact.uniq.take(10)
+json.searchlist @searchlist.compact.uniq.take(12)
