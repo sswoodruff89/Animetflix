@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins";
 
 @keyframes zoom-fade {
     from {
@@ -56,14 +57,9 @@
 ////
 
 .profile-form {
+    @include animations(zoom-fade, false, 350ms);
     max-width: 88%;
     background-color: $blackblue;
-    animation-name: zoom-fade;
-    animation-duration: 350ms;
-    -webkit-animation-name: zoom-fade;
-    -webkit-animation-duration: 350ms;
-    -moz-animation-name: zoom-fade;
-    -moz-animation-duration: 350ms;
 }
 
 .profile-form .watching{
@@ -75,7 +71,6 @@
 .profile-list {
     margin: 2em 0;
 }
-
 
 
 .profile-block {
@@ -106,7 +101,9 @@
 
 }
 
-.profile-block .profile-icon {
+.profile-icon {
+    @include background-size-pos(auto, 100%, no-repeat, center);
+
     height: 10vw;
     width: 10vw;
     max-height: 200px;
@@ -117,29 +114,13 @@
     position: relative;
     text-decoration: none;
     border: 0.1em solid rgba(0, 10, 27, 0.4);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
     box-sizing: border-box;
 }
 
 .profile-icon.add {
+    @extend .profile-icon;
     background-image: image-url("add.png");
-    height: 10vw;
-    width: 10vw;
-    max-height: 200px;
-    max-width: 200px;
-    min-height: 84px;
-    min-width: 84px;
-    box-sizing: border-box;
-    position: relative;
-    text-decoration: none;
-    border: 0.1em solid rgba(0, 10, 27, 0.4);
     background-color: $darkgrayblue;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
-    box-sizing: border-box; 
 }
 
 .profile-name{
@@ -147,7 +128,6 @@
     width: 100%;
     display: block;
     text-align: center;
-    justify-content: center;
     font-size: 1.3vw;
     margin: .6em 0;
 }
@@ -215,14 +195,9 @@
 ///////Form
 
 .profile-fill-out-form {
-    max-width:45vw;
+    @include animations(zoom-fade, false, 350ms);
+    max-width: 45vw;
     background-color: #000308;
-    animation-name: zoom-fade;
-    animation-duration: 350ms;
-    -webkit-animation-name: zoom-fade;
-    -webkit-animation-duration: 350ms;
-    -moz-animation-name: zoom-fade;
-    -moz-animation-duration: 350ms;
 }
 
 .form-heading {
@@ -252,14 +227,8 @@
 }
 
 .form-container .profile-icon {
-    width: 10vw;
-    height: 10vw;
     margin-right: 3vw;
     border: 1px solid white;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
-    box-sizing: border-box;
 }
 
 

@@ -1,3 +1,5 @@
+@import "mixins";
+
 @keyframes loading-pulsate {
   0%, 36%, 54%, 90% {
     filter: brightness(0);
@@ -60,15 +62,7 @@
   transition-property: all;
   transition-duration: 0.5s;
 
-  animation-name: loading-pulsate;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  -webkit-animation-name: loading-pulsate;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 3s;
-  -moz-animation-name: loading-pulsate;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-duration: 3s;
+  @include animations(loading-pulsate, infinite, 3s);
 }
 
 .loading .loadpic {
@@ -81,57 +75,33 @@
 }
 
 .loading-squares-1 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 100ms;
-  -webkit-animation-delay: 100ms;
-  -moz-animation-delay: 100ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(100ms); 
 }
 
 .loading-squares-2 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 200ms;
-  -webkit-animation-delay: 200ms;
-  -moz-animation-delay: 200ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(200ms);
 }
 
 .loading-squares-3 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 300ms;
-  -webkit-animation-delay: 300ms;
-  -moz-animation-delay: 300ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(300ms);
 }
 
 .loading-squares-4 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 400ms;
-  -webkit-animation-delay: 400ms;
-  -moz-animation-delay: 400ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(400ms);
 }
 
 .loading-squares-5 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 500ms;
-  -webkit-animation-delay: 500ms;
-  -moz-animation-delay: 500ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(500ms);
 }
 
 .loading-squares-6 {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation-delay: 600ms;
-  -webkit-animation-delay: 600ms;
-  -moz-animation-delay: 600ms; 
+  @include background-size-pos(auto, 100%, no-repeat, center);
+  @include animations-delay(600ms);
 }
 
 

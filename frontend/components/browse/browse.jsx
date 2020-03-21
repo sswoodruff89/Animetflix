@@ -5,7 +5,6 @@ import ProgramDetailContainer from "../program_list/program_detai_view/program_d
 import {Route} from "react-router-dom";
 import BrowseShowcase from "./browse_showcase_container";
 import LoadingPage from "../loading_page";
-import Video from "../video/video";
 
 class Browse extends React.Component{
   constructor(props) {

@@ -1,5 +1,5 @@
 ////////MOVIE THUMBNAIL FORMAT WHEN DETAIL IS OPEN
-
+@import "mixins";
 
 [class^="program-item-detail-open"] {
   min-width: 16.43%;
@@ -130,27 +130,21 @@
 
 
 .program-detail-page {
+  @include background-size-pos(80%, auto, no-repeat);
+  @include animations(slidingin, false, .5s);
+
+  background-position-x: right;
+  background-position-y: center;
+  background-color: black;
   width: 100%;
   height: 68vh;
   top: 0;
   opacity: 1;
   z-index: 0;
   transform: translateY(0);
-  background-color: black;
   position: relative;
-  animation-name: slidingin;
-  animation-duration: .5s;
-  -webkit-animation-name: slidingin;
-  -webkit-animation-duration: .5s;
-  -moz-animation-name: slidingin;
-  -moz-animation-duration: .5s;
   box-sizing: border-box;
   overflow: hidden;
-  background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: center;
-  background-size: 80% auto;
-
 }
 
 .closing {
@@ -163,8 +157,8 @@
 
 .inner-detail-container {
   width: 100%;
-  padding: 0 5%;
   height: 100%;
+  padding: 0 5%;
   background: linear-gradient(to right, black 33%, transparent);
 }
 

@@ -1,0 +1,34 @@
+////For KEYFRAMES/////
+@mixin animations($name, $iteration, $duration) {
+  animation-name: $name;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+
+  @if $iteration {
+      animation-iteration-count: $iteration;
+      -webkit-animation-iteration-count: $iteration;
+      -moz-animation-iteration-count: $iteration;
+  }
+
+  @if $duration {
+      animation-duration: $duration;
+      -webkit-animation-duration: $duration;
+      -moz-animation-duration: $duration;
+  }
+}
+
+@mixin animations-delay($val) {
+  animation-delay: $val;
+  -webkit-animation-delay: $val;
+  -moz-animation-delay: $val; 
+}
+/////////////
+
+@mixin background-size-pos($width, $height, $rep: no-repeat, $pos: false) {
+  background-size: $width $height;
+  background-repeat: $rep;
+
+  @if $pos {
+      background-position: $pos;
+  }
+}

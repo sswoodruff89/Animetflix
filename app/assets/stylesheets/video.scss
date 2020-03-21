@@ -1,3 +1,5 @@
+@import "mixins";
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -42,6 +44,7 @@ video.thumbnail {
 }
 
 .program-detail-page video.detail {
+  @include animations(fade-in, false, 300ms);
   position: absolute;
   right: 0;
   height: 100%;
@@ -49,13 +52,6 @@ video.thumbnail {
   width: 70vw;
   opacity: 1;
   z-index: -4;
-  animation-name: fade-in;
-  animation-duration: 300ms;
-  -webkit-animation-name: fade-in;
-  -webkit-animation-duration: 300ms;
-  -moz-animation-name: fade-in;
-  -moz-animation-duration: 300ms;
-
 }
 
 .program-detail-page video.detail::before {

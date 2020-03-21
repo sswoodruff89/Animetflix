@@ -1,3 +1,5 @@
+@import "mixins";
+
 .browse-nav {
   height: 70px;
   background: linear-gradient(
@@ -13,10 +15,6 @@
   position: fixed;
   z-index: 900;
 }
-
-/* .browse-nav.scroll {
-  background-color: rgba(0, 0, 0. 0.5);
-} */
 
 .browse-logo{
   width: 150px;
@@ -117,18 +115,13 @@ li.current {
 }
 
 .search-field input {
+  @include animations(open-input, false, .5s);
   width: 265px;
   font-size: 14px;
   padding: 5px 2px;
   font-weight: 300;
   letter-spacing: 0.05em;
   vertical-align: middle;
-  animation-name: open-input;
-  animation-duration: .5s;
-  -webkit-animation-name: open-input;
-  -webkit-animation-duration: .5s;
-  -moz-animation-name: open-input;
-  -moz-animation-duration: .5s;
 }
 
 .search-field .fa-times {
@@ -176,12 +169,10 @@ li.current {
   max-width: 40px;
   max-height: 40px;
   background-size: cover;
-  // background-color: blue;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid black;
   position: relative;
-  // margin-left: 5px;
 }
 
 .profile::after {

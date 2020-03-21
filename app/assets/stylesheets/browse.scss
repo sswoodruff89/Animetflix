@@ -95,13 +95,11 @@
 }
 
 .showcase-detail-buttons button:hover {
-  // background-color: rgb(22, 22, 22);
   transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.8);
   filter: invert(1);
   transition: all 200ms ease;
   transition-delay: 100ms;
-  // filter: brightness(2);
 }
 
 .vid-container {
