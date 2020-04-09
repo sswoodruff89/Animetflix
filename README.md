@@ -35,7 +35,7 @@ On the watch page, enjoy your movie of choice!
 
 ### Movie List Carousel
 
-The first major challenge of building this app was making a clean, scrollable carousel of movies per genre that was not smooth when going back and forth but also handled lists of varying length. Getting the structure of each list down was pretty straightforward-- each list being a 'ul' of movie items --which would then be slid back and forth inside another container with a hidden overflow. The amount of movement was the real challenge. Keeping the page as responsive as possible to the window size meant setting most units of measurement to percentages or viewing width. I also had to make sure a list would scroll off the screen when it reached it's end.
+The first major challenge of building this app was making a clean, scrollable carousel of movies per genre that was not only smooth when going back and forth but also handled lists of varying length. Getting the structure of each list down was pretty straightforward-- each list being a 'ul' of movie items --which would then be slid back and forth inside another container with a hidden overflow. The amount of movement was the real challenge. Keeping the page as responsive as possible to the window size meant setting most units of measurement to percentages or viewing width. I also had to make sure a list would scroll off the screen when it reached it's end.
 
 To solve this issue, I had to track several properties in the MovieList component state:
 
